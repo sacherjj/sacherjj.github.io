@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>joesacher.com</title><link>http://www.joesacher.com/</link><description></description><atom:link href="http://www.joesacher.com/feeds/joe-sacher.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 30 Jun 2015 00:00:00 -0400</lastBuildDate><item><title>Trans-Am Placeholder</title><link>http://www.joesacher.com/blog/trans-am/trans-am-placeholder/</link><description>&lt;p&gt;This is a placeholder file so the trans-am section generates.  I am moving my old posts over from Wordpress format to Pelican.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>joesacher.com</title><link>http://localhost:8000/</link><description></description><atom:link href="http://localhost:8000/feeds/joe-sacher.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 30 Jun 2015 00:00:00 -0400</lastBuildDate><item><title>Trans-Am Placeholder</title><link>http://localhost:8000/blog/trans-am/trans-am-placeholder/</link><description>&lt;p&gt;This is a placeholder file so the trans-am section generates.  I am moving my old posts over from Wordpress format to Pelican.
 I plan to revamp my trip logs and will remove this once I post the first new log.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Tue, 30 Jun 2015 00:00:00 -0400</pubDate><guid>tag:www.joesacher.com,2015-06-30:blog/trans-am/trans-am-placeholder/</guid></item><item><title>Paleo Chicken Nuggets</title><link>http://www.joesacher.com/blog/cooking/paleo-chicken-nuggets/</link><description>&lt;div class="section" id="ingredients"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Tue, 30 Jun 2015 00:00:00 -0400</pubDate><guid>tag:localhost:8000,2015-06-30:blog/trans-am/trans-am-placeholder/</guid></item><item><title>Paleo Chicken Nuggets</title><link>http://localhost:8000/blog/cooking/paleo-chicken-nuggets/</link><description>&lt;div class="section" id="ingredients"&gt;
 &lt;h2&gt;Ingredients&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;1 pound ground chicken&lt;/li&gt;
@@ -70,7 +70,7 @@ I plan to revamp my trip logs and will remove this once I post the first new lo
 &lt;h2&gt;Verdict&lt;/h2&gt;
 &lt;p&gt;Not yet made with coconut.  Can’t seem to make a recipe as printed, even the first time. :)&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Sat, 10 May 2014 00:00:00 -0400</pubDate><guid>tag:www.joesacher.com,2014-05-10:blog/cooking/paleo-chicken-nuggets/</guid><category>recipes</category><category>paleo</category><category>chicken</category></item><item><title>Web Site Reboot</title><link>http://www.joesacher.com/blog/personal/web-site-reboot/</link><description>&lt;p&gt;It is hard for me to believe that I tried to go to a markdown or reStructured text driven web site over a year ago.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Sat, 10 May 2014 00:00:00 -0400</pubDate><guid>tag:localhost:8000,2014-05-10:blog/cooking/paleo-chicken-nuggets/</guid><category>recipes</category><category>paleo</category><category>chicken</category></item><item><title>Web Site Reboot</title><link>http://localhost:8000/blog/personal/web-site-reboot/</link><description>&lt;p&gt;It is hard for me to believe that I tried to go to a markdown or reStructured text driven web site over a year ago.
 I started with a Ruby based solutions, thinking it would be a good time to learn.  But the only thing I really learned is that Ruby is a 2nd class citizen on Windows.
 I need to do 60% of my work in Windows and a &lt;span class="caps"&gt;VM&lt;/span&gt; can’t cut it.&lt;/p&gt;
 &lt;p&gt;How many times do you think I logged into my Linux &lt;span class="caps"&gt;VM&lt;/span&gt; to update the site?  Other than the first time?  None.  Well, actually once.  I tried, but gems had been changed and I had dependency issues and…  I just let it sit.&lt;/p&gt;
@@ -78,7 +78,7 @@ I need to do 60% of my work in Windows and a &lt;span class="caps"&gt;VM&lt;/spa
 So I came full circle and am now generating the site in Pelican and hosting on github pages.&lt;/p&gt;
 &lt;p&gt;The style isn’t how I want it to end up, but back online.  It will grow with time, as I add new content and port over the old content.&lt;/p&gt;
 &lt;p&gt;This whole process started with a outdated Wordpress install on a shared server, leading to compromised sites and blank sites.  One thing I’m sure of, it is better than Wordpress.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Mon, 05 May 2014 18:00:00 -0400</pubDate><guid>tag:www.joesacher.com,2014-05-05:blog/personal/web-site-reboot/</guid><category>site related</category></item><item><title>The Windows Phone Experiment is Over</title><link>http://www.joesacher.com/blog/tech/windows-phone-experiment-is-over/</link><description>&lt;p&gt;My wife and I left webOS when &lt;span class="caps"&gt;HP&lt;/span&gt; flushed their 3 year plan to revamp webOS down the toilet. We tested both Android and Windows Phone. Android is a multitasking joke.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Mon, 05 May 2014 18:00:00 -0400</pubDate><guid>tag:localhost:8000,2014-05-05:blog/personal/web-site-reboot/</guid><category>site related</category></item><item><title>The Windows Phone Experiment is Over</title><link>http://localhost:8000/blog/tech/windows-phone-experiment-is-over/</link><description>&lt;p&gt;My wife and I left webOS when &lt;span class="caps"&gt;HP&lt;/span&gt; flushed their 3 year plan to revamp webOS down the toilet. We tested both Android and Windows Phone. Android is a multitasking joke.
 Coming from webOS, it has a terrible &lt;span class="caps"&gt;UI&lt;/span&gt;. Windows Phone has very nice flowing &lt;span class="caps"&gt;UI&lt;/span&gt;. We decided to go to Windows Phone.&lt;/p&gt;
 &lt;p&gt;Microsoft representatives promised to get phones and development credits to webOS programmers. Despite many requests, it turned out to be a bunch of hot air.
 Sadly, this turned me off to all mobile development.&lt;/p&gt;
@@ -122,7 +122,7 @@ Not quite the WiFi hot spot that webOS gave me, but I can have that too if I dec
 I had to get a 3500 mAh battery to make my phone last a day. But things are better.&lt;/p&gt;
 &lt;p&gt;&lt;span class="caps"&gt;P.S.&lt;/span&gt; I found out that Zune doesn’t want me to go. I cancelled our Zune Pass. Luckily, I had a card stolen and cancelled that card as well.
 Now I get an email periodically about how the card is bad. How they can’t charge a monthly fee for a service I cancelled over 2 weeks ago. Zune, the relationship is over.  We broke up.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Mon, 09 Apr 2012 00:00:00 -0400</pubDate><guid>tag:www.joesacher.com,2012-04-09:blog/tech/windows-phone-experiment-is-over/</guid><category>mobile</category><category>windows phone</category></item><item><title>Zune Podcasts - A Rant</title><link>http://www.joesacher.com/blog/tech/zune-podcasts-a-rant/</link><description>&lt;p&gt;Zune podcast functionality on Windows Phone Mango was obviously designed by someone who never listens to podcasts.  I’ve tried to use it over the last three weeks and it is an exercise in futility.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Mon, 09 Apr 2012 00:00:00 -0400</pubDate><guid>tag:localhost:8000,2012-04-09:blog/tech/windows-phone-experiment-is-over/</guid><category>mobile</category><category>windows phone</category></item><item><title>Zune Podcasts - A Rant</title><link>http://localhost:8000/blog/tech/zune-podcasts-a-rant/</link><description>&lt;p&gt;Zune podcast functionality on Windows Phone Mango was obviously designed by someone who never listens to podcasts.  I’ve tried to use it over the last three weeks and it is an exercise in futility.&lt;/p&gt;
 &lt;p&gt;There is one glaring problems that needs to be addressed before it is close to usable.  It all comes down to episode management.  Unfortunately, this is the most important factor of any podcast solution.&lt;/p&gt;
 &lt;p&gt;Order is allowed, for either oldest first or newest first.  This is great.  What this means is that it will constantly download the oldest or the newest.  Doesn’t matter how many times you have heard them.
 It doesn’t matter if you manually marked them as heard and manually deleted them.&lt;/p&gt;
@@ -141,7 +141,7 @@ The next episode is automatically downloaded to get up to your keep at least num
 &lt;p&gt;I’ve almost stopped listening to PodCasts on Windows Phone, because the management of episodes is more work than the enjoyment of listening to them.
 Maybe it is too easy to spot really crappy software after using really great software.   If anyone wants to see really good software, look at drPodder on webOS.
 It is open source, take a look.  It makes Zune’s implementation looks like a bad student programming project.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Wed, 21 Sep 2011 00:00:00 -0400</pubDate><guid>tag:www.joesacher.com,2011-09-21:blog/tech/zune-podcasts-a-rant/</guid><category>podcasts</category><category>mobile</category><category>windows phone</category></item><item><title>Thermostat Wiring</title><link>http://www.joesacher.com/blog/projects/thermostat-wiring/</link><description>&lt;p&gt;I have delusions of possibly making an embedded thermostat solution that tracks energy usage, inside and outside temperature and humidity and possibly online weather forecasts for setting house temperature.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Wed, 21 Sep 2011 00:00:00 -0400</pubDate><guid>tag:localhost:8000,2011-09-21:blog/tech/zune-podcasts-a-rant/</guid><category>podcasts</category><category>mobile</category><category>windows phone</category></item><item><title>Thermostat Wiring</title><link>http://localhost:8000/blog/projects/thermostat-wiring/</link><description>&lt;p&gt;I have delusions of possibly making an embedded thermostat solution that tracks energy usage, inside and outside temperature and humidity and possibly online weather forecasts for setting house temperature.
 For this to work, I need to fully understand thermostat wiring.  It took a bit of looking around the net to identify thermostat wire colors, thermostat terminals and functions, so I thought I would summarize it in a post.&lt;/p&gt;
 &lt;p&gt;All signals are 24 &lt;span class="caps"&gt;VAC&lt;/span&gt; controlled&lt;/p&gt;
 &lt;table border="1" class="docutils"&gt;
@@ -216,7 +216,7 @@ For this to work, I need to fully understand thermostat wiring.  It took a bit 
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Thu, 08 Sep 2011 00:00:00 -0400</pubDate><guid>tag:www.joesacher.com,2011-09-08:blog/projects/thermostat-wiring/</guid><category>projects</category><category>hvac</category></item><item><title>Android vs Windows Phone Navigation</title><link>http://www.joesacher.com/blog/tech/android-vs-windows-phone-navigation/</link><description>&lt;p&gt;I’m testing both Android and Windows Phone on Sprint.  Both devices have free TeleNav service on Sprint, so the service using that application is roughly similar.  Both phones also come with stock turn by turn directions.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Thu, 08 Sep 2011 00:00:00 -0400</pubDate><guid>tag:localhost:8000,2011-09-08:blog/projects/thermostat-wiring/</guid><category>projects</category><category>hvac</category></item><item><title>Android vs Windows Phone Navigation</title><link>http://localhost:8000/blog/tech/android-vs-windows-phone-navigation/</link><description>&lt;p&gt;I’m testing both Android and Windows Phone on Sprint.  Both devices have free TeleNav service on Sprint, so the service using that application is roughly similar.  Both phones also come with stock turn by turn directions.
 Android is a no holds barred knockout win.&lt;/p&gt;
 &lt;p&gt;The turn by turn directions in pre-Mango Windows Phone is a joke.  You must tap the screen to move along, making it totally unusable for navigation when you are driving the car.  The Mango update provides considerably increased driving instructions.
 If you follow the route given, the system works very well.  If you do not, you will soon want to through your phone out your car window.&lt;/p&gt;
@@ -232,7 +232,7 @@ So I held the phone in my hand, because I knew I would have to tap the screen af
 &lt;p&gt;I wound up turning off Maps about halfway to work, to keep me from throwing the phone out the window.  A complete and utter usability failure.&lt;/p&gt;
 &lt;p&gt;Android wins this round.  Still not sure if it is enough to get past the complete ease of use failure that is the Android system in general, so I’m still using both.&lt;/p&gt;
 &lt;p&gt;…and still missing webOS.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Wed, 07 Sep 2011 00:00:00 -0400</pubDate><guid>tag:www.joesacher.com,2011-09-07:blog/tech/android-vs-windows-phone-navigation/</guid><category>android</category><category>windows phone</category><category>gps</category><category>navigation</category></item><item><title>Windows Phone Podcast Experience</title><link>http://www.joesacher.com/blog/tech/windows-phone-podcast-experience/</link><description>&lt;p&gt;The “Mango” update for Windows Phone, or version 7.5 for those less fruity, adds many features.  This article is dealing with the podcasting capabilities.  On webOS, I made daily use of a brilliant piece of software called drPodder.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Wed, 07 Sep 2011 00:00:00 -0400</pubDate><guid>tag:localhost:8000,2011-09-07:blog/tech/android-vs-windows-phone-navigation/</guid><category>android</category><category>windows phone</category><category>gps</category><category>navigation</category></item><item><title>Windows Phone Podcast Experience</title><link>http://localhost:8000/blog/tech/windows-phone-podcast-experience/</link><description>&lt;p&gt;The “Mango” update for Windows Phone, or version 7.5 for those less fruity, adds many features.  This article is dealing with the podcasting capabilities.  On webOS, I made daily use of a brilliant piece of software called drPodder.
 Moving from this almost clairvoyant app to the integrated podcast ability of Windows Phone is quite jarring.&lt;/p&gt;
 &lt;p&gt;I will be outlining the current successes and fails with Windows Phone which keep it from being an enjoyable podcasting experience.&lt;/p&gt;
 &lt;div class="section" id="adding-podcasts"&gt;
@@ -284,7 +284,181 @@ From here you can pause and go forward or back.&lt;/p&gt;
 &lt;p&gt;After getting past the pain of catching up all the shows, it should work fine for steady state listening.  Heaven help me if I ever get behind again and just want to catch up.  I’ll be using this for my daily podcasts for a while and see how it goes.
 Sure wish I could get my missing podcasts back though.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Wed, 07 Sep 2011 00:00:00 -0400</pubDate><guid>tag:www.joesacher.com,2011-09-07:blog/tech/windows-phone-podcast-experience/</guid><category>windows phone</category><category>podcasts</category></item><item><title>Encoding Videos for the HP Touchpad</title><link>http://www.joesacher.com/blog/tech/encoding-videos-for-the-hp-touchpad/</link><description>&lt;p&gt;This post is for those who have ripped their DVDs and other video media and would like to load it onto their &lt;span class="caps"&gt;HP&lt;/span&gt; Touchpad.  I started to encode videos for the &lt;span class="caps"&gt;HP&lt;/span&gt; Touchpad using HandBrake, which had given me success for video targeting my Palm Pre.   I used iPad profiles, as the display size is exactly the same.  It seemed that no matter what I tried, the files would not show up in Photos &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; Videos app.  I tried quite a few options and then just gave up.  Many issues that I had with encoding video for the Touchpad seem to have been fixed with the 3.0.2 webOS update.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Wed, 07 Sep 2011 00:00:00 -0400</pubDate><guid>tag:localhost:8000,2011-09-07:blog/tech/windows-phone-podcast-experience/</guid><category>windows phone</category><category>podcasts</category></item><item><title>webOS to Windows Phone - What’s Missing?</title><link>http://localhost:8000/blog/tech/webos-to-windows-phone-whats-missing/</link><description>&lt;p&gt;I’ve decided that I’ll be exploring both Android and Windows Phone as possible replacements for my nearly dead Palm Pre.  &lt;span class="caps"&gt;HP&lt;/span&gt; killed future hardware and we need phones, bad.
+I purchased an &lt;span class="caps"&gt;HTC&lt;/span&gt; Arrive off eBay, slightly cheaper than I would get it from Sprint under contract.  I’ve been using it as a WiFi only device for about a week.
+Wednesday night, I upgraded it to the developer’s release of Mango, the future update for Windows Phone.  Last night, I added this phone to our third “testing” line on Sprint.&lt;/p&gt;
+&lt;p&gt;This article will detail the pain points that will exist on doing a webOS to Windows Phone (and specifically the &lt;span class="caps"&gt;HTC&lt;/span&gt; Arrive) transition.
+I will also highlight the cool things I see that aren’t possible on webOS (at least Sprint available webOS phones).&lt;/p&gt;
+&lt;div class="section" id="multitasking-vs-multipausing"&gt;
+&lt;h2&gt;MultiTasking vs MultiPausing&lt;/h2&gt;
+&lt;p&gt;webOS is still the best multitasking platform for mobile, full stop.  Windows Phone acts much like iOS, where apps are put into a pause state and resumed when reloaded.
+The Arrive has three “soft” buttons on the front for Back, Windows, and Search.  These are needed to navigate and annoying at the same time.
+I can’t tell you how often I accidentally tapped search and was bounced into Bing search.  Then a Back tap resumes where you were in a variably amount of time, depending on the app.&lt;/p&gt;
+&lt;p&gt;In the development documentation, there is a term for preparing your application for this pause: “Tombstoning”.
+Sit there and act dead and I’ll let you know when you can come out of the coffin.  Mango supposedly has faster resume, but like the iOS transition a short while ago,
+the apps must be coded to use this for a faster resume.  Most I’ve used have not been updated.&lt;/p&gt;
+&lt;p&gt;Holding the back button takes you to a similar view as card mode on webOS.  This isn’t nearly as nice, but I can work with it.  The cards will be a list of the last 5
+(or less) apps that you have opened.  You will always start at the right and can swipe to the left in chronological order.  webOS this sure isn’t, but I can deal.
+It isn’t as bad as I expected it would be.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="notifications"&gt;
+&lt;h2&gt;Notifications&lt;/h2&gt;
+&lt;p&gt;This is another feature where webOS tops the mobile space.  Others are getting close, but not there yet.  Windows Phone uses live tiles on the home screen to display some of this information.
+However, there is not one place to go to see all that has happened.  I can live with Windows Phone version, but it is vastly inferior.  The unlock screen shows many of the “notifications”,
+which is slightly like the locked display on webOS.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="calendars"&gt;
+&lt;h2&gt;Calendars&lt;/h2&gt;
+&lt;p&gt;When my wife and I purchased our webOS phones, over two years ago, we started expanding into the capabilities of webOS Synergy.  I use a work Exchange calendar, Google personal,
+and my wife used two Google calendars for work and personal.  All of these show up on my Pre with no effort other than linking my Google account.  This is not the case with Windows Phone.
+It is not even possible to see multiple calendars for one account in the current release of Windows Phone.
+When I upgraded to Mango, this was possible, but &lt;a class="reference external" href="http://localhost:8000/blog/tech/multiple-google-calendars-on-windows-phone-mango/"&gt;only after a hack that I detailed in this article&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Since you only have to do this once, I call the Calendar a draw (once Mango comes out, that is.)  webOS has a few nicer features, but Windows Phone is 5x faster in getting through the info.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="touchstone"&gt;
+&lt;h2&gt;Touchstone&lt;/h2&gt;
+&lt;p&gt;The wireless charging setup for webOS phones and tablets is something that isn’t thought about, until you are plugging cabled into phones for the first time on two years.
+I have my Pre sitting right in front of my keyboard on a Touchstone, right now.  When I leave my desk area, I just scoop it up.  It is there to tap songs or quickly look at notifications.
+Just a handy setup.  This will be missed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="podcasts"&gt;
+&lt;h2&gt;Podcasts&lt;/h2&gt;
+&lt;p&gt;I have used drPodder for webOS, since early betas.  It is a great app with the ability to download podcasts directly from your phone, or stream them.  It supports audio and video,
+as well as some advanced renaming features.  The negatives of using drPodder are all related to the error filled media playing implementation of webOS 1.4.5, where my Pre is stuck.
+I just expect the last 6-10 seconds of a podcast to get cut off.  It just happens.  Starting a podcast playing back (even a downloaded one) can take up to 10 seconds.
+If my Pre starts getting hot for some reason, playback slows to 80% speed.  But drPodder makes listening to and managing podcasts a breeze.  After playing, the file can be auto deleted.
+You can play from bottom or top (oldest to newest or reverse).&lt;/p&gt;
+&lt;p&gt;Mango has added podcasts directly into the Zune media system.  I was able to find a majority of the podcasts I listen to in the directory.
+I am not used to the immediate response of the software, when lags where just part of the game with webOS.
+The current setting is to download audio and video only when WiFi is connected, but this is configurable.
+I cannot find a way to manually add an &lt;span class="caps"&gt;RSS&lt;/span&gt; feed to a podcast not in the Zune directory.  So immediately, I’m missing 3 of my normal podcasts.&lt;/p&gt;
+&lt;p&gt;You have options of how many of each podcast to download, if you should get oldest or newest first, and if you should play them from oldest or newest.
+So it seems to replace most functionality of drPodder.  But not so fast.&lt;/p&gt;
+&lt;p&gt;Some of the podcasts I listen to are nearly 90 minutes.  I almost never listen to them at one sitting.  On webOS, drPodder just keeps my last place and when I start that episode again,
+I’m just slightly before when I stopped.  If I leave the podcast in Zune player, and go back to it in the future, I’m right back at the beginning.  This has got to be a joke, right?
+They aren’t bookmarking audio podcasts?  It looks like they are handled just like songs.  This is a complete and utter fail and makes audio podcast listening impossible on the device.&lt;/p&gt;
+&lt;p&gt;Now for video podcasts, they are storing the position for each one.  I can pause 4 different episodes of a podcast, 3 different ones of another, and all will restore at the correct position.
+So I have to download video versions of the podcasts that have them and listen to that on my drive into work, when I will never be looking at the video.
+Have I been spoiled too much by drPodder, or is this implementation just not well formed?&lt;/p&gt;
+&lt;p&gt;Podcasting on Windows Phone is a fail.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="video-playback"&gt;
+&lt;h2&gt;Video Playback&lt;/h2&gt;
+&lt;p&gt;Be it video podcasts or video files that you loaded on the phone via Zune software (which encodes them), they all play great.  However, I have not been able to figure out how to make
+sound for Video come out over &lt;span class="caps"&gt;A2DP&lt;/span&gt; headsets.  Audio works great.  However, once you start a video, it either comes out of the speaker or wired headphones.  I’m not sure if this is an
+&lt;span class="caps"&gt;HTC&lt;/span&gt; Arrive fail or a Windows Phone issue in general.  Why isn’t audio just audio.  Just when I thought that I could used the video versions of a podcast to get past the bookmark issue,
+now I can’t use &lt;span class="caps"&gt;A2DP&lt;/span&gt; headphones for that.  You seriously have to be kidding me.  This is a major annoyance and needs to be addressed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="web-browser"&gt;
+&lt;h2&gt;Web Browser&lt;/h2&gt;
+&lt;p&gt;There is no way to describe the web browser in current Windows Phone, other than crap.  It was really bad.  The Mango update essentially loads &lt;span class="caps"&gt;IE9&lt;/span&gt; onto your phone.  While this is still
+a step back from the Chrome or Firefox that I’m used to on the desktop, it is a decent mobile browser.  &lt;span class="caps"&gt;ACID3&lt;/span&gt; test jumps from a 12 to a 95, between current &lt;span class="caps"&gt;WP&lt;/span&gt; and Mango.  For most browse
+ability, the Windows Phone wins over my old Palm Pre.  This is a combination of screen size and processor speed.  However, there are sites which my Pre can open that Windows Phone Mango
+will not.  For getting something done all over the web, webOS still wins here.  For most use, the speed of the newer phone and clean &lt;span class="caps"&gt;OS&lt;/span&gt; is on top.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="camera"&gt;
+&lt;h2&gt;Camera&lt;/h2&gt;
+&lt;p&gt;If the Pre3 was released, I think this would be equal or slightly into webOS for functionality.  Video editing on the Pre is pretty cool.  However, my Pre cannot shoot a clear shot closer
+than 8 inches.  Scanning barcodes with the phone? Don’t make me laugh.&lt;/p&gt;
+&lt;p&gt;The Arrive has a 5 &lt;span class="caps"&gt;MP&lt;/span&gt; autofocus camera, which allows me to shoot as close as 2-3 cm.  Dedicated camera button that never seems to freeze for up to 20 seconds when I want to load it, as my
+aging Pre will do occasionally.&lt;/p&gt;
+&lt;p&gt;There is also automated uploads to SkyDrive (Microsoft’s cloud storage) if you desire.  This is a hands down win for the &lt;span class="caps"&gt;HTC&lt;/span&gt; Arrive and Windows Phone.  The uploads to Facebook and other
+upload features that a almost never using on the Pre are also available here.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="apps"&gt;
+&lt;h2&gt;Apps&lt;/h2&gt;
+&lt;p&gt;The Windows Phone Marketplace isn’t iOS or Android level yet, but there are Apps.  More and better games than available for webOS.  The one missing app that I hope they get soon is Pandora.
+I have gotten used to listening to a mellow mix over &lt;span class="caps"&gt;A2DP&lt;/span&gt; headphones while I work.  This will be missed.&lt;/p&gt;
+&lt;p&gt;You know one app that is pretty cool?  Netflix.  Streaming on my phone.  Oh, yeah.  These are the things that may push past any of the pain.  The real apps we have been waiting for on webOS
+for two years.  While there are some missing innovative apps that are unique to webOS, Windows Phone is walking to the finish line to win on this one.  They have the apps that I hoped &lt;span class="caps"&gt;HP&lt;/span&gt;
+scale would bring to webOS.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="bing-search"&gt;
+&lt;h2&gt;Bing Search&lt;/h2&gt;
+&lt;p&gt;Does Windows Phone have an app to identify songs?  Yes, but with Mango it is baked into the &lt;span class="caps"&gt;OS&lt;/span&gt; itself.  (This is also why Shazam has upped their price to $5.99 for Windows Phone, as
+they will be obsolete when the Mango update pushes out.)  To search for music in Mango, tap the search button and tap the music icon at the bottom.  Then let the phone listen.
+It does a decent job identifying music, with a link to the Zune marketplace if you want to purchase it.&lt;/p&gt;
+&lt;p&gt;They also have visual search, that allows you to photograph text with the camera and translate it into other languages, or pull up &lt;span class="caps"&gt;QR&lt;/span&gt; code, Microsoft Tags, UPCs for books, CDs, DVDs.
+It isn’t perfect with the text, but better than I expected.&lt;/p&gt;
+&lt;p&gt;You also have voice search.  This works amazingly well.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="speech-to-text-and-text-to-speech"&gt;
+&lt;h2&gt;Speech to Text and Text to Speech&lt;/h2&gt;
+&lt;p&gt;I’m interested in trying this out on Android, as Molly Wood indicated that she uses it in more places than just searching.  However, I found it very useful.  If you hold down the windows key,
+you activate voice mode.  I may say: “text Amy”, it will respond with which of my wife’s numbers I should text.  I say “Google” for her Google Voice number.  It then says “Texting Amy Sacher”
+and goes to the &lt;span class="caps"&gt;SMS&lt;/span&gt; composition mode.  Then I say what I want to text.  It gets it down fairly accurately and reads it back to me.  I can say “Send”, “Try Again”, or “Cancel”.&lt;/p&gt;
+&lt;p&gt;&lt;span class="dquo"&gt;“&lt;/span&gt;Open” followed by any installed app name works to start up that app.  “Call” followed by a phone number works as long as you say each digit and don’t call 18 “eighteen” instead of “one, eight”.
+If it doesn’t recognize a valid verb noun combo, it will bing search for the text you spoke.  This blows away the functionality that I’ve played with on the Pre2.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="trial-version"&gt;
+&lt;h2&gt;Trial Version&lt;/h2&gt;
+&lt;p&gt;Windows Phone apps allow trial versions.  This would be fairly simple to hack around in webOS and is possible, because the apps are compiled.
+I have tried many apps and it keeps be from buying bad apps, which is have done many times on webOS.  This is good for keeping the collection of apps strong.
+If you try 3 apps to provide one service, download all the trials.  Then buy the one you like, but review all three.  This will reward good developers.&lt;/p&gt;
+&lt;p&gt;I’m downloading all the trials of Instapaper apps right now.  Let the best app win.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tethering"&gt;
+&lt;h2&gt;Tethering&lt;/h2&gt;
+&lt;p&gt;Of all the features that I use on my webOS phone, tethering for free on Sprint is the most needed, due to now having the Touchpad.  This is easy on both webOS and Android.
+I’m not sure if this is possible with the &lt;span class="caps"&gt;HTC&lt;/span&gt; Arrive and Windows Mobile, yet.  I believe some type of tethering will be available with Mango, but if you can do it without the extra
+fee is yet to be seen.  This may be the deal breaker that takes me to Android.  But comparing webOS to Windows Phone, webOS knocks it out of the park.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="homebrew"&gt;
+&lt;h2&gt;Homebrew&lt;/h2&gt;
+&lt;p&gt;There is no debate on this one.  webOS homebrew is the only thing that kept people on webOS in the dark days (1) before &lt;span class="caps"&gt;HP&lt;/span&gt; acquisition.  It is also how people are staying on webOS with
+FrankenPre2s and other methods of staying on their carrier and getting through the dark days (2) after the &lt;span class="caps"&gt;HP&lt;/span&gt; cancellation.  There is not a more open system than webOS, period.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="getting-files-on-device"&gt;
+&lt;h2&gt;Getting Files on Device&lt;/h2&gt;
+&lt;p&gt;There is no &lt;span class="caps"&gt;USB&lt;/span&gt; mode for Windows Phone.  Like iTunes on iOS, you go through Zune.  This is annoying.  The only other real option is going through SkyDrive.
+This worked to edit an Office document on the phone from SkyDrive and push it back up there.&lt;/p&gt;
+&lt;p&gt;With webOS stock, you can connect your phone to your computer as a &lt;span class="caps"&gt;USB&lt;/span&gt; drive.  Copy either way.  All good.  With a little WebOSInternals, you can &lt;span class="caps"&gt;SSH&lt;/span&gt; into the phone and &lt;span class="caps"&gt;SCP&lt;/span&gt; files with the
+phone just being on the same network.  This is an easy webOS win and I have many “work arounds” to learn if I will be staying on Windows Phone.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="development"&gt;
+&lt;h2&gt;Development&lt;/h2&gt;
+&lt;p&gt;While this doesn’t affect strictly users, I see the development environment for each platform pretty well matched.  There are cool things that webOS does where Windows Phone can’t match,
+and vice versa.  We are still waiting for mic access and other hardware access on webOS.  Both platforms are much nicer than trying to develop for Android.  I’m looking into MonoGame to port
+apps to Android, iOS, Mac, Linux, and possibly webOS, in addition to the native support on Windows Phone, Windows, and XBox.&lt;/p&gt;
+&lt;p&gt;There is also a fun little scripting app on the phone called TouchDevelop.  This exposes most if not all the phone’s capabilities for your little mini programs.  I made a 4 line program
+that prompted me to talk, converted Speech to Text, then used Text to Speech to read it back to me.  I’m sure I’ll mes with this more.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusion"&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;The only part that I will have trouble working past is if I can’t get tethering on my Windows Phone.   I will be getting an Android phone via our two year upgrade discount, to test that
+platform as well (most likely a Nexus S).  No conclusions what platform I’m landing on yet, still much more research to be done.  Unlike webOS, the hardware is solid.
+Performance of individual apps blow away my aging webOS hardware.  However, there are software fixes that are still needed.  Since Mango will not hit for a month or more, these will be a
+while in coming.’, ‘webOS to Windows Phone: What’s Missing?&lt;/p&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Fri, 02 Sep 2011 00:00:00 -0400</pubDate><guid>tag:localhost:8000,2011-09-02:blog/tech/webos-to-windows-phone-whats-missing/</guid><category>webos</category><category>windows phone</category></item><item><title>Multiple Google Calendars on Windows Phone (Mango)</title><link>http://localhost:8000/blog/tech/multiple-google-calendars-on-windows-phone-mango/</link><description>&lt;p&gt;With webOS, Synergy just happened.  (&lt;span class="caps"&gt;OK&lt;/span&gt;, it didn’t just happen.  Many engineers spent many hours making this work seamlessly.  But to the user, it “just happened”.)  You don’t realize how nice this is, until you try a system that doesn’t really have it.  Windows Phone 7 with NoDo (the current “up to date” version for the public) has this problem.  The update due out September or October called Mango (or Windows phone 7.5) enables more Synergy like features, such as multiple calendars.  However, Google doesn’t allow you to select more than one.  But there’s a hack for that.&lt;/p&gt;
+&lt;p&gt;For most Windows Phone 7 users who are waiting for the Mango release, this won’t be useful yet.  But you can go through the steps if you want, and it will magically show all your Google calendars when you get the &lt;span class="caps"&gt;OS&lt;/span&gt; update.&lt;/p&gt;
+&lt;p&gt;Google is only selecting the primary calendar to sync to your &lt;span class="caps"&gt;WP7&lt;/span&gt; calendar.   In my situation, I have an Exchange Work calendar and a Google Personal calendar.  Both of those showed up with &lt;span class="caps"&gt;WP7&lt;/span&gt; NoDo.  What was missing is my wife’s Google Work and Personal calendars.  Here is how I enabled them.&lt;/p&gt;
+&lt;p&gt;Google will allow you to configure the calendar to sync if it believes you are an iOS device.  If you have access to an iOS device (iPhone, iPad, iPod Touch, etc.) you can use those to do this.  Otherwise, we will just fake it.&lt;/p&gt;
+&lt;p&gt;To fake an iPhone, I used Google Chrome.  You will want to start up the browser on the command line.  So open up a Command Shell and “cd” (change directory) into the proper directory for chrome.exe.  If you don’t know where this is, right-click on the shortcut in Windows and select Properties.&lt;/p&gt;
+&lt;p&gt;You will need to close down any Chrome browsers you may have open before you do this.  We will paste the following into your command prompt to start Chrome as an iOS device.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;chrome.exe --user-agent="Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_0 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko) Version/4.0.5 Mobile/8A293 Safari/6531.22.7"
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="figure" style="width: 468px; height: auto; max-width: 100%;"&gt;
+&lt;img alt="" src="/images/posts/multiple-google-calendars-on-windows-phone-mango/GC_Inital.png" style="width: 468px; height: auto; max-width: 100%;"/&gt;
+&lt;p class="caption"&gt;Browse to &lt;a class="reference external" href="http://m.google.com/sync"&gt;http://m.google.com/sync&lt;/a&gt;.  You should see something similar to this.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="figure" style="width: 468px; height: auto; max-width: 100%;"&gt;
+&lt;img alt="" src="/images/posts/multiple-google-calendars-on-windows-phone-mango/GC_UnChecked.png" style="width: 468px; height: auto; max-width: 100%;"/&gt;
+&lt;p class="caption"&gt;Click on WindowsPhone and you will see your calendars.&lt;/p&gt;
+&lt;div class="legend"&gt;
+Notice only your main calendar is checked.  No problem, check the others.  But that doesn’t work.  Google has blocked this with JavaScript.  We just need to turn JavaScript off.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="figure" style="width: 462px; height: auto; max-width: 100%;"&gt;
+&lt;img alt="" src="/images/posts/multiple-google-calendars-on-windows-phone-mango/GC_Javascript.png" style="width: 462px; height: auto; max-width: 100%;"/&gt;
+&lt;p class="caption"&gt;Click on the wrench icon at the top right of Chrome and select Options.  Now click Under the Hood on the left.  Click the Content Settings button.  Change JavaScript section to not allow any site to run JavaScript:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="figure" style="width: 468px; height: auto; max-width: 100%;"&gt;
+&lt;img alt="" src="/images/posts/multiple-google-calendars-on-windows-phone-mango/GC_Checked.png" style="width: 468px; height: auto; max-width: 100%;"/&gt;
+&lt;p class="caption"&gt;Now you will be able to select the other calendars and click Save.&lt;/p&gt;
+&lt;div class="legend"&gt;
+Going back to your Mango phone, you should be able to sync and see all calendars.  Just remember to reselect JavaScript.&lt;/div&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Wed, 31 Aug 2011 00:00:00 -0400</pubDate><guid>tag:localhost:8000,2011-08-31:blog/tech/multiple-google-calendars-on-windows-phone-mango/</guid><category>webos</category><category>windows phone</category><category>calendars</category></item><item><title>Encoding Videos for the HP Touchpad</title><link>http://localhost:8000/blog/tech/encoding-videos-for-the-hp-touchpad/</link><description>&lt;p&gt;This post is for those who have ripped their DVDs and other video media and would like to load it onto their &lt;span class="caps"&gt;HP&lt;/span&gt; Touchpad.  I started to encode videos for the &lt;span class="caps"&gt;HP&lt;/span&gt; Touchpad using HandBrake, which had given me success for video targeting my Palm Pre.   I used iPad profiles, as the display size is exactly the same.  It seemed that no matter what I tried, the files would not show up in Photos &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; Videos app.  I tried quite a few options and then just gave up.  Many issues that I had with encoding video for the Touchpad seem to have been fixed with the 3.0.2 webOS update.&lt;/p&gt;
 &lt;p&gt;The too long didn’t read version of this post is this: Download HandBrake, render using the iPad Preset and change frame rate to Same as Source.  Upload to Touchpad and be happy.  If you care about some of the testing I did, continue reading.&lt;/p&gt;
 &lt;p&gt;I started with a high end &lt;span class="caps"&gt;HD&lt;/span&gt; video file, to take advantage of the full resolution of the Touchpad.  The video I played with is a BluRay version of Pixar’s Partly Cloudy.  This is a 1080p video (1920x1080), with 5.1 channel &lt;span class="caps"&gt;AC3&lt;/span&gt; sound (48 kHz and 16 bit).  This is most likely the highest video quality source that people will use for Touchpad encoding.  Runtime is 5:48 with 23.976 frame rate.&lt;/p&gt;
 &lt;p&gt;Two pieces of software I used are Format Factory (now a dead link) and &lt;a class="reference external" href="http://handbrake.fr/"&gt;Handbrake&lt;/a&gt; (Windows, Mac, Linux. Tested on the Windows version).&lt;/p&gt;
@@ -296,7 +470,7 @@ Sure wish I could get my missing podcasts back though.&lt;/p&gt;
 &lt;p&gt;When looking at the two on the Touchpad, they are very hard to tell apart most of the time.  The biggest issues is with horizontal streaking on single color backgrounds for the Format Factory version.  By going with a fixed bit rate, rather than the HandBrake’s quality based setting, you also get blocking during highly changing scenes.  HandBrake will use less data during the static scenes, but more during dynamic scenes, resulting in a better encoding at the same overall file size.&lt;/p&gt;
 &lt;p&gt;I rendered some of the files that I have ripped from my DVDs (most 640 x proper aspect ratio height) through HandBrake, using the iPad profile.  These play great.  The Touchpad had no issues with m4v or mp4 file extension for the H.264 &lt;span class="caps"&gt;MPEG&lt;/span&gt; 4 files these apps were generating. It will not display the Xvid based &lt;span class="caps"&gt;MPEG4&lt;/span&gt; files that I have encoded for use with my media players and Boxee Box before H.264 was the standard.&lt;/p&gt;
 &lt;p&gt;Watching video on the Touchpad just reminds you how great the audio on this thing sounds.  Really a good video viewing experience.  Do some transcoding and enjoy your moving picture shows.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Wed, 10 Aug 2011 00:00:00 -0400</pubDate><guid>tag:www.joesacher.com,2011-08-10:blog/tech/encoding-videos-for-the-hp-touchpad/</guid><category>webos</category><category>video encoding</category><category>touchpad</category></item><item><title>Touchpad WiFi - Hidden Passcode Hell</title><link>http://www.joesacher.com/blog/tech/touchpad-wifi-hidden-passcode-hell/</link><description>&lt;p&gt;I have just spent the last 30 minutes trying to get our complex 64 character &lt;span class="caps"&gt;WPA&lt;/span&gt; key into my &lt;span class="caps"&gt;HP&lt;/span&gt; Touchpad so I can start the setup procedure.  The password field for the WiFi key is frustrating.
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Wed, 10 Aug 2011 00:00:00 -0400</pubDate><guid>tag:localhost:8000,2011-08-10:blog/tech/encoding-videos-for-the-hp-touchpad/</guid><category>webos</category><category>video encoding</category><category>touchpad</category></item><item><title>Touchpad WiFi - Hidden Passcode Hell</title><link>http://localhost:8000/blog/tech/touchpad-wifi-hidden-passcode-hell/</link><description>&lt;p&gt;I have just spent the last 30 minutes trying to get our complex 64 character &lt;span class="caps"&gt;WPA&lt;/span&gt; key into my &lt;span class="caps"&gt;HP&lt;/span&gt; Touchpad so I can start the setup procedure.  The password field for the WiFi key is frustrating.
 The last character is only shown for a second or two, then it too fades into the dots of obscurity.  This is fine in normal use with passwords you are used to typing, but a WiFi key is complex and entered only once per new device.
 When you add to this a finiky WiFi network acceptance, you have time after time frustration.  The key is entered and network selected (even with a check mark!), but for some reason the Touchpad won’t accept anything but Cancel.
 Guess who gets to type the key in again?&lt;/p&gt;
@@ -323,7 +497,7 @@ Guess who gets to type the key in again?&lt;/p&gt;
 &lt;img alt="" src="/images/posts/hp-touchpad-wifi/06-Hold-for-Paste.png" style="width: 443px; height: auto; max-width: 100%;"/&gt;
 &lt;p class="caption"&gt;Tap and hold in the passcode field and you can select Paste.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Tue, 02 Aug 2011 00:00:00 -0400</pubDate><guid>tag:www.joesacher.com,2011-08-02:blog/tech/touchpad-wifi-hidden-passcode-hell/</guid><category>touchpad</category><category>wifi</category><category>setup</category></item><item><title>Dark Chocolate Dipped Ginger Altoids</title><link>http://www.joesacher.com/blog/personal/dark-chocolate-dipped-ginger-altoids/</link><description>&lt;div class="figure" style="width: 234px; height: auto; max-width: 100%;"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Tue, 02 Aug 2011 00:00:00 -0400</pubDate><guid>tag:localhost:8000,2011-08-02:blog/tech/touchpad-wifi-hidden-passcode-hell/</guid><category>touchpad</category><category>wifi</category><category>setup</category></item><item><title>Dark Chocolate Dipped Ginger Altoids</title><link>http://localhost:8000/blog/personal/dark-chocolate-dipped-ginger-altoids/</link><description>&lt;div class="figure" style="width: 234px; height: auto; max-width: 100%;"&gt;
 &lt;img alt="" src="/images/posts/singles/ginger-altoids.jpg" style="width: 234px; height: auto; max-width: 100%;"/&gt;
 &lt;p class="caption"&gt;Warning: An Experience&lt;/p&gt;
 &lt;/div&gt;
@@ -337,7 +511,7 @@ Guess who gets to type the key in again?&lt;/p&gt;
 &lt;p&gt;Now it should have been a clue when Julie put out the Altoids tin. She said that she tried a few and wasn’t sure about how they taste. They are now available for others to sample. I should have seen something there, because you protect the Altoids. You make sure that no one is around and sneak one out quick and then hide it again.&lt;/p&gt;
 &lt;p&gt;After all of this, if you are offered a Dark Chocolate Dipped Ginger Altoids, try one. It is an experience. Maybe not a good one, but good lives are chains of experiences.&lt;/p&gt;
 &lt;p&gt;But please get a real mint before you come around me to breathe all your pumpkin pie breath on me.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Thu, 28 Aug 2008 00:00:00 -0400</pubDate><guid>tag:www.joesacher.com,2008-08-28:blog/personal/dark-chocolate-dipped-ginger-altoids/</guid><category>humor</category></item><item><title>30,000 Hours Later…I’m Engaged.</title><link>http://www.joesacher.com/blog/personal/30000-hours-later/</link><description>&lt;div class="figure" style="width: 300px; height: auto; max-width: 100%;"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Thu, 28 Aug 2008 00:00:00 -0400</pubDate><guid>tag:localhost:8000,2008-08-28:blog/personal/dark-chocolate-dipped-ginger-altoids/</guid><category>humor</category></item><item><title>30,000 Hours Later…I’m Engaged.</title><link>http://localhost:8000/blog/personal/30000-hours-later/</link><description>&lt;div class="figure" style="width: 300px; height: auto; max-width: 100%;"&gt;
 &lt;img alt="" src="/images/posts/singles/30000-hours-later.jpg" style="width: 300px; height: auto; max-width: 100%;"/&gt;
 &lt;p class="caption"&gt;The ring on her finger.&lt;/p&gt;
 &lt;/div&gt;
@@ -365,14 +539,14 @@ Guess who gets to type the key in again?&lt;/p&gt;
 &lt;p&gt;“You two set a date yet?”&lt;/p&gt;
 &lt;p&gt;No. Not yet.&lt;/p&gt;
 &lt;p&gt;Edit: We were married on June 6th, 2009&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Tue, 26 Feb 2008 19:00:00 -0500</pubDate><guid>tag:www.joesacher.com,2008-02-26:blog/personal/30000-hours-later/</guid><category>proposal</category><category>marriage</category></item><item><title>Jet Mini vs PSI Turncrafter Pro</title><link>http://www.joesacher.com/blog/reviews/a-lathe-comparison-jet-mini-vs-psi-turncrafter-pro/</link><description>&lt;p&gt;When I was looking at lathes, I talked with many people who had tried and liked either the Jet Mini or the &lt;span class="caps"&gt;PSI&lt;/span&gt; Turncrafter Pro lathes. I could not find many that had used both, to get an idea of the differences between them. Now owning a &lt;span class="caps"&gt;PSI&lt;/span&gt; Turncrafter Pro and having taken a class and used a Jet Mini for 5 hours or so, I decided to summarize the differences.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Tue, 26 Feb 2008 19:00:00 -0500</pubDate><guid>tag:localhost:8000,2008-02-26:blog/personal/30000-hours-later/</guid><category>proposal</category><category>marriage</category></item><item><title>Jet Mini vs PSI Turncrafter Pro</title><link>http://localhost:8000/blog/reviews/a-lathe-comparison-jet-mini-vs-psi-turncrafter-pro/</link><description>&lt;p&gt;When I was looking at lathes, I talked with many people who had tried and liked either the Jet Mini or the &lt;span class="caps"&gt;PSI&lt;/span&gt; Turncrafter Pro lathes. I could not find many that had used both, to get an idea of the differences between them. Now owning a &lt;span class="caps"&gt;PSI&lt;/span&gt; Turncrafter Pro and having taken a class and used a Jet Mini for 5 hours or so, I decided to summarize the differences.&lt;/p&gt;
 &lt;p&gt;Both lathes look deceptively similar. The &lt;span class="caps"&gt;PSI&lt;/span&gt; is 4” longer in the bed at 18”, vs 14” for the Jet. The Jet also has one higher speed. The first 5 speed ranges seem to be very close. The beds look almost exactly the same, as do the banjo and steady rest. The motor height adjustment is almost exactly the same.&lt;/p&gt;
 &lt;p&gt;Quality wise, the Jet has a nicer finish and features. By this, I mean the machining is a little better cleaned up and parts are more thought out. The threads on my &lt;span class="caps"&gt;PSI&lt;/span&gt; headstock looked like there were cut and never touched again. There are burrs and sharp edges that I will be dressing down. While the Jet lathe I was using had been in use at the classroom for a while, I haven”t noticed this on Jet minis out on display at shops either.&lt;/p&gt;
 &lt;p&gt;The major difference, which will affect daily use, are the belt access doors. The Jet has a nice flip open door for both top and bottom access. Although the spring handle setup for the bottom door seems a little strange to me, it works fast once you get used to it. The access to the belts are in exactly the same spot, but the &lt;span class="caps"&gt;PSI&lt;/span&gt; has a thumb screw to undo and then a little plastic piece which is lifted and removed. This piece has slits on the bottom that sits on bolts screwed in below the opening. The piece would be set down for the change then replaced. It makes for a piece to lose and takes over twice as long to change the belt speed as on the Jet. I will be replacing my plastic pieces with doors that have a spring clip, similar to the Jet’s. Currently my access panels are off, because they are annoying to remove and replace.&lt;/p&gt;
 &lt;p&gt;The locking handle on the steady rest and the tail stock depth lock are both a plastic handles on the &lt;span class="caps"&gt;PSI&lt;/span&gt;. The operation is the same, both spring loaded handles which can be lifted to change position. The plastic handles don’t feel flimsy, but I doubt they will last quite as long as the metal handles on the Jet.&lt;/p&gt;
 &lt;p&gt;Point to point, my &lt;span class="caps"&gt;PSI&lt;/span&gt; is slightly off (1/32” tail is closer to me than the head point).  While a thin shim under the tail will fix this, I”m not sure if this is typical with &lt;span class="caps"&gt;PSI&lt;/span&gt; or not. My sample size is 1. I did not see this with the 4 Jet lathes I looked at.&lt;/p&gt;
 &lt;p&gt;I am still happy with my &lt;span class="caps"&gt;PSI&lt;/span&gt; purchase. After I spend a little bit of time to polish off some of the rough edges and I will have a nice lathe for about $100 less than the Jet. I don’t see the loss of the high end (3800 rpm or so) on the Jet as too much of a problem. 3200 rpm is fast enough and both have the 500 rpm low end. But there is no doubt, the Jet is a better finished machine, with a few upgrades over the &lt;span class="caps"&gt;PSI&lt;/span&gt;. If I could have found the Jet on special for within $20-40 of the &lt;span class="caps"&gt;PSI&lt;/span&gt;, I would have paid the difference.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Wed, 26 Dec 2007 00:00:00 -0500</pubDate><guid>tag:www.joesacher.com,2007-12-26:blog/reviews/a-lathe-comparison-jet-mini-vs-psi-turncrafter-pro/</guid><category>woodworking</category><category>lathes</category></item><item><title>How To Build Bicycle Panniers</title><link>http://www.joesacher.com/blog/how-to/how-to-build-bicycle-panniers/</link><description>&lt;div class="figure" style="width: 300px; height: auto; max-width: 100%;"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Wed, 26 Dec 2007 00:00:00 -0500</pubDate><guid>tag:localhost:8000,2007-12-26:blog/reviews/a-lathe-comparison-jet-mini-vs-psi-turncrafter-pro/</guid><category>woodworking</category><category>lathes</category></item><item><title>How To Build Bicycle Panniers</title><link>http://localhost:8000/blog/how-to/how-to-build-bicycle-panniers/</link><description>&lt;div class="figure" style="width: 300px; height: auto; max-width: 100%;"&gt;
 &lt;img alt="" src="/images/posts/pannier/loadedrocket.jpg" style="width: 300px; height: auto; max-width: 100%;"/&gt;
 &lt;p class="caption"&gt;I’ll be describing the construction of the gray panniers located directly under my seat.&lt;/p&gt;
 &lt;/div&gt;
@@ -526,12 +700,12 @@ Lessons Learned: Again on the issue of ground strike.  When measuring that 45 de
 &lt;/div&gt;
 &lt;div class="section" id="post-script"&gt;
 &lt;h2&gt;Post Script&lt;/h2&gt;
-&lt;p&gt;After my 70+ days on the bike, &lt;a class="reference external" href="http://www.joesacher.com/category/trans-am.html"&gt;during my Trans-Am tour&lt;/a&gt;, I learned a few things.  The overall design and construction was sound.  The bags are pretty decent at shedding water and held up pretty well to carrying the bulk of my touring load.  A few things didn’t work well.&lt;/p&gt;
+&lt;p&gt;After my 70+ days on the bike, &lt;a class="reference external" href="http://localhost:8000/category/trans-am.html"&gt;during my Trans-Am tour&lt;/a&gt;, I learned a few things.  The overall design and construction was sound.  The bags are pretty decent at shedding water and held up pretty well to carrying the bulk of my touring load.  A few things didn’t work well.&lt;/p&gt;
 &lt;p&gt;First, I under estimated the tilt angle that I might need to make on the bike, after the bags sagged slightly with heavy load.  I would use 60 degrees as a measure next time, instead of 45 degrees.   Obviously, if you make them shallower, this becomes less of a factor as well.  This was augmented by the second problem, the bottom drooped.  Not  all loads I put in there were a flat 18” x 7” pieces of baggage.  I don’t think any were.  This causes the bag to get close enough to the ground that I did touch a few times at speed.  Cordura fabric is considered abrasion resistant.  However they aren’t talking about the type of abrasion that pavement gives at 40 mph on a downhill.&lt;/p&gt;
 &lt;p&gt;My dad met me two times on tour and I had him bring some equipment to solve these problems.  We glued some light aluminum sheet to the outside rear edge, where I occasionally touched down, to form skid plates.   We also put some corrugated plastic sheet in the bottom of the pannier.   I oriented the channels along the short axis to keep the bottom from curving as much as possible.&lt;/p&gt;
 &lt;p&gt;The entire process was a great learning experience that I would only do again if I couldn’t find something commercially available close to what I wanted.  It is nice to personalize things, but these bags were a great deal of work.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Tue, 11 Dec 2007 00:00:00 -0500</pubDate><guid>tag:www.joesacher.com,2007-12-11:blog/how-to/how-to-build-bicycle-panniers/</guid><category>pannier</category><category>bicycle</category><category>touring</category></item><item><title>Recipe - Japanese Fruit Pie</title><link>http://www.joesacher.com/blog/cooking/recipe-japanese-fruit-pie/</link><description>&lt;p&gt;This pie is a family tradition, always present at Christmas and Thanksgiving.  It is similar to a Pecan Pie, but with a little more body.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Tue, 11 Dec 2007 00:00:00 -0500</pubDate><guid>tag:localhost:8000,2007-12-11:blog/how-to/how-to-build-bicycle-panniers/</guid><category>pannier</category><category>bicycle</category><category>touring</category></item><item><title>Recipe - Japanese Fruit Pie</title><link>http://localhost:8000/blog/cooking/recipe-japanese-fruit-pie/</link><description>&lt;p&gt;This pie is a family tradition, always present at Christmas and Thanksgiving.  It is similar to a Pecan Pie, but with a little more body.&lt;/p&gt;
 &lt;div class="section" id="ingredients"&gt;
 &lt;h2&gt;Ingredients&lt;/h2&gt;
 &lt;ul class="simple"&gt;
@@ -574,4 +748,4 @@ Lessons Learned: Again on the issue of ground strike.  When measuring that 45 de
 &lt;p&gt;The important parts of the recipe are the butter, sugar and egg.  Just like a pecan pie, the egg cooks and gels the pie together.  I tend to like a little more coconut than the recipe and a little more pecans.  Variations on fruit such as dried cherries instead of raisins are interesting.&lt;/p&gt;
 &lt;p&gt;I have also made this into a bar with a flat dough on parchment paper that it blind baked, then a layer of the filling on top.  Let cool for a while before cutting. These turned out well and were a smaller portion of this rich dessert.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Thu, 06 Dec 2007 00:00:00 -0500</pubDate><guid>tag:www.joesacher.com,2007-12-06:blog/cooking/recipe-japanese-fruit-pie/</guid><category>recipe</category><category>dessert</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Joe Sacher</dc:creator><pubDate>Thu, 06 Dec 2007 00:00:00 -0500</pubDate><guid>tag:localhost:8000,2007-12-06:blog/cooking/recipe-japanese-fruit-pie/</guid><category>recipe</category><category>dessert</category></item></channel></rss>
