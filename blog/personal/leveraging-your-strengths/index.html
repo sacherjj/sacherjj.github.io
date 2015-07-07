@@ -15,6 +15,13 @@
     <meta name="author" content="Joe Sacher" />
 
 
+    <!-- Important to load before any jQuery Plugins! -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <!-- Fluidbox Script -->
+    <script src="http://www.joesacher.com/theme/js/jquery.fluidbox.min.js"></script>
+    <link rel="stylesheet" media="all" href="http://www.joesacher.com/theme/css/fluidbox.css">
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]> <script src="http://www.joesacher.com/theme/js/html5.js"></script> <![endif]-->
     <!-- Le styles -->
@@ -90,12 +97,7 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2008-02-21T00:00:00-05:00</span>
-            <span title="2008-02-21T00:00:00-05:00">Thu 21<span class="day_suffix">st</span> February, 2008</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2008-02-21T00:00:00-05:00">Thu 21<span class="day_suffix">st</span> February, 2008</span>
         </p>
         <p title="29 words"><i class="muted icon-clock"></i>1 min read</p>
         <span itemprop="timeRequired" class="hidden">P1M</span>
@@ -131,9 +133,9 @@
                     <h3>Related Posts</h3>
                         <nav>
                             <dl>
-                                <dt><h4><a href="http://www.joesacher.com/blog/personal/power-of-two-date-time/">2^1 / 2^2 / 2^3  2^4 :&nbsp;2^5</a></h4></dt>
-                                <dd><span class="smallprint muted"></span></dd>
                                 <dt><h4><a href="http://www.joesacher.com/blog/personal/dark-chocolate-dipped-ginger-altoids/">Dark Chocolate Dipped Ginger&nbsp;Altoids</a></h4></dt>
+                                <dd><span class="smallprint muted"></span></dd>
+                                <dt><h4><a href="http://www.joesacher.com/blog/personal/power-of-two-date-time/">2^1 / 2^2 / 2^3  2^4 :&nbsp;2^5</a></h4></dt>
                                 <dd><span class="smallprint muted"></span></dd>
                             </dl>
                         </nav>
@@ -141,7 +143,6 @@
             </div>
             <hr />
 
-            <!--
             <div class="row-fluid">
                 <h3 id="article-comments-section">Comments</h3>
 <div id="disqus_thread"></div>
@@ -156,7 +157,6 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
-            -->
         </section>
     </div>
 
@@ -211,8 +211,14 @@
     </footer> <!--end of container -->
 
     <!--/footer-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <!-- Fluidbox Activate -->
+    <script>
+        jQuery(document).ready(function() {
+            $('a').fluidbox();
+        });
+    </script>
 
 </body>
 </html>

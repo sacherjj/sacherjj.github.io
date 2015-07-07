@@ -7,13 +7,20 @@
     <link rel="shortcut icon" href="http://www.joesacher.com/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="http://www.joesacher.com/images/apple-touch-icon.png">
 
-    <meta name="description" itemprop="description" content="I received my boards from the DorkbotPDX group order. While the purple solder mask is “interesting”. The board quality is beautiful. This was the first SMD soldering I’ve ever done. I started with tinning the pads with my normal iron and normal solder. I wanted to try that and see how it compares with solder paste I’ll use later. Then I put some tack flux on top of the solder with a syringe. Before I used the flux ..." />
+    <meta name="description" itemprop="description" content="Mostly build Smart Domino board top. I received my boards from the DorkbotPDX group order. While the purple solder mask is “interesting”. The board quality is beautiful. This was the first SMD soldering I’ve ever done. I started with tinning the pads with my normal iron and normal solder. I wanted to try that and see how it compares with solder paste I’ll use later. Then I put some tack flux on top of the solder with a ..." />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="copyright" content="Copyright (c) 1998-2015 Joe Sacher" />
     <meta name="author" content="Joe Sacher" />
 
+
+    <!-- Important to load before any jQuery Plugins! -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <!-- Fluidbox Script -->
+    <script src="http://www.joesacher.com/theme/js/jquery.fluidbox.min.js"></script>
+    <link rel="stylesheet" media="all" href="http://www.joesacher.com/theme/css/fluidbox.css">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]> <script src="http://www.joesacher.com/theme/js/html5.js"></script> <![endif]-->
@@ -30,14 +37,14 @@
     <meta name="twitter:image" content="http://www.joesacher.com/images/favicon-128x128.png">
     <meta name="twitter:site" content="@sacherjj">
     <meta name="twitter:title" content="Micro Domino - Part 2">
-    <meta name="twitter:description" content="I received my boards from the DorkbotPDX group order. While the purple solder mask is “interesting”. The board quality is beautiful. This was the first SMD soldering I’ve ever done. I started with tinning the pads with my normal iron and normal solder. I wanted to try that and see how it compares with solder paste I’ll use later. Then I put some tack flux on top of the solder with a syringe. Before I used the flux ...">
+    <meta name="twitter:description" content="Mostly build Smart Domino board top. I received my boards from the DorkbotPDX group order. While the purple solder mask is “interesting”. The board quality is beautiful. This was the first SMD soldering I’ve ever done. I started with tinning the pads with my normal iron and normal solder. I wanted to try that and see how it compares with solder paste I’ll use later. Then I put some tack flux on top of the solder with a ...">
     <meta name="twitter:creator" content="@sacherjj">
     <meta name="twitter:domain" content="www.joesacher.com">
     <meta property="og:image" content="http://www.joesacher.com/images/favicon-128x128.png"/>
     <meta property="og:site_name" content="joesacher.com"/>
     <meta property="og:title" content="Micro Domino - Part 2"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:description" content="I received my boards from the DorkbotPDX group order. While the purple solder mask is “interesting”. The board quality is beautiful. This was the first SMD soldering I’ve ever done. I started with tinning the pads with my normal iron and normal solder. I wanted to try that and see how it compares with solder paste I’ll use later. Then I put some tack flux on top of the solder with a syringe. Before I used the flux ..."/>
+    <meta property="og:description" content="Mostly build Smart Domino board top. I received my boards from the DorkbotPDX group order. While the purple solder mask is “interesting”. The board quality is beautiful. This was the first SMD soldering I’ve ever done. I started with tinning the pads with my normal iron and normal solder. I wanted to try that and see how it compares with solder paste I’ll use later. Then I put some tack flux on top of the solder with a ..."/>
     <meta property="og:url" content="http://www.joesacher.com/blog/tech/micro-domino-part-2/"/>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -90,12 +97,7 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2011-06-21T00:00:00-04:00</span>
-            <span title="2011-06-21T00:00:00-04:00">Tue 21<span class="day_suffix">st</span> June, 2011</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2011-06-21T00:00:00-04:00">Tue 21<span class="day_suffix">st</span> June, 2011</span>
         </p>
         <p title="345 words"><i class="muted icon-clock"></i>2 min read</p>
         <span itemprop="timeRequired" class="hidden">P2M</span>
@@ -117,18 +119,31 @@
 <a href="https://twitter.com/share" class="twitter-share-button" data-via="sacherjj" data-hashtags="electronics,avr" data-url="http://www.joesacher.com/blog/tech/micro-domino-part-2/" data-text="Micro Domino - Part 2: joesacher.com">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </div>
-</div>        </aside>
+</div>    <div class="row-fluid">
+        <nav>
+            <p>This is part 2 of 2 in the "micro-domino" series:</p>
+            <ul class="parts">
+                <li >
+                    <a href='http://www.joesacher.com/blog/tech/micro-domino-part-1/'>Micro Domino - Part&nbsp;1</a>
+                </li>
+                <li class="active">
+                    Micro Domino - Part&nbsp;2
+                </li>
+            </ul>
+        </nav>
+    </div>
+        </aside>
 
         <section class="content span9" itemprop="text articleBody">
 
-            <p>I received my boards from the DorkbotPDX group order.  While the purple solder mask is “interesting”.  The board quality is beautiful.  This was the first <span class="caps">SMD</span> soldering I’ve ever done.  I started with tinning the pads with my normal iron and normal solder.  I wanted to try that and see how it compares with solder paste I’ll use later.  Then I put some tack flux on top of the solder with a syringe.  Before I used the flux, I was able to blow the tiny <span class="caps">LED</span> I’m using off the board with my hot air iron.  The <span class="caps">LED</span> stays on the board and remains when the flux melts, due to surface tension.</p>
-<div class="figure" style="width: 600px; height: auto; max-width: 100%;">
+            <div class="figure" style="width: 600px; height: auto; max-width: 100%;">
 <img alt="" src="/images/posts/micro-domino/SmartDominoTop.jpg" style="width: 600px; height: auto; max-width: 100%;"/>
 <p class="caption">Mostly build Smart Domino board top.</p>
 </div>
+<p>I received my boards from the DorkbotPDX group order.  While the purple solder mask is “interesting”.  The board quality is beautiful.  This was the first <span class="caps">SMD</span> soldering I’ve ever done.  I started with tinning the pads with my normal iron and normal solder.  I wanted to try that and see how it compares with solder paste I’ll use later.  Then I put some tack flux on top of the solder with a syringe.  Before I used the flux, I was able to blow the tiny <span class="caps">LED</span> I’m using off the board with my hot air iron.  The <span class="caps">LED</span> stays on the board and remains when the flux melts, due to surface tension.</p>
 <p>It was fun to watch slightly misaligned resistors get pulled into place as the solder melts and forms a fillet with the part.  Even the <span class="caps">SOT23</span>-6 ATTiny10 chip self aligned a little.  Very cool stuff.  I jumped to the <span class="caps">LED</span> current limit resistor with my multimeter and see that the expected 14.3 mA is flowing through the <span class="caps">LED</span>.  (And that I mounted it the correct direction, as it lit up.)</p>
 <p>I left the photo transistor of the board for now.  I will first get a good <span class="caps">LED</span> flashing “Hello World” program loaded to verify that I can program my micro controller and that it functions.</p>
-<div class="figure" style="width: 600px; height: auto; max-width: 100%;">
+<div class="figure align-right" style="width: 600px; height: auto; max-width: 100%;">
 <img alt="" src="/images/posts/micro-domino/SmartDominoBottom.jpg" style="width: 600px; height: auto; max-width: 100%;"/>
 <p class="caption">Mostly build Smart Domino board bottom</p>
 </div>
@@ -140,16 +155,10 @@
 
             <div class="row-fluid">
                 <div class="realted_posts span11">
-                    <h3>Related Posts</h3>
+                    <h3>This is part 2 of 2 in the "micro-domino" series.</h3>
                         <nav>
                             <dl>
-                                <dt><h4><a href="http://www.joesacher.com/blog/tech/enhancing-the-avr-isp-ii/">Enhancing the <span class="caps">AVR</span> <span class="caps">ISP</span> <span class="caps">II</span></a></h4></dt>
-                                <dd><span class="smallprint muted"></span></dd>
-                                <dt><h4><a href="http://www.joesacher.com/blog/tech/micro-domino-part-1/">Micro Domino - Part&nbsp;1</a></h4></dt>
-                                <dd><span class="smallprint muted"></span></dd>
-                                <dt><h4><a href="http://www.joesacher.com/blog/tech/im-such-a-ham/">I&#8217;m such a <span class="caps">HAM</span>&#8230;</a></h4></dt>
-                                <dd><span class="smallprint muted"></span></dd>
-                                <dt><h4><a href="http://www.joesacher.com/blog/tech/amateur-extra-class-no-more-tests/">Amateur Extra Class - No More&nbsp;Tests</a></h4></dt>
+                            
                                 <dd><span class="smallprint muted"></span></dd>
                             </dl>
                         </nav>
@@ -157,7 +166,6 @@
             </div>
             <hr />
 
-            <!--
             <div class="row-fluid">
                 <h3 id="article-comments-section">Comments</h3>
 <div id="disqus_thread"></div>
@@ -172,7 +180,6 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
-            -->
         </section>
     </div>
 
@@ -227,8 +234,14 @@
     </footer> <!--end of container -->
 
     <!--/footer-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <!-- Fluidbox Activate -->
+    <script>
+        jQuery(document).ready(function() {
+            $('a').fluidbox();
+        });
+    </script>
 
 </body>
 </html>

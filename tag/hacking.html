@@ -15,6 +15,13 @@
     <meta name="author" content="Joe Sacher" />
 
 
+    <!-- Important to load before any jQuery Plugins! -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <!-- Fluidbox Script -->
+    <script src="http://www.joesacher.com/theme/js/jquery.fluidbox.min.js"></script>
+    <link rel="stylesheet" media="all" href="http://www.joesacher.com/theme/css/fluidbox.css">
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]> <script src="http://www.joesacher.com/theme/js/html5.js"></script> <![endif]-->
     <!-- Le styles -->
@@ -88,12 +95,7 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2011-05-23T00:00:00-04:00</span>
-            <span title="2011-05-23T00:00:00-04:00">Mon 23<span class="day_suffix">rd</span> May, 2011</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2011-05-23T00:00:00-04:00">Mon 23<span class="day_suffix">rd</span> May, 2011</span>
         </p>
         <p title="814 words"><i class="muted icon-clock"></i>4 min read</p>
         <span itemprop="timeRequired" class="hidden">P4M</span>
@@ -118,8 +120,12 @@
         </div>
 </div>                </div>
                 <div class="summary span9 content">
-                    <p>The <span class="caps">AVR</span> <span class="caps">ISP</span> <span class="caps">II</span> is a device to program an <span class="caps">AVR</span> microcontroller using a 6 pin header in a circuit.  It does not contain any capability to power the circuit being programmed.  This could be very handy.</p>
-<p>Dave Jones at the <a class="reference external" href="http://eevblog.com">EEVBlog</a> has a <a class="reference external" href="http://www.eevblog.com/2011/03/25/eevblog-158-avr-isp-mk2-lm317-regulator-tutorial">video about adding power to the <span class="caps">ISP</span> cable, using an <span class="caps">LM317</span></a> to provide both 5V and 3.3V.  The issue with this, as he stated, was that the 5V source was very close to the required ...</p>
+                    <div class="figure" style="width: 450px; height: auto; max-width: 100%;">
+<img alt="" src="/images/posts/enhancing-the-avr-isp-ii/Regulator.jpg" style="width: 450px; height: auto; max-width: 100%;"/>
+<p class="caption">3.3V <span class="caps">LDO</span> Regulator soldered to <span class="caps">USB</span> jack</p>
+</div>
+<p>The <span class="caps">AVR</span> <span class="caps">ISP</span> <span class="caps">II</span> is a device to program an <span class="caps">AVR</span> microcontroller using a 6 pin header in a circuit.  It does not contain any capability to power the circuit being programmed.  This could be very handy.</p>
+<p>Dave Jones at the <a class="reference external" href="http://eevblog.com">EEVBlog</a> has a <a class="reference external" href="http://www.eevblog.com/2011/03/25/eevblog-158-avr-isp-mk2-lm317-regulator-tutorial">video about adding power to the <span class="caps">ISP</span> cable, using an <span class="caps">LM317</span></a> to provide both 5V and 3.3V.  The issue with this, as he stated, was that the ...</p>
                     <br />
                     <a class="btn" href="http://www.joesacher.com/blog/tech/enhancing-the-avr-isp-ii/">
                     <i class="icon-plus-circled"></i> Read More </a>
@@ -177,8 +183,14 @@
     </footer> <!--end of container -->
 
     <!--/footer-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <!-- Fluidbox Activate -->
+    <script>
+        jQuery(document).ready(function() {
+            $('a').fluidbox();
+        });
+    </script>
 
 </body>
 </html>

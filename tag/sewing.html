@@ -15,6 +15,13 @@
     <meta name="author" content="Joe Sacher" />
 
 
+    <!-- Important to load before any jQuery Plugins! -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <!-- Fluidbox Script -->
+    <script src="http://www.joesacher.com/theme/js/jquery.fluidbox.min.js"></script>
+    <link rel="stylesheet" media="all" href="http://www.joesacher.com/theme/css/fluidbox.css">
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]> <script src="http://www.joesacher.com/theme/js/html5.js"></script> <![endif]-->
     <!-- Le styles -->
@@ -88,16 +95,11 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2007-12-01T00:00:00-05:00</span>
-            <span title="2007-12-01T00:00:00-05:00">Sat 1<span class="day_suffix">st</span> December, 2007</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2007-12-01T00:00:00-05:00">Sat 1<span class="day_suffix">st</span> December, 2007</span>
         </p>
-        <p title="2197 words"><i class="muted icon-clock"></i>9 min read</p>
+        <p title="2217 words"><i class="muted icon-clock"></i>9 min read</p>
         <span itemprop="timeRequired" class="hidden">P9M</span>
-        <span itemprop="wordCount" class="hidden">2197</span>
+        <span itemprop="wordCount" class="hidden">2217</span>
 
         <p>Category: <a href="http://www.joesacher.com/category/how-to.html">how-to</a></p>
     </div>
@@ -122,8 +124,9 @@
 <img alt="" src="/images/posts/drybag/DBOrigDryBag.jpg" style="width: 205px; height: auto; max-width: 100%;"/>
 <p class="caption">Dry bag for inside panniers, purchased from Arkel</p>
 </div>
-<p>I searched without success for a lightweight, waterproof bag to protect my Martin Backpacker Guitar.  Typical dry bags used for water sports are overbuilt for bicycle touring and backpacking use, where weight is a very large factor.   They use clear vinyl or heavier vinyl coated cloth and weigh many pounds.</p>
-<p>I ordered a set of front panniers and some lightweight waterproof bags to use in the panniers from <a class="reference external" href="http://www.panniers.com">Arkel</a>. You can see ...</p>
+<p>I searched without success for a lightweight, waterproof bag to protect my Martin Backpacker Guitar.  Typical dry bags used for water sports are overbuilt for bicycle touring and backpacking use, where weight is a very large factor.   They use clear vinyl or heavier vinyl coated cloth and weigh many pounds.  This article describes the process I went through to make my own custom lightweight waterproof bags for touring and backpacking.</p>
+<!-- PELICAN_SUMMARY_END -->
+<p>I ordered ...</p></!-->
                     <br />
                     <a class="btn" href="http://www.joesacher.com/blog/how-to/creating-a-dry-bag/">
                     <i class="icon-plus-circled"></i> Read More </a>
@@ -181,8 +184,14 @@
     </footer> <!--end of container -->
 
     <!--/footer-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <!-- Fluidbox Activate -->
+    <script>
+        jQuery(document).ready(function() {
+            $('a').fluidbox();
+        });
+    </script>
 
 </body>
 </html>

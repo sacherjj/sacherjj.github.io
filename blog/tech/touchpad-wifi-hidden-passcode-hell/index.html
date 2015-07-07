@@ -15,6 +15,13 @@
     <meta name="author" content="Joe Sacher" />
 
 
+    <!-- Important to load before any jQuery Plugins! -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <!-- Fluidbox Script -->
+    <script src="http://www.joesacher.com/theme/js/jquery.fluidbox.min.js"></script>
+    <link rel="stylesheet" media="all" href="http://www.joesacher.com/theme/css/fluidbox.css">
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]> <script src="http://www.joesacher.com/theme/js/html5.js"></script> <![endif]-->
     <!-- Le styles -->
@@ -90,12 +97,7 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2011-08-02T00:00:00-04:00</span>
-            <span title="2011-08-02T00:00:00-04:00">Tue 2<span class="day_suffix">nd</span> August, 2011</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2011-08-02T00:00:00-04:00">Tue 2<span class="day_suffix">nd</span> August, 2011</span>
         </p>
         <p title="416 words"><i class="muted icon-clock"></i>2 min read</p>
         <span itemprop="timeRequired" class="hidden">P2M</span>
@@ -162,9 +164,9 @@ Guess who gets to type the key in again?</p>
                                 <dd><span class="smallprint muted"></span></dd>
                                 <dt><h4><a href="http://www.joesacher.com/blog/tech/unrecoverable-problems-with-kindle-app-on-touchpad/">Hacking can be bad for your Kindle App&#8217;s&nbsp;Health</a></h4></dt>
                                 <dd><span class="smallprint muted"></span></dd>
-                                <dt><h4><a href="http://www.joesacher.com/blog/tech/encoding-videos-for-the-hp-touchpad/">Encoding Videos for the <span class="caps">HP</span>&nbsp;Touchpad</a></h4></dt>
-                                <dd><span class="smallprint muted"></span></dd>
                                 <dt><h4><a href="http://www.joesacher.com/blog/tech/loading-mobi-books-into-touchpads-kindle-app/">Loading mobi books into Touchpad&#8217;s Kindle&nbsp;App</a></h4></dt>
+                                <dd><span class="smallprint muted"></span></dd>
+                                <dt><h4><a href="http://www.joesacher.com/blog/tech/hp-touchpad/"><span class="caps">HP</span>&nbsp;Touchpad</a></h4></dt>
                                 <dd><span class="smallprint muted"></span></dd>
                             </dl>
                         </nav>
@@ -172,7 +174,6 @@ Guess who gets to type the key in again?</p>
             </div>
             <hr />
 
-            <!--
             <div class="row-fluid">
                 <h3 id="article-comments-section">Comments</h3>
 <div id="disqus_thread"></div>
@@ -187,7 +188,6 @@ Guess who gets to type the key in again?</p>
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
-            -->
         </section>
     </div>
 
@@ -242,8 +242,14 @@ Guess who gets to type the key in again?</p>
     </footer> <!--end of container -->
 
     <!--/footer-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <!-- Fluidbox Activate -->
+    <script>
+        jQuery(document).ready(function() {
+            $('a').fluidbox();
+        });
+    </script>
 
 </body>
 </html>

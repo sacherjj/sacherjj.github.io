@@ -15,6 +15,13 @@
     <meta name="author" content="Joe Sacher" />
 
 
+    <!-- Important to load before any jQuery Plugins! -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <!-- Fluidbox Script -->
+    <script src="http://www.joesacher.com/theme/js/jquery.fluidbox.min.js"></script>
+    <link rel="stylesheet" media="all" href="http://www.joesacher.com/theme/css/fluidbox.css">
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]> <script src="http://www.joesacher.com/theme/js/html5.js"></script> <![endif]-->
     <!-- Le styles -->
@@ -90,12 +97,7 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2007-12-04T00:00:00-05:00</span>
-            <span title="2007-12-04T00:00:00-05:00">Tue 4<span class="day_suffix">th</span> December, 2007</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2007-12-04T00:00:00-05:00">Tue 4<span class="day_suffix">th</span> December, 2007</span>
         </p>
         <p title="1371 words"><i class="muted icon-clock"></i>6 min read</p>
         <span itemprop="timeRequired" class="hidden">P6M</span>
@@ -151,11 +153,13 @@
                     <h3>Related Posts</h3>
                         <nav>
                             <dl>
+                                <dt><h4><a href="http://www.joesacher.com/blog/trans-am/day-1/">Day 1 - Yorktown to Jamestown, <span class="caps">VA</span></a></h4></dt>
+                                <dd><span class="smallprint muted"></span></dd>
                                 <dt><h4><a href="http://www.joesacher.com/blog/how-to/how-to-build-bicycle-panniers/">How To Build Bicycle&nbsp;Panniers</a></h4></dt>
                                 <dd><span class="smallprint muted"></span></dd>
-                                <dt><h4><a href="http://www.joesacher.com/blog/reviews/bicycling-coast-to-coast/">Bicycling Coast to&nbsp;Coast</a></h4></dt>
+                                <dt><h4><a href="http://www.joesacher.com/blog/trans-am/day-0/">Day 0 - Final Shakedown&nbsp;Ride</a></h4></dt>
                                 <dd><span class="smallprint muted"></span></dd>
-                                <dt><h4><a href="http://www.joesacher.com/blog/personal/bicycle-zen/">Bicycle&nbsp;Zen</a></h4></dt>
+                                <dt><h4><a href="http://www.joesacher.com/blog/how-to/vision-seat-camp-chair/">Vision Seat Camp&nbsp;Chair</a></h4></dt>
                                 <dd><span class="smallprint muted"></span></dd>
                             </dl>
                         </nav>
@@ -163,7 +167,6 @@
             </div>
             <hr />
 
-            <!--
             <div class="row-fluid">
                 <h3 id="article-comments-section">Comments</h3>
 <div id="disqus_thread"></div>
@@ -178,7 +181,6 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
-            -->
         </section>
     </div>
 
@@ -233,8 +235,14 @@
     </footer> <!--end of container -->
 
     <!--/footer-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <!-- Fluidbox Activate -->
+    <script>
+        jQuery(document).ready(function() {
+            $('a').fluidbox();
+        });
+    </script>
 
 </body>
 </html>

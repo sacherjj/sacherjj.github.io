@@ -15,6 +15,13 @@
     <meta name="author" content="Joe Sacher" />
 
 
+    <!-- Important to load before any jQuery Plugins! -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <!-- Fluidbox Script -->
+    <script src="http://www.joesacher.com/theme/js/jquery.fluidbox.min.js"></script>
+    <link rel="stylesheet" media="all" href="http://www.joesacher.com/theme/css/fluidbox.css">
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]> <script src="http://www.joesacher.com/theme/js/html5.js"></script> <![endif]-->
     <!-- Le styles -->
@@ -88,12 +95,7 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2014-05-10T00:00:00-04:00</span>
-            <span title="2014-05-10T00:00:00-04:00">Sat 10<span class="day_suffix">th</span> May, 2014</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2014-05-10T00:00:00-04:00">Sat 10<span class="day_suffix">th</span> May, 2014</span>
         </p>
         <p title="238 words"><i class="muted icon-clock"></i>1 min read</p>
         <span itemprop="timeRequired" class="hidden">P1M</span>
@@ -164,12 +166,7 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2008-01-27T00:00:00-05:00</span>
-            <span title="2008-01-27T00:00:00-05:00">Sun 27<span class="day_suffix">th</span> January, 2008</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2008-01-27T00:00:00-05:00">Sun 27<span class="day_suffix">th</span> January, 2008</span>
         </p>
         <p title="678 words"><i class="muted icon-clock"></i>3 min read</p>
         <span itemprop="timeRequired" class="hidden">P3M</span>
@@ -213,12 +210,7 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2007-12-15T00:00:00-05:00</span>
-            <span title="2007-12-15T00:00:00-05:00">Sat 15<span class="day_suffix">th</span> December, 2007</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2007-12-15T00:00:00-05:00">Sat 15<span class="day_suffix">th</span> December, 2007</span>
         </p>
         <p title="215 words"><i class="muted icon-clock"></i>1 min read</p>
         <span itemprop="timeRequired" class="hidden">P1M</span>
@@ -261,12 +253,7 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2007-12-06T00:00:00-05:00</span>
-            <span title="2007-12-06T00:00:00-05:00">Thu 6<span class="day_suffix">th</span> December, 2007</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2007-12-06T00:00:00-05:00">Thu 6<span class="day_suffix">th</span> December, 2007</span>
         </p>
         <p title="436 words"><i class="muted icon-clock"></i>2 min read</p>
         <span itemprop="timeRequired" class="hidden">P2M</span>
@@ -374,8 +361,14 @@
     </footer> <!--end of container -->
 
     <!--/footer-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <!-- Fluidbox Activate -->
+    <script>
+        jQuery(document).ready(function() {
+            $('a').fluidbox();
+        });
+    </script>
 
 </body>
 </html>

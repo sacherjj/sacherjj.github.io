@@ -17,6 +17,13 @@
     <meta name="author" content="Joe Sacher" />
 
 
+    <!-- Important to load before any jQuery Plugins! -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <!-- Fluidbox Script -->
+    <script src="http://www.joesacher.com/theme/js/jquery.fluidbox.min.js"></script>
+    <link rel="stylesheet" media="all" href="http://www.joesacher.com/theme/css/fluidbox.css">
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]> <script src="http://www.joesacher.com/theme/js/html5.js"></script> <![endif]-->
     <!-- Le styles -->
@@ -90,12 +97,7 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2011-07-01T00:00:00-04:00</span>
-            <span title="2011-07-01T00:00:00-04:00">Fri 1<span class="day_suffix">st</span> July, 2011</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2011-07-01T00:00:00-04:00">Fri 1<span class="day_suffix">st</span> July, 2011</span>
         </p>
         <p title="102 words"><i class="muted icon-clock"></i>1 min read</p>
         <span itemprop="timeRequired" class="hidden">P1M</span>
@@ -139,12 +141,7 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2011-06-21T00:00:00-04:00</span>
-            <span title="2011-06-21T00:00:00-04:00">Tue 21<span class="day_suffix">st</span> June, 2011</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2011-06-21T00:00:00-04:00">Tue 21<span class="day_suffix">st</span> June, 2011</span>
         </p>
         <p title="345 words"><i class="muted icon-clock"></i>2 min read</p>
         <span itemprop="timeRequired" class="hidden">P2M</span>
@@ -168,7 +165,11 @@
         </div>
 </div>                </div>
                 <div class="summary span9 content">
-                    <p>I received my boards from the DorkbotPDX group order.  While the purple solder mask is “interesting”.  The board quality is beautiful.  This was the first <span class="caps">SMD</span> soldering I’ve ever done.  I started with tinning the pads with my normal iron and normal solder.  I wanted to try that and see how it compares with solder paste I’ll use later.  Then I put some tack flux on top of the solder with a syringe.  Before I used the flux ...</p>
+                    <div class="figure" style="width: 600px; height: auto; max-width: 100%;">
+<img alt="" src="/images/posts/micro-domino/SmartDominoTop.jpg" style="width: 600px; height: auto; max-width: 100%;"/>
+<p class="caption">Mostly build Smart Domino board top.</p>
+</div>
+<p>I received my boards from the DorkbotPDX group order.  While the purple solder mask is “interesting”.  The board quality is beautiful.  This was the first <span class="caps">SMD</span> soldering I’ve ever done.  I started with tinning the pads with my normal iron and normal solder.  I wanted to try that and see how it compares with solder paste I’ll use later.  Then I put some tack flux on top of the solder with a ...</p>
                     <br />
                     <a class="btn" href="http://www.joesacher.com/blog/tech/micro-domino-part-2/">
                     <i class="icon-plus-circled"></i> Read More </a>
@@ -187,12 +188,7 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2011-06-03T00:00:00-04:00</span>
-            <span title="2011-06-03T00:00:00-04:00">Fri 3<span class="day_suffix">rd</span> June, 2011</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2011-06-03T00:00:00-04:00">Fri 3<span class="day_suffix">rd</span> June, 2011</span>
         </p>
         <p title="567 words"><i class="muted icon-clock"></i>3 min read</p>
         <span itemprop="timeRequired" class="hidden">P3M</span>
@@ -242,12 +238,7 @@ I thought about making a few to mess around with.  This would be a good project 
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2011-05-23T00:00:00-04:00</span>
-            <span title="2011-05-23T00:00:00-04:00">Mon 23<span class="day_suffix">rd</span> May, 2011</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2011-05-23T00:00:00-04:00">Mon 23<span class="day_suffix">rd</span> May, 2011</span>
         </p>
         <p title="814 words"><i class="muted icon-clock"></i>4 min read</p>
         <span itemprop="timeRequired" class="hidden">P4M</span>
@@ -272,8 +263,12 @@ I thought about making a few to mess around with.  This would be a good project 
         </div>
 </div>                </div>
                 <div class="summary span9 content">
-                    <p>The <span class="caps">AVR</span> <span class="caps">ISP</span> <span class="caps">II</span> is a device to program an <span class="caps">AVR</span> microcontroller using a 6 pin header in a circuit.  It does not contain any capability to power the circuit being programmed.  This could be very handy.</p>
-<p>Dave Jones at the <a class="reference external" href="http://eevblog.com">EEVBlog</a> has a <a class="reference external" href="http://www.eevblog.com/2011/03/25/eevblog-158-avr-isp-mk2-lm317-regulator-tutorial">video about adding power to the <span class="caps">ISP</span> cable, using an <span class="caps">LM317</span></a> to provide both 5V and 3.3V.  The issue with this, as he stated, was that the 5V source was very close to the required ...</p>
+                    <div class="figure" style="width: 450px; height: auto; max-width: 100%;">
+<img alt="" src="/images/posts/enhancing-the-avr-isp-ii/Regulator.jpg" style="width: 450px; height: auto; max-width: 100%;"/>
+<p class="caption">3.3V <span class="caps">LDO</span> Regulator soldered to <span class="caps">USB</span> jack</p>
+</div>
+<p>The <span class="caps">AVR</span> <span class="caps">ISP</span> <span class="caps">II</span> is a device to program an <span class="caps">AVR</span> microcontroller using a 6 pin header in a circuit.  It does not contain any capability to power the circuit being programmed.  This could be very handy.</p>
+<p>Dave Jones at the <a class="reference external" href="http://eevblog.com">EEVBlog</a> has a <a class="reference external" href="http://www.eevblog.com/2011/03/25/eevblog-158-avr-isp-mk2-lm317-regulator-tutorial">video about adding power to the <span class="caps">ISP</span> cable, using an <span class="caps">LM317</span></a> to provide both 5V and 3.3V.  The issue with this, as he stated, was that the ...</p>
                     <br />
                     <a class="btn" href="http://www.joesacher.com/blog/tech/enhancing-the-avr-isp-ii/">
                     <i class="icon-plus-circled"></i> Read More </a>
@@ -292,12 +287,7 @@ I thought about making a few to mess around with.  This would be a good project 
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2011-05-15T00:00:00-04:00</span>
-            <span title="2011-05-15T00:00:00-04:00">Sun 15<span class="day_suffix">th</span> May, 2011</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2011-05-15T00:00:00-04:00">Sun 15<span class="day_suffix">th</span> May, 2011</span>
         </p>
         <p title="542 words"><i class="muted icon-clock"></i>3 min read</p>
         <span itemprop="timeRequired" class="hidden">P3M</span>
@@ -340,12 +330,7 @@ I thought about making a few to mess around with.  This would be a good project 
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2011-03-02T00:00:00-05:00</span>
-            <span title="2011-03-02T00:00:00-05:00">Wed 2<span class="day_suffix">nd</span> March, 2011</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2011-03-02T00:00:00-05:00">Wed 2<span class="day_suffix">nd</span> March, 2011</span>
         </p>
         <p title="211 words"><i class="muted icon-clock"></i>1 min read</p>
         <span itemprop="timeRequired" class="hidden">P1M</span>
@@ -389,12 +374,7 @@ I thought about making a few to mess around with.  This would be a good project 
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2011-02-22T00:00:00-05:00</span>
-            <span title="2011-02-22T00:00:00-05:00">Tue 22<span class="day_suffix">nd</span> February, 2011</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2011-02-22T00:00:00-05:00">Tue 22<span class="day_suffix">nd</span> February, 2011</span>
         </p>
         <p title="277 words"><i class="muted icon-clock"></i>2 min read</p>
         <span itemprop="timeRequired" class="hidden">P2M</span>
@@ -439,12 +419,7 @@ As they posted <a class="reference external" href="http://www.precentral.net/tou
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2011-02-15T00:00:00-05:00</span>
-            <span title="2011-02-15T00:00:00-05:00">Tue 15<span class="day_suffix">th</span> February, 2011</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2011-02-15T00:00:00-05:00">Tue 15<span class="day_suffix">th</span> February, 2011</span>
         </p>
         <p title="856 words"><i class="muted icon-clock"></i>4 min read</p>
         <span itemprop="timeRequired" class="hidden">P4M</span>
@@ -488,6 +463,7 @@ As they posted <a class="reference external" href="http://www.precentral.net/tou
     <li class="active"><a href="http://www.joesacher.com/index3.html">3</a></li>
     <li class=""><a href="http://www.joesacher.com/index4.html">4</a></li>
     <li class=""><a href="http://www.joesacher.com/index5.html">5</a></li>
+    <li class=""><a href="http://www.joesacher.com/index6.html">6</a></li>
 
     <li class="next"><a href="http://www.joesacher.com/index4.html">Next &rarr;</a></li>
 
@@ -543,8 +519,14 @@ As they posted <a class="reference external" href="http://www.precentral.net/tou
     </footer> <!--end of container -->
 
     <!--/footer-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <!-- Fluidbox Activate -->
+    <script>
+        jQuery(document).ready(function() {
+            $('a').fluidbox();
+        });
+    </script>
 
 </body>
 </html>

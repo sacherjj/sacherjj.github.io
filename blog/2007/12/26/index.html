@@ -15,6 +15,13 @@
     <meta name="author" content="Joe Sacher" />
 
 
+    <!-- Important to load before any jQuery Plugins! -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <!-- Fluidbox Script -->
+    <script src="http://www.joesacher.com/theme/js/jquery.fluidbox.min.js"></script>
+    <link rel="stylesheet" media="all" href="http://www.joesacher.com/theme/css/fluidbox.css">
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]> <script src="http://www.joesacher.com/theme/js/html5.js"></script> <![endif]-->
     <!-- Le styles -->
@@ -96,6 +103,16 @@
                         <p class="muted smallprint"></p>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        26<span class="day_suffix">th</span> December, 2007<br />
+                        <span class="muted smallprint">6 min read</span>
+                    </td>
+                    <td>
+                        <a href='http://www.joesacher.com/blog/reviews/review-i-am-legend/'>I am&nbsp;Legend</a><br />
+                        <p class="muted smallprint"></p>
+                    </td>
+                </tr>
             </tbody>
         </table>
     <hr />
@@ -150,8 +167,14 @@
     </footer> <!--end of container -->
 
     <!--/footer-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <!-- Fluidbox Activate -->
+    <script>
+        jQuery(document).ready(function() {
+            $('a').fluidbox();
+        });
+    </script>
 
 </body>
 </html>

@@ -15,6 +15,13 @@
     <meta name="author" content="Joe Sacher" />
 
 
+    <!-- Important to load before any jQuery Plugins! -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <!-- Fluidbox Script -->
+    <script src="http://www.joesacher.com/theme/js/jquery.fluidbox.min.js"></script>
+    <link rel="stylesheet" media="all" href="http://www.joesacher.com/theme/css/fluidbox.css">
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]> <script src="http://www.joesacher.com/theme/js/html5.js"></script> <![endif]-->
     <!-- Le styles -->
@@ -90,12 +97,7 @@
     <div class="span10">
         <p>
             <span itemprop="datePublished" class="hidden">2011-09-21T00:00:00-04:00</span>
-            <span title="2011-09-21T00:00:00-04:00">Wed 21<span class="day_suffix">st</span> September, 2011</span><!-- <br /> by
-            <span class="post-author vcard">
-                <span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-                    <span itemprop="name">Joe Sacher</span>
-                </span>
-            </span> -->
+            <span title="2011-09-21T00:00:00-04:00">Wed 21<span class="day_suffix">st</span> September, 2011</span>
         </p>
         <p title="508 words"><i class="muted icon-clock"></i>3 min read</p>
         <span itemprop="timeRequired" class="hidden">P3M</span>
@@ -156,7 +158,7 @@ It is open source, take a look.  It makes Zune’s implementation looks like a 
                                 <dd><span class="smallprint muted"></span></dd>
                                 <dt><h4><a href="http://www.joesacher.com/blog/tech/multiple-google-calendars-on-windows-phone-mango/">Multiple Google Calendars on Windows Phone&nbsp;(Mango)</a></h4></dt>
                                 <dd><span class="smallprint muted"></span></dd>
-                                <dt><h4><a href="http://www.joesacher.com/blog/tech/webos-to-windows-phone-whats-missing/">webOS to Windows Phone - What&#8217;s&nbsp;Missing?</a></h4></dt>
+                                <dt><h4><a href="http://www.joesacher.com/blog/tech/android-vs-windows-phone-navigation/">Android vs Windows Phone&nbsp;Navigation</a></h4></dt>
                                 <dd><span class="smallprint muted"></span></dd>
                             </dl>
                         </nav>
@@ -164,7 +166,6 @@ It is open source, take a look.  It makes Zune’s implementation looks like a 
             </div>
             <hr />
 
-            <!--
             <div class="row-fluid">
                 <h3 id="article-comments-section">Comments</h3>
 <div id="disqus_thread"></div>
@@ -179,7 +180,6 @@ It is open source, take a look.  It makes Zune’s implementation looks like a 
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
-            -->
         </section>
     </div>
 
@@ -234,8 +234,14 @@ It is open source, take a look.  It makes Zune’s implementation looks like a 
     </footer> <!--end of container -->
 
     <!--/footer-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <!-- Fluidbox Activate -->
+    <script>
+        jQuery(document).ready(function() {
+            $('a').fluidbox();
+        });
+    </script>
 
 </body>
 </html>
