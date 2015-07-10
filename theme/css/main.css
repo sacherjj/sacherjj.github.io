@@ -64,10 +64,11 @@ h1 {
 
 /* Styling for Nav bar. Bg color, link color etc */
 
+    /* #2C71B8 url(/images/blueprint-background.png) repeat url(/theme/images/concrete_seamless.png) repeat */
 .blog-header,
 .blog-footer {
     padding: 16px 0;
-    background: #2C71B8 url(/images/blueprint-background.png) repeat;
+    background: #333399;
     color: #fff;
     margin-bottom: 1em;
 }
