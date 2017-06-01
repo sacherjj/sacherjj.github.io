@@ -7,11 +7,11 @@
     <link rel="shortcut icon" href="http://www.joesacher.com/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="http://www.joesacher.com/images/apple-touch-icon.png">
 
-    <meta name="description" itemprop="description" content="The Bencode format is an interesting design. It is byte based, which makes it safe from big-endian and little-endian translations. Somewhere when reading about how torrents worked, I got looking at their file format. As far as I know, the Bencode format isn’t used on anything but torrent files. The format is pretty simple, with only 4 different data structures: Byte String, Integer, List, and Dictionary. Bencode Basics Byte String This is formatted as [integer length]:[byte string]. Simply ..." />
+    <meta name="description" itemprop="description" content="The Bencode format is an interesting design. It is byte based, which makes it safe from big-endian and little-endian translations. Somewhere when reading about how torrents worked, I got looking at their file format. As far as I know, the Bencode format isn’t used on anything but torrent files. The format is pretty simple, with only 4 different data structures: Byte String, Integer, List, and Dictionary. Bencode Basics Byte String This is formatted as [integer length]:[byte string]. Simply …" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="copyright" content="Copyright (c) 1998-2015 Joe Sacher" />
+    <meta name="copyright" content="Copyright (c) 1998-2017 Joe Sacher" />
     <meta name="author" content="Joe Sacher" />
 
 
@@ -37,7 +37,7 @@
     <meta property="og:site_name" content="joesacher.com"/>
     <meta property="og:title" content="Bencoding (encoding of a .torrent file)"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:description" content="The Bencode format is an interesting design. It is byte based, which makes it safe from big-endian and little-endian translations. Somewhere when reading about how torrents worked, I got looking at their file format. As far as I know, the Bencode format isn’t used on anything but torrent files. The format is pretty simple, with only 4 different data structures: Byte String, Integer, List, and Dictionary. Bencode Basics Byte String This is formatted as [integer length]:[byte string]. Simply ..."/>
+    <meta property="og:description" content="The Bencode format is an interesting design. It is byte based, which makes it safe from big-endian and little-endian translations. Somewhere when reading about how torrents worked, I got looking at their file format. As far as I know, the Bencode format isn’t used on anything but torrent files. The format is pretty simple, with only 4 different data structures: Byte String, Integer, List, and Dictionary. Bencode Basics Byte String This is formatted as [integer length]:[byte string]. Simply …"/>
     <meta property="og:url" content="http://www.joesacher.com/blog/tech/bencoding/"/>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -142,88 +142,88 @@ I wanted to call out a few things in the code that were good learning experience
 <h3>Encoding Methods</h3>
 <p>Functions are objects in Python and can be stored and referenced just like data.  In the internal encoding function _local_encode, I’m storing the various data type encode methods in a
 dictonary with data type string as key.  This allows me to get data type string with <code>type(data).__name__</code>.  If the key exists in the dictonary, I envoke that method to process the data.</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">_local_encode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_local_encode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="sd">""" Returns the proper Bencoded string for data given """</span>
-    <span class="n">encoders</span> <span class="o">=</span> <span class="p">{</span><span class="s">'dict'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_dictionary</span><span class="p">,</span>
-                <span class="s">'list'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_list</span><span class="p">,</span>
-                <span class="s">'tuple'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_list</span><span class="p">,</span>
-                <span class="s">'str'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_string</span><span class="p">,</span>
-                <span class="s">'int'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_integer</span><span class="p">,</span>
-                <span class="s">'float'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_float</span><span class="p">}</span>
-    <span class="n">data_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span>
+    <span class="n">encoders</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'dict'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_dictionary</span><span class="p">,</span>
+                <span class="s1">'list'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_list</span><span class="p">,</span>
+                <span class="s1">'tuple'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_list</span><span class="p">,</span>
+                <span class="s1">'str'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_string</span><span class="p">,</span>
+                <span class="s1">'int'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_integer</span><span class="p">,</span>
+                <span class="s1">'float'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_float</span><span class="p">}</span>
+    <span class="n">data_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
     <span class="k">if</span> <span class="n">data_type</span> <span class="ow">in</span> <span class="n">encoders</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">encoders</span><span class="p">[</span><span class="n">data_type</span><span class="p">](</span><span class="n">data</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">'Encoder is not defined for data type: </span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="n">data_type</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">'Encoder is not defined for data type: </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="n">data_type</span><span class="p">)</span>
 </pre></div>
 <p>String encoding is very simple, just joining length of the string with the data.</p>
-<div class="highlight"><pre><span class="nd">@staticmethod</span>
+<div class="highlight"><pre><span></span><span class="nd">@staticmethod</span>
 <span class="k">def</span> <span class="nf">_encode_string</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="sd">""" Converts string to Bencoded Byte String """</span>
-    <span class="k">return</span> <span class="s">'</span><span class="si">%d</span><span class="s">:</span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">'</span><span class="si">%d</span><span class="s1">:</span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">data</span><span class="p">)</span>
 </pre></div>
 <p>Encoding integer is just wrapping ‘i’ and ‘e’ around the string conversion of the integer.  Since bencode does not encode floats, those are converted to ints.</p>
-<div class="highlight"><pre><span class="nd">@staticmethod</span>
+<div class="highlight"><pre><span></span><span class="nd">@staticmethod</span>
 <span class="k">def</span> <span class="nf">_encode_integer</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="sd">""" Converts Integer to Bencoded Integer string """</span>
-    <span class="k">return</span> <span class="s">'i</span><span class="si">%d</span><span class="s">e'</span> <span class="o">%</span> <span class="n">data</span>
+    <span class="k">return</span> <span class="s1">'i</span><span class="si">%d</span><span class="s1">e'</span> <span class="o">%</span> <span class="n">data</span>
 
 <span class="k">def</span> <span class="nf">_encode_float</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="sd">""" Converts Float to Bencoded Integer string """</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_integer</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
 <p>List encoding performs recursive calls into _local_encode as it loops through the list, just appending items.  I optimised with lists instead of string concatenation.  Originally, I built this with the ben variable as a string and += calls, which is terrible for memory performance.</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">_encode_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_encode_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="sd">""" Converts List or Tuple to Bencoded List string """</span>
-    <span class="n">ben</span> <span class="o">=</span> <span class="p">[</span><span class="s">'l'</span><span class="p">]</span>
+    <span class="n">ben</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'l'</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
         <span class="n">ben</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_local_encode</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
-    <span class="n">ben</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'e'</span><span class="p">)</span>
-    <span class="k">return</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ben</span><span class="p">)</span>
+    <span class="n">ben</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'e'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ben</span><span class="p">)</span>
 </pre></div>
 <p>Dictionary works the same way as list, just appending the generated values from _local_encode with the addition of a string in front.  Again, this was changed from string concatenation to list append.</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">_encode_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_encode_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="sd">""" Converts Dictionary to Bencoded Dictionary String """</span>
-    <span class="n">ben</span> <span class="o">=</span> <span class="p">[</span><span class="s">'d'</span><span class="p">]</span>
+    <span class="n">ben</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'d'</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
         <span class="n">ben</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_encode_string</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
         <span class="n">ben</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_local_encode</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span>
-    <span class="n">ben</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'e'</span><span class="p">)</span>
-    <span class="k">return</span><span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ben</span><span class="p">)</span>
+    <span class="n">ben</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'e'</span><span class="p">)</span>
+    <span class="k">return</span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ben</span><span class="p">)</span>
 </pre></div>
 <p>This came out simpler and cleaner than I expected for encoding.  But it is a really simple format, so it shouldn’t be too complex.</p>
 </div>
 <div class="section" id="decoding-methods">
 <h3>Decoding Methods</h3>
 <p>For my external decode method, I’m using a class level pointer for the bencoded string and walking through it.  I setup those two variables and call into _local_decode.</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ben_string</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ben_string</span><span class="p">):</span>
     <span class="sd">""" Returns the data structure defined by the Bencoded string """</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ben_string</span> <span class="o">=</span> <span class="n">ben_string</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local_decode</span><span class="p">()</span>
     <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"Index Error at Pointer = </span><span class="si">%d</span><span class="s"> of </span><span class="si">%d</span><span class="se">\n</span><span class="si">%s</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ben_string</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">"Index Error at Pointer = </span><span class="si">%d</span><span class="s2"> of </span><span class="si">%d</span><span class="se">\n</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ben_string</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
 </pre></div>
 <p>While I thought I might use the dictonary mapped methods again, I couldn’t find a clean way to handle the 11 possible cases for integer.  So, I decided to just just go old school flow control.  This is one situation that I would have used a switch statement with an else case if it was available in Python.  If you have a more Pythonic way of doing this, please ley me know!</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">_local_decode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_local_decode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">""" Detects and returns the proper Bencoded data type starting at current Pointer position """</span>
     <span class="n">cur_char</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ben_string</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">cur_char</span> <span class="o">==</span> <span class="s">'i'</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">cur_char</span> <span class="o">==</span> <span class="s1">'i'</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_integer</span><span class="p">()</span>
-    <span class="k">elif</span> <span class="n">cur_char</span> <span class="o">==</span> <span class="s">'l'</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">cur_char</span> <span class="o">==</span> <span class="s1">'l'</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_list</span><span class="p">()</span>
-    <span class="k">elif</span> <span class="n">cur_char</span> <span class="o">==</span> <span class="s">'d'</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">cur_char</span> <span class="o">==</span> <span class="s1">'d'</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_dictionary</span><span class="p">()</span>
-    <span class="k">elif</span> <span class="n">cur_char</span> <span class="ow">in</span> <span class="p">(</span><span class="s">'-'</span><span class="p">,</span> <span class="s">'0'</span><span class="p">,</span> <span class="s">'1'</span><span class="p">,</span> <span class="s">'2'</span><span class="p">,</span> <span class="s">'3'</span><span class="p">,</span> <span class="s">'4'</span><span class="p">,</span> <span class="s">'5'</span><span class="p">,</span> <span class="s">'6'</span><span class="p">,</span> <span class="s">'7'</span><span class="p">,</span> <span class="s">'8'</span><span class="p">,</span> <span class="s">'9'</span><span class="p">):</span>
+    <span class="k">elif</span> <span class="n">cur_char</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'-'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">,</span> <span class="s1">'2'</span><span class="p">,</span> <span class="s1">'3'</span><span class="p">,</span> <span class="s1">'4'</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">,</span> <span class="s1">'6'</span><span class="p">,</span> <span class="s1">'7'</span><span class="p">,</span> <span class="s1">'8'</span><span class="p">,</span> <span class="s1">'9'</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_byte_string</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">'Invalid character detected at position </span><span class="si">%d</span><span class="s"> : </span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">cur_char</span><span class="p">)))</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">'Invalid character detected at position </span><span class="si">%d</span><span class="s1"> : </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">cur_char</span><span class="p">)))</span>
 </pre></div>
 <p>Before we get into Integer and String decoding, we have a helper function.  Both the Integer and the String will have a certain number of characters to parse into an integer.
 The only difference is the stop character.  For the String, this is the length of the string with ‘:’ end character.  For the Integer, this is the actual data value with ‘e’ end character.
 You will see this method called from both decode methods.  Note that the int() parsing handles the leading ‘-‘ fine for negative integers.</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">_get_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">end_char</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_get_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">end_char</span><span class="p">):</span>
     <span class="sd">"""</span>
 <span class="sd">    Returns number in string up to termination character given.</span>
 <span class="sd">    """</span>
@@ -231,61 +231,61 @@ You will see this method called from both decode methods.  Note that the int() p
     <span class="n">start_pointer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span>
     <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ben_string</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span><span class="p">]</span> <span class="o">!=</span> <span class="n">end_char</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ben_string</span><span class="p">[</span><span class="n">start_pointer</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span><span class="p">])</span>  <span class="c"># Parse int</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c"># Consume the end_char</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ben_string</span><span class="p">[</span><span class="n">start_pointer</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span><span class="p">])</span>  <span class="c1"># Parse int</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Consume the end_char</span>
     <span class="k">return</span> <span class="n">num</span>
 </pre></div>
 <p>The only job of the integer decode method is to consume the leading character that doesn’t exist in the string integer.  Then all the work is turned over to the _get_number method above up to the ‘e’ character.</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">_parse_integer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_parse_integer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">"""</span>
 <span class="sd">    Parses a Bencoded Integer type of format i&lt;number&gt;e</span>
 <span class="sd">    """</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c"># Consume the 'i' start character</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_number</span><span class="p">(</span><span class="s">'e'</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Consume the 'i' start character</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_number</span><span class="p">(</span><span class="s1">'e'</span><span class="p">)</span>
 </pre></div>
 <p>The String decoding gets the length integer this the helper function up to the ‘:’ character.  Then it gets the string for return, and increments the pointer past the string.</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">_parse_byte_string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_parse_byte_string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">"""</span>
 <span class="sd">    Parses a Bencoded Byte String type of format &lt;len&gt;:&lt;byte string&gt;</span>
 <span class="sd">    """</span>
 
-    <span class="n">str_len</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_number</span><span class="p">(</span><span class="s">':'</span><span class="p">)</span>
+    <span class="n">str_len</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_number</span><span class="p">(</span><span class="s1">':'</span><span class="p">)</span>
     <span class="n">byte_string</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ben_string</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+</span> <span class="n">str_len</span><span class="p">]</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="n">str_len</span>  <span class="c"># Consume the byte string</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="n">str_len</span>  <span class="c1"># Consume the byte string</span>
     <span class="k">return</span> <span class="n">byte_string</span>
 </pre></div>
 <p>The list starts with ‘l’ and ends with ‘e’.  So we move the pointer to consume the ‘l’, then we loop until the current pointer character is an ‘e’.  Each time through the while,
 the class level pointer might increment quite a bit, as data items are consumed.  However, we are not at the end of the list until we see a letter ‘e’.</p>
 <p>For each list item, much like the recursive encoding, we call _local_decode to return us whatever the data is.</p>
 <p>Since it is the responsibility of all the decoding methods to consume their bytes, we increment the pointer to move past the list termination ‘e’ at the end.</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">_parse_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_parse_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">"""</span>
 <span class="sd">    Parses a Bencoded List type of format l&lt;contents&gt;e</span>
 
 <span class="sd">    All members of the list as simply appended together in Bencode format to make up &lt;contents&gt;</span>
 <span class="sd">    """</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c"># Consume the 'l' start character</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Consume the 'l' start character</span>
     <span class="n">val</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ben_string</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span><span class="p">]</span> <span class="o">!=</span> <span class="s">'e'</span><span class="p">:</span>
+    <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ben_string</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'e'</span><span class="p">:</span>
         <span class="n">val</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_local_decode</span><span class="p">())</span>
 
-    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c"># Consume the 'e' termination character</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Consume the 'e' termination character</span>
     <span class="k">return</span> <span class="n">val</span>
 </pre></div>
 <p>This is very similar to list processing, with the addition of the key.  We know that the key is required to be a byte string, so we call directly to that method.</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">_parse_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_parse_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">"""    Parses a Bencoded Dictionary type of format d&lt;pairs&gt;e</span>
 
 <span class="sd">    All pairs consist of ByteString key followed by any valid data type</span>
 <span class="sd">    """</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c"># Consume the 'd' start character</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Consume the 'd' start character</span>
     <span class="n">be_dict</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ben_string</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span><span class="p">]</span> <span class="o">!=</span> <span class="s">'e'</span><span class="p">:</span>
-        <span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_byte_string</span><span class="p">()</span>   <span class="c"># Skipping local decode, because key must be a byte string</span>
+    <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ben_string</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'e'</span><span class="p">:</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_byte_string</span><span class="p">()</span>   <span class="c1"># Skipping local decode, because key must be a byte string</span>
         <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local_decode</span><span class="p">()</span>
         <span class="n">be_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c"># Consume the 'e' termination character</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_pointer</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Consume the 'e' termination character</span>
     <span class="k">return</span> <span class="n">be_dict</span>
 </pre></div>
 <p>If you have a cleaner implementation you would like to share, please contact me.  I found the few iterations on this to be enjoyable and a good learning experience.</p>
@@ -358,7 +358,7 @@ the class level pointer might increment quite a bit, as data items are consumed.
             <hr />
             <p>
                 <small>
-                    &copy; 1998-2015 <a href="http://www.joesacher.com">Joe Sacher</a><br />
+                    &copy; 1998-2017 <a href="http://www.joesacher.com">Joe Sacher</a><br />
                 </small>
             </p>
         </div> <!--end of blog-footer-->

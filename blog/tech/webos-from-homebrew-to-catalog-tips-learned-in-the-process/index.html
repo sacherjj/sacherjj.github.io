@@ -11,7 +11,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="copyright" content="Copyright (c) 1998-2015 Joe Sacher" />
+    <meta name="copyright" content="Copyright (c) 1998-2017 Joe Sacher" />
     <meta name="author" content="Joe Sacher" />
 
 
@@ -117,7 +117,7 @@
 <div class="section" id="debugging">
 <h2>Debugging</h2>
 <p>When developing on the Pre or in the Emulator, it is difficult to locate syntactical and functional errors in your code.  You will save a great deal of time when trapping errors as close to the source as possible.  I include try/catch blocks around any non trivial code.  A typical setup function might look like this:</p>
-<div class="highlight"><pre><span class="nx">MySceneAssistant</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+<div class="highlight"><pre><span></span><span class="nx">MySceneAssistant</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="k">try</span><span class="p">{</span>
                 <span class="c1">// My Code</span>
                 <span class="nx">Mojo</span><span class="p">.</span><span class="nx">Log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="err">“</span><span class="nx">Hey</span><span class="p">,</span> <span class="nx">I</span> <span class="nx">actually</span> <span class="nx">got</span> <span class="nx">here</span><span class="p">.</span><span class="err">”</span><span class="p">);</span>
@@ -131,13 +131,13 @@
 <p>Once you have terminal access to the emulator, use the log command with your appId.  Ex: <code>log com.sachersoft.wordwhirl</code>  Use Ctrl+C to exit the log command when finished.</p>
 <p>Also in the function above, I have a Mojo.Log.info command to write out non-error generated debug messages.</p>
 <p>Your messages will not show up unless you increase the logLevel.  To do this, create a file named framework_config.json in the root of your application.  Inside that file you need:</p>
-<div class="highlight"><pre><span class="p">{</span>
+<div class="highlight"><pre><span></span><span class="p">{</span>
         <span class="s2">"logLevel"</span><span class="o">:</span><span class="mi">99</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 <p>Remember to set the value back to 0 before you release your app or you will fill the users messages file with all your debug information.</p>
 <p>If you need to debug on the Pre, you can only use <code>Mojo.Log.error</code> to write to <code>/var/log/messages</code>.  Follow the process to get terminal access (or incorrectly called “root your Pre”).  You will find the log command missing.  <code>tail -f /var/log/messages</code> will partially replace this.  To perform more like log, pipe the output to grep with something like this:</p>
-<div class="highlight"><pre>tail -f /var/log/messages <span class="p">|</span> grep com.sachersoft.wordwhirl
+<div class="highlight"><pre><span></span>tail -f /var/log/messages <span class="p">|</span> grep com.sachersoft.wordwhirl
 </pre></div>
 <p>Obviously, replace <code>com.sachersoft.wordwhirl</code> with the proper appId for your application.  Like log, you can terminate this command with Ctrl+C.</p>
 </div>
@@ -145,20 +145,20 @@
 <h2>Stability and Efficiency</h2>
 <p>The biggest problem I have seen in WebOS homebrew code is missing cleanup for event handlers. This can cause an application to use more memory than it really needs and opens up the possibility of memory leaks which can make your app be responsible for the users phone getting progressively slower.</p>
 <p>A typical event handler statement in the setup function of a scene might look something like this:</p>
-<div class="highlight"><pre><span class="nx">MySceneAssistant</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+<div class="highlight"><pre><span></span><span class="nx">MySceneAssistant</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">controller</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="s1">'MySuperBtn'</span><span class="p">,</span> <span class="nx">Mojo</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">tap</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">tapButton</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
 <p>This functions correctly, calling the tapButton function and all looks well.  However, when the scene unloads the event handler isn’t cleaned up properly.  Every event handler must be removed in the cleanup function with a stopListening call.  This is impossible to do with how we created the event handler.</p>
 <p>Each time you call <code>this.tapButton.bind(this)</code>, you will receive a different instance of a function, created by bind.  (The same thing occurs with bindAsEventHandler.)  We need to save the bound function instance, because the stopListening method requires the exact arguments given to the listen method.</p>
-<div class="highlight"><pre><span class="nx">MySceneAssistant</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+<div class="highlight"><pre><span></span><span class="nx">MySceneAssistant</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">tabHndlr</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">tapButton</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">controller</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="s1">'MySuperBtn'</span><span class="p">,</span> <span class="nx">Mojo</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">tap</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">tapHndlr</span><span class="p">);</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">controller</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="s1">'SecondBtn'</span><span class="p">,</span> <span class="nx">Mojo</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">tap</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">tapHndlr</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 <p>Since the bind function call is stored, we can properly stop event listening. There is an added advantage if you have more than one user of the handler.  Notice my new ‘SecondBtn’ will use the same bound function as the first.  This eliminates multiple instances of bound functions going to the same place, thereby saving memory.  Now that we are creating event handlers properly, we need to remove them in the cleanup method.</p>
-<div class="highlight"><pre><span class="nx">MySceneAssistant</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">cleanup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+<div class="highlight"><pre><span></span><span class="nx">MySceneAssistant</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">cleanup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">controller</span><span class="p">.</span><span class="nx">stopListening</span><span class="p">(</span><span class="s1">'MySuperBtn'</span><span class="p">,</span> <span class="nx">Mojo</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">tap</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">tapHndlr</span><span class="p">);</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">controller</span><span class="p">.</span><span class="nx">stopListening</span><span class="p">(</span><span class="s1">'SecondBtn'</span><span class="p">,</span> <span class="nx">Mojo</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">tap</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">tapHndlr</span><span class="p">);</span>
 <span class="p">}</span>
@@ -168,12 +168,12 @@
 <div class="section" id="scene-painting">
 <h2>Scene Painting</h2>
 <p>On some of my scenes, I noticed the <span class="caps">HTML</span> elements flicker into place, when dynamic <span class="caps">HTML</span> changes were made in the activate scene.  Since these changes can’t be performed in setup, how do we fix it?  The answer is the little publicized aboutToActivate.  In this example, I have a css class called “hidden” which is just:</p>
-<div class="highlight"><pre><span class="nc">.hidden</span><span class="p">{</span>
-        <span class="k">display</span><span class="o">:</span><span class="k">none</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">hidden</span><span class="p">{</span>
+        <span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 <p>I have a button I want to hide in certain cases.  When this code was in activate, there was a short time that the button was visible before it disappeared.  The flicker was very short, but it looked bad.  By moving the code to aboutToActivate, this flicker is removed and replaced with just a slight bit more scene loading delay.</p>
-<div class="highlight"><pre><span class="nx">MySceneAssistant</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">aboutToActivate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+<div class="highlight"><pre><span></span><span class="nx">MySceneAssistant</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">aboutToActivate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="k">if</span><span class="p">(</span><span class="nx">HideButton</span><span class="p">){</span>
                 <span class="nx">$</span><span class="p">(</span><span class="s1">'MyButton'</span><span class="p">).</span><span class="nx">addClassName</span><span class="p">(</span><span class="s1">'hidden'</span><span class="p">);</span>
         <span class="p">}</span>
@@ -185,41 +185,41 @@
 <h2>Use <span class="caps">CSS3</span> Transitions</h2>
 <p>While some games require exacting animation with JavaScript timers and positioning code, that isn’t always the case.  Almost all animations in Word Whirl are performed by <span class="caps">CSS</span> transitions.  I define a base class for a given item.  This class will define which styles to animate.  Then I define as many classes as needed to represent the states I animate between.  I set styles directly, instead of classes, when the values are more dynamic.</p>
 <p>For the letters used to play in Word Whirl, I have a base class of letter-button.  The positioning is absolute within my letter-board div.  The other important pieces of this class are the two -webkit-transition styles:</p>
-<div class="highlight"><pre><span class="nc">.letter-button</span><span class="p">{</span>
-        <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
-        <span class="k">width</span><span class="o">:</span><span class="m">45px</span><span class="p">;</span>
-        <span class="k">height</span><span class="o">:</span><span class="m">46px</span><span class="p">;</span>
-        <span class="k">background-image</span><span class="o">:</span><span class="sx">url('../images/ltrtile.png')</span><span class="p">;</span>
-        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transition</span><span class="o">-</span><span class="n">property</span><span class="o">:</span> <span class="k">left</span><span class="o">,</span> <span class="k">top</span><span class="p">;</span>
-        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transition</span><span class="o">-</span><span class="n">duration</span><span class="o">:</span> <span class="m">250</span><span class="n">ms</span><span class="o">,</span> <span class="m">250</span><span class="n">ms</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">letter-button</span><span class="p">{</span>
+        <span class="k">position</span><span class="p">:</span><span class="kc">absolute</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">45</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">height</span><span class="p">:</span><span class="mi">46</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">background-image</span><span class="p">:</span><span class="nb">url</span><span class="p">(</span><span class="s1">'../images/ltrtile.png'</span><span class="p">);</span>
+        <span class="kp">-webkit-</span><span class="k">transition-property</span><span class="p">:</span> <span class="kc">left</span><span class="p">,</span> <span class="kc">top</span><span class="p">;</span>
+        <span class="kp">-webkit-</span><span class="k">transition-duration</span><span class="p">:</span> <span class="mi">250</span><span class="kt">ms</span><span class="p">,</span> <span class="mi">250</span><span class="kt">ms</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 <p>The <code>-webkit-transition-property</code> tells which styles the transitions should affect.  <code>-webkit-transition-duration</code> defines the duration it takes to animate each property from start to stop value.</p>
 <p>In addition, I have 6 home classes (home0 through home5) and 6 target classes (tar0 through tar5).  These just define the left and top values for each location.  Just the first two of each are listed below, as the others just use larger left values.</p>
-<div class="highlight"><pre><span class="nc">.home0</span><span class="p">{</span>
-        <span class="k">left</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
-        <span class="k">top</span><span class="o">:</span><span class="m">50px</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">home0</span><span class="p">{</span>
+        <span class="k">left</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">top</span><span class="p">:</span><span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nc">.home1</span><span class="p">{</span>
-        <span class="k">left</span><span class="o">:</span><span class="m">60px</span><span class="p">;</span>
-        <span class="k">top</span><span class="o">:</span><span class="m">50px</span><span class="p">;</span>
+<span class="p">.</span><span class="nc">home1</span><span class="p">{</span>
+        <span class="k">left</span><span class="p">:</span><span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">top</span><span class="p">:</span><span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nc">.tar0</span><span class="p">{</span>
-        <span class="k">left</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
-        <span class="k">top</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
+<span class="p">.</span><span class="nc">tar0</span><span class="p">{</span>
+        <span class="k">left</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">top</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nc">.tar1</span><span class="p">{</span>
-        <span class="k">left</span><span class="o">:</span><span class="m">60px</span><span class="p">;</span>
-        <span class="k">top</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
+<span class="p">.</span><span class="nc">tar1</span><span class="p">{</span>
+        <span class="k">left</span><span class="p">:</span><span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">top</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 <p>The <span class="caps">HTML</span> for a letter block is defined below.  The inside div with letter class is just to hold the letter used on the block and not important for the animation.  The letter-button class gives the block its main properties. The home0 class places the block in the first home position.</p>
-<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"letter-button home0"</span> <span class="na">id=</span><span class="s">"but0"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"let0"</span> <span class="na">class=</span><span class="s">"letter"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"letter-button home0"</span> <span class="na">id</span><span class="o">=</span><span class="s">"but0"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"let0"</span> <span class="na">class</span><span class="o">=</span><span class="s">"letter"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 <p>Animating the block is now just a matter of removing and adding position classes.  This code would move the block from the first home position (home0) to the second target position (tar1).</p>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'but0'</span><span class="p">).</span><span class="nx">removeClassName</span><span class="p">(</span><span class="s1">'home0'</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">'but0'</span><span class="p">).</span><span class="nx">removeClassName</span><span class="p">(</span><span class="s1">'home0'</span><span class="p">);</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">'but0'</span><span class="p">).</span><span class="nx">addClassName</span><span class="p">(</span><span class="s1">'tar1'</span><span class="p">);</span>
 </pre></div>
 <p>The div will fly from the home0 to the tar1 position in a quarter of a second.  The timing was controlled by the <code>250ms</code> setting in the <code>-webkit-transition-duration</code> style.</p>
@@ -235,13 +235,13 @@
                     <h3>Related Posts</h3>
                         <nav>
                             <dl>
-                                <dt><h4><a href="http://www.joesacher.com/blog/tech/hp-touchpad-keyboard-good-bad-and-ugly/">Touchpad Keyboard - Good, Bad, and&nbsp;Ugly</a></h4></dt>
-                                <dd><span class="smallprint muted"></span></dd>
-                                <dt><h4><a href="http://www.joesacher.com/blog/tech/touchstone-theories-confirmed/">TouchStone Theories&nbsp;Confirmed</a></h4></dt>
-                                <dd><span class="smallprint muted"></span></dd>
                                 <dt><h4><a href="http://www.joesacher.com/blog/tech/encoding-videos-for-the-hp-touchpad/">Encoding Videos for the <span class="caps">HP</span>&nbsp;Touchpad</a></h4></dt>
                                 <dd><span class="smallprint muted"></span></dd>
+                                <dt><h4><a href="http://www.joesacher.com/blog/tech/hp-touchpad-keyboard-good-bad-and-ugly/">Touchpad Keyboard - Good, Bad, and&nbsp;Ugly</a></h4></dt>
+                                <dd><span class="smallprint muted"></span></dd>
                                 <dt><h4><a href="http://www.joesacher.com/blog/tech/webos-touchstone-now-and-future/">WebOS Touchstone - Now and&nbsp;Future</a></h4></dt>
+                                <dd><span class="smallprint muted"></span></dd>
+                                <dt><h4><a href="http://www.joesacher.com/blog/tech/touchstone-theories-confirmed/">TouchStone Theories&nbsp;Confirmed</a></h4></dt>
                                 <dd><span class="smallprint muted"></span></dd>
                             </dl>
                         </nav>
@@ -310,7 +310,7 @@
             <hr />
             <p>
                 <small>
-                    &copy; 1998-2015 <a href="http://www.joesacher.com">Joe Sacher</a><br />
+                    &copy; 1998-2017 <a href="http://www.joesacher.com">Joe Sacher</a><br />
                 </small>
             </p>
         </div> <!--end of blog-footer-->

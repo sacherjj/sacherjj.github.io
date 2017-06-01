@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>joesacher.com</title><link href="http://www.joesacher.com/" rel="alternate"></link><link href="http://www.joesacher.com/feeds/how-to.atom.xml" rel="self"></link><id>http://www.joesacher.com/</id><updated>2007-12-11T00:00:00-05:00</updated><entry><title>How To Build Bicycle Panniers</title><link href="http://www.joesacher.com/blog/how-to/how-to-build-bicycle-panniers/" rel="alternate"></link><updated>2007-12-11T00:00:00-05:00</updated><author><name>Joe Sacher</name></author><id>tag:www.joesacher.com,2007-12-11:blog/how-to/how-to-build-bicycle-panniers/</id><summary type="html">&lt;div class="figure" style="width: 300px; height: auto; max-width: 100%;"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>joesacher.com - how-to</title><link href="http://www.joesacher.com/" rel="alternate"></link><link href="http://www.joesacher.com/feeds/how-to.atom.xml" rel="self"></link><id>http://www.joesacher.com/</id><updated>2007-12-11T00:00:00-05:00</updated><entry><title>How To Build Bicycle Panniers</title><link href="http://www.joesacher.com/blog/how-to/how-to-build-bicycle-panniers/" rel="alternate"></link><published>2007-12-11T00:00:00-05:00</published><updated>2007-12-11T00:00:00-05:00</updated><author><name>Joe Sacher</name></author><id>tag:www.joesacher.com,2007-12-11:/blog/how-to/how-to-build-bicycle-panniers/</id><summary type="html">
+&lt;img alt="" src="/images/posts/pannier/loadedrocket.jpg" style="width: 300px; height: auto; max-width: 100%;"/&gt;
+&lt;p class="caption"&gt;I’ll be describing the construction of the gray panniers located directly under my seat.&lt;/p&gt;
+
+&lt;p&gt;I was unable to find a pannier set that works exactly as I would like for the under-seat rack on my &lt;span class="caps"&gt;RANS&lt;/span&gt; Rocket.   I like the panniers made by &lt;a class="reference external" href="http://www.panniers.com"&gt;Arkel&lt;/a&gt; of all the panniers I have looked at and used.  However, it was impossible to find a size that worked exactly for me.&lt;/p&gt;
+&lt;p&gt;I decided to make my own set tailored (quite literally) exactly to my needs and I borrowed quite a bit from Arkel’s design work.  Below is a description of the process for those who would like to do the same.&lt;/p&gt;
+</summary><content type="html">&lt;div class="figure" style="width: 300px; height: auto; max-width: 100%;"&gt;
 &lt;img alt="" src="/images/posts/pannier/loadedrocket.jpg" style="width: 300px; height: auto; max-width: 100%;"/&gt;
 &lt;p class="caption"&gt;I’ll be describing the construction of the gray panniers located directly under my seat.&lt;/p&gt;
 &lt;/div&gt;
@@ -159,7 +165,13 @@ Lessons Learned: Again on the issue of ground strike.  When measuring that 45 de
 &lt;p&gt;My dad met me two times on tour and I had him bring some equipment to solve these problems.  We glued some light aluminum sheet to the outside rear edge, where I occasionally touched down, to form skid plates.   We also put some corrugated plastic sheet in the bottom of the pannier.   I oriented the channels along the short axis to keep the bottom from curving as much as possible.&lt;/p&gt;
 &lt;p&gt;The entire process was a great learning experience that I would only do again if I couldn’t find something commercially available close to what I wanted.  It is nice to personalize things, but these bags were a great deal of work.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="pannier"></category><category term="bicycle"></category><category term="touring"></category></entry><entry><title>Creating a Dry Bag for my Martin Backpacker Guitar</title><link href="http://www.joesacher.com/blog/how-to/creating-a-dry-bag/" rel="alternate"></link><updated>2007-12-01T00:00:00-05:00</updated><author><name>Joe Sacher</name></author><id>tag:www.joesacher.com,2007-12-01:blog/how-to/creating-a-dry-bag/</id><summary type="html">&lt;div class="figure" style="width: 205px; height: auto; max-width: 100%;"&gt;
+</content><category term="pannier"></category><category term="bicycle"></category><category term="touring"></category></entry><entry><title>Creating a Dry Bag for my Martin Backpacker Guitar</title><link href="http://www.joesacher.com/blog/how-to/creating-a-dry-bag/" rel="alternate"></link><published>2007-12-01T00:00:00-05:00</published><updated>2007-12-01T00:00:00-05:00</updated><author><name>Joe Sacher</name></author><id>tag:www.joesacher.com,2007-12-01:/blog/how-to/creating-a-dry-bag/</id><summary type="html">&lt;div class="figure" style="width: 205px; height: auto; max-width: 100%;"&gt;
+&lt;img alt="" src="/images/posts/drybag/DBOrigDryBag.jpg" style="width: 205px; height: auto; max-width: 100%;"/&gt;
+&lt;p class="caption"&gt;Dry bag for inside panniers, purchased from Arkel&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;I searched without success for a lightweight, waterproof bag to protect my Martin Backpacker Guitar.  Typical dry bags used for water sports are overbuilt for bicycle touring and backpacking use, where weight is a very large factor.   They use clear vinyl or heavier vinyl coated cloth and weigh many pounds.  This article describes the process I went through to make my own custom lightweight waterproof bags for touring and backpacking.&lt;/p&gt;
+&lt;!-- PELICAN_SUMMARY_END --&gt;
+&lt;p&gt;I ordered …&lt;/p&gt;</summary><content type="html">&lt;div class="figure" style="width: 205px; height: auto; max-width: 100%;"&gt;
 &lt;img alt="" src="/images/posts/drybag/DBOrigDryBag.jpg" style="width: 205px; height: auto; max-width: 100%;"/&gt;
 &lt;p class="caption"&gt;Dry bag for inside panniers, purchased from Arkel&lt;/p&gt;
 &lt;/div&gt;
@@ -288,7 +300,13 @@ I should also note that it is a good idea to do some tack seals.  By that I mean
 &lt;h2&gt;Post Script&lt;/h2&gt;
 &lt;p&gt;This article was written a few years ago.  I wound up not taking the Backpacker guitar with my on my bike tour.  I also no longer own this guitar or bag.  This shouldn’t keep you from making your own, however.  The one problem with this bag is the possibility of puncturing the bottom, there the neck inserts.  Cut off strings are very sharp.  My solution for this was to get a very thick wool sock that fit over the tuners.  This did two things, first it protected the water proof integrity of the bag.  This sock also protected the exposed tuners, a second unintended consequence.  Good luck if you take on this project.  With a little work, you can have a nice dry bag for any custom application that should last a long time.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="drybag"></category><category term="sewing"></category><category term="bicycle touring"></category></entry><entry><title>Watts, Volts, and Amps</title><link href="http://www.joesacher.com/blog/how-to/watts-volts-and-amps/" rel="alternate"></link><updated>2005-05-02T00:00:00-05:00</updated><author><name>Joe Sacher</name></author><id>tag:www.joesacher.com,2005-05-02:blog/how-to/watts-volts-and-amps/</id><summary type="html">&lt;div class="figure" style="width: 333px; height: auto; max-width: 100%;"&gt;
+</content><category term="drybag"></category><category term="sewing"></category><category term="bicycle touring"></category></entry><entry><title>Watts, Volts, and Amps</title><link href="http://www.joesacher.com/blog/how-to/watts-volts-and-amps/" rel="alternate"></link><published>2005-05-02T00:00:00-05:00</published><updated>2005-05-02T00:00:00-05:00</updated><author><name>Joe Sacher</name></author><id>tag:www.joesacher.com,2005-05-02:/blog/how-to/watts-volts-and-amps/</id><summary type="html">
+&lt;img alt="" src="/images/posts/singles/watts-volts-amps.jpg" style="width: 333px; height: auto; max-width: 100%;"/&gt;
+&lt;p class="caption"&gt;or How not to look Stupid and Burn Down a House&lt;/p&gt;
+
+&lt;p&gt;Note: This was an article written for a now defunct site about film making.  Thus, the intended audience of the article a low budget independent film maker.  I wrote this to address may of the problems I witnessed on various sets.  However, this applies to everyone that uses extension cords for anything.&lt;/p&gt;
+&lt;p&gt;This article is going to be a little technical and possibly boring to some, but the subject is important. I’m an Electrical Engineer, who also works on films, so I tend to take all of this knowledge for granted. The math involved is really simple, so hopefully this will be more educational than painful for those of you who hate math.&lt;/p&gt;
+</summary><content type="html">&lt;div class="figure" style="width: 333px; height: auto; max-width: 100%;"&gt;
 &lt;img alt="" src="/images/posts/singles/watts-volts-amps.jpg" style="width: 333px; height: auto; max-width: 100%;"/&gt;
 &lt;p class="caption"&gt;or How not to look Stupid and Burn Down a House&lt;/p&gt;
 &lt;/div&gt;
@@ -310,10 +328,10 @@ I should also note that it is a good idea to do some tack seals.  By that I mean
 &lt;p&gt;I’ll wrap up with a little advice on the use of stingers. When you purchase some extension cords for lighting, make sure to look at the possible current draws for which you will use it. In the &lt;span class="caps"&gt;US&lt;/span&gt;, wire size is specified by gauge. As the gauge number gets smaller, the wire diameter gets larger. While you will most likely be fine with cheaper cords for short runs inside, if you are using quite a few lights outside this is something you need to think about. When lighting up a scene outside, typically only one cord distributes the power out to all the lights. If this run is very long, you need to be careful. To the right is a table showing the extension cord gauge that must be used to safely power lights drawing different currents at different cord lengths.&lt;/p&gt;
 &lt;table border="1" class="docutils"&gt;
 &lt;colgroup&gt;
-&lt;col width="32%"&gt;&lt;/col&gt;
-&lt;col width="23%"&gt;&lt;/col&gt;
-&lt;col width="23%"&gt;&lt;/col&gt;
-&lt;col width="23%"&gt;&lt;/col&gt;
+&lt;col width="32%"/&gt;
+&lt;col width="23%"/&gt;
+&lt;col width="23%"/&gt;
+&lt;col width="23%"/&gt;
 &lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
 &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Cord&lt;/strong&gt;
@@ -351,7 +369,12 @@ I should also note that it is a good idea to do some tack seals.  By that I mean
 &lt;/table&gt;
 &lt;p&gt;If smaller cords (higher gauge numbers) are used, you have the possibility of overheating the wires and starting fires. This is much more dangerous than just blowing a circuit breaker. The circuit breaker will not blow on an overloaded extension cord, if the current is within the amperage allowed by the circuit breaker. It has no understanding that you tried to use a 100’ cord with 16 or 18 gauge to power 15A worth of lights. But, when you grab that cord it will be warm or possibly hot and that is not good at all.&lt;/p&gt;
 &lt;p&gt;I don’t expect that everyone will bring a calculator to set to do power calculations, but I hope everyone takes away some respect for the problem. This same problem will cause numerous house fires this holiday season, when people decorating their homes or Christmas trees overload the cords. While Christmas lights don’t draw a great deal, they are also built with very small wire. If you chain enough of the lights together, the first light strand will carry all the current for all the lights. When this is next to wood or a Christmas tree, powered 24/7, it is a recipe for a fire. Everyone be careful out there.&lt;/p&gt;
-</summary><category term="safety"></category><category term="film making"></category></entry><entry><title>Vision Seat Camp Chair</title><link href="http://www.joesacher.com/blog/how-to/vision-seat-camp-chair/" rel="alternate"></link><updated>2001-05-31T00:00:00-05:00</updated><author><name>Joe Sacher</name></author><id>tag:www.joesacher.com,2001-05-31:blog/how-to/vision-seat-camp-chair/</id><summary type="html">&lt;div class="figure" style="width: 265px; height: auto; max-width: 100%;"&gt;
+</content><category term="safety"></category><category term="film making"></category></entry><entry><title>Vision Seat Camp Chair</title><link href="http://www.joesacher.com/blog/how-to/vision-seat-camp-chair/" rel="alternate"></link><published>2001-05-31T00:00:00-05:00</published><updated>2001-05-31T00:00:00-05:00</updated><author><name>Joe Sacher</name></author><id>tag:www.joesacher.com,2001-05-31:/blog/how-to/vision-seat-camp-chair/</id><summary type="html">
+&lt;img alt="" src="/images/posts/vision-seat-camp-chair/vs_shot.jpg" style="width: 265px; height: auto; max-width: 100%;"/&gt;
+&lt;p class="caption"&gt;Quick Prototype of Vision Seat “Camp Chair”&lt;/p&gt;
+
+&lt;p&gt;I am almost fully equipped for touring on my Vision Recumbent with a &lt;span class="caps"&gt;BOB&lt;/span&gt; trialer for cargo.  However, I really think a good camp seat would be nice. The only problem with that is the weight must go up the hills.  The seat on the Vision is removable by lossening the back mount and removing the bottom pivot mount.  This should take only a minute or so to do.&lt;/p&gt;
+</summary><content type="html">&lt;div class="figure" style="width: 265px; height: auto; max-width: 100%;"&gt;
 &lt;img alt="" src="/images/posts/vision-seat-camp-chair/vs_shot.jpg" style="width: 265px; height: auto; max-width: 100%;"/&gt;
 &lt;p class="caption"&gt;Quick Prototype of Vision Seat “Camp Chair”&lt;/p&gt;
 &lt;/div&gt;
@@ -368,4 +391,4 @@ I should also note that it is a good idea to do some tack seals.  By that I mean
 &lt;/div&gt;
 &lt;p&gt;The seat bottom rear piece is a rectangle with the bottom a slightly oversized tube to allow it to pivot in the bottom triangle. This render shows the bottom folded how it would ride on the top of the &lt;span class="caps"&gt;BOB&lt;/span&gt; trailer.&lt;/p&gt;
 &lt;p&gt;Note: This design never went past the 3D model stage. I now am using a &lt;span class="caps"&gt;RANS&lt;/span&gt; Rocket for touring, but I will keep this page here, in case someone else want to try this. Please let me know if you do! - Joe 05/23/01&lt;/p&gt;
-</summary><category term="touring"></category><category term="recumbent"></category></entry></feed>
+</content><category term="touring"></category><category term="recumbent"></category></entry></feed>
