@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ebooks on joesacher.com</title>
+    <link>http://joesacher.com/tags/ebooks/</link>
+    <description>Recent content in Ebooks on joesacher.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 06 Aug 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://joesacher.com/tags/ebooks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hacking can be bad for your Kindle App&#39;s Health</title>
+      <link>http://joesacher.com/blog/2011/08/06/unrecoverable-problems-with-kindle-app-on-touchpad/</link>
+      <pubDate>Sat, 06 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/08/06/unrecoverable-problems-with-kindle-app-on-touchpad/</guid>
+      <description>If you feel like following my hacking example to load .mobi format books onto the Touchpad&amp;rsquo;s Kindle App, be ready to have to reload it. If the app has a problem parsing the book for any reason, you are done. With no back gesture on the Touchpad, there is no way to back out of the crashed book load. Each time you start the app, it will load the file into a crash situation.</description>
+    </item>
+    
+    <item>
+      <title>Loading mobi books into Touchpad&#39;s Kindle App</title>
+      <link>http://joesacher.com/blog/2011/08/05/loading-mobi-books-into-touchpads-kindle-app/</link>
+      <pubDate>Fri, 05 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/08/05/loading-mobi-books-into-touchpads-kindle-app/</guid>
+      <description>I have purchased many ebooks and created others manually in the .mobi format. This is very easy to load onto my Kindle device to read. Unfortunately, the current Kindle app on the Touchpad does not allow loading ebooks other than downloading from Amazon. This is unfortunate and makes the Touchpad a poor replacement for my Kindle.</description>
+    </item>
+    
+  </channel>
+</rss>

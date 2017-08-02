@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on joesacher.com</title>
+    <link>http://joesacher.com/tags/javascript/</link>
+    <description>Recent content in Javascript on joesacher.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <lastBuildDate>Tue, 01 Mar 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://joesacher.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WebOS From Homebrew to Catalog: tips learned in the process</title>
+      <link>http://joesacher.com/blog/2011/03/01/from-homebrew-to-catalog-webos-tips-learned-in-the-process/</link>
+      <pubDate>Tue, 01 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/03/01/from-homebrew-to-catalog-webos-tips-learned-in-the-process/</guid>
+      <description>I&amp;rsquo;ve been a developer, on many different platforms, for just under two decades. Like many code monkeys, I enjoy learning new architectures. I&amp;rsquo;m not exactly sure why, but programming for WebOS has me more excited than I&amp;rsquo;ve been since working with GCC on the Palm Personal. The idea of building apps with web technologies on a portable device sounded interesting. I knew that certain things would be easy and others hard.</description>
+    </item>
+    
+  </channel>
+</rss>

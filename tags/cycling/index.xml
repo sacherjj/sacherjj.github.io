@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cycling on joesacher.com</title>
+    <link>http://joesacher.com/tags/cycling/</link>
+    <description>Recent content in Cycling on joesacher.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 02 Mar 2002 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://joesacher.com/tags/cycling/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Bicycle Wheel by Jobst Brandt</title>
+      <link>http://joesacher.com/blog/2002/03/02/the-bicycle-wheel-by-jobst-brandt/</link>
+      <pubDate>Sat, 02 Mar 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/03/02/the-bicycle-wheel-by-jobst-brandt/</guid>
+      <description>I have just finished building my first rear wheel using The Bicycle Wheel as a guide. This book will teach you the technical aspects of the bicycle wheel in both structural principles and practical methods. After a couple hundred miles on my new wheel, it is still true as an arrow.
+This book debunks myths and gives you the confidence to repair, build, and rebuild wheels. I can honestly say that I no longer fear any wheel repairs.</description>
+    </item>
+    
+  </channel>
+</rss>

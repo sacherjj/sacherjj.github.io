@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on joesacher.com</title>
+    <link>http://joesacher.com/tags/python/</link>
+    <description>Recent content in Python on joesacher.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <lastBuildDate>Tue, 21 Dec 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://joesacher.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bencoding (encoding of a .torrent file)</title>
+      <link>http://joesacher.com/blog/2010/12/21/bencoding/</link>
+      <pubDate>Tue, 21 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2010/12/21/bencoding/</guid>
+      <description>The Bencode format is an interesting design. It is byte based, which makes it safe from big-endian and little-endian translations. Somewhere when reading about how torrents worked, I got looking at their file format.
+As far as I know, the Bencode format isn&amp;rsquo;t used on anything but torrent files. The format is pretty simple, with only 4 different data structures: Byte String, Integer, List, and Dictionary.
+Bencode Basics Byte String This is formatted as [integer length]:[byte string].</description>
+    </item>
+    
+  </channel>
+</rss>

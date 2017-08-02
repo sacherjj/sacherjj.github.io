@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on joesacher.com</title>
+    <link>http://joesacher.com/tags/projects/</link>
+    <description>Recent content in Projects on joesacher.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <lastBuildDate>Thu, 08 Sep 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://joesacher.com/tags/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Thermostat Wiring</title>
+      <link>http://joesacher.com/blog/2011/09/08/thermostat-wiring/</link>
+      <pubDate>Thu, 08 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/09/08/thermostat-wiring/</guid>
+      <description>I have delusions of possibly making an embedded thermostat solution that tracks energy usage, inside and outside temperature and humidity and possibly online weather forecasts for setting house temperature. For this to work, I need to fully understand thermostat wiring. It took a bit of looking around the net to identify thermostat wire colors, thermostat terminals and functions, so I thought I would summarize it in a post.
+All signals are 24 VAC controlled</description>
+    </item>
+    
+  </channel>
+</rss>

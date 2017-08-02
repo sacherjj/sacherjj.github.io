@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enhancing the AVR ISP II</title>
+  <meta name="author" content="" />
+
+  
+
+  
+  <meta name="description" content="My little piece of the web.">	
+  
+
+  <meta name="generator" content="Hugo 0.25.1" />
+
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="http://joesacher.comcss/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="http://joesacher.comcss/style.default.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="http://joesacher.comcss/custom.css" rel="stylesheet">
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="http://joesacher.comimg/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="http://joesacher.comimg/apple-touch-icon.png" />
+
+  
+
+
+
+
+  <link rel="alternate" href="http://joesacher.com/index.xml" type="application/rss+xml" title="joesacher.com">
+
+  
+  <meta property="og:title" content="Enhancing the AVR ISP II" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2011/05/23/enhancing-the-avr-isp-ii//" />
+  <meta property="og:image" content="img/logo.png" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="http://joesacher.com">
+                    <img src="http://joesacher.comimg/logo.png" alt="Enhancing the AVR ISP II logo" class="hidden-xs hidden-sm">
+                    <img src="http://joesacher.comimg/logo-small.png" alt="Enhancing the AVR ISP II logo" class="visible-xs visible-sm">
+                    <span class="sr-only">Enhancing the AVR ISP II - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/">Home</a>
+                    
+                  </li>
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/blog/">Blog</a>
+                    
+                  </li>
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Enhancing the AVR ISP II</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+                        
+                        <p class="text-muted mb-small text-right text-uppercase">
+                            May 23, 2011<br/>
+                            <i class="fa fa-clock-o"></i> 4 min. read</p>
+
+                            <div id="post-content">
+                                
+
+
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+<p>The AVR ISP II is a device to program an AVR microcontroller using a 6 pin header in a circuit.  It does not contain any capability to power the circuit being programmed.  This could be very handy.</p>
+
+<p>Dave Jones at the <a href="http://eevblog.com">EEVBlog</a> has a <a href="http://www.eevblog.com/2011/03/25/eevblog-158-avr-isp-mk2-lm317-regulator-tutorial">video about adding power to the ISP cable, using an LM317</a> to provide both 5V and 3.3V.  The issue with this, as he stated, was that the 5V source was very close to the required dropout voltage of the regulator to get the 3.3V.  In addition, resistors are needed to set the voltage.  This is my version of hacking on the AVR ISP II.</p>
+
+<p>I decided to use a Low Drop Out regulator for 3.3V.  The specific part I used was the <a href="http://www.rohm.com/products/databook/power/pdf/bdxxka5-e.pdf">BD33KA5 in a TO252-3 package (pdf)</a>.  I started by soldering the tab of the LDO 3.3V regulator to the shield ground on the USB jack.  My new $50 Atten 858D+ hot air rework station made this much easier than an iron.  I had tried and failed with the iron before the 858D+ arrived.  According to the data sheet, I needed a 1uF on both Vcc and 3.3V output pins.  I used some tantalums that I had around.</p>
+
+
+
+<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+	  
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/posts/enhancing-the-avr-isp-ii/Regulator.jpg');">
+      <img itemprop="thumbnail" src="/img/posts/enhancing-the-avr-isp-ii/Regulator.jpg" alt="3.3V LDO Regulator soldered to USB jack"/>
+    </div>
+    <a href="/img/posts/enhancing-the-avr-isp-ii/Regulator.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>3.3V LDO Regulator soldered to USB jack</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/posts/enhancing-the-avr-isp-ii/Vcc.jpg');">
+      <img itemprop="thumbnail" src="/img/posts/enhancing-the-avr-isp-ii/Vcc.jpg" alt="Connection from the 5V pin of the USB to the 3.3V voltage regulator"/>
+    </div>
+    <a href="/img/posts/enhancing-the-avr-isp-ii/Vcc.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Connection from the 5V pin of the USB to the 3.3V voltage regulator</p>
+      </figcaption>
+  </figure>
+</div>
+
+</div>
+
+
+<p>I soldered the Vcc side of the regulator directly to the USB 5V pin and also soldered a 5V wire from the regulator back to the switch.</p>
+
+<p>I decided that I would use a DPDT ON-OFF-ON switch to allow for 5V - 0V - 3.3V output options.  I used a double pole, instead of a single pole, so I could use the other pole of the switch to power little LEDs beside the 5V and 3.3V labels.  This will give an indication to make it harder to accidentally power into a live circuit.  I decided to mess with surface mount LEDs.  This would turn out to be a mistake.</p>
+
+
+
+<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+	  
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/posts/enhancing-the-avr-isp-ii/SMDTest.jpg');">
+      <img itemprop="thumbnail" src="/img/posts/enhancing-the-avr-isp-ii/SMDTest.jpg" alt="Powering both the SMD LED indicators"/>
+    </div>
+    <a href="/img/posts/enhancing-the-avr-isp-ii/SMDTest.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Powering both the SMD LED indicators</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/posts/enhancing-the-avr-isp-ii/Snapped2.jpg');">
+      <img itemprop="thumbnail" src="/img/posts/enhancing-the-avr-isp-ii/Snapped2.jpg" alt="SMD LEDs were too delecate for me"/>
+    </div>
+    <a href="/img/posts/enhancing-the-avr-isp-ii/Snapped2.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>SMD LEDs were too delecate for me</p>
+      </figcaption>
+  </figure>
+</div>
+
+</div>
+
+
+<p>When I got the <a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=475-1408-1-ND">LEDs from DigiKey</a>, they were tiny.  Like, stick to your soldering iron when trying to solder tiny.  Like, Joe you are going to snap them in half a couple times.  I soldered the LED to a 1/4W resistor and a wire.  This allowed me to test the power.  For 2mA, these were pretty decent.  I snapped one LED during this, but resoldered on another one.</p>
+
+<p>After messing around with soldering those to the switch and trying to bend the resistors into place, I snapped both of them.  I think it might have been possible with thin wire and would have looked good.  But I was done with this SMD stuff for now.  :)</p>
+
+<p>I grabbed some 3mm red LEDs that I have had since I was in middle school.  These let me also fix the one problem I didn&rsquo;t think about.  My SMD LEDs were crossed, so the light would be illuminated the opposite direction of the switch toggle.  I crossed the hookup for the 3mm LEDs.  I had to change the current limiting resistors from 1.5k to 220.  I figured about 16 mA for these LEDs and it turned out about right.  (I am running the LEDs directly from the 5V power.)</p>
+
+<p>With 5V and 3.3V soldered to each side of one pole, I wired the center down to pin 2 of the ISP header.  Now we can power it with 5V, 3.3V or Nothing.</p>
+
+
+
+<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+	  
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/posts/enhancing-the-avr-isp-ii/BetterLEDs.jpg');">
+      <img itemprop="thumbnail" src="/img/posts/enhancing-the-avr-isp-ii/BetterLEDs.jpg" alt="Change to 3mm LEDs"/>
+    </div>
+    <a href="/img/posts/enhancing-the-avr-isp-ii/BetterLEDs.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Change to 3mm LEDs</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/posts/enhancing-the-avr-isp-ii/Pin2.jpg');">
+      <img itemprop="thumbnail" src="/img/posts/enhancing-the-avr-isp-ii/Pin2.jpg" alt="ISP Power connection on Pin 2"/>
+    </div>
+    <a href="/img/posts/enhancing-the-avr-isp-ii/Pin2.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>ISP Power connection on Pin 2</p>
+      </figcaption>
+  </figure>
+</div>
+
+</div>
+
+
+<p>I connected the AVR ISP II to the ISP connector on an Arduino Uno board.  With no power, the ISP should work as normal, if you power the Uno board.</p>
+
+<p>I then tried the 5V power to the Uno board and that looked good.</p>
+
+
+
+<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+	  
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/posts/enhancing-the-avr-isp-ii/PowerOff.jpg');">
+      <img itemprop="thumbnail" src="/img/posts/enhancing-the-avr-isp-ii/PowerOff.jpg" alt="Connected to Uno but with power off"/>
+    </div>
+    <a href="/img/posts/enhancing-the-avr-isp-ii/PowerOff.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Connected to Uno but with power off</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/posts/enhancing-the-avr-isp-ii/On5V.jpg');">
+      <img itemprop="thumbnail" src="/img/posts/enhancing-the-avr-isp-ii/On5V.jpg" alt="Powering the UNO with 5V ISP connection"/>
+    </div>
+    <a href="/img/posts/enhancing-the-avr-isp-ii/On5V.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Powering the UNO with 5V ISP connection</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/posts/enhancing-the-avr-isp-ii/On33V.jpg');">
+      <img itemprop="thumbnail" src="/img/posts/enhancing-the-avr-isp-ii/On33V.jpg" alt="Powering the Uno with 3.3V ISP"/>
+    </div>
+    <a href="/img/posts/enhancing-the-avr-isp-ii/On33V.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Powering the Uno with 3.3V ISP</p>
+      </figcaption>
+  </figure>
+</div>
+
+</div>
+
+
+<p>Finally I thought the Uno might run on 3.3V, even though I don&rsquo;t think you are supposed to use up to 16 MHz with 3.3V.  I didn&rsquo;t try programming, but the power definitely works.</p>
+
+<p>I&rsquo;m not terribly pleased with the results of hot gluing the LEDs.  It spreads the light too much.  If I was to do it again, I wouldn&rsquo;t try to cover around the LED, I would have put a dab of hot glue and stuck the LED into the glue.  I did find out that the 858D+ rework air iron was again helpful to fix my glue mess.  By setting the temperature down to the minimum of 100 C, I was able to remelt the glue and push the LEDs in deeper with a flat screw driver, without hurting the plastic case at all.</p>
+
+<p>Anyhow, it is a test device, so it doesn&rsquo;t have to look good.  It just has to work.  Work it does.</p>
+
+                                
+
+                             </div>
+                        
+                        
+                        <div id="comments">
+                            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "joesachercom" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </div>
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+
+
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Categories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            
+            <li><a href="http://joesacher.comcategories/cooking" class="text-uppercase">cooking (2)</a>
+            </li>
+            
+            <li><a href="http://joesacher.comcategories/how-to" class="text-uppercase">how-to (5)</a>
+            </li>
+            
+            <li><a href="http://joesacher.comcategories/personal" class="text-uppercase">personal (8)</a>
+            </li>
+            
+            <li><a href="http://joesacher.comcategories/reviews" class="text-uppercase">reviews (14)</a>
+            </li>
+            
+            <li><a href="http://joesacher.comcategories/tech" class="text-uppercase">tech (20)</a>
+            </li>
+            
+            <li><a href="http://joesacher.comcategories/trans-am" class="text-uppercase">trans-am (19)</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            
+            <li><a href="http://joesacher.comtags/android"><i class="fa fa-tags"></i> android</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/avr"><i class="fa fa-tags"></i> avr</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/bicycle"><i class="fa fa-tags"></i> bicycle</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/bicycle-touring"><i class="fa fa-tags"></i> bicycle-touring</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/book-review"><i class="fa fa-tags"></i> book-review</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/calendars"><i class="fa fa-tags"></i> calendars</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/cooking"><i class="fa fa-tags"></i> cooking</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/cycling"><i class="fa fa-tags"></i> cycling</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/dessert"><i class="fa fa-tags"></i> dessert</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/drybag"><i class="fa fa-tags"></i> drybag</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/ebooks"><i class="fa fa-tags"></i> ebooks</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/electronics"><i class="fa fa-tags"></i> electronics</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/fiction"><i class="fa fa-tags"></i> fiction</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/film-making"><i class="fa fa-tags"></i> film-making</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/hacking"><i class="fa fa-tags"></i> hacking</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/ham-radio"><i class="fa fa-tags"></i> ham-radio</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/hugo"><i class="fa fa-tags"></i> hugo</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/humor"><i class="fa fa-tags"></i> humor</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/hvac"><i class="fa fa-tags"></i> hvac</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/inspiration"><i class="fa fa-tags"></i> inspiration</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/javascript"><i class="fa fa-tags"></i> javascript</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/lathes"><i class="fa fa-tags"></i> lathes</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/marriage"><i class="fa fa-tags"></i> marriage</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/navigation"><i class="fa fa-tags"></i> navigation</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/nonfiction"><i class="fa fa-tags"></i> nonfiction</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/pannier"><i class="fa fa-tags"></i> pannier</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/personal"><i class="fa fa-tags"></i> personal</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/pizza"><i class="fa fa-tags"></i> pizza</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/podcasts"><i class="fa fa-tags"></i> podcasts</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/programming"><i class="fa fa-tags"></i> programming</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/projects"><i class="fa fa-tags"></i> projects</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/proposal"><i class="fa fa-tags"></i> proposal</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/python"><i class="fa fa-tags"></i> python</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/recipe"><i class="fa fa-tags"></i> recipe</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/recumbent"><i class="fa fa-tags"></i> recumbent</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/safety"><i class="fa fa-tags"></i> safety</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/sewing"><i class="fa fa-tags"></i> sewing</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/touchpad"><i class="fa fa-tags"></i> touchpad</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/touring"><i class="fa fa-tags"></i> touring</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/video"><i class="fa fa-tags"></i> video</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/web"><i class="fa fa-tags"></i> web</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/webos"><i class="fa fa-tags"></i> webos</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/windows-phone"><i class="fa fa-tags"></i> windows-phone</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/woodowrking"><i class="fa fa-tags"></i> woodowrking</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/writing"><i class="fa fa-tags"></i> writing</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+        
+
+
+
+
+
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left">Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</p>
+            
+            <p class="pull-right">A modified version of 
+              template by <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>
+              
+              ported to Hugo by <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+    </div>
+    
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-3718160-3', 'auto');
+ga('send', 'pageview');
+</script>
+
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+<script src="http://joesacher.comjs/hpneo.gmaps.js"></script>
+<script src="http://joesacher.comjs/gmaps.init.js"></script>
+<script src="http://joesacher.comjs/front.js"></script>
+
+
+<script src="http://joesacher.comjs/owl.carousel.min.js"></script>
+
+
+
+
+<script src="/js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

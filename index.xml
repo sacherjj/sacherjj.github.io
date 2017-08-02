@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>joesacher.com</title>
+    <link>http://joesacher.com/</link>
+    <description>Recent content on joesacher.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <lastBuildDate>Thu, 03 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://joesacher.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Moved from Pelican to Hugo</title>
+      <link>http://joesacher.com/blog/2017/08/03/pelican-to-hugo/</link>
+      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2017/08/03/pelican-to-hugo/</guid>
+      <description>I&amp;rsquo;ve used Python as my main programming language for a few years. When my Word Press was hacked and defaced yet again, I finally decided to rebuild my website with a static generator and host on GitHub. I leaned towards Pelican, due to the Python base that I thought I could modify if I needed. And I hoped that I could get it to work easily.
+I did get everything converted over to .</description>
+    </item>
+    
+    <item>
+      <title>The Windows Phone Experiment is Over</title>
+      <link>http://joesacher.com/blog/2012/04/09/windows-experiment-is-over/</link>
+      <pubDate>Mon, 09 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2012/04/09/windows-experiment-is-over/</guid>
+      <description>My wife and I left webOS when HP flushed their 3 year plan to revamp webOS down the toilet. We tested both Android and Windows Phone. Android is a multitasking joke. Coming from webOS, it has a terrible UI. Windows Phone has very nice flowing UI. We decided to go to Windows Phone.
+Microsoft representatives promised to get phones and development credits to webOS programmers. Despite many requests, it turned out to be a bunch of hot air.</description>
+    </item>
+    
+    <item>
+      <title>Zune Podcasts - A Rant</title>
+      <link>http://joesacher.com/blog/2011/09/21/zune-podcasts-a-rant/</link>
+      <pubDate>Wed, 21 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/09/21/zune-podcasts-a-rant/</guid>
+      <description>Zune podcast functionality on Windows Phone Mango was obviously designed by someone who never listens to podcasts. I’ve tried to use it over the last three weeks and it is an exercise in futility. There is one glaring problems that needs to be addressed before it is close to usable. It all comes down to episode management. Unfortunately, this is the most important factor of any podcast solution.
+Order is allowed, for either oldest first or newest first.</description>
+    </item>
+    
+    <item>
+      <title>Thermostat Wiring</title>
+      <link>http://joesacher.com/blog/2011/09/08/thermostat-wiring/</link>
+      <pubDate>Thu, 08 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/09/08/thermostat-wiring/</guid>
+      <description>I have delusions of possibly making an embedded thermostat solution that tracks energy usage, inside and outside temperature and humidity and possibly online weather forecasts for setting house temperature. For this to work, I need to fully understand thermostat wiring. It took a bit of looking around the net to identify thermostat wire colors, thermostat terminals and functions, so I thought I would summarize it in a post.
+All signals are 24 VAC controlled</description>
+    </item>
+    
+    <item>
+      <title>Android vs Windows Phone Navigation</title>
+      <link>http://joesacher.com/blog/2011/09/07/android-vs-windows-phone-navigation/</link>
+      <pubDate>Wed, 07 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/09/07/android-vs-windows-phone-navigation/</guid>
+      <description>I&amp;rsquo;m testing both Android and Windows Phone on Sprint. Both devices have free TeleNav service on Sprint, so the service using that application is roughly similar. Both phones also come with stock turn by turn directions. Android is a no holds barred knockout win.
+The turn by turn directions in pre-Mango Windows Phone is a joke. You must tap the screen to move along, making it totally unusable for navigation when you are driving the car.</description>
+    </item>
+    
+    <item>
+      <title>Windows Phone Podcast Experience</title>
+      <link>http://joesacher.com/blog/2011/09/07/windows-phone-podcast-experience/</link>
+      <pubDate>Wed, 07 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/09/07/windows-phone-podcast-experience/</guid>
+      <description>The &amp;ldquo;Mango&amp;rdquo; update for Windows Phone, or version 7.5 for those less fruity, adds many features. This article is dealing with the podcasting capabilities. On webOS, I made daily use of a brilliant piece of software called drPodder. Moving from this almost clairvoyant app to the integrated podcast ability of Windows Phone is quite jarring.
+I will be outlining the current successes and fails with Windows Phone which keep it from being an enjoyable podcasting experience.</description>
+    </item>
+    
+    <item>
+      <title>webOS to Windows Phone - What&#39;s Missing?</title>
+      <link>http://joesacher.com/blog/2011/09/02/webos-to-windows-phone-whats-missing/</link>
+      <pubDate>Fri, 02 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/09/02/webos-to-windows-phone-whats-missing/</guid>
+      <description>I&amp;rsquo;ve decided that I&amp;rsquo;ll be exploring both Android and Windows Phone as possible replacements for my nearly dead Palm Pre. HP killed future hardware and we need phones, bad. I purchased an HTC Arrive off eBay, slightly cheaper than I would get it from Sprint under contract. I&amp;rsquo;ve been using it as a WiFi only device for about a week. Wednesday night, I upgraded it to the developer&amp;rsquo;s release of Mango, the future update for Windows Phone.</description>
+    </item>
+    
+    <item>
+      <title>Multiple Google Calendars on Windows Phone (Mango)</title>
+      <link>http://joesacher.com/blog/2011/08/11/multiple-google-calendars-on-windows-phone-mango/</link>
+      <pubDate>Thu, 11 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/08/11/multiple-google-calendars-on-windows-phone-mango/</guid>
+      <description>With webOS, Synergy just happened. (OK, it didn&amp;rsquo;t just happen. Many engineers spent many hours making this work seamlessly. But to the user, it &amp;ldquo;just happened&amp;rdquo;.) You don&amp;rsquo;t realize how nice this is, until you try a system that doesn&amp;rsquo;t really have it. Windows Phone 7 with NoDo (the current &amp;ldquo;up to date&amp;rdquo; version for the public) has this problem.</description>
+    </item>
+    
+    <item>
+      <title>Encoding Videos for the HP Touchpad</title>
+      <link>http://joesacher.com/blog/2011/08/10/encoding-videos-for-the-hp-touchpad/</link>
+      <pubDate>Wed, 10 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/08/10/encoding-videos-for-the-hp-touchpad/</guid>
+      <description>This post is for those who have ripped their DVDs and other video media and would like to load it onto their HP Touchpad. I started to encode videos for the HP Touchpad using HandBrake, which had given me success for video targeting my Palm Pre. I used iPad profiles, as the display size is exactly the same. It seemed that no matter what I tried, the files would not show up in Photos &amp;amp; Videos app.</description>
+    </item>
+    
+    <item>
+      <title>Hacking can be bad for your Kindle App&#39;s Health</title>
+      <link>http://joesacher.com/blog/2011/08/06/unrecoverable-problems-with-kindle-app-on-touchpad/</link>
+      <pubDate>Sat, 06 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/08/06/unrecoverable-problems-with-kindle-app-on-touchpad/</guid>
+      <description>If you feel like following my hacking example to load .mobi format books onto the Touchpad&amp;rsquo;s Kindle App, be ready to have to reload it. If the app has a problem parsing the book for any reason, you are done. With no back gesture on the Touchpad, there is no way to back out of the crashed book load. Each time you start the app, it will load the file into a crash situation.</description>
+    </item>
+    
+    <item>
+      <title>Touchpad Keyboard - Good, Bad, and Ugly</title>
+      <link>http://joesacher.com/blog/2011/08/06/hp-touchpad-keyboard-good-bad-and-ugly/</link>
+      <pubDate>Sat, 06 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/08/06/hp-touchpad-keyboard-good-bad-and-ugly/</guid>
+      <description>While there is no doubt that software for the HP Touchpad is in its infancy, it is hard not to see the great usefulness and potential. There are a few good writing apps for the Touchpad, including those for WordPress blogging. I&amp;rsquo;m composing this in the WordPress App for WebOS tablet. Any of these are much easier to use with a hardware keyboard, than attempting to type quantity on a virtual keyboard.</description>
+    </item>
+    
+    <item>
+      <title>Loading mobi books into Touchpad&#39;s Kindle App</title>
+      <link>http://joesacher.com/blog/2011/08/05/loading-mobi-books-into-touchpads-kindle-app/</link>
+      <pubDate>Fri, 05 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/08/05/loading-mobi-books-into-touchpads-kindle-app/</guid>
+      <description>I have purchased many ebooks and created others manually in the .mobi format. This is very easy to load onto my Kindle device to read. Unfortunately, the current Kindle app on the Touchpad does not allow loading ebooks other than downloading from Amazon. This is unfortunate and makes the Touchpad a poor replacement for my Kindle.</description>
+    </item>
+    
+    <item>
+      <title>Playing for Pizza by John Grisham</title>
+      <link>http://joesacher.com/blog/2011/08/02/playing-for-pizza-by-john-grisham/</link>
+      <pubDate>Tue, 02 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/08/02/playing-for-pizza-by-john-grisham/</guid>
+      <description>I have to admit that I was intrigued when I read the summary of this book. A novel by John Grisham about a third string NFL quarterback, escaping his terrible past to play professional football in Italy. Nothing about lawyers? This sounds interesting, if not just to figure out why John didn&amp;rsquo;t write about lawyers.
+Normally the novel isn&amp;rsquo;t quite as good, when an author writes completely out of their &amp;ldquo;comfort zone&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Touchpad WiFi - Hidden Passcode Hell</title>
+      <link>http://joesacher.com/blog/2011/08/02/hp-touchpad-wifi-setup-hidden-passcode-hell/</link>
+      <pubDate>Tue, 02 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/08/02/hp-touchpad-wifi-setup-hidden-passcode-hell/</guid>
+      <description>I have just spent the last 30 minutes trying to get our complex 64 character WPA key into my HP Touchpad so I can start the setup procedure. The password field for the WiFi key is frustrating.
+The last character is only shown for a second or two, then it too fades into the dots of obscurity.</description>
+    </item>
+    
+    <item>
+      <title>Treason by Don Brown</title>
+      <link>http://joesacher.com/blog/2011/08/02/treason-by-don-brown/</link>
+      <pubDate>Tue, 02 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/08/02/treason-by-don-brown/</guid>
+      <description>This used to be offered as a free book for the Kindle and was one of many I added to my account after receiving my Kindle. (If its free, its for me, right?)
+When reading the author &amp;ldquo;Don Brown&amp;rdquo; on the cover of this novel, I was mistaking it for a more famous Dan Brown (Da Vinci Code). As I read the military themes unfold, my mind then played further tricks on me as I made a connection with Dale Brown&amp;rsquo;s military styled novels as the author.</description>
+    </item>
+    
+    <item>
+      <title>HP Touchpad</title>
+      <link>http://joesacher.com/blog/2011/07/01/hp-touchpad/</link>
+      <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/07/01/hp-touchpad/</guid>
+      <description>July 1st is the day that many WebOS users have been waiting for. The day that HP releases their first WebOS tablet, the Touchpad. I preordered through Amazon and was delivered my own spanking new HP Touchpad tablet this evening.
+Overall it is an amazing piece of technology. Slicker than any Android tablets that I have tried, but not quite as polished as an iPad. However, for me the usability is far above an iPad, whose &amp;ldquo;multitasking&amp;rdquo; is a joke compared to the Touchpad.</description>
+    </item>
+    
+    <item>
+      <title>Enhancing the AVR ISP II</title>
+      <link>http://joesacher.com/blog/2011/05/23/enhancing-the-avr-isp-ii/</link>
+      <pubDate>Mon, 23 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/05/23/enhancing-the-avr-isp-ii/</guid>
+      <description>The AVR ISP II is a device to program an AVR microcontroller using a 6 pin header in a circuit. It does not contain any capability to power the circuit being programmed. This could be very handy.
+Dave Jones at the EEVBlog has a video about adding power to the ISP cable, using an LM317 to provide both 5V and 3.</description>
+    </item>
+    
+    <item>
+      <title>I Miss You, Dad</title>
+      <link>http://joesacher.com/blog/2011/05/15/i-miss-you-dad/</link>
+      <pubDate>Sun, 15 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/05/15/i-miss-you-dad/</guid>
+      <description>My father fought cancer for decades. He was the strongest man I have ever known. It was hard to see him wither with a body not able to do what his will desired. His suffering finally ended during the early morning of April 20th. Despite knowing that the cancer was terminal and preparing for it. Death is never easy. It tears a hole through you.
+The storm was heavy. No matter what I did, I couldn&amp;rsquo;t keep the ship from going down.</description>
+    </item>
+    
+    <item>
+      <title>WebOS From Homebrew to Catalog: tips learned in the process</title>
+      <link>http://joesacher.com/blog/2011/03/01/from-homebrew-to-catalog-webos-tips-learned-in-the-process/</link>
+      <pubDate>Tue, 01 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/03/01/from-homebrew-to-catalog-webos-tips-learned-in-the-process/</guid>
+      <description>I&amp;rsquo;ve been a developer, on many different platforms, for just under two decades. Like many code monkeys, I enjoy learning new architectures. I&amp;rsquo;m not exactly sure why, but programming for WebOS has me more excited than I&amp;rsquo;ve been since working with GCC on the Palm Personal. The idea of building apps with web technologies on a portable device sounded interesting. I knew that certain things would be easy and others hard.</description>
+    </item>
+    
+    <item>
+      <title>TouchStone Theories Confirmed</title>
+      <link>http://joesacher.com/blog/2011/02/22/touchstone-theories-confirmed/</link>
+      <pubDate>Tue, 22 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/02/22/touchstone-theories-confirmed/</guid>
+      <description>Precentral.net read through the initial TouchStone theory post I put up and asked HP about my theories.
+As they posted in this article on the site, HP confirmed the identification to work as I assumed.
+The new TouchStones will use the 3.1 MHz frequency to pass a unique key to the new WebOS phones, which will enable them to know where it is docked. You will obviously have to tell the phone where each dock is located the first time you use it.</description>
+    </item>
+    
+    <item>
+      <title>WebOS Touchstone - Now and Future</title>
+      <link>http://joesacher.com/blog/2011/02/15/webos-touchstone-now-and-future/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/02/15/webos-touchstone-now-and-future/</guid>
+      <description>When the Palm Pre was released, Palm also sold a unique inductive charger called the Touchstone. Inductive charging isn&amp;rsquo;t new, by any means. Electric toothbrushes and many other devices have used them in the past. This was a first for cell phones, I believe.
+When I purchased my Pre and eventually many Touchstones, I didn&amp;rsquo;t have a good oscilloscope to play around with the signals.</description>
+    </item>
+    
+    <item>
+      <title>Amateur Extra Class - No More Tests</title>
+      <link>http://joesacher.com/blog/2011/02/09/amateur-extra-class-no-more-tests/</link>
+      <pubDate>Wed, 09 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/02/09/amateur-extra-class-no-more-tests/</guid>
+      <description>I studied for a month or so and re-learned quite a bit of electronics for AC circuits. Resistance, Reactance, Polar Impedance. I took the test on the morning of February 5th and missed 1 out of 50. So now I am an Extra Class Licensed Ham Radio operator. No more tests to take. This is as high as it gets.
+I am still working on what type of antenna to put up.</description>
+    </item>
+    
+    <item>
+      <title>Bencoding (encoding of a .torrent file)</title>
+      <link>http://joesacher.com/blog/2010/12/21/bencoding/</link>
+      <pubDate>Tue, 21 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2010/12/21/bencoding/</guid>
+      <description>The Bencode format is an interesting design. It is byte based, which makes it safe from big-endian and little-endian translations. Somewhere when reading about how torrents worked, I got looking at their file format.
+As far as I know, the Bencode format isn&amp;rsquo;t used on anything but torrent files. The format is pretty simple, with only 4 different data structures: Byte String, Integer, List, and Dictionary.
+Bencode Basics Byte String This is formatted as [integer length]:[byte string].</description>
+    </item>
+    
+    <item>
+      <title>I&#39;m such a HAM...</title>
+      <link>http://joesacher.com/blog/2010/12/18/im-such-a-ham/</link>
+      <pubDate>Sat, 18 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2010/12/18/im-such-a-ham/</guid>
+      <description>Years ago, Dad and I attended meetings for Amateur Radio at the local Red Cross building in Jeffersonville. We both worked through passing the 5 words per minute Morse Code and test to get our Novice license and then studied and passed the test for Technician Class. I was licensed in 1990 and expired in 2000. Just when I was starting work in the &amp;ldquo;Real World&amp;rdquo;, outside of college. I didn&amp;rsquo;t bother renewing.</description>
+    </item>
+    
+    <item>
+      <title>H.M.S. Unseen by Patrick Robinson</title>
+      <link>http://joesacher.com/blog/2008/12/14/hms-unseen-by-patrick-robinson/</link>
+      <pubDate>Sun, 14 Dec 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2008/12/14/hms-unseen-by-patrick-robinson/</guid>
+      <description>This is the second book by Patrick Robinson I could get my hands on. I really enjoyed reading Kilo Class and I enjoyed this book as well. It is set a couple years into the future, so Patrick gets to play with some technology that isn&amp;rsquo;t around quite yet.
+The novel is an interesting story about a seriously skilled agent from Iraq. He infiltrated Israel&amp;rsquo;s navy and was trained as a submariner.</description>
+    </item>
+    
+    <item>
+      <title>Kilo Class by Patrick Robinson</title>
+      <link>http://joesacher.com/blog/2008/11/04/kilo-class-by-patrick-robinson/</link>
+      <pubDate>Tue, 04 Nov 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2008/11/04/kilo-class-by-patrick-robinson/</guid>
+      <description>This book was an accident. I needed a new book to read, because I was going to be waiting for something. The cover looked like a decent military technological drama. Since Tom Clancy cannot write books as fast as I can read them, I thought I would give it a try. It was a decent choice.
+The premise is that Russia wants to sell Kilo class submarines to China. At $300 million a boat, it is much needed income for Russia.</description>
+    </item>
+    
+    <item>
+      <title>Dark Chocolate Dipped Ginger Altoids</title>
+      <link>http://joesacher.com/blog/2008/08/28/dark-chocolate-dipped-ginger-altoids/</link>
+      <pubDate>Thu, 28 Aug 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2008/08/28/dark-chocolate-dipped-ginger-altoids/</guid>
+      <description>Dark Chocolate Dipped Ginger Altoids. Yes, it sounds weird. I don’t understand how they made it through marketing. I don’t think they had any type of focus group for these. I have a rule that I will try anything once, as long as there isn’t a high likelihood of death. I think this is why blowfish is so expensive, for the malpractice insurance for those that die after eating it. I don’t plan on trying blowfish any time soon.</description>
+    </item>
+    
+    <item>
+      <title>On Writing by Stephen King</title>
+      <link>http://joesacher.com/blog/2008/07/03/on-writing-by-stephen-king/</link>
+      <pubDate>Thu, 03 Jul 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2008/07/03/on-writing-by-stephen-king/</guid>
+      <description>Recently I&amp;rsquo;ve started writing again. In the last few years, all my writing was on screenplay style for short films. Some of these we actually shot and produced, most just sit on my computer in final PDF form. Writing in screenplay format is different than novel, novella, or short story forms. Screenplay is all about dialog and character actions. There is no exposition of character thoughts. I think this experience makes you a stronger dialog writer, when you switch to fiction.</description>
+    </item>
+    
+    <item>
+      <title>What an Engagement!</title>
+      <link>http://joesacher.com/blog/2008/03/18/what-an-engagement/</link>
+      <pubDate>Tue, 18 Mar 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2008/03/18/what-an-engagement/</guid>
+      <description>Today I read of an engagement gone seriously wrong. Although, reading through the article I realized that had I been in that situation, things would have gone differently. Amy and I are a little different than the two in the article.
+The incident started with a man concealing his $12,000 engagement ring in a helium balloon, with the idea of actually &amp;lsquo;popping&amp;rsquo; the question. I don&amp;rsquo;t understand why he had not attached the balloon to something of a greater weight than the buoyancy.</description>
+    </item>
+    
+    <item>
+      <title>Happy Birthday To Me</title>
+      <link>http://joesacher.com/blog/2008/03/07/happy-birthday-to-me/</link>
+      <pubDate>Fri, 07 Mar 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2008/03/07/happy-birthday-to-me/</guid>
+      <description>Hurray for me. Today is my birthday.
+Last night, I decided to make a German Chocolate Cake. Amy thought I shouldn&amp;rsquo;t have to make my own cake, but I wanted to try one from scratch. The cake used real melted chocolate and I folded in whipped egg whites. The frosting was pretty standard fare with egg yolks, evaporated milk, sugar, etc. I didn&amp;rsquo;t have a piece until tonight. I cooked the cake a little too much and it was slightly dry.</description>
+    </item>
+    
+    <item>
+      <title>30,000 Hours Later...I&#39;m Engaged</title>
+      <link>http://joesacher.com/blog/2008/02/26/30000-hours-later/</link>
+      <pubDate>Tue, 26 Feb 2008 19:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2008/02/26/30000-hours-later/</guid>
+      <description>On September 24th, 2004, I met Amy for the first time on our date at Acapulco Joe’s in Downtown Indianapolis. Amy’s car broke down just before we met, so she was driving her dad’s old Ford Ranger. We have been seeing each other since. On Feb 26th, we were going to reach an obscure and geeky anniversary. We will have known each other for exactly 30,000 hours. About two months ago, I targeted this date for something I had been planning for almost a year.</description>
+    </item>
+    
+    <item>
+      <title>Leveraging Your Strengths</title>
+      <link>http://joesacher.com/blog/2008/02/21/leveraging-your-strengths/</link>
+      <pubDate>Thu, 21 Feb 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2008/02/21/leveraging-your-strengths/</guid>
+      <description>Unfortunately, I am easily bored.
+My mind wandered during a meeting at work today as we were talking about leveraging your strengths. So I started drawing on my notepad.
+    </description>
+    </item>
+    
+    <item>
+      <title>2^1 / 2^2 / 2^3  2^4 : 2^5</title>
+      <link>http://joesacher.com/blog/2008/02/04/power-of-two-date-time/</link>
+      <pubDate>Mon, 04 Feb 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2008/02/04/power-of-two-date-time/</guid>
+      <description>I&amp;rsquo;m a geek, no doubt about it. Only a geek would notice that today is special. The date is 2^1&amp;frasl;2^2&amp;frasl;2^3 or 2/4/08. At 4:32 PM or 16:32, we have a time of 2^4:2^5. Sadly there are not 64 seconds.
+Yes, and I AM aware that most places that describe dates in a sane way (like everywhere but the US), will have this day in April. :)  So enjoy a fun power of two date/time sequence that will not happen again for a hundred years.</description>
+    </item>
+    
+    <item>
+      <title>Making Pizza</title>
+      <link>http://joesacher.com/blog/2008/01/27/making-pizza/</link>
+      <pubDate>Sun, 27 Jan 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2008/01/27/making-pizza/</guid>
+      <description>For New York Style pizzas, you really need a stone. I have heard for people using unglazed tiles from a hardware store, but I am concerned with impurities that may come out of those tiles if I pick the incorrect one. I have purchased a thick stone, but it eventually cracked after some use , but no mis-use from me. I&amp;rsquo;m currently using a large round stone from Pampered Chef.</description>
+    </item>
+    
+    <item>
+      <title>Jet Mini vs PSI Turncrafter Pro</title>
+      <link>http://joesacher.com/blog/2007/12/26/a-lathe-comparison-jet-mini-vs-psi-turncrafter-pro/</link>
+      <pubDate>Wed, 26 Dec 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2007/12/26/a-lathe-comparison-jet-mini-vs-psi-turncrafter-pro/</guid>
+      <description>When I was looking at lathes, I talked with many people who had tried and liked either the Jet Mini or the PSI Turncrafter Pro lathes. I could not find many that had used both, to get an idea of the differences between them. Now owning a PSI Turncrafter Pro and having taken a class and used a Jet Mini for 5 hours or so, I decided to summarize the differences.</description>
+    </item>
+    
+    <item>
+      <title>Bicycling Coast to Coast by Donna Ikenberry</title>
+      <link>http://joesacher.com/blog/2007/12/15/bicycling-coast-to-coast/</link>
+      <pubDate>Sat, 15 Dec 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2007/12/15/bicycling-coast-to-coast/</guid>
+      <description>As soon as I realized that my recumbent would allow me to complete my dream of riding a bicycle across the country, I started research all over the web. While reading through the many trip reports of coast to coast touring cyclists, two things became clear.
+First, I would be riding the TransAmerica Trail created by Adventure Cycling in 1976 (the year of my birth).
+Second, I should purchase, read, re-read, and take along Donna&amp;rsquo;s book.</description>
+    </item>
+    
+    <item>
+      <title>How To Build Bicycle Panniers</title>
+      <link>http://joesacher.com/blog/2007/12/11/how-to-build-bicycle-panniers/</link>
+      <pubDate>Tue, 11 Dec 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2007/12/11/how-to-build-bicycle-panniers/</guid>
+      <description>I was unable to find a pannier set that works exactly as I needed for the under-seat rack on my RANS Rocket. I like the panniers made by Arkel of all the panniers I have looked at and used. However, I could not find a size that worked exactly for me.</description>
+    </item>
+    
+    <item>
+      <title>White-Out by James Vance Marshall</title>
+      <link>http://joesacher.com/blog/2007/12/11/white-out-by-james-vance-marshall/</link>
+      <pubDate>Tue, 11 Dec 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2007/12/11/white-out-by-james-vance-marshall/</guid>
+      <description>This is a book I happened on by chance. I picked it out of the new book section of the library by the title and checked it out after reading the inside cover. I&amp;rsquo;m glad that I did. While I only rate it 4 out of 5, it was an interesting book and worth reading.
+The book is centered on telling the story of a Royal Navy officer and his trials to survive against impossible odds.</description>
+    </item>
+    
+    <item>
+      <title>A Crossing: A Cyclist&#39;s Journey Home by Brian Newhouse</title>
+      <link>http://joesacher.com/blog/2007/12/09/a-cyclists-journey-home/</link>
+      <pubDate>Sun, 09 Dec 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2007/12/09/a-cyclists-journey-home/</guid>
+      <description>This book was an incredible read. Brian starts his trek by dipping his wheel in the Pacific Ocean and heading east.
+Follow Brian across the United States and learn of his internal conflicts and pressures that time alone on a bicycle set free. Raised in a fundimentalist Christian home, he is searching for the method of understanding his relationship with his father and his spirituality.You do not have to ride a bicycle to enjoy this book.</description>
+    </item>
+    
+    <item>
+      <title>Recipe - Japanese Fruit Pie</title>
+      <link>http://joesacher.com/blog/2007/12/06/recipe-japanese-fruit-pie/</link>
+      <pubDate>Thu, 06 Dec 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2007/12/06/recipe-japanese-fruit-pie/</guid>
+      <description>This pie is a family tradition, always present at Christmas and Thanksgiving. It is similar to a Pecan Pie, but with a little more body.
+Ingredients  1 frozen pie shell 1 stick of butter, melted 2 eggs 1 teaspoon vinegar (Apple Cider type is best) 1 cup sugar 1 teaspoon vanilla extract 1&amp;frasl;2 cup raisins (gold or regular) 1&amp;frasl;2 cup chopped nuts (normally use pecans) 1&amp;frasl;2 cup coconut (shredded)  Directions Blind bake the 9&amp;rdquo; pie shell, according to the package instructions.</description>
+    </item>
+    
+    <item>
+      <title>Why Ride a Bicycle across the Country?</title>
+      <link>http://joesacher.com/blog/2007/12/04/why-do-you-ride-a-bicycle-across-the-country/</link>
+      <pubDate>Tue, 04 Dec 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2007/12/04/why-do-you-ride-a-bicycle-across-the-country/</guid>
+      <description>I have been asked many times why I wanted to ride a bicycle across the county. Having completed the trip, the question became easy to answer. Before I left, I&amp;rsquo;m not sure I even could answer it.
+I am a bicentennial baby, born in 1976. This is the same year the Bikecentennial route was created as a celebration of our 200 years as a country. Thousands of cyclists rode across the country on that route during the inaugural year.</description>
+    </item>
+    
+    <item>
+      <title>Creating a Dry Bag for my Martin Backpacker Guitar</title>
+      <link>http://joesacher.com/blog/2007/12/01/creating-a-dry-bag/</link>
+      <pubDate>Sat, 01 Dec 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2007/12/01/creating-a-dry-bag/</guid>
+      <description>I searched without success for a lightweight, waterproof bag to protect my Martin Backpacker Guitar. Typical dry bags used for water sports are overbuilt for bicycle touring and backpacking use, where weight is a very large factor. They use clear vinyl or heavier vinyl coated cloth and weigh many pounds.</description>
+    </item>
+    
+    <item>
+      <title>Metal Cowboy by Joe Kurmaskie</title>
+      <link>http://joesacher.com/blog/2007/11/04/metal-cowboy-by-joe-kurmaskie/</link>
+      <pubDate>Sun, 04 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2007/11/04/metal-cowboy-by-joe-kurmaskie/</guid>
+      <description>I have not found a way to better describe this book than the first sentence inside the dust cover. &amp;ldquo;It&amp;rsquo;s as if Dave Barry and Charles Kuralt squeezed together onto a bicycle to pedal across America and around the world, filing outrageous dispatches along the way.&amp;rdquo;
+Indeed, many times while reading I felt as if I was watching the well done Sunday morning stories where the common man or the small town are shown in all of their glory.</description>
+    </item>
+    
+    <item>
+      <title>Deception Point by Dan Brown</title>
+      <link>http://joesacher.com/blog/2007/06/02/deception-point-by-dan-brown/</link>
+      <pubDate>Sat, 02 Jun 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2007/06/02/deception-point-by-dan-brown/</guid>
+      <description>The Da Vinci Code was the first book of Dan Brown&amp;rsquo;s I read. It seemed like your only choice was to read the book, due to popularity. I really enjoy Brown&amp;rsquo;s style of writing, but didn&amp;rsquo;t like the far stretches required to make The Da Vinci Code a suspenseful novel and much of the false history. I guess it didn&amp;rsquo;t really bug me when reading the book. The thing that bugged me was people thinking it was the truth after reading a fictional novel.</description>
+    </item>
+    
+    <item>
+      <title>The Code Book by Simon Singh</title>
+      <link>http://joesacher.com/blog/2007/03/23/the-code-book-by-simon-singh/</link>
+      <pubDate>Fri, 23 Mar 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2007/03/23/the-code-book-by-simon-singh/</guid>
+      <description>I&amp;rsquo;m sorry, you can no longer win $15,000 by reading this book. It was the announcement of the solution to the 10 cipher challenges, located in the back of The Code Book, that made me aware of this book. Money aside, if you are interested in learning of the history of codes and ciphers, this book is for you!
+Did you know that Mary Queens of Scots was killed by Queen Elizabeth, because her code was not strong enough to foil the code breakers of the time.</description>
+    </item>
+    
+    <item>
+      <title>Sew and Repair Your Outdoor Gear by Louise Lindgren</title>
+      <link>http://joesacher.com/blog/2007/02/14/sew-and-repair-your-outdoor-gear-by-louise-lindgren/</link>
+      <pubDate>Wed, 14 Feb 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2007/02/14/sew-and-repair-your-outdoor-gear-by-louise-lindgren/</guid>
+      <description>I really wish I had ran into this book before I purchased my &amp;ldquo;utility&amp;rdquo; sewing machine. I got a no frills home machine with a few stitches. It was a floor model, but I would have been better to spend the money on a light weight industrial sewing machine with only a straight stitch. Louise was talking about me when she mentioned those who buy a machine with all of these cool stitches.</description>
+    </item>
+    
+    <item>
+      <title>These things I wish</title>
+      <link>http://joesacher.com/blog/2006/04/18/these-things-i-wish-for-each-of-you/</link>
+      <pubDate>Tue, 18 Apr 2006 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2006/04/18/these-things-i-wish-for-each-of-you/</guid>
+      <description>This is something often attributed to Paul Harvey. While Paul often read material from this author, he was not the author. This was written by Lee Pitts in People Who Live at the End of Dirt Roads that appeared in the 2000 Chicken Soup for the Golden Soul.
+For my grandchildren, I&amp;rsquo;d like better. I&amp;rsquo;d really like for them to know about hand-me-down clothes, homemade ice-cream and meat loaf sandwiches. I really would.</description>
+    </item>
+    
+    <item>
+      <title>Vision Seat Camp Chair</title>
+      <link>http://joesacher.com/blog/2005/05/31/vision-seat-camp-chair/</link>
+      <pubDate>Tue, 31 May 2005 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2005/05/31/vision-seat-camp-chair/</guid>
+      <description>I am almost fully equipped for touring on my Vision Recumbent with a BOB trialer for cargo. However, I really think a good camp seat would be nice. The only problem with that is the weight must go up the hills. The seat on the Vision is removable by lossening the back mount and removing the bottom pivot mount.</description>
+    </item>
+    
+    <item>
+      <title>Watts, Volts, and Amps</title>
+      <link>http://joesacher.com/blog/2005/05/02/watts-volts-and-amps/</link>
+      <pubDate>Mon, 02 May 2005 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2005/05/02/watts-volts-and-amps/</guid>
+      <description>or How not to look Stupid and Burn Down a House Note: This was an article written for a now defunct site about film making. Thus, the intended audience of the article were low budget independent filmmakers. I wrote this to address may of the problems I witnessed on various sets. However, this applies to everyone that uses extension cords for anything.
+This article is going to be a little technical and possibly boring to some, but the subject is important.</description>
+    </item>
+    
+    <item>
+      <title>Day 13 - Christiansburg, VA to Newbern, VA</title>
+      <link>http://joesacher.com/blog/2002/06/01/day-13/</link>
+      <pubDate>Sat, 01 Jun 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/06/01/day-13/</guid>
+      <description>We both woke up early, but slept in. It is hard to leave a cold, paid for motel room. We managed to get packed up and out by 10:30. The climb up into town was moderate, but much better than climbing Danger Hill. We were heading out of Christiansburg before noon.</description>
+    </item>
+    
+    <item>
+      <title>Day 12 - Troutville, VA to Christiansburg, VA</title>
+      <link>http://joesacher.com/blog/2002/05/31/day-12/</link>
+      <pubDate>Fri, 31 May 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/31/day-12/</guid>
+      <description>The alarm went off at 5:45 and we started getting things together. After looking at the route last night, we knew that today was going to be hard.
+We rolled out of Troutville at 6:30 and Adam started in the wrong direction. I agreed with him, because my GPS was set to inside mode (GPS radio off) and was pointing west.</description>
+    </item>
+    
+    <item>
+      <title>Day 11 - Lexington to Troutville, VA</title>
+      <link>http://joesacher.com/blog/2002/05/30/day-11/</link>
+      <pubDate>Thu, 30 May 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/30/day-11/</guid>
+      <description>Adam and I both woke up a few times and went back to sleep. We finally started getting up around 8:45. We grabbed our things and got out of the motel room at check-out time (11 AM). As the trash can indicates, we might have over done it a little, staying right next to a Wal-Mart.</description>
+    </item>
+    
+    <item>
+      <title>Day 10 - Vesuvius to Lexington</title>
+      <link>http://joesacher.com/blog/2002/05/29/day-10/</link>
+      <pubDate>Wed, 29 May 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/29/day-10/</guid>
+      <description>I had gotten up and to on the rain fly, because the water in the stream and the trees blowing both sounded like rain at times. This gave me some comfort to sleep more soundly, but I still slept in a little. I started pedalling up and out of the Tye River Gap Campground just past 11 AM.</description>
+    </item>
+    
+    <item>
+      <title>The Conversation</title>
+      <link>http://joesacher.com/blog/2002/05/29/the-conversation/</link>
+      <pubDate>Wed, 29 May 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/29/the-conversation/</guid>
+      <description>I have been having the same basic conversation over and over again. I really thought that Trans-Am cyclists would have already answered them all before, but I guess there aren&amp;rsquo;t all that many of us. Well, not all that many of us that look like a cross between a wheel chair and a NASA satelite.</description>
+    </item>
+    
+    <item>
+      <title>Day 9 - Afton almost to Vesuvius, VA</title>
+      <link>http://joesacher.com/blog/2002/05/28/day-9/</link>
+      <pubDate>Tue, 28 May 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/28/day-9/</guid>
+      <description>The gain in self-confidence of having accomplished a tiresome labor is immense. &amp;ndash;Thomas Arnold Bennett
+                       I woke up at 6 AM, reset my alarm, and went back to sleep. Then I woke up a 7 AM and I felt a little better about it, so I didn&amp;rsquo;t reset the alarm and I got up.</description>
+    </item>
+    
+    <item>
+      <title>Day 8 - June Curry&#39;s Bike House</title>
+      <link>http://joesacher.com/blog/2002/05/27/day-8-bike-house/</link>
+      <pubDate>Mon, 27 May 2002 02:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/27/day-8-bike-house/</guid>
+      <description>This post is almost entirely pictures. I spent two days at the bike house and filled up my 1 GB memory cards more than a few times. Yes, yes. Those of you from the future are rolling your eyes at 1 GB. Even I am a little as I&amp;rsquo;m posting this to the new site.</description>
+    </item>
+    
+    <item>
+      <title>Day 8 - Memorial Day in Afton, VA</title>
+      <link>http://joesacher.com/blog/2002/05/27/day-8/</link>
+      <pubDate>Mon, 27 May 2002 01:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/27/day-8/</guid>
+      <description>I woke up at around 8 AM, when June came into the bike house. She told me not to get up, but I told her to come on in. We sat and talked for an hour about some of the people that had come through before and about how modern times are so much different than old times. I was able to talk with June a couple of times throughout the day and had a good time during each conversation.</description>
+    </item>
+    
+    <item>
+      <title>Day 7 - Charlottesville to Afton, VA</title>
+      <link>http://joesacher.com/blog/2002/05/26/day-7/</link>
+      <pubDate>Sun, 26 May 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/26/day-7/</guid>
+      <description>I adjusted my kickstand mount that was working loose this morning. Checkout time was noon and I got out of my room at 12:05. I actually had to rush to get packed up by noon. Then I got to wait about 10 minutes for an empty elevator going down.</description>
+    </item>
+    
+    <item>
+      <title>Day 6 - Palmyra to Charlottesville, VA</title>
+      <link>http://joesacher.com/blog/2002/05/25/day-6/</link>
+      <pubDate>Sat, 25 May 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/25/day-6/</guid>
+      <description>The jails in Palmyra, VA are pretty nice. The officer arrested me around 2 AM and confiscated all of my gear.
+Just kidding! I didn&amp;rsquo;t have any problems with camping at the boat ramp last night. Traffic on 15 started to slow around 10 PM and I fell asleep shortly after sending out my emails.</description>
+    </item>
+    
+    <item>
+      <title>Day 5 - Lake Anna to Palmyra, VA</title>
+      <link>http://joesacher.com/blog/2002/05/24/day-5/</link>
+      <pubDate>Fri, 24 May 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/24/day-5/</guid>
+      <description>I woke up just before dawn cracked at 5:45. I had packed up everything but my sleeping gear before I went to bed, because I wanted to secure as much of it as I could from any animal or other visitors. I was out of the campground before 6.</description>
+    </item>
+    
+    <item>
+      <title>Day 4 - Ashland to Lake Anna, VA</title>
+      <link>http://joesacher.com/blog/2002/05/23/day-4/</link>
+      <pubDate>Thu, 23 May 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/23/day-4/</guid>
+      <description>Before willing myself out of my warm sleeping bag, I snapped a picture of my view. I rose into the cold and decided on a cold breakfast to keep with the theme. I finished off my first pack of Fig Newtons and had a mug of Gatorade (my morning drink of choice for that last few days.</description>
+    </item>
+    
+    <item>
+      <title>Day 3 - Glendale to near Ashland, VA</title>
+      <link>http://joesacher.com/blog/2002/05/22/day-3/</link>
+      <pubDate>Wed, 22 May 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/22/day-3/</guid>
+      <description>I didn&amp;rsquo;t get a chance to finish typing up my journal and answer emails before bed yesterday. While eating and writing, the temperature dove off a cliff. The food from my cook stove was warming for a while, but with the food and hot tea gone, night&amp;rsquo;s chill started winning the battle.</description>
+    </item>
+    
+    <item>
+      <title>Day 2 - Sherwood Forest Plantation</title>
+      <link>http://joesacher.com/blog/2002/05/21/day-2-sherwood-forest-plantation/</link>
+      <pubDate>Tue, 21 May 2002 03:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/21/day-2-sherwood-forest-plantation/</guid>
+      <description>Sherwood Forest was the first plantation I visited today along Hwy 5. It holds a few distinctions, such as the only private residence having been owned by two unrelated presidents. William Henry Harrison inherited the property in 1790 and sold it in 1793 without having every lived in the house.</description>
+    </item>
+    
+    <item>
+      <title>Day 2 - Berkley Plantation</title>
+      <link>http://joesacher.com/blog/2002/05/21/day-2-berkley-plantation/</link>
+      <pubDate>Tue, 21 May 2002 02:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/21/day-2-berkley-plantation/</guid>
+      <description>Berkley Plantation was my second stop of the day. I should point out to anyone wanting to try this route themselves that the 1&amp;frasl;2 mile ride into Berkley is TERRIBLE. You see the sign that asks you to enjoy yourself for the next 1&amp;frasl;2 mile of authentic Colonial road and you get to try as hard as you can to keep the bike upright.</description>
+    </item>
+    
+    <item>
+      <title>Day 2 - Jamestown to Glendale, VA</title>
+      <link>http://joesacher.com/blog/2002/05/21/day-2/</link>
+      <pubDate>Tue, 21 May 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/21/day-2/</guid>
+      <description>I had a good night&amp;rsquo;s sleep, despite the temperature. I thought about not bringing my 20 degree bag and purchasing a warmer weather bag to take up less space and weight. I&amp;rsquo;m thrilled that I didn&amp;rsquo;t talk myself into it. I needed every bit of that bag to stay warm last night.</description>
+    </item>
+    
+    <item>
+      <title>Day 1 - Yorktown to Jamestown, VA</title>
+      <link>http://joesacher.com/blog/2002/05/20/day-1/</link>
+      <pubDate>Mon, 20 May 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/20/day-1/</guid>
+      <description>The bicycle tourist is greeted with two choices when starting their tour. Do I ride away from my home or pack up everything and take alternate transportation to the start? For local tours, the loop method is a good idea. Start off in one direction and ride in a big loop until you end up back home.</description>
+    </item>
+    
+    <item>
+      <title>Day 0 - Final Shakedown Ride</title>
+      <link>http://joesacher.com/blog/2002/05/19/day-0/</link>
+      <pubDate>Sun, 19 May 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/05/19/day-0/</guid>
+      <description>Today I completely loaded up my RANS Rocket. I&amp;rsquo;ve built many custom components to make it into a cross-country touring machine. Unfortunately, I haven&amp;rsquo;t had as much time getting ready for the trip as I wanted. Work pressed into taking far too much of my time, so both equipment and physical shape preparation was lacking.</description>
+    </item>
+    
+    <item>
+      <title>The Bicycle Wheel by Jobst Brandt</title>
+      <link>http://joesacher.com/blog/2002/03/02/the-bicycle-wheel-by-jobst-brandt/</link>
+      <pubDate>Sat, 02 Mar 2002 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2002/03/02/the-bicycle-wheel-by-jobst-brandt/</guid>
+      <description>I have just finished building my first rear wheel using The Bicycle Wheel as a guide. This book will teach you the technical aspects of the bicycle wheel in both structural principles and practical methods. After a couple hundred miles on my new wheel, it is still true as an arrow.
+This book debunks myths and gives you the confidence to repair, build, and rebuild wheels. I can honestly say that I no longer fear any wheel repairs.</description>
+    </item>
+    
+  </channel>
+</rss>

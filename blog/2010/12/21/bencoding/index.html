@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bencoding (encoding of a .torrent file)</title>
+  <meta name="author" content="" />
+
+  
+
+  
+  <meta name="description" content="My little piece of the web.">	
+  
+
+  <meta name="generator" content="Hugo 0.25.1" />
+
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="http://joesacher.comcss/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="http://joesacher.comcss/style.default.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="http://joesacher.comcss/custom.css" rel="stylesheet">
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="http://joesacher.comimg/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="http://joesacher.comimg/apple-touch-icon.png" />
+
+  
+
+
+
+
+  <link rel="alternate" href="http://joesacher.com/index.xml" type="application/rss+xml" title="joesacher.com">
+
+  
+  <meta property="og:title" content="Bencoding (encoding of a .torrent file)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2010/12/21/bencoding//" />
+  <meta property="og:image" content="img/logo.png" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="http://joesacher.com">
+                    <img src="http://joesacher.comimg/logo.png" alt="Bencoding (encoding of a .torrent file) logo" class="hidden-xs hidden-sm">
+                    <img src="http://joesacher.comimg/logo-small.png" alt="Bencoding (encoding of a .torrent file) logo" class="visible-xs visible-sm">
+                    <span class="sr-only">Bencoding (encoding of a .torrent file) - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/">Home</a>
+                    
+                  </li>
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/blog/">Blog</a>
+                    
+                  </li>
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Bencoding (encoding of a .torrent file)</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+                        
+                        <p class="text-muted mb-small text-right text-uppercase">
+                            December 21, 2010<br/>
+                            <i class="fa fa-clock-o"></i> 7 min. read</p>
+
+                            <div id="post-content">
+                                
+
+<p>The Bencode format is an interesting design.  It is byte based, which makes it safe from big-endian and little-endian translations.  Somewhere when reading about how torrents worked, I got looking at their file format.</p>
+
+<p>As far as I know, the Bencode format isn&rsquo;t used on anything but torrent files.  The format is pretty simple, with only 4 different data structures: Byte String, Integer, List, and Dictionary.</p>
+
+<h2 id="bencode-basics">Bencode Basics</h2>
+
+<h3 id="byte-string">Byte String</h3>
+
+<p>This is formatted as <code>[integer length]:[byte string]</code>.  Simply read the length number of bytes following the colon.</p>
+
+<h3 id="integer">Integer</h3>
+
+<p>The integer type is structured as <code>i[contents]e</code>. Contents can be positive or negative integer, without leading zeros.</p>
+
+<p>Valid examples: <code>i-1234e</code>  <code>i1234e</code></p>
+
+<h3 id="list">List</h3>
+
+<p>The list type (or array if you like) is formatted as <code>l[contents]e</code>.  Contents will be any valid Bencode types just appended together.</p>
+
+<h3 id="dictionary">Dictionary</h3>
+
+<p>The dictionary type (also know as a hash or an associative array) is formatted as <code>d[contents]e</code>.  Contents includes <code>[key][value]</code> pairs until termination.  The key value must always be a byte string, but the value may be any Bencode type (even another dictionary).</p>
+
+<h2 id="the-code">The Code</h2>
+
+<p>It is possible to store complex structures with these simple types.  I enjoyed learning the format by creating a Python class for encoding and decoding data in Bencode format.</p>
+
+<p>The source code for this class is available <a href="https://github.com/sacherjj/bencode">on my github</a>.</p>
+
+<p>I have been using Python for quite a while as a scripting language, but only recently started trying to create proper classes and develop more advanced OO designed applications with Python.  I&rsquo;m sure this isn&rsquo;t purely Pythonic and would welcome any criticism and ways to improve.</p>
+
+<p>I wanted to call out a few things in the code that were good learning experiences for me.</p>
+
+<h3 id="encoding-methods">Encoding Methods</h3>
+
+<p>Functions are objects in Python and can be stored and referenced just like data.  In the internal encoding function <code>_local_encode</code>, I&rsquo;m storing the various data type encode methods in a dictonary with data type string as key.  This allows me to get data type string with <code>type(data).__name__</code>.  If the key exists in the dictonary, I envoke that method to process the data.</p>
+
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_local_encode</span>(<span style="color: #336666">self</span>, data):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Returns the proper Bencoded string for data given &quot;&quot;&quot;</span>
+    encoders <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;dict&#39;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_dictionary,
+                <span style="color: #CC3300">&#39;list&#39;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_list,
+                <span style="color: #CC3300">&#39;tuple&#39;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_list,
+                <span style="color: #CC3300">&#39;str&#39;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_string,
+                <span style="color: #CC3300">&#39;int&#39;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_integer,
+                <span style="color: #CC3300">&#39;float&#39;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_float}
+    data_type <span style="color: #555555">=</span> <span style="color: #336666">type</span>(data)<span style="color: #555555">.</span><span style="color: #003333">__name__</span>
+    <span style="color: #006699; font-weight: bold">if</span> data_type <span style="color: #000000; font-weight: bold">in</span> encoders<span style="color: #555555">.</span>keys():
+        <span style="color: #006699; font-weight: bold">return</span> encoders[data_type](data)
+    <span style="color: #006699; font-weight: bold">else</span>:
+        <span style="color: #006699; font-weight: bold">raise</span> <span style="color: #CC0000; font-weight: bold">Exception</span>(<span style="color: #CC3300">&#39;Encoder is not defined for data type: </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&#39;</span> <span style="color: #555555">%</span> data_type)
+</pre></div>
+
+
+<p>String encoding is very simple, just joining length of the string with the data.</p>
+
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #9999FF">@staticmethod</span>
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_encode_string</span>(data):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Converts string to Bencoded Byte String &quot;&quot;&quot;</span>
+    <span style="color: #006699; font-weight: bold">return</span> <span style="color: #CC3300">&#39;</span><span style="color: #AA0000">%d</span><span style="color: #CC3300">:</span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&#39;</span> <span style="color: #555555">%</span> (<span style="color: #336666">len</span>(data), data)
+</pre></div>
+
+
+<p>Encoding integer is just wrapping <code>i</code> and <code>e</code> around the string conversion of the integer.  Since bencode does not encode floats, those are converted to ints.</p>
+
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #9999FF">@staticmethod</span>
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_encode_integer</span>(data):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Converts Integer to Bencoded Integer string &quot;&quot;&quot;</span>
+    <span style="color: #006699; font-weight: bold">return</span> <span style="color: #CC3300">&#39;i</span><span style="color: #AA0000">%d</span><span style="color: #CC3300">e&#39;</span> <span style="color: #555555">%</span> data
+
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_encode_float</span>(<span style="color: #336666">self</span>, data):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Converts Float to Bencoded Integer string &quot;&quot;&quot;</span>
+    <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_integer(<span style="color: #336666">int</span>(data))
+</pre></div>
+
+
+<p>List encoding performs recursive calls into _local_encode as it loops through the list, just appending items.  I optimised with lists instead of string concatenation.  Originally, I built this with the ben variable as a string and += calls, which is terrible for memory performance.</p>
+
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_encode_list</span>(<span style="color: #336666">self</span>, data):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Converts List or Tuple to Bencoded List string &quot;&quot;&quot;</span>
+    ben <span style="color: #555555">=</span> [<span style="color: #CC3300">&#39;l&#39;</span>]
+    <span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> data:
+        ben<span style="color: #555555">.</span>append(<span style="color: #336666">self</span><span style="color: #555555">.</span>_local_encode(item))
+    ben<span style="color: #555555">.</span>append(<span style="color: #CC3300">&#39;e&#39;</span>)
+    <span style="color: #006699; font-weight: bold">return</span> <span style="color: #CC3300">&#39;&#39;</span><span style="color: #555555">.</span>join(ben)
+</pre></div>
+
+
+<p>Dictionary works the same way as list, just appending the generated values from _local_encode with the addition of a string in front.  Again, this was changed from string concatenation to list append.</p>
+
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_encode_dictionary</span>(<span style="color: #336666">self</span>, data):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Converts Dictionary to Bencoded Dictionary String &quot;&quot;&quot;</span>
+    ben <span style="color: #555555">=</span> [<span style="color: #CC3300">&#39;d&#39;</span>]
+    <span style="color: #006699; font-weight: bold">for</span> key <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">sorted</span>(data<span style="color: #555555">.</span>keys()):
+        ben<span style="color: #555555">.</span>append(<span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_string(key))
+        ben<span style="color: #555555">.</span>append(<span style="color: #336666">self</span><span style="color: #555555">.</span>_local_encode(data[key]))
+    ben<span style="color: #555555">.</span>append(<span style="color: #CC3300">&#39;e&#39;</span>)
+    <span style="color: #006699; font-weight: bold">return</span><span style="color: #CC3300">&#39;&#39;</span><span style="color: #555555">.</span>join(ben)
+</pre></div>
+
+
+<p>This came out simpler and cleaner than I expected for encoding.  But it is a really simple format, so it shouldn&rsquo;t be too complex.</p>
+
+<h3 id="decoding-methods">Decoding Methods</h3>
+
+<p>For my external decode method, I&rsquo;m using a class level pointer for the bencoded string and walking through it.  I setup those two variables and call into _local_decode.</p>
+
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">decode</span>(<span style="color: #336666">self</span>, ben_string):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Returns the data structure defined by the Bencoded string &quot;&quot;&quot;</span>
+    <span style="color: #006699; font-weight: bold">try</span>:
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string <span style="color: #555555">=</span> ben_string
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+        <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_local_decode()
+    <span style="color: #006699; font-weight: bold">except</span> <span style="color: #CC0000; font-weight: bold">IndexError</span> <span style="color: #006699; font-weight: bold">as</span> e:
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Index Error at Pointer = </span><span style="color: #AA0000">%d</span><span style="color: #CC3300"> of </span><span style="color: #AA0000">%d</span><span style="color: #CC3300; font-weight: bold">\n</span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&quot;</span> <span style="color: #555555">%</span> (<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer, <span style="color: #336666">len</span>(<span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string), <span style="color: #336666">str</span>(e)))
+</pre></div>
+
+
+<p>While I thought I might use the dictonary mapped methods again, I couldn&rsquo;t find a clean way to handle the 11 possible cases for integer.  So, I decided to just just go old school flow control.  This is one situation that I would have used a switch statement with an else case if it was available in Python.  If you have a more Pythonic way of doing this, please ley me know!</p>
+
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_local_decode</span>(<span style="color: #336666">self</span>):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Detects and returns the proper Bencoded data type starting at current Pointer position &quot;&quot;&quot;</span>
+    cur_char <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string[<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer]
+    <span style="color: #006699; font-weight: bold">if</span> cur_char <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;i&#39;</span>:
+        <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_parse_integer()
+    <span style="color: #006699; font-weight: bold">elif</span> cur_char <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;l&#39;</span>:
+        <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_parse_list()
+    <span style="color: #006699; font-weight: bold">elif</span> cur_char <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;d&#39;</span>:
+        <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_parse_dictionary()
+    <span style="color: #006699; font-weight: bold">elif</span> cur_char <span style="color: #000000; font-weight: bold">in</span> (<span style="color: #CC3300">&#39;-&#39;</span>, <span style="color: #CC3300">&#39;0&#39;</span>, <span style="color: #CC3300">&#39;1&#39;</span>, <span style="color: #CC3300">&#39;2&#39;</span>, <span style="color: #CC3300">&#39;3&#39;</span>, <span style="color: #CC3300">&#39;4&#39;</span>, <span style="color: #CC3300">&#39;5&#39;</span>, <span style="color: #CC3300">&#39;6&#39;</span>, <span style="color: #CC3300">&#39;7&#39;</span>, <span style="color: #CC3300">&#39;8&#39;</span>, <span style="color: #CC3300">&#39;9&#39;</span>):
+        <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_parse_byte_string()
+    <span style="color: #006699; font-weight: bold">else</span>:
+        <span style="color: #006699; font-weight: bold">raise</span> <span style="color: #CC0000; font-weight: bold">Exception</span>(<span style="color: #CC3300">&#39;Invalid character detected at position </span><span style="color: #AA0000">%d</span><span style="color: #CC3300"> : </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&#39;</span> <span style="color: #555555">%</span> (<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer, <span style="color: #336666">str</span>(cur_char)))
+</pre></div>
+
+
+<p>Before we get into Integer and String decoding, we have a helper function.  Both the Integer and the String will have a certain number of characters to parse into an integer.
+The only difference is the stop character.  For the String, this is the length of the string with &lsquo;:&rsquo; end character.  For the Integer, this is the actual data value with &lsquo;e&rsquo; end character.<br />
+You will see this method called from both decode methods.  Note that the int() parsing handles the leading &lsquo;-&rsquo; fine for negative integers.</p>
+
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_get_number</span>(<span style="color: #336666">self</span>, end_char):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; </span>
+<span style="color: #CC3300; font-style: italic">    Returns number in string up to termination character given. </span>
+<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
+    
+    start_pointer <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer
+    <span style="color: #006699; font-weight: bold">while</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string[<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer] <span style="color: #555555">!=</span> end_char:
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+    num <span style="color: #555555">=</span> <span style="color: #336666">int</span>(<span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string[start_pointer:<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer])  <span style="color: #0099FF; font-style: italic"># Parse int</span>
+    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>  <span style="color: #0099FF; font-style: italic"># Consume the end_char</span>
+    <span style="color: #006699; font-weight: bold">return</span> num
+</pre></div>
+
+
+<p>The only job of the integer decode method is to consume the leading character that doesn&rsquo;t exist in the string integer.  Then all the work is turned over to the _get_number method above up to the &lsquo;e&rsquo; character.</p>
+
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_parse_integer</span>(<span style="color: #336666">self</span>):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; </span>
+<span style="color: #CC3300; font-style: italic">    Parses a Bencoded Integer type of format i&lt;number&gt;e</span>
+<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
+    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>  <span style="color: #0099FF; font-style: italic"># Consume the &#39;i&#39; start character</span>
+    <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_get_number(<span style="color: #CC3300">&#39;e&#39;</span>)
+</pre></div>
+
+
+<p>The String decoding gets the length integer this the helper function up to the &lsquo;:&rsquo; character.  Then it gets the string for return, and increments the pointer past the string.</p>
+
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_parse_byte_string</span>(<span style="color: #336666">self</span>):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">    Parses a Bencoded Byte String type of format &lt;len&gt;:&lt;byte string&gt; </span>
+<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
+
+    str_len <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_get_number(<span style="color: #CC3300">&#39;:&#39;</span>)
+    byte_string <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string[<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer:<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+</span> str_len]
+    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> str_len  <span style="color: #0099FF; font-style: italic"># Consume the byte string</span>
+    <span style="color: #006699; font-weight: bold">return</span> byte_string
+</pre></div>
+
+
+<p>The list starts with &lsquo;l&rsquo; and ends with &lsquo;e&rsquo;.  So we move the pointer to consume the &lsquo;l&rsquo;, then we loop until the current pointer character is an &lsquo;e&rsquo;.  Each time through the while,
+the class level pointer might increment quite a bit, as data items are consumed.  However, we are not at the end of the list until we see a letter &lsquo;e&rsquo;.</p>
+
+<p>For each list item, much like the recursive encoding, we call _local_decode to return us whatever the data is.</p>
+
+<p>Since it is the responsibility of all the decoding methods to consume their bytes, we increment the pointer to move past the list termination &lsquo;e&rsquo; at the end.</p>
+
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_parse_list</span>(<span style="color: #336666">self</span>):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; </span>
+<span style="color: #CC3300; font-style: italic">    Parses a Bencoded List type of format l&lt;contents&gt;e</span>
+<span style="color: #CC3300; font-style: italic">    </span>
+<span style="color: #CC3300; font-style: italic">    All members of the list as simply appended together in Bencode format to make up &lt;contents&gt;</span>
+<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
+    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>  <span style="color: #0099FF; font-style: italic"># Consume the &#39;l&#39; start character</span>
+    val <span style="color: #555555">=</span> []
+    
+    <span style="color: #006699; font-weight: bold">while</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string[<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer] <span style="color: #555555">!=</span> <span style="color: #CC3300">&#39;e&#39;</span>:
+        val<span style="color: #555555">.</span>append(<span style="color: #336666">self</span><span style="color: #555555">.</span>_local_decode())
+    
+    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span> <span style="color: #0099FF; font-style: italic"># Consume the &#39;e&#39; termination character</span>
+    <span style="color: #006699; font-weight: bold">return</span> val
+</pre></div>
+
+
+<p>This is very similar to list processing, with the addition of the key.  We know that the key is required to be a byte string, so we call directly to that method.</p>
+
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_parse_dictionary</span>(<span style="color: #336666">self</span>):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;    Parses a Bencoded Dictionary type of format d&lt;pairs&gt;e</span>
+
+<span style="color: #CC3300; font-style: italic">    All pairs consist of ByteString key followed by any valid data type</span>
+<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
+    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>  <span style="color: #0099FF; font-style: italic"># Consume the &#39;d&#39; start character</span>
+    be_dict <span style="color: #555555">=</span> {}
+    <span style="color: #006699; font-weight: bold">while</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string[<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer] <span style="color: #555555">!=</span> <span style="color: #CC3300">&#39;e&#39;</span>:
+        key <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_parse_byte_string()   <span style="color: #0099FF; font-style: italic"># Skipping local decode, because key must be a byte string</span>
+        val <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_local_decode()
+        be_dict[key] <span style="color: #555555">=</span> val
+    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>  <span style="color: #0099FF; font-style: italic"># Consume the &#39;e&#39; termination character</span>
+    <span style="color: #006699; font-weight: bold">return</span> be_dict
+</pre></div>
+
+
+<p>If you have a cleaner implementation you would like to share, please contact me.  I found the few iterations on this to be enjoyable and a good learning experience.</p>
+
+<p>The code is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a></p>
+
+                                
+
+                             </div>
+                        
+                        
+                        <div id="comments">
+                            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "joesachercom" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </div>
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+
+
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Categories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            
+            <li><a href="http://joesacher.comcategories/cooking" class="text-uppercase">cooking (2)</a>
+            </li>
+            
+            <li><a href="http://joesacher.comcategories/how-to" class="text-uppercase">how-to (5)</a>
+            </li>
+            
+            <li><a href="http://joesacher.comcategories/personal" class="text-uppercase">personal (8)</a>
+            </li>
+            
+            <li><a href="http://joesacher.comcategories/reviews" class="text-uppercase">reviews (14)</a>
+            </li>
+            
+            <li><a href="http://joesacher.comcategories/tech" class="text-uppercase">tech (20)</a>
+            </li>
+            
+            <li><a href="http://joesacher.comcategories/trans-am" class="text-uppercase">trans-am (19)</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            
+            <li><a href="http://joesacher.comtags/android"><i class="fa fa-tags"></i> android</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/avr"><i class="fa fa-tags"></i> avr</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/bicycle"><i class="fa fa-tags"></i> bicycle</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/bicycle-touring"><i class="fa fa-tags"></i> bicycle-touring</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/book-review"><i class="fa fa-tags"></i> book-review</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/calendars"><i class="fa fa-tags"></i> calendars</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/cooking"><i class="fa fa-tags"></i> cooking</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/cycling"><i class="fa fa-tags"></i> cycling</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/dessert"><i class="fa fa-tags"></i> dessert</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/drybag"><i class="fa fa-tags"></i> drybag</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/ebooks"><i class="fa fa-tags"></i> ebooks</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/electronics"><i class="fa fa-tags"></i> electronics</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/fiction"><i class="fa fa-tags"></i> fiction</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/film-making"><i class="fa fa-tags"></i> film-making</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/hacking"><i class="fa fa-tags"></i> hacking</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/ham-radio"><i class="fa fa-tags"></i> ham-radio</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/hugo"><i class="fa fa-tags"></i> hugo</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/humor"><i class="fa fa-tags"></i> humor</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/hvac"><i class="fa fa-tags"></i> hvac</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/inspiration"><i class="fa fa-tags"></i> inspiration</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/javascript"><i class="fa fa-tags"></i> javascript</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/lathes"><i class="fa fa-tags"></i> lathes</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/marriage"><i class="fa fa-tags"></i> marriage</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/navigation"><i class="fa fa-tags"></i> navigation</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/nonfiction"><i class="fa fa-tags"></i> nonfiction</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/pannier"><i class="fa fa-tags"></i> pannier</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/personal"><i class="fa fa-tags"></i> personal</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/pizza"><i class="fa fa-tags"></i> pizza</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/podcasts"><i class="fa fa-tags"></i> podcasts</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/programming"><i class="fa fa-tags"></i> programming</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/projects"><i class="fa fa-tags"></i> projects</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/proposal"><i class="fa fa-tags"></i> proposal</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/python"><i class="fa fa-tags"></i> python</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/recipe"><i class="fa fa-tags"></i> recipe</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/recumbent"><i class="fa fa-tags"></i> recumbent</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/safety"><i class="fa fa-tags"></i> safety</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/sewing"><i class="fa fa-tags"></i> sewing</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/touchpad"><i class="fa fa-tags"></i> touchpad</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/touring"><i class="fa fa-tags"></i> touring</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/video"><i class="fa fa-tags"></i> video</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/web"><i class="fa fa-tags"></i> web</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/webos"><i class="fa fa-tags"></i> webos</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/windows-phone"><i class="fa fa-tags"></i> windows-phone</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/woodowrking"><i class="fa fa-tags"></i> woodowrking</a>
+            </li>
+            
+            <li><a href="http://joesacher.comtags/writing"><i class="fa fa-tags"></i> writing</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+        
+
+
+
+
+
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left">Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</p>
+            
+            <p class="pull-right">A modified version of 
+              template by <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>
+              
+              ported to Hugo by <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+    </div>
+    
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-3718160-3', 'auto');
+ga('send', 'pageview');
+</script>
+
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+<script src="http://joesacher.comjs/hpneo.gmaps.js"></script>
+<script src="http://joesacher.comjs/gmaps.init.js"></script>
+<script src="http://joesacher.comjs/front.js"></script>
+
+
+<script src="http://joesacher.comjs/owl.carousel.min.js"></script>
+
+
+
+
+  </body>
+</html>

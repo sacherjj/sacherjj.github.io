@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on joesacher.com</title>
+    <link>http://joesacher.com/tags/android/</link>
+    <description>Recent content in Android on joesacher.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <lastBuildDate>Mon, 09 Apr 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://joesacher.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Windows Phone Experiment is Over</title>
+      <link>http://joesacher.com/blog/2012/04/09/windows-experiment-is-over/</link>
+      <pubDate>Mon, 09 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2012/04/09/windows-experiment-is-over/</guid>
+      <description>My wife and I left webOS when HP flushed their 3 year plan to revamp webOS down the toilet. We tested both Android and Windows Phone. Android is a multitasking joke. Coming from webOS, it has a terrible UI. Windows Phone has very nice flowing UI. We decided to go to Windows Phone.
+Microsoft representatives promised to get phones and development credits to webOS programmers. Despite many requests, it turned out to be a bunch of hot air.</description>
+    </item>
+    
+    <item>
+      <title>Android vs Windows Phone Navigation</title>
+      <link>http://joesacher.com/blog/2011/09/07/android-vs-windows-phone-navigation/</link>
+      <pubDate>Wed, 07 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://joesacher.com/blog/2011/09/07/android-vs-windows-phone-navigation/</guid>
+      <description>I&amp;rsquo;m testing both Android and Windows Phone on Sprint. Both devices have free TeleNav service on Sprint, so the service using that application is roughly similar. Both phones also come with stock turn by turn directions. Android is a no holds barred knockout win.
+The turn by turn directions in pre-Mango Windows Phone is a joke. You must tap the screen to move along, making it totally unusable for navigation when you are driving the car.</description>
+    </item>
+    
+  </channel>
+</rss>
