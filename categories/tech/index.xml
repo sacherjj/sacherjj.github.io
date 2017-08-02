@@ -2,165 +2,165 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech on joesacher.com</title>
-    <link>http://joesacher.com/categories/tech/</link>
+    <link>http://www.joesacher.com/categories/tech/</link>
     <description>Recent content in Tech on joesacher.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
     <lastBuildDate>Thu, 03 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://joesacher.com/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.joesacher.com/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Moved from Pelican to Hugo</title>
-      <link>http://joesacher.com/blog/2017/08/03/pelican-to-hugo/</link>
+      <link>http://www.joesacher.com/blog/2017/08/03/pelican-to-hugo/</link>
       <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2017/08/03/pelican-to-hugo/</guid>
+      <guid>http://www.joesacher.com/blog/2017/08/03/pelican-to-hugo/</guid>
       <description>I&amp;rsquo;ve used Python as my main programming language for a few years. When my Word Press was hacked and defaced yet again, I finally decided to rebuild my website with a static generator and host on GitHub. I leaned towards Pelican, due to the Python base that I thought I could modify if I needed. And I hoped that I could get it to work easily.
 I did get everything converted over to .</description>
     </item>
     
     <item>
       <title>The Windows Phone Experiment is Over</title>
-      <link>http://joesacher.com/blog/2012/04/09/windows-experiment-is-over/</link>
+      <link>http://www.joesacher.com/blog/2012/04/09/windows-experiment-is-over/</link>
       <pubDate>Mon, 09 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2012/04/09/windows-experiment-is-over/</guid>
+      <guid>http://www.joesacher.com/blog/2012/04/09/windows-experiment-is-over/</guid>
       <description>My wife and I left webOS when HP flushed their 3 year plan to revamp webOS down the toilet. We tested both Android and Windows Phone. Android is a multitasking joke. Coming from webOS, it has a terrible UI. Windows Phone has very nice flowing UI. We decided to go to Windows Phone.
 Microsoft representatives promised to get phones and development credits to webOS programmers. Despite many requests, it turned out to be a bunch of hot air.</description>
     </item>
     
     <item>
       <title>Zune Podcasts - A Rant</title>
-      <link>http://joesacher.com/blog/2011/09/21/zune-podcasts-a-rant/</link>
+      <link>http://www.joesacher.com/blog/2011/09/21/zune-podcasts-a-rant/</link>
       <pubDate>Wed, 21 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/09/21/zune-podcasts-a-rant/</guid>
+      <guid>http://www.joesacher.com/blog/2011/09/21/zune-podcasts-a-rant/</guid>
       <description>Zune podcast functionality on Windows Phone Mango was obviously designed by someone who never listens to podcasts. I’ve tried to use it over the last three weeks and it is an exercise in futility. There is one glaring problems that needs to be addressed before it is close to usable. It all comes down to episode management. Unfortunately, this is the most important factor of any podcast solution.
 Order is allowed, for either oldest first or newest first.</description>
     </item>
     
     <item>
       <title>Android vs Windows Phone Navigation</title>
-      <link>http://joesacher.com/blog/2011/09/07/android-vs-windows-phone-navigation/</link>
+      <link>http://www.joesacher.com/blog/2011/09/07/android-vs-windows-phone-navigation/</link>
       <pubDate>Wed, 07 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/09/07/android-vs-windows-phone-navigation/</guid>
+      <guid>http://www.joesacher.com/blog/2011/09/07/android-vs-windows-phone-navigation/</guid>
       <description>I&amp;rsquo;m testing both Android and Windows Phone on Sprint. Both devices have free TeleNav service on Sprint, so the service using that application is roughly similar. Both phones also come with stock turn by turn directions. Android is a no holds barred knockout win.
 The turn by turn directions in pre-Mango Windows Phone is a joke. You must tap the screen to move along, making it totally unusable for navigation when you are driving the car.</description>
     </item>
     
     <item>
       <title>Windows Phone Podcast Experience</title>
-      <link>http://joesacher.com/blog/2011/09/07/windows-phone-podcast-experience/</link>
+      <link>http://www.joesacher.com/blog/2011/09/07/windows-phone-podcast-experience/</link>
       <pubDate>Wed, 07 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/09/07/windows-phone-podcast-experience/</guid>
+      <guid>http://www.joesacher.com/blog/2011/09/07/windows-phone-podcast-experience/</guid>
       <description>The &amp;ldquo;Mango&amp;rdquo; update for Windows Phone, or version 7.5 for those less fruity, adds many features. This article is dealing with the podcasting capabilities. On webOS, I made daily use of a brilliant piece of software called drPodder. Moving from this almost clairvoyant app to the integrated podcast ability of Windows Phone is quite jarring.
 I will be outlining the current successes and fails with Windows Phone which keep it from being an enjoyable podcasting experience.</description>
     </item>
     
     <item>
       <title>webOS to Windows Phone - What&#39;s Missing?</title>
-      <link>http://joesacher.com/blog/2011/09/02/webos-to-windows-phone-whats-missing/</link>
+      <link>http://www.joesacher.com/blog/2011/09/02/webos-to-windows-phone-whats-missing/</link>
       <pubDate>Fri, 02 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/09/02/webos-to-windows-phone-whats-missing/</guid>
+      <guid>http://www.joesacher.com/blog/2011/09/02/webos-to-windows-phone-whats-missing/</guid>
       <description>I&amp;rsquo;ve decided that I&amp;rsquo;ll be exploring both Android and Windows Phone as possible replacements for my nearly dead Palm Pre. HP killed future hardware and we need phones, bad. I purchased an HTC Arrive off eBay, slightly cheaper than I would get it from Sprint under contract. I&amp;rsquo;ve been using it as a WiFi only device for about a week. Wednesday night, I upgraded it to the developer&amp;rsquo;s release of Mango, the future update for Windows Phone.</description>
     </item>
     
     <item>
       <title>Multiple Google Calendars on Windows Phone (Mango)</title>
-      <link>http://joesacher.com/blog/2011/08/11/multiple-google-calendars-on-windows-phone-mango/</link>
+      <link>http://www.joesacher.com/blog/2011/08/11/multiple-google-calendars-on-windows-phone-mango/</link>
       <pubDate>Thu, 11 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/08/11/multiple-google-calendars-on-windows-phone-mango/</guid>
+      <guid>http://www.joesacher.com/blog/2011/08/11/multiple-google-calendars-on-windows-phone-mango/</guid>
       <description>With webOS, Synergy just happened. (OK, it didn&amp;rsquo;t just happen. Many engineers spent many hours making this work seamlessly. But to the user, it &amp;ldquo;just happened&amp;rdquo;.) You don&amp;rsquo;t realize how nice this is, until you try a system that doesn&amp;rsquo;t really have it. Windows Phone 7 with NoDo (the current &amp;ldquo;up to date&amp;rdquo; version for the public) has this problem.</description>
     </item>
     
     <item>
       <title>Encoding Videos for the HP Touchpad</title>
-      <link>http://joesacher.com/blog/2011/08/10/encoding-videos-for-the-hp-touchpad/</link>
+      <link>http://www.joesacher.com/blog/2011/08/10/encoding-videos-for-the-hp-touchpad/</link>
       <pubDate>Wed, 10 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/08/10/encoding-videos-for-the-hp-touchpad/</guid>
+      <guid>http://www.joesacher.com/blog/2011/08/10/encoding-videos-for-the-hp-touchpad/</guid>
       <description>This post is for those who have ripped their DVDs and other video media and would like to load it onto their HP Touchpad. I started to encode videos for the HP Touchpad using HandBrake, which had given me success for video targeting my Palm Pre. I used iPad profiles, as the display size is exactly the same. It seemed that no matter what I tried, the files would not show up in Photos &amp;amp; Videos app.</description>
     </item>
     
     <item>
       <title>Hacking can be bad for your Kindle App&#39;s Health</title>
-      <link>http://joesacher.com/blog/2011/08/06/unrecoverable-problems-with-kindle-app-on-touchpad/</link>
+      <link>http://www.joesacher.com/blog/2011/08/06/unrecoverable-problems-with-kindle-app-on-touchpad/</link>
       <pubDate>Sat, 06 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/08/06/unrecoverable-problems-with-kindle-app-on-touchpad/</guid>
+      <guid>http://www.joesacher.com/blog/2011/08/06/unrecoverable-problems-with-kindle-app-on-touchpad/</guid>
       <description>If you feel like following my hacking example to load .mobi format books onto the Touchpad&amp;rsquo;s Kindle App, be ready to have to reload it. If the app has a problem parsing the book for any reason, you are done. With no back gesture on the Touchpad, there is no way to back out of the crashed book load. Each time you start the app, it will load the file into a crash situation.</description>
     </item>
     
     <item>
       <title>Touchpad Keyboard - Good, Bad, and Ugly</title>
-      <link>http://joesacher.com/blog/2011/08/06/hp-touchpad-keyboard-good-bad-and-ugly/</link>
+      <link>http://www.joesacher.com/blog/2011/08/06/hp-touchpad-keyboard-good-bad-and-ugly/</link>
       <pubDate>Sat, 06 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/08/06/hp-touchpad-keyboard-good-bad-and-ugly/</guid>
+      <guid>http://www.joesacher.com/blog/2011/08/06/hp-touchpad-keyboard-good-bad-and-ugly/</guid>
       <description>While there is no doubt that software for the HP Touchpad is in its infancy, it is hard not to see the great usefulness and potential. There are a few good writing apps for the Touchpad, including those for WordPress blogging. I&amp;rsquo;m composing this in the WordPress App for WebOS tablet. Any of these are much easier to use with a hardware keyboard, than attempting to type quantity on a virtual keyboard.</description>
     </item>
     
     <item>
       <title>Loading mobi books into Touchpad&#39;s Kindle App</title>
-      <link>http://joesacher.com/blog/2011/08/05/loading-mobi-books-into-touchpads-kindle-app/</link>
+      <link>http://www.joesacher.com/blog/2011/08/05/loading-mobi-books-into-touchpads-kindle-app/</link>
       <pubDate>Fri, 05 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/08/05/loading-mobi-books-into-touchpads-kindle-app/</guid>
+      <guid>http://www.joesacher.com/blog/2011/08/05/loading-mobi-books-into-touchpads-kindle-app/</guid>
       <description>I have purchased many ebooks and created others manually in the .mobi format. This is very easy to load onto my Kindle device to read. Unfortunately, the current Kindle app on the Touchpad does not allow loading ebooks other than downloading from Amazon. This is unfortunate and makes the Touchpad a poor replacement for my Kindle.</description>
     </item>
     
     <item>
       <title>Touchpad WiFi - Hidden Passcode Hell</title>
-      <link>http://joesacher.com/blog/2011/08/02/hp-touchpad-wifi-setup-hidden-passcode-hell/</link>
+      <link>http://www.joesacher.com/blog/2011/08/02/hp-touchpad-wifi-setup-hidden-passcode-hell/</link>
       <pubDate>Tue, 02 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/08/02/hp-touchpad-wifi-setup-hidden-passcode-hell/</guid>
+      <guid>http://www.joesacher.com/blog/2011/08/02/hp-touchpad-wifi-setup-hidden-passcode-hell/</guid>
       <description>I have just spent the last 30 minutes trying to get our complex 64 character WPA key into my HP Touchpad so I can start the setup procedure. The password field for the WiFi key is frustrating.
 The last character is only shown for a second or two, then it too fades into the dots of obscurity.</description>
     </item>
     
     <item>
       <title>HP Touchpad</title>
-      <link>http://joesacher.com/blog/2011/07/01/hp-touchpad/</link>
+      <link>http://www.joesacher.com/blog/2011/07/01/hp-touchpad/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/07/01/hp-touchpad/</guid>
+      <guid>http://www.joesacher.com/blog/2011/07/01/hp-touchpad/</guid>
       <description>July 1st is the day that many WebOS users have been waiting for. The day that HP releases their first WebOS tablet, the Touchpad. I preordered through Amazon and was delivered my own spanking new HP Touchpad tablet this evening.
 Overall it is an amazing piece of technology. Slicker than any Android tablets that I have tried, but not quite as polished as an iPad. However, for me the usability is far above an iPad, whose &amp;ldquo;multitasking&amp;rdquo; is a joke compared to the Touchpad.</description>
     </item>
     
     <item>
       <title>Enhancing the AVR ISP II</title>
-      <link>http://joesacher.com/blog/2011/05/23/enhancing-the-avr-isp-ii/</link>
+      <link>http://www.joesacher.com/blog/2011/05/23/enhancing-the-avr-isp-ii/</link>
       <pubDate>Mon, 23 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/05/23/enhancing-the-avr-isp-ii/</guid>
+      <guid>http://www.joesacher.com/blog/2011/05/23/enhancing-the-avr-isp-ii/</guid>
       <description>The AVR ISP II is a device to program an AVR microcontroller using a 6 pin header in a circuit. It does not contain any capability to power the circuit being programmed. This could be very handy.
 Dave Jones at the EEVBlog has a video about adding power to the ISP cable, using an LM317 to provide both 5V and 3.</description>
     </item>
     
     <item>
       <title>WebOS From Homebrew to Catalog: tips learned in the process</title>
-      <link>http://joesacher.com/blog/2011/03/01/from-homebrew-to-catalog-webos-tips-learned-in-the-process/</link>
+      <link>http://www.joesacher.com/blog/2011/03/01/from-homebrew-to-catalog-webos-tips-learned-in-the-process/</link>
       <pubDate>Tue, 01 Mar 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/03/01/from-homebrew-to-catalog-webos-tips-learned-in-the-process/</guid>
+      <guid>http://www.joesacher.com/blog/2011/03/01/from-homebrew-to-catalog-webos-tips-learned-in-the-process/</guid>
       <description>I&amp;rsquo;ve been a developer, on many different platforms, for just under two decades. Like many code monkeys, I enjoy learning new architectures. I&amp;rsquo;m not exactly sure why, but programming for WebOS has me more excited than I&amp;rsquo;ve been since working with GCC on the Palm Personal. The idea of building apps with web technologies on a portable device sounded interesting. I knew that certain things would be easy and others hard.</description>
     </item>
     
     <item>
       <title>TouchStone Theories Confirmed</title>
-      <link>http://joesacher.com/blog/2011/02/22/touchstone-theories-confirmed/</link>
+      <link>http://www.joesacher.com/blog/2011/02/22/touchstone-theories-confirmed/</link>
       <pubDate>Tue, 22 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/02/22/touchstone-theories-confirmed/</guid>
+      <guid>http://www.joesacher.com/blog/2011/02/22/touchstone-theories-confirmed/</guid>
       <description>Precentral.net read through the initial TouchStone theory post I put up and asked HP about my theories.
 As they posted in this article on the site, HP confirmed the identification to work as I assumed.
 The new TouchStones will use the 3.1 MHz frequency to pass a unique key to the new WebOS phones, which will enable them to know where it is docked. You will obviously have to tell the phone where each dock is located the first time you use it.</description>
@@ -168,30 +168,30 @@ The new TouchStones will use the 3.1 MHz frequency to pass a unique key to the n
     
     <item>
       <title>WebOS Touchstone - Now and Future</title>
-      <link>http://joesacher.com/blog/2011/02/15/webos-touchstone-now-and-future/</link>
+      <link>http://www.joesacher.com/blog/2011/02/15/webos-touchstone-now-and-future/</link>
       <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/02/15/webos-touchstone-now-and-future/</guid>
+      <guid>http://www.joesacher.com/blog/2011/02/15/webos-touchstone-now-and-future/</guid>
       <description>When the Palm Pre was released, Palm also sold a unique inductive charger called the Touchstone. Inductive charging isn&amp;rsquo;t new, by any means. Electric toothbrushes and many other devices have used them in the past. This was a first for cell phones, I believe.
 When I purchased my Pre and eventually many Touchstones, I didn&amp;rsquo;t have a good oscilloscope to play around with the signals.</description>
     </item>
     
     <item>
       <title>Amateur Extra Class - No More Tests</title>
-      <link>http://joesacher.com/blog/2011/02/09/amateur-extra-class-no-more-tests/</link>
+      <link>http://www.joesacher.com/blog/2011/02/09/amateur-extra-class-no-more-tests/</link>
       <pubDate>Wed, 09 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/02/09/amateur-extra-class-no-more-tests/</guid>
+      <guid>http://www.joesacher.com/blog/2011/02/09/amateur-extra-class-no-more-tests/</guid>
       <description>I studied for a month or so and re-learned quite a bit of electronics for AC circuits. Resistance, Reactance, Polar Impedance. I took the test on the morning of February 5th and missed 1 out of 50. So now I am an Extra Class Licensed Ham Radio operator. No more tests to take. This is as high as it gets.
 I am still working on what type of antenna to put up.</description>
     </item>
     
     <item>
       <title>Bencoding (encoding of a .torrent file)</title>
-      <link>http://joesacher.com/blog/2010/12/21/bencoding/</link>
+      <link>http://www.joesacher.com/blog/2010/12/21/bencoding/</link>
       <pubDate>Tue, 21 Dec 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2010/12/21/bencoding/</guid>
+      <guid>http://www.joesacher.com/blog/2010/12/21/bencoding/</guid>
       <description>The Bencode format is an interesting design. It is byte based, which makes it safe from big-endian and little-endian translations. Somewhere when reading about how torrents worked, I got looking at their file format.
 As far as I know, the Bencode format isn&amp;rsquo;t used on anything but torrent files. The format is pretty simple, with only 4 different data structures: Byte String, Integer, List, and Dictionary.
 Bencode Basics Byte String This is formatted as [integer length]:[byte string].</description>
@@ -199,10 +199,10 @@ Bencode Basics Byte String This is formatted as [integer length]:[byte string].<
     
     <item>
       <title>I&#39;m such a HAM...</title>
-      <link>http://joesacher.com/blog/2010/12/18/im-such-a-ham/</link>
+      <link>http://www.joesacher.com/blog/2010/12/18/im-such-a-ham/</link>
       <pubDate>Sat, 18 Dec 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2010/12/18/im-such-a-ham/</guid>
+      <guid>http://www.joesacher.com/blog/2010/12/18/im-such-a-ham/</guid>
       <description>Years ago, Dad and I attended meetings for Amateur Radio at the local Red Cross building in Jeffersonville. We both worked through passing the 5 words per minute Morse Code and test to get our Novice license and then studied and passed the test for Technician Class. I was licensed in 1990 and expired in 2000. Just when I was starting work in the &amp;ldquo;Real World&amp;rdquo;, outside of college. I didn&amp;rsquo;t bother renewing.</description>
     </item>
     

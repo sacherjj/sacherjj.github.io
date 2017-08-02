@@ -2,68 +2,68 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Touchpad on joesacher.com</title>
-    <link>http://joesacher.com/tags/touchpad/</link>
+    <link>http://www.joesacher.com/tags/touchpad/</link>
     <description>Recent content in Touchpad on joesacher.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
     <lastBuildDate>Wed, 10 Aug 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://joesacher.com/tags/touchpad/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.joesacher.com/tags/touchpad/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Encoding Videos for the HP Touchpad</title>
-      <link>http://joesacher.com/blog/2011/08/10/encoding-videos-for-the-hp-touchpad/</link>
+      <link>http://www.joesacher.com/blog/2011/08/10/encoding-videos-for-the-hp-touchpad/</link>
       <pubDate>Wed, 10 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/08/10/encoding-videos-for-the-hp-touchpad/</guid>
+      <guid>http://www.joesacher.com/blog/2011/08/10/encoding-videos-for-the-hp-touchpad/</guid>
       <description>This post is for those who have ripped their DVDs and other video media and would like to load it onto their HP Touchpad. I started to encode videos for the HP Touchpad using HandBrake, which had given me success for video targeting my Palm Pre. I used iPad profiles, as the display size is exactly the same. It seemed that no matter what I tried, the files would not show up in Photos &amp;amp; Videos app.</description>
     </item>
     
     <item>
       <title>Hacking can be bad for your Kindle App&#39;s Health</title>
-      <link>http://joesacher.com/blog/2011/08/06/unrecoverable-problems-with-kindle-app-on-touchpad/</link>
+      <link>http://www.joesacher.com/blog/2011/08/06/unrecoverable-problems-with-kindle-app-on-touchpad/</link>
       <pubDate>Sat, 06 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/08/06/unrecoverable-problems-with-kindle-app-on-touchpad/</guid>
+      <guid>http://www.joesacher.com/blog/2011/08/06/unrecoverable-problems-with-kindle-app-on-touchpad/</guid>
       <description>If you feel like following my hacking example to load .mobi format books onto the Touchpad&amp;rsquo;s Kindle App, be ready to have to reload it. If the app has a problem parsing the book for any reason, you are done. With no back gesture on the Touchpad, there is no way to back out of the crashed book load. Each time you start the app, it will load the file into a crash situation.</description>
     </item>
     
     <item>
       <title>Touchpad Keyboard - Good, Bad, and Ugly</title>
-      <link>http://joesacher.com/blog/2011/08/06/hp-touchpad-keyboard-good-bad-and-ugly/</link>
+      <link>http://www.joesacher.com/blog/2011/08/06/hp-touchpad-keyboard-good-bad-and-ugly/</link>
       <pubDate>Sat, 06 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/08/06/hp-touchpad-keyboard-good-bad-and-ugly/</guid>
+      <guid>http://www.joesacher.com/blog/2011/08/06/hp-touchpad-keyboard-good-bad-and-ugly/</guid>
       <description>While there is no doubt that software for the HP Touchpad is in its infancy, it is hard not to see the great usefulness and potential. There are a few good writing apps for the Touchpad, including those for WordPress blogging. I&amp;rsquo;m composing this in the WordPress App for WebOS tablet. Any of these are much easier to use with a hardware keyboard, than attempting to type quantity on a virtual keyboard.</description>
     </item>
     
     <item>
       <title>Loading mobi books into Touchpad&#39;s Kindle App</title>
-      <link>http://joesacher.com/blog/2011/08/05/loading-mobi-books-into-touchpads-kindle-app/</link>
+      <link>http://www.joesacher.com/blog/2011/08/05/loading-mobi-books-into-touchpads-kindle-app/</link>
       <pubDate>Fri, 05 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/08/05/loading-mobi-books-into-touchpads-kindle-app/</guid>
+      <guid>http://www.joesacher.com/blog/2011/08/05/loading-mobi-books-into-touchpads-kindle-app/</guid>
       <description>I have purchased many ebooks and created others manually in the .mobi format. This is very easy to load onto my Kindle device to read. Unfortunately, the current Kindle app on the Touchpad does not allow loading ebooks other than downloading from Amazon. This is unfortunate and makes the Touchpad a poor replacement for my Kindle.</description>
     </item>
     
     <item>
       <title>Touchpad WiFi - Hidden Passcode Hell</title>
-      <link>http://joesacher.com/blog/2011/08/02/hp-touchpad-wifi-setup-hidden-passcode-hell/</link>
+      <link>http://www.joesacher.com/blog/2011/08/02/hp-touchpad-wifi-setup-hidden-passcode-hell/</link>
       <pubDate>Tue, 02 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/08/02/hp-touchpad-wifi-setup-hidden-passcode-hell/</guid>
+      <guid>http://www.joesacher.com/blog/2011/08/02/hp-touchpad-wifi-setup-hidden-passcode-hell/</guid>
       <description>I have just spent the last 30 minutes trying to get our complex 64 character WPA key into my HP Touchpad so I can start the setup procedure. The password field for the WiFi key is frustrating.
 The last character is only shown for a second or two, then it too fades into the dots of obscurity.</description>
     </item>
     
     <item>
       <title>HP Touchpad</title>
-      <link>http://joesacher.com/blog/2011/07/01/hp-touchpad/</link>
+      <link>http://www.joesacher.com/blog/2011/07/01/hp-touchpad/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/07/01/hp-touchpad/</guid>
+      <guid>http://www.joesacher.com/blog/2011/07/01/hp-touchpad/</guid>
       <description>July 1st is the day that many WebOS users have been waiting for. The day that HP releases their first WebOS tablet, the Touchpad. I preordered through Amazon and was delivered my own spanking new HP Touchpad tablet this evening.
 Overall it is an amazing piece of technology. Slicker than any Android tablets that I have tried, but not quite as polished as an iPad. However, for me the usability is far above an iPad, whose &amp;ldquo;multitasking&amp;rdquo; is a joke compared to the Touchpad.</description>
     </item>

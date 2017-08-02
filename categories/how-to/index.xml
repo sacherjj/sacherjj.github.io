@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>How To on joesacher.com</title>
-    <link>http://joesacher.com/categories/how-to/</link>
+    <link>http://www.joesacher.com/categories/how-to/</link>
     <description>Recent content in How To on joesacher.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
     <lastBuildDate>Thu, 08 Sep 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://joesacher.com/categories/how-to/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.joesacher.com/categories/how-to/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Thermostat Wiring</title>
-      <link>http://joesacher.com/blog/2011/09/08/thermostat-wiring/</link>
+      <link>http://www.joesacher.com/blog/2011/09/08/thermostat-wiring/</link>
       <pubDate>Thu, 08 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/09/08/thermostat-wiring/</guid>
+      <guid>http://www.joesacher.com/blog/2011/09/08/thermostat-wiring/</guid>
       <description>I have delusions of possibly making an embedded thermostat solution that tracks energy usage, inside and outside temperature and humidity and possibly online weather forecasts for setting house temperature. For this to work, I need to fully understand thermostat wiring. It took a bit of looking around the net to identify thermostat wire colors, thermostat terminals and functions, so I thought I would summarize it in a post.
 All signals are 24 VAC controlled</description>
     </item>
     
     <item>
       <title>How To Build Bicycle Panniers</title>
-      <link>http://joesacher.com/blog/2007/12/11/how-to-build-bicycle-panniers/</link>
+      <link>http://www.joesacher.com/blog/2007/12/11/how-to-build-bicycle-panniers/</link>
       <pubDate>Tue, 11 Dec 2007 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2007/12/11/how-to-build-bicycle-panniers/</guid>
+      <guid>http://www.joesacher.com/blog/2007/12/11/how-to-build-bicycle-panniers/</guid>
       <description>I was unable to find a pannier set that works exactly as I needed for the under-seat rack on my RANS Rocket. I like the panniers made by Arkel of all the panniers I have looked at and used. However, I could not find a size that worked exactly for me.</description>
     </item>
     
     <item>
       <title>Creating a Dry Bag for my Martin Backpacker Guitar</title>
-      <link>http://joesacher.com/blog/2007/12/01/creating-a-dry-bag/</link>
+      <link>http://www.joesacher.com/blog/2007/12/01/creating-a-dry-bag/</link>
       <pubDate>Sat, 01 Dec 2007 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2007/12/01/creating-a-dry-bag/</guid>
+      <guid>http://www.joesacher.com/blog/2007/12/01/creating-a-dry-bag/</guid>
       <description>I searched without success for a lightweight, waterproof bag to protect my Martin Backpacker Guitar. Typical dry bags used for water sports are overbuilt for bicycle touring and backpacking use, where weight is a very large factor. They use clear vinyl or heavier vinyl coated cloth and weigh many pounds.</description>
     </item>
     
     <item>
       <title>Vision Seat Camp Chair</title>
-      <link>http://joesacher.com/blog/2005/05/31/vision-seat-camp-chair/</link>
+      <link>http://www.joesacher.com/blog/2005/05/31/vision-seat-camp-chair/</link>
       <pubDate>Tue, 31 May 2005 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2005/05/31/vision-seat-camp-chair/</guid>
+      <guid>http://www.joesacher.com/blog/2005/05/31/vision-seat-camp-chair/</guid>
       <description>I am almost fully equipped for touring on my Vision Recumbent with a BOB trialer for cargo. However, I really think a good camp seat would be nice. The only problem with that is the weight must go up the hills. The seat on the Vision is removable by lossening the back mount and removing the bottom pivot mount.</description>
     </item>
     
     <item>
       <title>Watts, Volts, and Amps</title>
-      <link>http://joesacher.com/blog/2005/05/02/watts-volts-and-amps/</link>
+      <link>http://www.joesacher.com/blog/2005/05/02/watts-volts-and-amps/</link>
       <pubDate>Mon, 02 May 2005 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2005/05/02/watts-volts-and-amps/</guid>
+      <guid>http://www.joesacher.com/blog/2005/05/02/watts-volts-and-amps/</guid>
       <description>or How not to look Stupid and Burn Down a House Note: This was an article written for a now defunct site about film making. Thus, the intended audience of the article were low budget independent filmmakers. I wrote this to address may of the problems I witnessed on various sets. However, this applies to everyone that uses extension cords for anything.
 This article is going to be a little technical and possibly boring to some, but the subject is important.</description>
     </item>

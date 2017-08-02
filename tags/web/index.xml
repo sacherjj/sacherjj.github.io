@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web on joesacher.com</title>
-    <link>http://joesacher.com/tags/web/</link>
+    <link>http://www.joesacher.com/tags/web/</link>
     <description>Recent content in Web on joesacher.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
     <lastBuildDate>Thu, 03 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://joesacher.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.joesacher.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Moved from Pelican to Hugo</title>
-      <link>http://joesacher.com/blog/2017/08/03/pelican-to-hugo/</link>
+      <link>http://www.joesacher.com/blog/2017/08/03/pelican-to-hugo/</link>
       <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2017/08/03/pelican-to-hugo/</guid>
+      <guid>http://www.joesacher.com/blog/2017/08/03/pelican-to-hugo/</guid>
       <description>I&amp;rsquo;ve used Python as my main programming language for a few years. When my Word Press was hacked and defaced yet again, I finally decided to rebuild my website with a static generator and host on GitHub. I leaned towards Pelican, due to the Python base that I thought I could modify if I needed. And I hoped that I could get it to work easily.
 I did get everything converted over to .</description>
     </item>

@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on joesacher.com</title>
-    <link>http://joesacher.com/categories/</link>
+    <link>http://www.joesacher.com/categories/</link>
     <description>Recent content in Categories on joesacher.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
     
-	<atom:link href="http://joesacher.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.joesacher.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Cooking</title>
-      <link>http://joesacher.com/categories/cooking/</link>
+      <link>http://www.joesacher.com/categories/cooking/</link>
       <pubDate>Sun, 27 Jan 2008 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/categories/cooking/</guid>
+      <guid>http://www.joesacher.com/categories/cooking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>How To</title>
-      <link>http://joesacher.com/categories/how-to/</link>
+      <link>http://www.joesacher.com/categories/how-to/</link>
       <pubDate>Thu, 08 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/categories/how-to/</guid>
+      <guid>http://www.joesacher.com/categories/how-to/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Personal</title>
-      <link>http://joesacher.com/categories/personal/</link>
+      <link>http://www.joesacher.com/categories/personal/</link>
       <pubDate>Sun, 15 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/categories/personal/</guid>
+      <guid>http://www.joesacher.com/categories/personal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reviews</title>
-      <link>http://joesacher.com/categories/reviews/</link>
+      <link>http://www.joesacher.com/categories/reviews/</link>
       <pubDate>Tue, 02 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/categories/reviews/</guid>
+      <guid>http://www.joesacher.com/categories/reviews/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tech</title>
-      <link>http://joesacher.com/categories/tech/</link>
+      <link>http://www.joesacher.com/categories/tech/</link>
       <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/categories/tech/</guid>
+      <guid>http://www.joesacher.com/categories/tech/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Trans Am</title>
-      <link>http://joesacher.com/categories/trans-am/</link>
+      <link>http://www.joesacher.com/categories/trans-am/</link>
       <pubDate>Tue, 04 Dec 2007 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/categories/trans-am/</guid>
+      <guid>http://www.joesacher.com/categories/trans-am/</guid>
       <description></description>
     </item>
     

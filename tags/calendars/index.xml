@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Calendars on joesacher.com</title>
-    <link>http://joesacher.com/tags/calendars/</link>
+    <link>http://www.joesacher.com/tags/calendars/</link>
     <description>Recent content in Calendars on joesacher.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
     <lastBuildDate>Thu, 11 Aug 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://joesacher.com/tags/calendars/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.joesacher.com/tags/calendars/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Multiple Google Calendars on Windows Phone (Mango)</title>
-      <link>http://joesacher.com/blog/2011/08/11/multiple-google-calendars-on-windows-phone-mango/</link>
+      <link>http://www.joesacher.com/blog/2011/08/11/multiple-google-calendars-on-windows-phone-mango/</link>
       <pubDate>Thu, 11 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://joesacher.com/blog/2011/08/11/multiple-google-calendars-on-windows-phone-mango/</guid>
+      <guid>http://www.joesacher.com/blog/2011/08/11/multiple-google-calendars-on-windows-phone-mango/</guid>
       <description>With webOS, Synergy just happened. (OK, it didn&amp;rsquo;t just happen. Many engineers spent many hours making this work seamlessly. But to the user, it &amp;ldquo;just happened&amp;rdquo;.) You don&amp;rsquo;t realize how nice this is, until you try a system that doesn&amp;rsquo;t really have it. Windows Phone 7 with NoDo (the current &amp;ldquo;up to date&amp;rdquo; version for the public) has this problem.</description>
     </item>
     
