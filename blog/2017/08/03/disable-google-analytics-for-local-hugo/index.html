@@ -6,7 +6,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Drybag</title>
+  <title>Disabling Analytics for Local Hugo</title>
   <meta name="author" content="" />
 
   
@@ -55,9 +55,9 @@
   <link rel="alternate" href="http://www.joesacher.com/index.xml" type="application/rss+xml" title="joesacher.com">
 
   
-  <meta property="og:title" content="Drybag" />
+  <meta property="og:title" content="Disabling Analytics for Local Hugo" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/tags/drybag//" />
+  <meta property="og:url" content="/blog/2017/08/03/disable-google-analytics-for-local-hugo//" />
   <meta property="og:image" content="img/logo.png" />
 
 </head>
@@ -76,9 +76,9 @@
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand home" href="http://www.joesacher.com/">
-                    <img src="http://www.joesacher.com/img/logo.png" alt="Drybag logo" class="hidden-xs hidden-sm">
-                    <img src="http://www.joesacher.com/img/logo-small.png" alt="Drybag logo" class="visible-xs visible-sm">
-                    <span class="sr-only">Drybag - go to homepage</span>
+                    <img src="http://www.joesacher.com/img/logo.png" alt="Disabling Analytics for Local Hugo logo" class="hidden-xs hidden-sm">
+                    <img src="http://www.joesacher.com/img/logo-small.png" alt="Disabling Analytics for Local Hugo logo" class="visible-xs visible-sm">
+                    <span class="sr-only">Disabling Analytics for Local Hugo - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -139,7 +139,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Drybag</h1>
+                <h1>Disabling Analytics for Local Hugo</h1>
             </div>
         </div>
     </div>
@@ -148,57 +148,77 @@
 
         <div id="content">
             <div class="container">
+
                 <div class="row">
+
                     
 
-                    <div class="col-md-9" id="blog-listing-medium">
+                    <div class="col-md-9" id="blog-post">
+                        
+                        <p class="text-muted mb-small text-right text-uppercase">
+                            August 3, 2017<br/>
+                            <i class="fa fa-clock-o"></i> 2 min. read</p>
 
+                            <div id="post-content">
+                                <p>Hugo&rsquo;s watching web server is great for creating pages.  Tweak a little and see the browser refresh.  (Unless you break things and then it is still just a manual browser refresh away from back to the good state, once your page is unbroken.)</p>
+
+<p>As I was developing local pages, I happened to have my realtime Google Anaytics open.  I noticed I was hitting it.  I would have assumed that it would be disabled if running locally.  So I started searching around for the code that inserts the script, so I could disable similar to how Disqus is disabled locally.  However, I couldn&rsquo;t find this script anywhere.</p>
+
+<p>After some web searching, it turns out that this is in an internal template, compiled with hugo.  I didn&rsquo;t know that was a thing.  Something to look out for when researching other template changes.</p>
+
+<p>To find where this exists in your theme, look for <code>{{ template &quot;_internal/google_analytics.html&quot; . }}</code>.  In the theme I am modifying for this site, it exists in <code>partials/scripts.html</code>.  I&rsquo;m not sure if this is common or not.</p>
+
+<p>I created a new file named <code>partials/google_analytics.html</code> with the following code:</p>
+
+<pre><code>&lt;!-- GOOGLE ANALYTICS --&gt;
+&lt;!-- Disabled when running locally --&gt;
+{{ if not .Site.BuildDrafts }}
+{{ if .Site.GoogleAnalytics }}
+&lt;script&gt;
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
+ga('send', 'pageview');
+&lt;/script&gt;
+{{ end }}
+{{ end }}
+</code></pre>
+
+<p>Then I replaced <code>{{ template &quot;_internal/google_analytics.html&quot; . }}</code> with <code>{{ partial &quot;google_analytics.html&quot; . }}</code>.</p>
+
+<p>Now running locally with the <code>-D</code> flag, the Google Analytics does not load and polute my real statistics.   I typically run <code>hugo -wD server</code> in development.</p>
+
+                                
+
+                             </div>
                         
                         
-                        <section class="post">
-                            <div class="row">
-                                <div class="col-md-4">
-                                  <div class="image">
-                                      <a href="http://www.joesacher.com/blog/2007/12/01/creating-a-dry-bag/">
-                                          
-                                          <img src="http://www.joesacher.com/img/posts/drybag/DBOrigDryBag.jpg" class="img-responsive" alt="">
-                                          
-                                      </a>
-                                  </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h2><a href="http://www.joesacher.com/blog/2007/12/01/creating-a-dry-bag/">Creating a Dry Bag for my Martin Backpacker Guitar</a></h2>
-                                    <div class="clearfix">
-                                        <p class="author-category">
-                                          
-                                          
-                                          
-                                          in <a href="http://www.joesacher.com/categories/how-to">how-to</a>
-                                          
-                                          
-                                          &nbsp; &nbsp; <i class="fa fa-clock-o"></i> 11 min. read
-                                        </p>
-                                        <p class="date-comments">
-                                            <a href="http://www.joesacher.com/blog/2007/12/01/creating-a-dry-bag/" class="text-uppercase"><i class="fa fa-calendar-o"></i>December 1, 2007</a>
-                                        </p>
-                                    </div>
-                                    <p class="intro">I searched without success for a lightweight, waterproof bag to protect my Martin Backpacker Guitar. Typical dry bags used for water sports are overbuilt for bicycle touring and backpacking use, where weight is a very large factor. They use clear vinyl or heavier vinyl coated cloth and weigh many pounds.</p>
-                                    <p class="read-more"><a href="http://www.joesacher.com/blog/2007/12/01/creating-a-dry-bag/" class="btn btn-template-main">Continue reading</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
+                        <div id="comments">
+                            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "joesachercom" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </div>
                         
 
-                        <ul class="pager">
-                            
-                            <li class="previous disabled"><a href="#">&larr; Newer</a></li>
-                            
-
-                            
-                            <li class="next disabled"><a href="#">Older &rarr;</a></li>
-                            
-                        </ul>
                     </div>
                     
 
@@ -236,7 +256,7 @@
             <li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
             </li>
             
-            <li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (21)</a>
+            <li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (22)</a>
             </li>
             
             <li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (19)</a>
@@ -288,7 +308,7 @@
             <li><a href="http://www.joesacher.com/tags/dessert"><i class="fa fa-tags"></i> dessert</a>
             </li>
             
-            <li><a href="http://www.joesacher.com/tags/drybag"><i class="fa fa-tags"></i> drybag</a>
+            <li><a href="http://www.joesacher.com/tags/dry-bag"><i class="fa fa-tags"></i> dry-bag</a>
             </li>
             
             <li><a href="http://www.joesacher.com/tags/ebooks"><i class="fa fa-tags"></i> ebooks</a>
@@ -301,6 +321,9 @@
             </li>
             
             <li><a href="http://www.joesacher.com/tags/film-making"><i class="fa fa-tags"></i> film-making</a>
+            </li>
+            
+            <li><a href="http://www.joesacher.com/tags/google"><i class="fa fa-tags"></i> google</a>
             </li>
             
             <li><a href="http://www.joesacher.com/tags/hacking"><i class="fa fa-tags"></i> hacking</a>
@@ -414,6 +437,7 @@
 
                 </div>
                 
+
             </div>
             
         </div>
@@ -448,15 +472,18 @@
     
 
     
+
+
+
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
 ga('create', 'UA-3718160-3', 'auto');
 ga('send', 'pageview');
 </script>
+
 
 <script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

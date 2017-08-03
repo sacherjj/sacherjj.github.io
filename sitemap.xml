@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.joesacher.com/blog/2017/08/03/disable-google-analytics-for-local-hugo/</loc>
+    <lastmod>2017-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/blog/2017/08/03/implementing-series-in-hugo/</loc>
     <lastmod>2017-08-03T00:00:00+00:00</lastmod>
   </url>
@@ -419,7 +424,7 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/drybag/</loc>
+    <loc>http://www.joesacher.com/tags/dry-bag/</loc>
     <lastmod>2007-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -445,6 +450,12 @@
   <url>
     <loc>http://www.joesacher.com/tags/film-making/</loc>
     <lastmod>2005-05-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/tags/google/</loc>
+    <lastmod>2017-08-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

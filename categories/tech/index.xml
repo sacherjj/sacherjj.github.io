@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Disabling Analytics for Local Hugo</title>
+      <link>http://www.joesacher.com/blog/2017/08/03/disable-google-analytics-for-local-hugo/</link>
+      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.joesacher.com/blog/2017/08/03/disable-google-analytics-for-local-hugo/</guid>
+      <description>Hugo&amp;rsquo;s watching web server is great for creating pages. Tweak a little and see the browser refresh. (Unless you break things and then it is still just a manual browser refresh away from back to the good state, once your page is unbroken.)
+As I was developing local pages, I happened to have my realtime Google Anaytics open. I noticed I was hitting it. I would have assumed that it would be disabled if running locally.</description>
+    </item>
+    
+    <item>
       <title>Implementing a Series in Hugo</title>
       <link>http://www.joesacher.com/blog/2017/08/03/implementing-series-in-hugo/</link>
       <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
