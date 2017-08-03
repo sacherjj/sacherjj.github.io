@@ -6,7 +6,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Why Ride a Bicycle across the Country?</title>
+  <title>Implementing a Series in Hugo</title>
   <meta name="author" content="" />
 
   
@@ -55,9 +55,9 @@
   <link rel="alternate" href="http://www.joesacher.com/index.xml" type="application/rss+xml" title="joesacher.com">
 
   
-  <meta property="og:title" content="Why Ride a Bicycle across the Country?" />
+  <meta property="og:title" content="Implementing a Series in Hugo" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/blog/2007/12/04/why-do-you-ride-a-bicycle-across-the-country//" />
+  <meta property="og:url" content="/blog/2017/08/03/implementing-series-in-hugo//" />
   <meta property="og:image" content="img/logo.png" />
 
 </head>
@@ -76,9 +76,9 @@
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand home" href="http://www.joesacher.com/">
-                    <img src="http://www.joesacher.com/img/logo.png" alt="Why Ride a Bicycle across the Country? logo" class="hidden-xs hidden-sm">
-                    <img src="http://www.joesacher.com/img/logo-small.png" alt="Why Ride a Bicycle across the Country? logo" class="visible-xs visible-sm">
-                    <span class="sr-only">Why Ride a Bicycle across the Country? - go to homepage</span>
+                    <img src="http://www.joesacher.com/img/logo.png" alt="Implementing a Series in Hugo logo" class="hidden-xs hidden-sm">
+                    <img src="http://www.joesacher.com/img/logo-small.png" alt="Implementing a Series in Hugo logo" class="visible-xs visible-sm">
+                    <span class="sr-only">Implementing a Series in Hugo - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -139,7 +139,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Why Ride a Bicycle across the Country?</h1>
+                <h1>Implementing a Series in Hugo</h1>
             </div>
         </div>
     </div>
@@ -156,261 +156,199 @@
                     <div class="col-md-9" id="blog-post">
                         
                         <p class="text-muted mb-small text-right text-uppercase">
-                            December 4, 2007<br/>
+                            August 3, 2017<br/>
                             <i class="fa fa-clock-o"></i> 7 min. read</p>
 
                             <div id="post-content">
-                                <p>I have been asked many times why I wanted to ride a bicycle across the county.  Having completed the trip, the question became easy to answer.  Before I left, I&rsquo;m not sure I even could answer it.</p>
+                                
 
-<p>I am a bicentennial baby, born in 1976.  This is the same year the Bikecentennial route was created as a celebration of our 200 years as a country.  Thousands of cyclists rode across the country on that route during the inaugural year.  Many thousands more have crossed the United States on the same route since.  The route is still maintained by the same organization with a new name: Adventure Cycling.  Their maps are extremely helpful for the bicycle tourist and have kept the same basic route, with slight changes as roads are modified over the years.</p>
+<h2 id="goal">Goal</h2>
 
-<p>All of this is well and good, you say, but it still doesn&rsquo;t answer the why.  The truth is that I didn&rsquo;t really know.  I read a tour report on-line and thought it sounded interesting.  Over the years it fermented into a strong desire.  I wondered if this was something I could do.  I started riding a Trek 520 touring bike in college.  I was overweight.  No nicer way to say it.  Riding 50 miles in a day was a task.  This wasn&rsquo;t because I couldn&rsquo;t physically do it, my butt just couldn&rsquo;t handle the time on the bike.  Yes, I had the real bike shorts.  I tried three different seats.  It just didn&rsquo;t work.  All season would be required before I could do two back to back 50 mile days.  I couldn&rsquo;t see myself riding across the country, when you are doing 50+ mile days, every day.  The idea was put on the shelf.</p>
+<p>In converting my Pelican blog over to Hugo, I needed to learn a new templating system.  I miss a few things that Pelican did, like categories based on folders and not front matter.  However, I can see advantages of allowing more organization in these folders, without affecting final position on the web.</p>
 
-<p>I started working at Office Depot as a Business Machine Specialist, while in High School.  Lower hours during the school year and full weeks during the summer, I didn&rsquo;t have much time off.  When High School turned to college, I worked as much as I could to help pay for school.  Added to that a challenging Engineering curriculum and there wasn&rsquo;t much time off.  Then I started work at a consulting company, pulling crazy hours and throwing myself into my work.  The reality was that I needed to get a life, but I didn&rsquo;t realize it at the time.  I had work and not much else.  Work was challenging and I enjoyed it, but I was burning myself out.</p>
+<p>One glaring miss was the idea of series links.  I have been trying to add photos and complete conversion of my travel journal into posts for my <a href="/categories/trans-am">Trans-Am bicycle trip in 2002</a>.  I wanted the bottom of the entry to allow the reader to jump to the next post.</p>
 
-<p>In 2001, I ran into a man on a recumbent bicycle.  The man&rsquo;s name was Pete, something I didn&rsquo;t know until months later when we became friends.  I asked him so many questions that he graciously answered.  Soon after that encounter, I purchased my first recumbent.  It would be the first of many to come.</p>
+<p>My goal was to have something like this at the bottom of any series page:</p>
 
-<p>With recumbents came pain free riding.  They allow you to ride a bicycle, while you sit in a lazy boy recliner.  I started easily riding 50 miles.  I rode a century (100 miles) without much problem.  I thought back to the first century I rode on an old mountain bike without road tires.  That experience is currently in Webster&rsquo;s as a definition for pain.  I had trouble walking for a day or two after that.  With the recumbent century, I just had sore legs and nothing else hurt.  This was the way to ride.</p>
+<pre><code>Part [Current Page Num] of [Total Series Page Count] in the [Series Name] series.
+&lt; Series Start &gt; | &lt; [Previous Page Title]  |  [Next Page Title] &gt;
+</code></pre>
 
-<p>Now having a way to ride across the country, I began to seriously consider it.  I didn&rsquo;t know if I could actually make it all the way across, physically.  That became another reason to do it, just to see if I could.  This is the same reason people have climbed mountains and explored new realms.</p>
+<p>I would like <code>&lt; Series Start &gt;</code>, <code>Previous Page Title</code>, <code>Next Page Title</code>, and <code>Series Name</code> have hyperlinks to the relevant pages.  I was able to accomplish all but the last.  I&rsquo;m not sure if I want to map the <code>Series Name</code> to <code>category</code> or make a page that lists all posts of a series.</p>
 
-<p>While the discovery of recumbents was occurring, I started consulting for an Internet startup in my day job.  Working 6 and 7 days a week for 80+ hours each week can take a toll.  It was challenging and I enjoyed the work, but I was getting further burned out.  I needed a vacation that I didn&rsquo;t feel like I&rsquo;d had since High School.  I had saved up so much vacation time, it was ridiculous.</p>
+<p>For my Trans-Am, this would render like:</p>
 
-<p>I finally set a date for the trip and told my boss that I would need 4 months off work.  I told him that I would like to come back to work, but would take the time off regardless of a job waiting for me or not.  I had over a month of vacation to use and knew I would get a few more paychecks during the trip, even if I was forced to quit.  If I needed to find a new job when I got back, so be it.  I wound up with two months paid leave (I could pull forward vacation time from the new PTO system in addition to my vacation) and two months without pay.  Then I would return to work.</p>
+<pre><code>Part 6 of 19 in the Trans-Am series.
+&lt; Series Start &gt;  |  &lt; Day 2 - Sherwood Forest Plantation  |  Day 4 - Ashland to Lake Anna, VA &gt;
+</code></pre>
 
-<p>You would be bored with a description of all the small projects I was put on during the months before my departure.  I couldn&rsquo;t do a full term project, because I wouldn&rsquo;t be around.  As never happens (snicker), all the projects ran long.  Instead of getting ready for the trip, I was working serious overtime again.  I was getting burned out with a vengeance.</p>
+<h2 id="implementation">Implementation</h2>
 
-<p>So why did I go?  Had I known the serious and life changing effect this trip would have on me, I would have come up with a better answer.  But the only answer I came up with is this: I had to go.  I needed those hours of uninterrupted thought.  I needed to figure out if I was doing what I wanted in life.  I needed to change something.  I needed to see if I could ride a bicycle across the country.</p>
+<p>The template I came up with seems very inefficient.  Once I get more familiar with go templating, there may be a cleaner way of accomplishing this.  If you have improvements, I&rsquo;d really like to hear about them.</p>
 
-<p>I just had to go.  So I went.  And it changed my life.</p>
+<p>The first thing I need to do is detect if the page is part of a series and the name of that series.  I&rsquo;m printing this value out, so I need to make this to be ready to print.   I&rsquo;m using a <code>series</code> page variable in the front matter for this.</p>
 
-<p>My outlook on so many things is different.  The definition of what you actually need to live.  We think we need so much more than we do.  When life is a bicycle and what you can carry, you have to simplify and ration your belongings.  Each hill demands justification for every pound on the bike.  For all but the most seasoned bicycle tourists, the first few towns&rsquo; post office is a must stop location.  You have been on tour for some days and you can&rsquo;t for the life of you understand why you brought this heavy, useless [fill in the blank].  Then be prepared to do the same thing in another few days, when yet another piece of equipment is voted off of the bicycle.  This is an event similar to backpackers, where common hostels and other meeting locations often have a place to leave things that others can take.</p>
+<pre><code>+++
+series = &quot;Trans-Am&quot;
++++
+</code></pre>
 
-<p>There isn&rsquo;t a month that goes by that I don&rsquo;t long to be out on the road again for a while.  I am now over 5 years from my big trip and I still miss it.  The challenge was almost too much for me at first.  But it was an emotional triumph to persevere and conquer my weakness.</p>
+<p>In addition to this, I will be sorting based on date for page position in series.  <code>date</code> is already a defined variable, so that is handled.  I&rsquo;m adding this functionality as part of my theme, in a new file: <code>layouts/partials/series_link.html</code>.  I added a call to this in <code>layouts/_default/single.html</code> just below <code>{{ .Content }}</code> like the following:</p>
 
-<p>The experience isn&rsquo;t the same for everyone.  Many on the tour would have only goals in mind.  Finishing the tour in a certain amont of time.  This is often a necessity due to work schedules and other things.  I didn&rsquo;t finish the trip, due to an accident.  But it didn&rsquo;t matter, as my goal was touring.</p>
+<pre><code>&lt;div id=&quot;post-content&quot;&gt;
+    {{ .Content }}
+    {{ partial &quot;series_link.html&quot; . }}
+&lt;/div&gt;
+</code></pre>
 
-<p>I was surprised when I would ask if others had seen the beautiful artesian well or stopped at the museum.</p>
+<p>This will put it directly after the main page content.</p>
 
-<p>&ldquo;Nope.  But we made our mileage in under 5 hours.&rdquo;</p>
+<h3 id="series-link-html">series_link.html</h3>
 
-<p>Who cares?  How full of experiences were those miles?</p>
+<p>Complete source, which I will discuss in parts below:</p>
 
-<p>The same is true with life.  Are you living life to really live it or are to constantly striving ONLY towards goals and missing life?  Is your job and crazy hours caused by the things you surround yourself with and who know rule you?  Life can be as simple as a bicycle and being homeless.  Everything else is gravy.  But too much else is a millstone around your neck.</p>
+<pre><code>{{ if .Params.series }}
+    {{ $.Scratch.Add &quot;cur_page_num&quot; 1 }} 
+    {{ $.Scratch.Add &quot;total_page_num&quot; 0 }} 
+    {{ range where .Site.RegularPages.ByDate &quot;Params.series&quot; .Params.series }} 
+        {{ $.Scratch.Add &quot;total_page_num&quot; 1 }} 
+        {{ if gt $.Date.Unix .Date.Unix }} 
+            {{ $.Scratch.Add &quot;cur_page_num&quot; 1 }} 
+            {{ $.Scratch.Set &quot;prev_link&quot; .Permalink }}
+            {{ $.Scratch.Set &quot;prev_title&quot; .Title }}  
+        {{ end }}
+    {{ end }}
+    {{ range where .Site.RegularPages.ByDate.Reverse &quot;Params.series&quot; .Params.series }} 
+        {{ $.Scratch.Set &quot;first_link&quot; .Permalink }}
+        {{ if lt $.Date.Unix .Date.Unix }}
+            {{ $.Scratch.Set &quot;next_link&quot; .Permalink }}
+            {{ $.Scratch.Set &quot;next_title&quot; .Title }}
+        {{ end }}
+    {{ end }}
+    {{ if or ($.Scratch.Get &quot;next_link&quot;) ($.Scratch.Get &quot;prev_link&quot;) }} 
+        &lt;hr/&gt;
+        &lt;p&gt;Part {{ $.Scratch.Get &quot;cur_page_num&quot; }} of {{ $.Scratch.Get &quot;total_page_num&quot; }}
+            in the &lt;b&gt;{{ .Params.series }}&lt;/b&gt; series.&lt;/p&gt;
+        &lt;p&gt;
+        {{ if $.Scratch.Get &quot;prev_link&quot; }}
+            {{ if ne ($.Scratch.Get &quot;prev_link&quot;) ($.Scratch.Get &quot;first_link&quot;) }}
+                &lt;a href=&quot;{{ $.Scratch.Get &quot;first_link&quot; }}&quot;&gt;&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;Series Start&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                    |
+            {{ end }}
+            {{ if $.Scratch.Get &quot;prev_link&quot; }}
+                &lt;a href=&quot;{{ $.Scratch.Get &quot;prev_link&quot; }}&quot;&gt;&lt;i class=&quot;fa fa-angle-double-left&quot;&gt;&lt;/i&gt;{{ $.Scratch.Get &quot;prev_title&quot; }}&lt;/a&gt;
+            {{ end }}
+        {{ end }}
+        {{ if and ($.Scratch.Get &quot;next_link&quot;) ($.Scratch.Get &quot;prev_link&quot;) }}
+                |
+        {{ end }}
+        {{ if $.Scratch.Get &quot;next_link&quot; }}
+            &lt;a href=&quot;{{ $.Scratch.Get &quot;next_link&quot; }}&quot;&gt;{{ $.Scratch.Get &quot;next_title&quot; }}&lt;i class=&quot;fa fa-angle-double-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+        {{ end }}
+    {{ end }}
+{{ end }}
+</code></pre>
 
-<p>Live with a purpose and justify all the drains in your life.  Live simply.  Live happy.  Because doing otherwise isn&rsquo;t really living.</p>
+<h3 id="enabling">Enabling</h3>
 
-<p>I learned that by riding a bicycle across the country.</p>
+<p>The outer <code>if</code> only allows this to run if <code>series</code> exists on a page:</p>
 
-                                  
-     
-     
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-         
-             
-            
-              
-        
-     
-         
-        
-    
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-     
-        
-        
-    
-     
-        <hr/>
-        <p>Part 19 of 19
-            in the <b>Trans-Am</b> series.</p>
-        <p>
-          
-            
-                <a href="http://www.joesacher.com/blog/2002/05/19/day-0/"><i class="fa fa-angle-left"></i>Series Start<i class="fa fa-angle-right"></i></a>
-                     |  
-            
-            
-                <a href="http://www.joesacher.com/blog/2002/06/01/day-13/"><i class="fa fa-angle-double-left"></i>Day 13 - Christiansburg, VA to Newbern, VA</a>
-            
-        
-        
-        
-    
+<pre><code>{{ if .Params.series }}
+   ...
+{{ end }}
+</code></pre>
 
+<h3 id="getting-data">Getting Data</h3>
+
+<p>Next I am defining page variables to hold the current page number of the series and the total pages in the series.</p>
+
+<pre><code>{{ $.Scratch.Add &quot;cur_page_num&quot; 1 }}
+{{ $.Scratch.Add &quot;total_page_num&quot; 0 }}
+</code></pre>
+
+<p>Here we are looping through pages by date (old to new), where the page&rsquo;s series is the same as the current page&rsquo;s series.  <code>total_page_num</code> is incremented each loop, yielding a count of all pages that are in the series.</p>
+
+<p>Our <code>if</code> is true when the current page date is greater than the looping page.  This will apply to all pages previous to the current page.  So incrementing <code>cur_page_num</code> from 0 would make it the number of the previous page.  This is why it is initialized to 1 above.  I&rsquo;m also saving the link and title of the page.  This is set each page, but will last be set when it reaches the previous page, after which the if will be in a false state.</p>
+
+<pre><code>{{ range where .Site.RegularPages.ByDate &quot;Params.series&quot; .Params.series }}
+        {{ $.Scratch.Add &quot;total_page_num&quot; 1 }}
+    {{ if gt $.Date.Unix .Date.Unix }}
+        {{ $.Scratch.Add &quot;cur_page_num&quot; 1 }}
+        {{ $.Scratch.Set &quot;prev_link&quot; .Permalink }}
+        {{ $.Scratch.Set &quot;prev_title&quot; .Title }}
+    {{ end }}
+{{ end }}
+</code></pre>
+
+<p>The next loop is backwards, due to the <code>.Reverse</code>, so it gives pages by date (new to old).  I&rsquo;m setting <code>first_link</code> each time, so it will be the first in the series when complete.</p>
+
+<p>If the current page is less than the page in the loop (meaning it is older), we set the link and title for the next page.  This will end up with the page directly next of the current one, then the if is not true for the rest of the loop.</p>
+
+<pre><code>{{ range where .Site.RegularPages.ByDate.Reverse &quot;Params.series&quot; .Params.series }}
+    {{ $.Scratch.Set &quot;first_link&quot; .Permalink }}
+    {{ if lt $.Date.Unix .Date.Unix }}
+        {{ $.Scratch.Set &quot;next_link&quot; .Permalink }}
+        {{ $.Scratch.Set &quot;next_title&quot; .Title }}
+    {{ end }}
+{{ end }}
+</code></pre>
+
+<h3 id="generating-display">Generating Display</h3>
+
+<p>Now we have all the data we need and we just have to display it on the rendering page.</p>
+
+<p>I don&rsquo;t want to display anything if there is only one member of the series.  So we have a wrapper <code>if</code> to require either a next or a previous link.</p>
+
+<pre><code>{{ if or ($.Scratch.Get &quot;next_link&quot;) ($.Scratch.Get &quot;prev_link&quot;) }} 
+   ...
+{{ end }}
+</code></pre>
+
+<p>I printing an <code>&lt;hr/&gt;</code> to seperate this a little from the bottom of the page.  Next, I print the <code>Part x of y in the [SeriesName] series</code>.  Since I&rsquo;m just printing the <code>.Params.series</code> variable directly, it must be display ready as I mentioned above.</p>
+
+<pre><code>&lt;hr/&gt;
+&lt;p&gt;Part {{ $.Scratch.Get &quot;cur_page_num&quot; }} of {{ $.Scratch.Get &quot;total_page_num&quot; }}
+    in the &lt;b&gt;{{ .Params.series }}&lt;/b&gt; series.&lt;/p&gt;
+</code></pre>
+
+<p>We only want to print a <code>&lt; Series Start &gt;</code>  and/or  <code>&lt; [Previous Title]</code>, if there is a previous link.  So the outer <code>if</code> checks this.</p>
+
+<p>I want to display the previous title instead of just <code>&lt; Series Start &gt;</code> if they are the same thing.  So I&rsquo;m only showing the start link if <code>prev_link</code> and <code>first_link</code> are not equal (ne).  Since if they are not equal, I know both exist, I include the <code>|</code> delimiter inside that <code>if</code>.</p>
+
+<p>The second <code>if</code> just displays the previous link if it exists.</p>
+
+<p>So for the first page in the series, this section is skipped with no <code>prev_link</code> set.  For the second page in the series: <code>prev_link == first_link</code>, so the <code>&lt; Series Start &gt;</code> isn&rsquo;t printed and we get a <code>prev_title</code> text link to the first page.  For third and subsequent pages, we will get both of these links.</p>
+
+<pre><code>{{ if $.Scratch.Get &quot;prev_link&quot; }}
+    {{ if ne ($.Scratch.Get &quot;prev_link&quot;) ($.Scratch.Get &quot;first_link&quot;) }}
+        &lt;a href=&quot;{{ $.Scratch.Get &quot;first_link&quot; }}&quot;&gt;&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;Series Start&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            |  
+    {{ end }}
+    {{ if $.Scratch.Get &quot;prev_link&quot; }}
+        &lt;a href=&quot;{{ $.Scratch.Get &quot;prev_link&quot; }}&quot;&gt;&lt;i class=&quot;fa fa-angle-double-left&quot;&gt;&lt;/i&gt;{{ $.Scratch.Get &quot;prev_title&quot; }}&lt;/a&gt;
+    {{ end }}
+{{ end }}
+</code></pre>
+
+<p>This section prints the delimiting <code>|</code> between <code>next_link</code> and <code>prev_link</code>, only if both exist.</p>
+
+<pre><code>{{ if and ($.Scratch.Get &quot;next_link&quot;) ($.Scratch.Get &quot;prev_link&quot;) }}
+
+{{ end }}
+</code></pre>
+
+<p>The last section just prints the link to the next page, if <code>next_link</code> exists.</p>
+
+<pre><code>{{ if $.Scratch.Get &quot;next_link&quot; }} 
+    &lt;a href=&quot;{{ $.Scratch.Get &quot;next_link&quot; }}&quot;&gt;{{ $.Scratch.Get &quot;next_title&quot; }}&lt;i class=&quot;fa fa-angle-double-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+{{ end }}
+</code></pre>
+
+<p>That completes the template.</p>
+
+<p>You can see this on any one of my <a href="/categories/trans-am">Trans-Am pages</a>, at the bottom of the page.</p>
+
+                                
 
                              </div>
                         
