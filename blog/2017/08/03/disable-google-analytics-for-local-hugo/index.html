@@ -92,18 +92,6 @@
             <div class="navbar-collapse collapse" id="navigation">
                 <ul class="nav navbar-nav navbar-right">
                   
-                  <li class="dropdown">
-                    
-                    <a href="/">Home</a>
-                    
-                  </li>
-                  
-                  <li class="dropdown">
-                    
-                    <a href="/blog/">Blog</a>
-                    
-                  </li>
-                  
                 </ul>
             </div>
             
@@ -139,7 +127,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Disabling Analytics for Local Hugo</h1>
+                <h1>Disabling Analytics for Local Hugo
+
+                
+
+                </h1>
             </div>
         </div>
     </div>
@@ -162,7 +154,9 @@
                             <div id="post-content">
                                 <p>Hugo&rsquo;s watching web server is great for creating pages.  Tweak a little and see the browser refresh.  (Unless you break things and then it is still just a manual browser refresh away from back to the good state, once your page is unbroken.)</p>
 
-<p>As I was developing local pages, I happened to have my realtime Google Anaytics open.  I noticed I was hitting it.  I would have assumed that it would be disabled if running locally.  So I started searching around for the code that inserts the script, so I could disable similar to how Disqus is disabled locally.  However, I couldn&rsquo;t find this script anywhere.</p>
+<p>As I was developing local pages, I happened to have my realtime Google Anaytics open.  I noticed I was hitting it.  When I look back at yesterday&rsquo;s stats, I have 124 visits to a page I was working on, but hadn&rsquo;t published yet.  That isn&rsquo;t good.</p>
+
+<p>I would have assumed that it would be disabled if running locally.  So I started searching around for the code that inserts the script, so I could disable similar to how Disqus is disabled locally.  However, I couldn&rsquo;t find this script anywhere.</p>
 
 <p>After some web searching, it turns out that this is in an internal template, compiled with hugo.  I didn&rsquo;t know that was a thing.  Something to look out for when researching other template changes.</p>
 
@@ -190,7 +184,55 @@ ga('send', 'pageview');
 
 <p>Now running locally with the <code>-D</code> flag, the Google Analytics does not load and polute my real statistics.   I typically run <code>hugo -wD server</code> in development.</p>
 
-                                
+                                  
+     
+     
+     
+         
+         
+             
+            
+              
+        
+     
+         
+         
+             
+            
+              
+        
+     
+         
+        
+    
+     
+        
+        
+     
+        
+        
+     
+        
+        
+    
+     
+        <hr/>
+        <p>Part 3 of 3
+            in the <b>Hugo</b> series.</p>
+        <p>
+          
+            
+                <a href="http://www.joesacher.com/blog/2017/08/01/pelican-to-hugo/"><i class="fa fa-angle-left"></i>Series Start<i class="fa fa-angle-right"></i></a>
+                     |  
+            
+            
+                <a href="http://www.joesacher.com/blog/2017/08/03/implementing-series-in-hugo/"><i class="fa fa-angle-double-left"></i>Implementing a Series in Hugo</a>
+            
+        
+        
+        
+    
+
 
                              </div>
                         

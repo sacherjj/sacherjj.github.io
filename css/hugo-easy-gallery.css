@@ -16,17 +16,18 @@ Grid Layout Styles
     float: left;
     position: relative;
     /* Default: 1 tile wide */
+    border: 0;
     width: 100%;
     padding-bottom: 100%; 
 }
-@media only screen and (min-width : 365px) {
+@media only screen and (min-width : 480px) {
     /* Tablet view: 2 tiles */
     .gallery .box {
         width: 50%;
         padding-bottom: 50%;
     }
 }
-@media only screen and (min-width : 480px) {
+@media only screen and (min-width : 768px) {
     /* Small desktop / ipad view: 3 tiles */
     .gallery .box {
         width: 33.3%;
@@ -57,7 +58,7 @@ Transition styles
 figure styles
 */
 figure {
-    position:relative; /* purely to allow absolution positioning of figcaption */
+    position: relative; /* purely to allow absolution positioning of figcaption */
     overflow: hidden;
 }
 .gallery figure {
@@ -66,6 +67,12 @@ figure {
     right: 5px;
     top: 5px;
     bottom: 5px;
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+/*    border: 10px solid #FFF; */
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
 }
 .gallery.hover-effect-grow figure:hover {
     transform: scale(1.05);
@@ -120,7 +127,7 @@ figcaption styles
     background: #000;
     color: #FFF;
     text-align: center;
-    font-size: 75%; /* change this if you want bigger text */
+    font-size: 100%; /* change this if you want bigger text */
     background: rgba(0, 0, 0, 0.5);
     opacity: 1;
     cursor: pointer;

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 03 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Aug 2017 02:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.joesacher.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,17 +15,17 @@
     <item>
       <title>Disabling Analytics for Local Hugo</title>
       <link>http://www.joesacher.com/blog/2017/08/03/disable-google-analytics-for-local-hugo/</link>
-      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 03 Aug 2017 02:00:00 +0000</pubDate>
       
       <guid>http://www.joesacher.com/blog/2017/08/03/disable-google-analytics-for-local-hugo/</guid>
       <description>Hugo&amp;rsquo;s watching web server is great for creating pages. Tweak a little and see the browser refresh. (Unless you break things and then it is still just a manual browser refresh away from back to the good state, once your page is unbroken.)
-As I was developing local pages, I happened to have my realtime Google Anaytics open. I noticed I was hitting it. I would have assumed that it would be disabled if running locally.</description>
+As I was developing local pages, I happened to have my realtime Google Anaytics open. I noticed I was hitting it. When I look back at yesterday&amp;rsquo;s stats, I have 124 visits to a page I was working on, but hadn&amp;rsquo;t published yet.</description>
     </item>
     
     <item>
       <title>Implementing a Series in Hugo</title>
       <link>http://www.joesacher.com/blog/2017/08/03/implementing-series-in-hugo/</link>
-      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 03 Aug 2017 01:00:00 +0000</pubDate>
       
       <guid>http://www.joesacher.com/blog/2017/08/03/implementing-series-in-hugo/</guid>
       <description>Goal In converting my Pelican blog over to Hugo, I needed to learn a new templating system. I miss a few things that Pelican did, like categories based on folders and not front matter. However, I can see advantages of allowing more organization in these folders, without affecting final position on the web.
