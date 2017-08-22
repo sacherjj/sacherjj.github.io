@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Tue, 21 Dec 2010 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.joesacher.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python to Rust: Beginning</title>
+      <link>http://www.joesacher.com/blog/2017/08/22/01-ptr-beginning/</link>
+      <pubDate>Tue, 22 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.joesacher.com/blog/2017/08/22/01-ptr-beginning/</guid>
+      <description>Why Rust for Me I&amp;rsquo;ve been programming in Python for quite a few years. It is a great language for getting things done. There are so many modules and batteries included. You can do most things by selecting the right package. However, no one will tell you that it is fast. Unless you are talking about the speed to write code.
+I started looking at new languages to learn as a way of growing as a programmer.</description>
+    </item>
     
     <item>
       <title>Bencoding (encoding of a .torrent file)</title>

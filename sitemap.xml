@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.joesacher.com/blog/2017/08/22/01-ptr-beginning/</loc>
+    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2017/08/21/solar-eclipse-2017/</loc>
+    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/blog/2017/08/03/disable-google-analytics-for-local-hugo/</loc>
     <lastmod>2017-08-03T02:00:00+00:00</lastmod>
   </url>
@@ -378,7 +388,7 @@
   
   <url>
     <loc>http://www.joesacher.com/blog/</loc>
-    <lastmod>2017-08-03T02:00:00+00:00</lastmod>
+    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -545,7 +555,13 @@
   
   <url>
     <loc>http://www.joesacher.com/categories/personal/</loc>
-    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/tags/photography/</loc>
+    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -581,7 +597,7 @@
   
   <url>
     <loc>http://www.joesacher.com/tags/python/</loc>
-    <lastmod>2010-12-21T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -600,6 +616,12 @@
   <url>
     <loc>http://www.joesacher.com/categories/reviews/</loc>
     <lastmod>2011-08-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/tags/rust/</loc>
+    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -623,7 +645,7 @@
   
   <url>
     <loc>http://www.joesacher.com/categories/tech/</loc>
-    <lastmod>2017-08-03T02:00:00+00:00</lastmod>
+    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -683,7 +705,7 @@
   
   <url>
     <loc>http://www.joesacher.com/</loc>
-    <lastmod>2017-08-03T02:00:00+00:00</lastmod>
+    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

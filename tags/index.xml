@@ -265,6 +265,15 @@
     </item>
     
     <item>
+      <title>Photography</title>
+      <link>http://www.joesacher.com/tags/photography/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.joesacher.com/tags/photography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Pizza</title>
       <link>http://www.joesacher.com/tags/pizza/</link>
       <pubDate>Sun, 27 Jan 2008 00:00:00 +0000</pubDate>
@@ -312,7 +321,7 @@
     <item>
       <title>Python</title>
       <link>http://www.joesacher.com/tags/python/</link>
-      <pubDate>Tue, 21 Dec 2010 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 22 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.joesacher.com/tags/python/</guid>
       <description></description>
@@ -333,6 +342,15 @@
       <pubDate>Tue, 31 May 2005 00:00:00 +0000</pubDate>
       
       <guid>http://www.joesacher.com/tags/recumbent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>http://www.joesacher.com/tags/rust/</link>
+      <pubDate>Tue, 22 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.joesacher.com/tags/rust/</guid>
       <description></description>
     </item>
     
