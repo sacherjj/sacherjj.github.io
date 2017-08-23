@@ -6,13 +6,13 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vision Seat Camp Chair</title>
+  <title>Python to Rust: PIP to Cargo</title>
   <meta name="author" content="" />
 
   
 
   
-  <meta name="description" content="My little piece of the web.">	
+  <meta name="description" content="This post discusses Cargo, the packaging tool for Rust.  I compare it with Pip and explain how dependencies are referenced in Rust.  I explain how to create new Rust projects with cargo and to build and run them.">
   
 
   <meta name="generator" content="Hugo 0.25.1" />
@@ -55,9 +55,9 @@
   <link rel="alternate" href="http://www.joesacher.com/index.xml" type="application/rss+xml" title="joesacher.com">
 
   
-  <meta property="og:title" content="Vision Seat Camp Chair" />
+  <meta property="og:title" content="Python to Rust: PIP to Cargo" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/blog/2005/05/31/vision-seat-camp-chair//" />
+  <meta property="og:url" content="/blog/2017/08/23/02-ptr-cargo-pip//" />
   <meta property="og:image" content="img/logo.png" />
 
 </head>
@@ -76,9 +76,9 @@
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand home" href="http://www.joesacher.com/">
-                    <img src="http://www.joesacher.com/img/logo.png" alt="Vision Seat Camp Chair logo" class="hidden-xs hidden-sm">
-                    <img src="http://www.joesacher.com/img/logo-small.png" alt="Vision Seat Camp Chair logo" class="visible-xs visible-sm">
-                    <span class="sr-only">Vision Seat Camp Chair - go to homepage</span>
+                    <img src="http://www.joesacher.com/img/logo.png" alt="Python to Rust: PIP to Cargo logo" class="hidden-xs hidden-sm">
+                    <img src="http://www.joesacher.com/img/logo-small.png" alt="Python to Rust: PIP to Cargo logo" class="visible-xs visible-sm">
+                    <span class="sr-only">Python to Rust: PIP to Cargo - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -127,7 +127,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Vision Seat Camp Chair
+                <h1>Python to Rust: PIP to Cargo
 
                 
 
@@ -148,122 +148,257 @@
                     <div class="col-md-9" id="blog-post">
                         
                         <p class="text-muted mb-small text-right text-uppercase">
-                            May 31, 2005<br/>
-                            <i class="fa fa-clock-o"></i> 1 min. read</p>
+                            August 23, 2017<br/>
+                            <i class="fa fa-clock-o"></i> 8 min. read</p>
 
                             <div id="post-content">
                                 
 
+<p>This post will discuss Cargo, compare it a little with Python&rsquo;s processes for dependencies, and explain how to use it in getting started.</p>
 
+<p>Many of the differences between pip and cargo are there due to the interpreted Python vs compiled Rust.  To make separate environments to deal with incompatible dependencies in Python, you will create either a virtual environment or use a docker instance.  Rust is compiling, so you just need a way to point to the proper source code you depend on.</p>
 
+<p>There is a similar action where you use an <code>import</code> in Python or a <code>use</code> in Rust.  Currently, there is some duplication of documentation between the <code>.toml</code> file where you reference the code (more below on this) and <code>extern crate [name]</code> at the top of the source file.   However, cargo will automatically get the versions to build, in contrast to the more manual pip process.   For those setting up project correctly in Python, this is more like using <code>requirements.txt</code> to setup the virtual environment.</p>
 
+<p>One of the biggest differences that has potential to cause issues is Python only allowing a single version of a package to be installed.  Rust can have dependencies that reference different versions of the same package, as cargo crawls up the dependency chains.</p>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+<p>The only real problem I see with crates.io currently is the large number of package name squatting that is going on.  Discussions have shown that those in control currently do not considered it a problem.  However, we are seeing more people announce the name of a library as something strange &ldquo;because other good names were being squatted.&rdquo;   Many of the squatted names are empty and registered 2 years ago.  This will most likely need to be addressed in the future.</p>
 
+<h3 id="starting-a-new-project">Starting a new project</h3>
 
+<p>When installing rust, you also get the <code>cargo</code> command line utility in your path.  While you can make a stand alone <code>.rs</code> source code file and compile it manually with <code>rustc</code>, I find it much easier to use cargo for everything.  Even one file script programs.</p>
 
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+<p>In the terminal, navigate to the folder you want the source inside and type:</p>
 
-<div class="pswp__bg"></div>
+<pre><code>cargo new my_library
+</code></pre>
 
-<div class="pswp__scroll-wrap">
+<p>The default is to generate library code, as you will do that more than executables.  On Windows, these would compile into <code>.dll</code> and on Linux or Mac, they would compile to <code>.so</code>.</p>
+
+<p>This command will create the following in the current directory:</p>
+
+<pre><code>my_library
+└─── Cargo.toml
+└─── src
+    └─── lib.rs
+</code></pre>
+
+<p>To make an executable, you would add <code>--bin</code> to the end.</p>
+
+<pre><code>cargo new my_program --bin
+</code></pre>
+
+<p>This command will create the following in the current directory:</p>
+
+<pre><code>my_program
+└─── Cargo.toml
+└─── src
+    └─── main.rs
+</code></pre>
+
+<p><code>lib.rs</code> and <code>main.rs</code> are your library and program source code files, respectively.  You will see a <code>main()</code> function already created in <code>main.rs</code> and a testing module with a single empty test function in the <code>lib.rs</code> file.</p>
+
+<h3 id="cargo-toml">Cargo.toml</h3>
+
+<p>What is the <code>Cargo.toml</code> file?  This is what replaces the functionality of Python&rsquo;s virtual environment and requirements.txt.  It manages your link to dependencies and version of that code.  It also contains the data the you need if you decided to share your library on <a href="https://crates.io">crates.io</a>.  It works as a one file version of the many setuptools used for packaging a PyPi project.</p>
+
+<p>My <code>Cargo.toml</code> for my_library above, looks like this:</p>
+
+<pre><code>[package]
+name = &quot;my_library&quot;
+version = &quot;0.1.0&quot;
+authors = [&quot;sacherjj &lt;sacherjj@gmail.com&gt;&quot;]
+
+[dependencies]
+</code></pre>
+
+<p>The one for my_program is exactly the same, except for the name.  These three field are mandatory, so this file would be the absolute minimum <code>Cargo.toml</code> that would be valid, if we removed the <code>[dependencies]</code> section.  However, there is a large chance that you will rely on another library, so including it eliminates busy work for the programmer.</p>
+
+<p>Cargo uses <a href="http://semver.org/">Semantic Versioning</a> with three numbers for [major].[minor].[patch].  With 0.x.x, anything goes.  Try to be nice, but the interface is not baked in.  Most developers treat minor version as increment on changes to the interface and patch as increment on non-breaking build.</p>
+
+<p>At 1.0.0, you cannot make breaking changes without incrementing the major version.  You also can not add new public interfaces structs, functions, types, etc., without incrementing the major version.  This is true of Rust.  For the most part, everything that compiled with Rust 1.0.0, still compiles.  It is impressive with how rapid the release schedule is for the language.</p>
+
+<p>You may also only care about pointing to the major or minor versions.  Using <code>1</code> would give you the latest version until <code>2.0.0</code>.  <code>1.1</code> would give you the latest version below either <code>1.2.0</code>.</p>
+
+<p>You can also specify a minimum version.  <code>~1.0.0</code> would use any version <code>&gt;= 1.0.0</code> but less than <code>2.0.0</code>.   If you had a leading zero <code>~0.2.3</code>, we would get any patch update <code>&gt;= 0.2.3</code> but less than <code>0.3.0</code>.</p>
+
+<p>Wildcards can also be used where <code>1.*</code> has the same meaning as <code>~1.0.0</code>.  You can also use single and combined inequality operators, such as <code>&gt; 1.2</code> or <code>&gt;= 1.2 &lt; 1.5</code>.</p>
+
+<h3 id="adding-dependencies">Adding Dependencies</h3>
+
+<p>If our project uses serialization and deserialization, we might want to include the <a href="https://crates.io/crates/serde">serde</a> library.  You will notice at the top of that linked page, where is a Cargo.toml block with a copy button.  You would then paste this into your file, so out library <code>Cargo.toml</code> file would look like:</p>
+
+<pre><code>[package]
+name = &quot;my_library&quot;
+version = &quot;0.1.0&quot;
+authors = [&quot;sacherjj &lt;sacherjj@gmail.com&gt;&quot;]
+
+[dependencies]
+serde = &quot;1.0.11&quot;
+</code></pre>
+
+<p>What happens when you are needing to reference a library you are developing or for some reason not on crates.io?</p>
+
+<p>Lets use my two cargo projects as an example.  I created both <code>my_library</code> and <code>my_program</code> in the same folder.  So if I want to reference <code>my_library</code> from <code>my_program</code>, I would need to add the dependency like this:</p>
+
+<pre><code>[dependencies]
+my_library = { path = &quot;../my_library&quot; }
+</code></pre>
+
+<p>If I build <code>my_program</code>, I see the <code>serde</code> dependency that <code>my_library</code> has compiles, then <code>my_library</code> compiles, and finally <code>my_program</code> compiles.  (More on how to build in the next section.)</p>
+
+<pre><code>Updating registry `https://github.com/rust-lang/crates.io-index`
+Compiling serde v1.0.11
+Compiling my_library v0.1.0 (file:///C:/Users/joesacher/Documents/Repositories/Personal/joesacher_com/scratch/my_library)
+Compiling my_program v0.1.0 (file:///C:/Users/joesacher/Documents/Repositories/Personal/joesacher_com/scratch/my_program)
+</code></pre>
+
+<p>You may also reference a library directly from git (if this existed on github):</p>
+
+<pre><code>my_library = { git = &quot;https://github.com/sacherjj/my_library.git&quot;, rev = &quot;1f8e324&quot; }
+</code></pre>
+
+<p>This can be useful if you are using features and a yet to be unpublished version, or just something that the author has not yet uploaded to crates.io.  Notice how we can specify a rev to call out a specific commit.</p>
+
+<h3 id="additional-package-fields">Additional package fields</h3>
+
+<p>The <code>documentation</code> field under package can be set to the documentation URL for the package.</p>
+
+<p><code>exclude</code> or <code>include</code> allows you to eliminate or include source files, with an array of paths with optional wildcards.  <code>exclude</code> will be seeded into your <code>.gitignore</code> file.  <code>include</code> must be exhaustive if it is used, or source code will not be included.</p>
+
+<p>Read through the entire <a href="http://doc.crates.io/manifest.html">manifest documentation</a> for all the possible fields and configurations of your <code>Cargo.toml</code> file.  This becomes more import as you full flush out a libray for inclusion into crates.io.</p>
+
+<h3 id="building-and-running">Building and Running</h3>
+
+<p>To compile a program, you type <code>cargo build</code>.  This builds in debug mode, which is much faster as performance optimizations are not being done.  To both build and run, type <code>cargo run</code>.   Either of these will fetch the dependencies and then compile everything.</p>
+
+<p>Below is the output from a Lode Runner clone I&rsquo;ve been working on to learn Rust. The first time a package has been referenced, you would see &lsquo;Downloading&rsquo; of the package as the first step, before compiling.</p>
+
+<pre><code>   Compiling rayon-core v1.2.1
+   Compiling heapsize v0.4.1
+   Compiling sdl2-sys v0.27.3
+   Compiling ole32-sys v0.2.0
+   Compiling kernel32-sys v0.2.2
+   Compiling shell32-sys v0.1.1
+   Compiling bzip2-sys v0.1.5
+   Compiling miniz-sys v0.1.9
+   Compiling gfx_gl v0.3.1
+   Compiling flate2 v0.2.19
+   Compiling app_dirs v1.1.1
+   Compiling time v0.1.38
+   Compiling cpal v0.4.5
+   Compiling sdl2 v0.29.1
+   Compiling euclid v0.15.1
+   Compiling rayon v0.8.2
+   Compiling rodio v0.5.1
+   Compiling msdos_time v0.1.5
+   Compiling bzip2 v0.3.2
+   Compiling lyon_bezier v0.7.1
+   Compiling lyon_core v0.7.0
+   Compiling zip v0.2.5
+   Compiling jpeg-decoder v0.1.13
+   Compiling lyon_path_iterator v0.7.0
+   Compiling lyon_path_builder v0.7.0
+   Compiling lyon_svg v0.7.0
+   Compiling lyon_path v0.7.0
+   Compiling lyon_extra v0.7.0
+   Compiling lyon_tessellation v0.7.1
+   Compiling image v0.15.0
+   Compiling lyon v0.7.1
+   Compiling gfx_device_gl v0.14.1
+   Compiling gfx_window_sdl v0.6.0
+   Compiling ggez v0.3.3 (file:///C:/Users/joesacher/Documents/Repositories/ggez)
+   Compiling lode_ruster v0.1.0 (file:///C:/Users/joesacher/Documents/Repositories/lode_ruster)
+</code></pre>
+
+<p>My only dependency is <code>ggez</code>, but cargo automatically downloaded and compiled the dependencies of ggez and the chain above that.</p>
+
+<p>If you are working on a small program for solving a problem on something like projecteuler, you might want good performance each time.  This means using the release option <code>cargo run --release</code>.  This takes longer to compile, but runs significantly faster.  This is of course what you want when you are done testing and releasing your library or program.</p>
+
+<h3 id="cargo-lock">Cargo.lock</h3>
+
+<p>Once you have built your project, cargo writes a <code>Cargo.lock</code> file next to <code>Cargo.toml</code>.  While <code>Cargo.toml</code> allows a little wiggle room, as far as versions of dependencies, <code>Cargo.lock</code> is a blueprint of exactly how the binary was created.</p>
+
+<p>For our empty <code>my_program</code> from above, I get this <code>Cargo.lock</code> when compiling:</p>
+
+<pre><code>[root]
+name = &quot;my_program&quot;
+version = &quot;0.1.0&quot;
+dependencies = [
+ &quot;my_library 0.1.0&quot;,
+]
+
+[[package]]
+name = &quot;my_library&quot;
+version = &quot;0.1.0&quot;
+dependencies = [
+ &quot;serde 1.0.11 (registry+https://github.com/rust-lang/crates.io-index)&quot;,
+]
+
+[[package]]
+name = &quot;serde&quot;
+version = &quot;1.0.11&quot;
+source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+
+[metadata]
+&quot;checksum serde 1.0.11 (registry+https://github.com/rust-lang/crates.io-index)&quot; = &quot;f7726f29ddf9731b17ff113c461e362c381d9d69433f79de4f3dd572488823e9&quot;
+</code></pre>
+
+<p>I could have <code>1.*</code> as my version for <code>serde</code>, but it would still have the full version in the <code>Cargo.lock</code>.  Also notice the checksum that can be used to verify the library binary as well.  This is all design to allow you to get exactly what you got before if you code is exactly the same.  It also contains the data from <code>my_library</code>&rsquo;s <code>Cargo.toml</code> file.</p>
+
+<h3 id="binary-crates">Binary Crates</h3>
+
+<p>Much of the issues I run into with Python on Windows is due to packages with associates C or other dependencies.  The default crates are pure Rust code.  Cargo also has the ability to install binaries with the <code>cargo install</code> command.  I have not used this yet, and just mention it if you come across something that needs it.   I would assume this sits closer to the idea of wheels in PyPi. Binaries are used on Python for speed up or interfaces not easily accomplished in Python.   There is much less need for binary in Rust for speed improvement.</p>
+
+                                  
+     
+     
+     
+         
+         
+             
+            
+              
+        
+     
+         
+        
+     
+         
+        
     
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
+     
+        
+        
+            
+            
+        
+     
+        
+        
+     
+        
+        
     
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+     
+        <hr/>
+        <p>Part 2 of 3
+            in the <b>Python to Rust</b> series.</p>
+        <p>
+          
+            
+            
+                <a href="http://www.joesacher.com/blog/2017/08/22/01-ptr-beginning/"><i class="fa fa-angle-double-left"></i>Python to Rust: Beginning</a>
+            
+        
+        
+                 |  
+        
+         
+            <a href="http://www.joesacher.com/blog/2017/08/24/03-ptr-types/">Python to Rust: Types<i class="fa fa-angle-double-right"></i></a></p>
+        
+    
 
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
-</div>
-
-
-<p>I am almost fully equipped for touring on my Vision Recumbent with a BOB trailer for cargo.  However, I really think a good camp seat would be nice. The only problem with that is the weight must go up the hills.  The seat on the Vision is removable by loosening the back mount and removing the bottom pivot mount.  This should take only a minute or so to do.</p>
-
-<p>I am toying with the idea of making a chair bottom for it. This would need to be 6061 aluminum to allow for the welding, but it still might weigh more than it is worth.  Here is some early sketches that I am playing around with.</p>
-
-<p>
-
-<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
-	  
-
-<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img" style="background-image: url('/img/posts/vision-seat-camp-chair/vs_shot.jpg');">
-      <img itemprop="thumbnail" src="/img/posts/vision-seat-camp-chair/vs_shot.jpg" alt="Quick Prototype of Vision Seat &#39;Camp Chair&#39;"/>
-    </div>
-    <a href="/img/posts/vision-seat-camp-chair/vs_shot.jpg" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>Quick Prototype of Vision Seat &#39;Camp Chair&#39;</p>
-      </figcaption>
-  </figure>
-</div>
-
-
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img" style="background-image: url('/img/posts/vision-seat-camp-chair/vs_qfront.jpg');">
-      <img itemprop="thumbnail" src="/img/posts/vision-seat-camp-chair/vs_qfront.jpg" alt="Front Quarter view"/>
-    </div>
-    <a href="/img/posts/vision-seat-camp-chair/vs_qfront.jpg" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>Front Quarter view</p>
-      </figcaption>
-  </figure>
-</div>
-
-
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img" style="background-image: url('/img/posts/vision-seat-camp-chair/vs_qrear.jpg');">
-      <img itemprop="thumbnail" src="/img/posts/vision-seat-camp-chair/vs_qrear.jpg" alt="Rear Quarter view"/>
-    </div>
-    <a href="/img/posts/vision-seat-camp-chair/vs_qrear.jpg" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>Rear Quarter view</p>
-      </figcaption>
-  </figure>
-</div>
-
-</div>
-</p>
-
-<p>The seat bottom rear piece is a rectangle with the bottom a slightly oversized tube to allow it to pivot in the bottom triangle. This render shows the bottom folded how it would ride on the top of the BOB trailer.</p>
-
-<p>Note: This design never went past the 3D model stage. I now am using a RANS Rocket for touring, but I will keep this page here, in case someone else want to try this. Please let me know if you do!</p>
-
-                                
 
                              </div>
                         
@@ -582,11 +717,6 @@ ga('send', 'pageview');
 <script src="http://www.joesacher.com/js/owl.carousel.min.js"></script>
 
 
-
-
-<script src="/js/load-photoswipe.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 
 
   </body>

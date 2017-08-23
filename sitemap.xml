@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.joesacher.com/blog/2017/08/24/03-ptr-types/</loc>
+    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2017/08/23/02-ptr-cargo-pip/</loc>
+    <lastmod>2017-08-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/blog/2017/08/22/01-ptr-beginning/</loc>
     <lastmod>2017-08-22T00:00:00+00:00</lastmod>
   </url>
@@ -388,7 +398,7 @@
   
   <url>
     <loc>http://www.joesacher.com/blog/</loc>
-    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -410,14 +420,14 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/cooking/</loc>
-    <lastmod>2008-03-07T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/categories/cooking/</loc>
+    <lastmod>2008-01-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/cooking/</loc>
-    <lastmod>2008-01-27T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/tags/cooking/</loc>
+    <lastmod>2008-03-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -548,14 +558,14 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/personal/</loc>
-    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/categories/personal/</loc>
+    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/personal/</loc>
-    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/tags/personal/</loc>
+    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -597,7 +607,7 @@
   
   <url>
     <loc>http://www.joesacher.com/tags/python/</loc>
-    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -621,7 +631,7 @@
   
   <url>
     <loc>http://www.joesacher.com/tags/rust/</loc>
-    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -645,7 +655,7 @@
   
   <url>
     <loc>http://www.joesacher.com/categories/tech/</loc>
-    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -705,7 +715,7 @@
   
   <url>
     <loc>http://www.joesacher.com/</loc>
-    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

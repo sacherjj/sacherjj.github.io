@@ -12,7 +12,7 @@
   
 
   
-  <meta name="description" content="My little piece of the web.">	
+  <meta name="description" content="As a Python programmer, I discuss wanting to learn a new language and my choice of Rust after looking at both Rust and Go as possibilities.">
   
 
   <meta name="generator" content="Hugo 0.25.1" />
@@ -160,17 +160,21 @@
 
 <p>I started looking at new languages to learn as a way of growing as a programmer.  I began looking at both <a href="https://golang.org/">Go</a> and <a href="https://www.rust-lang.org/en-US/">Rust</a>.  In some ways these don&rsquo;t compete at all and in other ways they directly compete.   Both are C-like in syntax with braces.  Rust is lower level and more complex.</p>
 
-<p>Go is a language that is meant to be easy to write and quick to code, but yield a much higher performance than Python.  This was Google&rsquo;s answer to better performance code from from fairly new programmers who are less experienced.  In 2007, the bulk of Google code was C++, Java, and Python.  As multiple processors come into play, Python&rsquo;s GIL starts to have issues, as well as a performance disadvantage compared to C++ and Java.  Java is very verbose and much more effort to write than a Python.  C++ allows you to entirely crash systems or open security holes with poor code.  Go wanted to get close to C++ speeds, with Python ease of programming.  I think they largely succeeded with this.  A goal was also to drastically reduce compile times.  In fact, 45 minute compile times give time to think about things like creating a new programming language.</p>
+<p>Go is a language that is meant to be easy to write and quick to code, but yield a much higher performance than Python.  This was Google&rsquo;s answer to better performance code from from fairly new programmers who are less experienced.  In 2007, the bulk of Google code was C++, Java, and Python.  As multiple processors come into play, Python&rsquo;s GIL starts to have issues, as well as a performance disadvantage compared to C++ and Java.  Java is very verbose and much more effort to write than a Python.  C++ allows you to entirely crash systems or open security holes with poor code.</p>
+
+<p>Go wanted to get close to C++ speeds, with Python ease of programming.  I think they largely succeeded with this.  A goal was also to drastically reduce compile times.  In fact, 45 minute compile times give you space to think about things like creating a new programming language.  Or so the story goes about the history of Go.</p>
 
 <p>Go was not a language to break new ground in programming language design.  It is all about making programmers more efficient and large systems work better together.  This is done by having the language fairly small so you can have it in your mind at one time.  This also helps with compilation speed.  For Google and many others, this was a success.</p>
 
 <p>I starting solving problems on <a href="http://exercism.io/">exercism.io</a> in Python, then Go and Rust.  I found that I enjoyed Rust better.  It was harder to get a Rust program written, because I had to really think about what I was doing.  But once it compiled, I was fairly sure it would work and the implementation was elegant.  It did not have the runtime failures that are encountered in Python and Go.  The other thing I was a real fan of is that much of Rust is written in Rust.  There are only a few &ldquo;blessed&rdquo; types that you could not write in the language yourself.  Go has many blessed types that are not creatable with standard data structures.</p>
 
-<p>In general, when I see how something works in Rust, it makes sense for an elegant programming style.  Things like the Option or Result types, which we will discuss later.  Go almost gets there with the dual return for value and error.  However, by allowing nil (like Python&rsquo;s null) in the language, we keep open a range of errors where the programmer must explicitly check for value before using it.  The iterators and general feel of how things are done in Rust resemble Python structure somewhat.  It feels a little like home.  Just an oddly looking and often complaining home.</p>
+<p>In general, when I see how something works in Rust, it makes sense from an elegant programming style.  Things like the Option or Result types, which we will discuss later.  Go almost gets there with the dual return for value and error.  However, by allowing nil (like Python&rsquo;s null) in the language, we keep open a range of errors where the programmer must explicitly check for value before using it.  The iterators and general feel of how things are done in Rust resemble Python structure somewhat.  It feels a little like home.  Just an oddly looking and often complaining home.</p>
 
-<p>Rust compiles slowly.  This is a known issue and steps are being taken to improve.  It will never be as fast as Go, as it is a much more complex language.  However, the analysis and checks involved are like a more experienced programmer telling you what you did wrong (with usually excellent suggestions for improvement.)  Rust&rsquo;s idea of ownership and borrowing eliminates the need for garbage collection.  This makes almost everything zero cost at runtime and easily multi-threaded.  The most important in my mind is that Rust provides guaranteed memory safety.  This as important for not crashing as it is for not leaking secure information due to a bug.  There may be programmers that can write as secure code as Rust in C or C++, but the number is very small.  Most C and C++ programmers spend not a small amount of time fixing bugs that Rust won&rsquo;t even allow to exist.  So some pain to get to these points is worthwhile in my mind.</p>
+<p>Rust compiles slowly.  This is a known issue and steps are being taken to improve.  It will never be as fast as Go, as it is a much more complex language.  However, the analysis and checks involved are like a more experienced programmer telling you what you did wrong (with usually excellent suggestions for improvement.)  Rust&rsquo;s idea of ownership and borrowing eliminates the need for garbage collection.  This makes almost everything zero cost at runtime and easily multi-threaded.</p>
 
-<p>I would most likely be much faster writing code in Go than Rust.  However, my goal is to grow.  Thus, my path switched to Rust.  This will be a sequence of posts comparing and contrasting Rust from the view of a primarily Python programmer.  I am also excited to get into some low level embedded use eventually and Python to Rust integration.  I think Rust is a great language to mesh with Python, for faster implementations when needed, but without the dangers of C for the inexperienced.</p>
+<p>The most important in my mind is that Rust provides guaranteed memory safety.  This as important for not crashing as it is for not leaking secure information due to a bug.  There may be programmers that can write as secure code as Rust in C or C++, but the number is very small.  Most C and C++ programmers spend not a small amount of time fixing bugs that Rust won&rsquo;t even allow to exist.  So some pain to get to these points is worthwhile in my mind.</p>
+
+<p>I know I would be much faster writing code in Go than Rust, at least to start out.  However, my goal is to grow.  Thus, my path switched to Rust.  This will be a sequence of posts comparing and contrasting Rust from the view of a primarily Python programmer.  Hopefully, it will help Python programmers try out Rust and go through the thought growth caused by the mental gymnastics required.  I am also excited to get into some low level embedded use eventually and Python to Rust integration.  I think Rust is a great language to mesh with Python, for faster implementations when needed, but without the dangers of C for the inexperienced.</p>
 
 <h3 id="community">Community</h3>
 
@@ -186,7 +190,7 @@
 
 <p>It is easy for me to say that if Cargo is not <strong>the best</strong> package manager out there, it is tied for the best.  Other than the slight issue currently of name squatting, everything handling Rust dependencies works great.</p>
 
-<p>Python has the idea of virtual environments and docker instances to deal with versioning issues of dependencies and the Python interpreter.  This is completely handled in cargo, by just listing dependencies in a file.  You will generally specify major and minor versions, but not build number.  Cargo.lock will store the exact versions you used to build the binary (library or executable).  This is great if you find a breaking change in one of your dependencies.</p>
+<p>Python has the idea of virtual environments and docker instances to deal with versioning issues of dependencies and the Python interpreter.  This is completely handled in cargo, by just listing dependencies in a file.  You will generally specify major and minor versions, but not patch number.  <code>Cargo.lock</code> will store the exact versions you used to build the binary (library or executable).  This is great if you find a breaking change in one of your dependencies.</p>
 
 <p>We will talk more about cargo and uses as I get into actually running code.  If you want to look at the crates available (the Rust term for a package), just browse through <a href="https://crates.io/">crates.io</a>, which is the equivalent of <a href="https://pypi.python.org/pypi">Python&rsquo;s Package Index</a>.</p>
 
@@ -198,14 +202,8 @@
 
 <p>The following is Python code (obviously Python 3, I don&rsquo;t use legacy Python unless I have to) that will set <code>val</code> to 0, 1, 2 and 3, as it consumes the iterator generated by <code>range</code>.  For each of these, we are formatting a string value to print and inserting the number into it.</p>
 
-<p>In order to run, we must include the standard <code>if __name__ == &quot;__main__&quot;</code> block at the end to call <code>main</code>.</p>
-
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">main</span>():
-    <span style="color: #006699; font-weight: bold">for</span> val <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">4</span>):
-        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;val is {}&quot;</span><span style="color: #555555">.</span>format(val))
-
-<span style="color: #006699; font-weight: bold">if</span> <span style="color: #003333">__name__</span> <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;__main__&quot;</span>:
-    main()
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">for</span> val <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">4</span>):
+    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;val is {}&quot;</span><span style="color: #555555">.</span>format(val))
 </pre></div>
 
 
@@ -243,11 +241,39 @@
      
          
         
+     
+         
+        
+     
+         
+        
     
      
         
         
+            
+            
+        
+     
+        
+        
+            
+            
+        
+     
+        
+        
     
+     
+        <hr/>
+        <p>Part 1 of 3
+            in the <b>Python to Rust</b> series.</p>
+        <p>
+        
+        
+         
+            <a href="http://www.joesacher.com/blog/2017/08/23/02-ptr-cargo-pip/">Python to Rust: PIP to Cargo<i class="fa fa-angle-double-right"></i></a></p>
+        
     
 
 
@@ -315,7 +341,7 @@
             <li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
             </li>
             
-            <li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (23)</a>
+            <li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (25)</a>
             </li>
             
             <li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (19)</a>
