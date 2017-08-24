@@ -158,7 +158,7 @@
 
 <p>Many of the differences between pip and cargo are there due to the interpreted Python vs compiled Rust.  To make separate environments to deal with incompatible dependencies in Python, you will create either a virtual environment or use a docker instance.  Rust is compiling, so you just need a way to point to the proper source code you depend on.</p>
 
-<p>There is a similar action where you use an <code>import</code> in Python or a <code>use</code> in Rust.  Currently, there is some duplication of documentation between the <code>.toml</code> file where you reference the code (more below on this) and <code>extern crate [name]</code> at the top of the source file.   However, cargo will automatically get the versions to build, in contrast to the more manual pip process.   For those setting up project correctly in Python, this is more like using <code>requirements.txt</code> to setup the virtual environment.</p>
+<p>There is a similar action where you use an <code>import</code> in Python or a <code>use</code> in Rust.  Packages to make available are defined in the <code>Cargo.toml</code> file and they are made available in source code via <code>extern crate [name]</code> at the top of the source file.   Cargo will automatically get the versions to build, in contrast to the more manual pip process.   For those setting up project correctly in Python, this is more like using <code>requirements.txt</code> to setup the virtual environment.</p>
 
 <p>One of the biggest differences that has potential to cause issues is Python only allowing a single version of a package to be installed.  Rust can have dependencies that reference different versions of the same package, as cargo crawls up the dependency chains.</p>
 
@@ -200,7 +200,7 @@
 
 <h3 id="cargo-toml">Cargo.toml</h3>
 
-<p>What is the <code>Cargo.toml</code> file?  This is what replaces the functionality of Python&rsquo;s virtual environment and requirements.txt.  It manages your link to dependencies and version of that code.  It also contains the data the you need if you decided to share your library on <a href="https://crates.io">crates.io</a>.  It works as a one file version of the many setuptools used for packaging a PyPi project.</p>
+<p>This is what replaces the functionality of Python&rsquo;s virtual environment and requirements.txt.  It manages your link to dependencies and version of that code.  It also can contain the data the you need if you decided to share your library on <a href="https://crates.io">crates.io</a>.  It works as a one file version of the many setuptools used for packaging a PyPi project.</p>
 
 <p>My <code>Cargo.toml</code> for my_library above, looks like this:</p>
 
@@ -245,7 +245,7 @@ serde = &quot;1.0.11&quot;
 my_library = { path = &quot;../my_library&quot; }
 </code></pre>
 
-<p>If I build <code>my_program</code>, I see the <code>serde</code> dependency that <code>my_library</code> has compiles, then <code>my_library</code> compiles, and finally <code>my_program</code> compiles.  (More on how to build in the next section.)</p>
+<p>If I build <code>my_program</code>, I see the <code>serde</code> dependency that <code>my_library</code> has compiles first, then <code>my_library</code> compiles, and finally <code>my_program</code> compiles.  (More on how to build in the next section.)</p>
 
 <pre><code>Updating registry `https://github.com/rust-lang/crates.io-index`
 Compiling serde v1.0.11
