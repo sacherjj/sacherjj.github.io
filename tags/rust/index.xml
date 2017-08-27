@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 24 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.joesacher.com/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python to Rust: Enum</title>
+      <link>http://www.joesacher.com/blog/2017/08/25/04-ptr-enum/</link>
+      <pubDate>Fri, 25 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.joesacher.com/blog/2017/08/25/04-ptr-enum/</guid>
+      <description>Enums are new with Python 3.4 and PEP 435, but have been backported. At first, I saw more trouble than benefit from Python Enums. They are typically used for type safety, and this isn&amp;rsquo;t really enforceable in Python. But, since they are a class, you can add additional functionality to them. This gives them more usefulness than I previously thought.
+It isn&amp;rsquo;t easy to store data with them in most languages.</description>
+    </item>
     
     <item>
       <title>Python to Rust: Types</title>

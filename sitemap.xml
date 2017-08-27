@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.joesacher.com/blog/2017/08/25/04-ptr-enum/</loc>
+    <lastmod>2017-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/blog/2017/08/24/03-ptr-types/</loc>
     <lastmod>2017-08-24T00:00:00+00:00</lastmod>
   </url>
@@ -398,7 +403,7 @@
   
   <url>
     <loc>http://www.joesacher.com/blog/</loc>
-    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -607,7 +612,7 @@
   
   <url>
     <loc>http://www.joesacher.com/tags/python/</loc>
-    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -631,7 +636,7 @@
   
   <url>
     <loc>http://www.joesacher.com/tags/rust/</loc>
-    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -655,7 +660,7 @@
   
   <url>
     <loc>http://www.joesacher.com/categories/tech/</loc>
-    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -715,7 +720,7 @@
   
   <url>
     <loc>http://www.joesacher.com/</loc>
-    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

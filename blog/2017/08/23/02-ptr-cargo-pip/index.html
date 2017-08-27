@@ -202,7 +202,7 @@
 
 <p>This is what replaces the functionality of Python&rsquo;s virtual environment and requirements.txt.  It manages your link to dependencies and version of that code.  It also can contain the data the you need if you decided to share your library on <a href="https://crates.io">crates.io</a>.  It works as a one file version of the many setuptools used for packaging a PyPi project.</p>
 
-<p>My <code>Cargo.toml</code> for my_library above, looks like this:</p>
+<p>The <code>Cargo.toml</code> automatically created for my_library above, looks like this:</p>
 
 <pre><code>[package]
 name = &quot;my_library&quot;
@@ -212,11 +212,11 @@ authors = [&quot;sacherjj &lt;sacherjj@gmail.com&gt;&quot;]
 [dependencies]
 </code></pre>
 
-<p>The one for my_program is exactly the same, except for the name.  These three field are mandatory, so this file would be the absolute minimum <code>Cargo.toml</code> that would be valid, if we removed the <code>[dependencies]</code> section.  However, there is a large chance that you will rely on another library, so including it eliminates busy work for the programmer.</p>
+<p>The one for my_program is exactly the same, except for the name.  These three field are mandatory, so this file would be the absolute minimum <code>Cargo.toml</code> that would be valid, if we removed the <code>[dependencies]</code> section.  Using external dependencies is very common, so this is included to reduce programmer work.</p>
 
-<p>Cargo uses <a href="http://semver.org/">Semantic Versioning</a> with three numbers for [major].[minor].[patch].  With 0.x.x, anything goes.  Try to be nice, but the interface is not baked in.  Most developers treat minor version as increment on changes to the interface and patch as increment on non-breaking build.</p>
+<p>Cargo uses <a href="http://semver.org/">Semantic Versioning</a> with three numbers for [major].[minor].[patch].  In 0.x.x versions, anything goes.  Try to be nice, but the interface is not baked in.  Most developers treat minor version as increment on changes to the interface and patch as increment on non-breaking build.</p>
 
-<p>At 1.0.0, you cannot make breaking changes without incrementing the major version.  You also can not add new public interfaces structs, functions, types, etc., without incrementing the major version.  This is true of Rust.  For the most part, everything that compiled with Rust 1.0.0, still compiles.  It is impressive with how rapid the release schedule is for the language.</p>
+<p>At 1.0.0, you cannot make breaking changes without incrementing the major version.  You also can not add new public interfaces structs, functions, types, etc., without incrementing the major version.  This is true of Rust.  For the most part, everything that compiled with Rust 1.0.0, still compiles.  It is impressive with how rapid the release schedule is for the language.  With every release, a tool is used that compiles all the code for all crates.  This makes for a large test sample for prior version compatibility.</p>
 
 <p>You may also only care about pointing to the major or minor versions.  Using <code>1</code> would give you the latest version until <code>2.0.0</code>.  <code>1.1</code> would give you the latest version below either <code>1.2.0</code>.</p>
 
@@ -226,7 +226,7 @@ authors = [&quot;sacherjj &lt;sacherjj@gmail.com&gt;&quot;]
 
 <h3 id="adding-dependencies">Adding Dependencies</h3>
 
-<p>If our project uses serialization and deserialization, we might want to include the <a href="https://crates.io/crates/serde">serde</a> library.  You will notice at the top of that linked page, where is a Cargo.toml block with a copy button.  You would then paste this into your file, so out library <code>Cargo.toml</code> file would look like:</p>
+<p>If our project uses serialization and deserialization, we might want to include the <a href="https://crates.io/crates/serde">serde</a> library.  You will notice at the top of that linked page, where is a Cargo.toml block with a copy button.  You would then paste this into your file, so our library <code>Cargo.toml</code> file would look like:</p>
 
 <pre><code>[package]
 name = &quot;my_library&quot;
@@ -264,9 +264,9 @@ Compiling my_program v0.1.0 (file:///C:/Users/joesacher/Documents/Repositories/P
 
 <p>The <code>documentation</code> field under package can be set to the documentation URL for the package.</p>
 
-<p><code>exclude</code> or <code>include</code> allows you to eliminate or include source files, with an array of paths with optional wildcards.  <code>exclude</code> will be seeded into your <code>.gitignore</code> file.  <code>include</code> must be exhaustive if it is used, or source code will not be included.</p>
+<p><code>exclude</code> or <code>include</code> allows you to eliminate or include source files, using an array of paths with optional wildcards.  <code>exclude</code> will be seeded into your <code>.gitignore</code> file.  <code>include</code> must be exhaustive if it is used, or source code will not be included.</p>
 
-<p>Read through the entire <a href="http://doc.crates.io/manifest.html">manifest documentation</a> for all the possible fields and configurations of your <code>Cargo.toml</code> file.  This becomes more import as you full flush out a libray for inclusion into crates.io.</p>
+<p>Read through the entire <a href="http://doc.crates.io/manifest.html">manifest documentation</a> for all the possible fields and configurations of your <code>Cargo.toml</code> file.  This becomes more import as you fully flush out a libray for inclusion into crates.io.  I have contributed to PyPi, but not yet to crates.io.</p>
 
 <h3 id="building-and-running">Building and Running</h3>
 
@@ -313,13 +313,13 @@ Compiling my_program v0.1.0 (file:///C:/Users/joesacher/Documents/Repositories/P
 
 <p>My only dependency is <code>ggez</code>, but cargo automatically downloaded and compiled the dependencies of ggez and the chain above that.</p>
 
-<p>If you are working on a small program for solving a problem on something like projecteuler, you might want good performance each time.  This means using the release option <code>cargo run --release</code>.  This takes longer to compile, but runs significantly faster.  This is of course what you want when you are done testing and releasing your library or program.</p>
+<p>If you are working on a small program for solving a problem on something like <a href="https://projecteuler.net/">Project Euler</a>, you might want good performance each time.  This means using the release option <code>cargo run --release</code>.  This takes longer to compile, but runs significantly faster.  This is of course what you want when you are done testing and releasing your library or program.</p>
 
 <h3 id="cargo-lock">Cargo.lock</h3>
 
 <p>Once you have built your project, cargo writes a <code>Cargo.lock</code> file next to <code>Cargo.toml</code>.  While <code>Cargo.toml</code> allows a little wiggle room, as far as versions of dependencies, <code>Cargo.lock</code> is a blueprint of exactly how the binary was created.</p>
 
-<p>For our empty <code>my_program</code> from above, I get this <code>Cargo.lock</code> when compiling:</p>
+<p>For our <code>my_program</code> from above, I get this <code>Cargo.lock</code> when compiling:</p>
 
 <pre><code>[root]
 name = &quot;my_program&quot;
@@ -344,7 +344,7 @@ source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
 &quot;checksum serde 1.0.11 (registry+https://github.com/rust-lang/crates.io-index)&quot; = &quot;f7726f29ddf9731b17ff113c461e362c381d9d69433f79de4f3dd572488823e9&quot;
 </code></pre>
 
-<p>I could have <code>1.*</code> as my version for <code>serde</code>, but it would still have the full version in the <code>Cargo.lock</code>.  Also notice the checksum that can be used to verify the library binary as well.  This is all design to allow you to get exactly what you got before if you code is exactly the same.  It also contains the data from <code>my_library</code>&rsquo;s <code>Cargo.toml</code> file.</p>
+<p>I could have <code>1.*</code> as my version for <code>serde</code>, but it would still have the full version in the <code>Cargo.lock</code>.  Also notice the checksum that can be used to verify the library binary.  This is all designed to allow you to get exactly what you got before if you code is exactly the same.</p>
 
 <h3 id="binary-crates">Binary Crates</h3>
 
@@ -366,7 +366,16 @@ source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
      
          
         
+     
+         
+        
     
+     
+        
+        
+            
+            
+        
      
         
         
@@ -382,7 +391,7 @@ source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
     
      
         <hr/>
-        <p>Part 2 of 3
+        <p>Part 2 of 4
             in the <b>Python to Rust</b> series.</p>
         <p>
           
@@ -464,7 +473,7 @@ source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
             <li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
             </li>
             
-            <li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (25)</a>
+            <li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (26)</a>
             </li>
             
             <li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (19)</a>

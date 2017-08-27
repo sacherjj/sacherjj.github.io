@@ -378,13 +378,13 @@ True
 
 <h3 id="characters">Characters</h3>
 
-<p>There is no character type in Python.  There exists only strings of length 1.  I don&rsquo;t fully understand the Unicode in both Python 3 and Rust.  But I know I can&rsquo;t expect them to be ASCII.  Someone much smarter than me has made them to work, and I&rsquo;ll just use them. :)  A character in Rust is a 4-byte Unicode Scalar Value.  If you know it is an ASCII value, you can convert into ASCII codes for the typical number to character conversion sometimes used in A-Z looping.</p>
+<p>There is no character type in Python.  There exists only strings of length 1.  I don&rsquo;t fully understand the Unicode in both Python 3 and Rust.  Someone much smarter than me has made them to work, and I&rsquo;ll just use them.   But I know I can&rsquo;t expect them to be ASCII.  A character in Rust is a 4-byte Unicode Scalar Value.  If you know it is an ASCII value, you can convert into ASCII codes for the typical number to character conversion sometimes used in A-Z looping.</p>
 
 <p>It is also worth noting that a single Unicode code point in a Rust String may not fit into a single character.  An example used on the Rust char documentation page is the emoticon ❤️having the value of two chars <code>\u{2764}\u{fe0f}</code>.</p>
 
 <p>Once I start talking about iterators, we will see that we can iterate by chars(), similar to how Python allows iterators on a string with 1 character strings.</p>
 
-<p>I should also point out that for most things in Python, <code>&quot;</code> amd <code>'</code> are interchangeable.  There are subtle differences, but they can often be swapped without any issue.   In Rust, a char is indicated by the single quote, such as <code>'A'</code>.  A string must use a quote as in <code>&quot;This is a string.&quot;</code>.</p>
+<p>I should also point out that for most things in Python, <code>&quot;</code> amd <code>'</code> are interchangeable.  There are subtle differences, but they can often be swapped without any issue.   In Rust, a char is represented by the single quote, such as <code>'A'</code>.  A string must use a double quote as in <code>&quot;This is a string.&quot;</code>.</p>
 
 <h2 id="complex-types">Complex Types</h2>
 
@@ -493,7 +493,7 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
 
 <p>The functionality is similar between a Python Dictionary and the Rust HashMap.  However, the big difference is that types of the key and value must be defined for Rust.  Again, it is possible to work around this for values, but it is a little to complex to look at now and uses some thing we haven&rsquo;t learned yet.</p>
 
-<p>HashMap isn&rsquo;t automatically available in Rust.  We will be using our first <code>use</code> statement, which is similar to Python&rsquo;s <code>import</code>.</p>
+<p>HashMap isn&rsquo;t automatically available in Rust.  We will be using our first <code>use</code> statement, which is similar to Python&rsquo;s <code>import</code>.  This is part of Rust and not an external crate, it just isn&rsquo;t automatically included.</p>
 
 <div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">use</span><span style="color: #bbbbbb"> </span>std::collections::HashMap;<span style="color: #bbbbbb"></span>
 
@@ -506,7 +506,7 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
 </pre></div>
 
 
-<p>From <code>std::collections</code> we are using <code>HashMap</code>.  We create an empty <code>HashMap&lt;K, V&gt;</code> with key type of <code>u32</code> and value type of <code>&amp;str</code>, which is a string pointer.  Look for the Strings post to cover strings in more detail.  Since we have no macro for creation, like the vector, you cannot use a simple notation for a single line dictionary creation and loading.  So we make two calls to the HashMap <code>insert</code> method and provide key and values.  Then use the Debug trait of the HashMap to display the structure.</p>
+<p>From <code>std::collections</code> we are using <code>HashMap</code>.  We create an empty <code>HashMap&lt;K, V&gt;</code> with key type of <code>u32</code> and value type of <code>&amp;str</code>, which is a string pointer.  Look for the Strings post to cover strings in more detail.  Since we have no macro for creation, like the vector&rsquo;s <code>vec!</code>, we cannot use a simple notation for a single line dictionary creation and loading.  So we make two calls to the HashMap <code>insert</code> method and provide key and values.  Then use the Debug trait of the HashMap to display the structure.</p>
 
 <p>Output is similar to Python&rsquo;s dictionary notation.</p>
 
@@ -535,7 +535,16 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
      
          
         
+     
+         
+        
     
+     
+        
+        
+            
+            
+        
      
         
         
@@ -548,7 +557,7 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
     
      
         <hr/>
-        <p>Part 3 of 3
+        <p>Part 3 of 4
             in the <b>Python to Rust</b> series.</p>
         <p>
           
@@ -561,6 +570,10 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
             
         
         
+                 |  
+        
+         
+            <a href="http://www.joesacher.com/blog/2017/08/25/04-ptr-enum/">Python to Rust: Enum<i class="fa fa-angle-double-right"></i></a></p>
         
     
 
@@ -629,7 +642,7 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
             <li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
             </li>
             
-            <li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (25)</a>
+            <li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (26)</a>
             </li>
             
             <li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (19)</a>
