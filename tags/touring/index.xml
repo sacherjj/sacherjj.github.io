@@ -1,65 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Touring on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/touring/</link>
-    <description>Recent content in Touring on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Sat, 15 Dec 2007 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/touring/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2007 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Sat, 15 Dec 2007 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>Bicycling Coast to Coast by Donna Ikenberry</title>
-      <link>http://www.joesacher.com/blog/2007/12/15/bicycling-coast-to-coast/</link>
-      <pubDate>Sat, 15 Dec 2007 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2007/12/15/bicycling-coast-to-coast/</guid>
-      <description>As soon as I realized that my recumbent would allow me to complete my dream of riding a bicycle across the country, I started research all over the web. While reading through the many trip reports of coast to coast touring cyclists, two things became clear.
-First, I would be riding the TransAmerica Trail created by Adventure Cycling in 1976 (the year of my birth).
-Second, I should purchase, read, re-read, and take along Donna&amp;rsquo;s book.</description>
-    </item>
     
-    <item>
-      <title>How To Build Bicycle Panniers</title>
-      <link>http://www.joesacher.com/blog/2007/12/11/how-to-build-bicycle-panniers/</link>
-      <pubDate>Tue, 11 Dec 2007 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2007/12/11/how-to-build-bicycle-panniers/</guid>
-      <description>I was unable to find a pannier set that works exactly as I needed for the under-seat rack on my RANS Rocket. I like the panniers made by Arkel of all the panniers I have looked at and used. However, I could not find a size that worked exactly for me.</description>
-    </item>
     
-    <item>
-      <title>A Crossing: A Cyclist&#39;s Journey Home by Brian Newhouse</title>
-      <link>http://www.joesacher.com/blog/2007/12/09/a-cyclists-journey-home/</link>
-      <pubDate>Sun, 09 Dec 2007 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2007/12/09/a-cyclists-journey-home/</guid>
-      <description>This book was an incredible read. Brian starts his trek by dipping his wheel in the Pacific Ocean and heading east.
-Follow Brian across the United States and learn of his internal conflicts and pressures that time alone on a bicycle set free. Raised in a fundimentalist Christian home, he is searching for the method of understanding his relationship with his father and his spirituality.You do not have to ride a bicycle to enjoy this book.</description>
-    </item>
     
-    <item>
-      <title>Metal Cowboy by Joe Kurmaskie</title>
-      <link>http://www.joesacher.com/blog/2007/11/04/metal-cowboy-by-joe-kurmaskie/</link>
-      <pubDate>Sun, 04 Nov 2007 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2007/11/04/metal-cowboy-by-joe-kurmaskie/</guid>
-      <description>I have not found a way to better describe this book than the first sentence inside the dust cover. &amp;ldquo;It&amp;rsquo;s as if Dave Barry and Charles Kuralt squeezed together onto a bicycle to pedal across America and around the world, filing outrageous dispatches along the way.&amp;rdquo;
-Indeed, many times while reading I felt as if I was watching the well done Sunday morning stories where the common man or the small town are shown in all of their glory.</description>
-    </item>
     
-    <item>
-      <title>Vision Seat Camp Chair</title>
-      <link>http://www.joesacher.com/blog/2005/05/31/vision-seat-camp-chair/</link>
-      <pubDate>Tue, 31 May 2005 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2005/05/31/vision-seat-camp-chair/</guid>
-      <description>I am almost fully equipped for touring on my Vision Recumbent with a BOB trailer for cargo. However, I really think a good camp seat would be nice. The only problem with that is the weight must go up the hills. The seat on the Vision is removable by loosening the back mount and removing the bottom pivot mount.</description>
-    </item>
+    
+    
+    
+    
     
   </channel>
 </rss>

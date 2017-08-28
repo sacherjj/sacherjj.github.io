@@ -1,56 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rust on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/rust/</link>
-    <description>Recent content in Rust on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Fri, 25 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2017 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Fri, 25 Aug 2017 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>Python to Rust: Enum</title>
-      <link>http://www.joesacher.com/blog/2017/08/25/04-ptr-enum/</link>
-      <pubDate>Fri, 25 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2017/08/25/04-ptr-enum/</guid>
-      <description>Enums are new with Python 3.4 and PEP 435, but have been backported. At first, I saw more trouble than benefit from Python Enums. They are typically used for type safety, and this isn&amp;rsquo;t really enforceable in Python. But, since they are a class, you can add additional functionality to them. This gives them more usefulness than I previously thought.
-It isn&amp;rsquo;t easy to store data with them in most languages.</description>
-    </item>
     
-    <item>
-      <title>Python to Rust: Types</title>
-      <link>http://www.joesacher.com/blog/2017/08/24/03-ptr-types/</link>
-      <pubDate>Thu, 24 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2017/08/24/03-ptr-types/</guid>
-      <description>Python is a dynamically typed language. It is a somewhat strong typed language, with some edge cases. Rust is a static and very strong typed language. What do these mean and how does it affect you?
-In a strong, dynamic typed language, it is the object that holds the type information, not the variable. In Python the strong typing means that we would not expect a string to become a number, without some work from us.</description>
-    </item>
     
-    <item>
-      <title>Python to Rust: PIP to Cargo</title>
-      <link>http://www.joesacher.com/blog/2017/08/23/02-ptr-cargo-pip/</link>
-      <pubDate>Wed, 23 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2017/08/23/02-ptr-cargo-pip/</guid>
-      <description>This post will discuss Cargo, compare it a little with Python&amp;rsquo;s processes for dependencies, and explain how to use it in getting started.
-Many of the differences between pip and cargo are there due to the interpreted Python vs compiled Rust. To make separate environments to deal with incompatible dependencies in Python, you will create either a virtual environment or use a docker instance. Rust is compiling, so you just need a way to point to the proper source code you depend on.</description>
-    </item>
     
-    <item>
-      <title>Python to Rust: Beginning</title>
-      <link>http://www.joesacher.com/blog/2017/08/22/01-ptr-beginning/</link>
-      <pubDate>Tue, 22 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2017/08/22/01-ptr-beginning/</guid>
-      <description>Why Rust for Me I&amp;rsquo;ve been programming in Python for quite a few years. It is a great language for getting things done. There are so many modules and batteries included. You can do most things by selecting the right package. However, no one will tell you that it is fast. Unless you are talking about the speed to write code.
-I started looking at new languages to learn as a way of growing as a programmer.</description>
-    </item>
+    
+    
+    
     
   </channel>
 </rss>

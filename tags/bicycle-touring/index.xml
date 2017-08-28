@@ -1,202 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bicycle Touring on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/bicycle-touring/</link>
-    <description>Recent content in Bicycle Touring on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Tue, 04 Dec 2007 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/bicycle-touring/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2007 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Tue, 04 Dec 2007 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>Why Ride a Bicycle across the Country?</title>
-      <link>http://www.joesacher.com/blog/2007/12/04/why-do-you-ride-a-bicycle-across-the-country/</link>
-      <pubDate>Tue, 04 Dec 2007 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2007/12/04/why-do-you-ride-a-bicycle-across-the-country/</guid>
-      <description>I have been asked many times why I wanted to ride a bicycle across the county. Having completed the trip, the question became easy to answer. Before I left, I&amp;rsquo;m not sure I even could answer it.
-I am a bicentennial baby, born in 1976. This is the same year the Bikecentennial route was created as a celebration of our 200 years as a country. Thousands of cyclists rode across the country on that route during the inaugural year.</description>
-    </item>
     
-    <item>
-      <title>Creating a Dry Bag for my Martin Backpacker Guitar</title>
-      <link>http://www.joesacher.com/blog/2007/12/01/creating-a-dry-bag/</link>
-      <pubDate>Sat, 01 Dec 2007 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2007/12/01/creating-a-dry-bag/</guid>
-      <description>I searched without success for a lightweight, waterproof bag to protect my Martin Backpacker Guitar. Typical dry bags used for water sports are overbuilt for bicycle touring and backpacking use, where weight is a very large factor. They use clear vinyl or heavier vinyl coated cloth and weigh many pounds.</description>
-    </item>
     
-    <item>
-      <title>Day 13 - Christiansburg, VA to Newbern, VA</title>
-      <link>http://www.joesacher.com/blog/2002/06/01/day-13/</link>
-      <pubDate>Sat, 01 Jun 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/06/01/day-13/</guid>
-      <description>We both woke up early, but slept in. It is hard to leave a cold, paid for motel room. We managed to get packed up and out by 10:30. The climb up into town was moderate, but much better than climbing Danger Hill. We were heading out of Christiansburg before noon.</description>
-    </item>
     
-    <item>
-      <title>Day 12 - Troutville, VA to Christiansburg, VA</title>
-      <link>http://www.joesacher.com/blog/2002/05/31/day-12/</link>
-      <pubDate>Fri, 31 May 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/31/day-12/</guid>
-      <description>The alarm went off at 5:45 and we started getting things together. After looking at the route last night, we knew that today was going to be hard.
-We rolled out of Troutville at 6:30 and Adam started in the wrong direction. I agreed with him, because my GPS was set to inside mode (GPS radio off) and was pointing west.</description>
-    </item>
     
-    <item>
-      <title>Day 11 - Lexington to Troutville, VA</title>
-      <link>http://www.joesacher.com/blog/2002/05/30/day-11/</link>
-      <pubDate>Thu, 30 May 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/30/day-11/</guid>
-      <description>Adam and I both woke up a few times and went back to sleep. We finally started getting up around 8:45. We grabbed our things and got out of the motel room at check-out time (11 AM). As the trash can indicates, we might have over done it a little, staying right next to a Wal-Mart.</description>
-    </item>
     
-    <item>
-      <title>Day 10 - Vesuvius to Lexington</title>
-      <link>http://www.joesacher.com/blog/2002/05/29/day-10/</link>
-      <pubDate>Wed, 29 May 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/29/day-10/</guid>
-      <description>I had gotten up and to on the rain fly, because the water in the stream and the trees blowing both sounded like rain at times. This gave me some comfort to sleep more soundly, but I still slept in a little. I started pedalling up and out of the Tye River Gap Campground just past 11 AM.</description>
-    </item>
     
-    <item>
-      <title>The Conversation</title>
-      <link>http://www.joesacher.com/blog/2002/05/29/the-conversation/</link>
-      <pubDate>Wed, 29 May 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/29/the-conversation/</guid>
-      <description>I have been having the same basic conversation over and over again. I really thought that Trans-Am cyclists would have already answered them all before, but I guess there aren&amp;rsquo;t all that many of us. Well, not all that many of us that look like a cross between a wheel chair and a NASA satelite.</description>
-    </item>
     
-    <item>
-      <title>Day 9 - Afton almost to Vesuvius, VA</title>
-      <link>http://www.joesacher.com/blog/2002/05/28/day-9/</link>
-      <pubDate>Tue, 28 May 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/28/day-9/</guid>
-      <description>The gain in self-confidence of having accomplished a tiresome labor is immense. &amp;ndash;Thomas Arnold Bennett
-                       I woke up at 6 AM, reset my alarm, and went back to sleep. Then I woke up a 7 AM and I felt a little better about it, so I didn&amp;rsquo;t reset the alarm and I got up.</description>
-    </item>
     
-    <item>
-      <title>Day 8 - June Curry&#39;s Bike House</title>
-      <link>http://www.joesacher.com/blog/2002/05/27/day-8-bike-house/</link>
-      <pubDate>Mon, 27 May 2002 02:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/27/day-8-bike-house/</guid>
-      <description>This post is almost entirely pictures. I spent two days at the bike house and filled up my 1 GB memory cards more than a few times. Yes, yes. Those of you from the future are rolling your eyes at 1 GB. Even I am a little as I&amp;rsquo;m posting this to the new site.</description>
-    </item>
     
-    <item>
-      <title>Day 8 - Memorial Day in Afton, VA</title>
-      <link>http://www.joesacher.com/blog/2002/05/27/day-8/</link>
-      <pubDate>Mon, 27 May 2002 01:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/27/day-8/</guid>
-      <description>I woke up at around 8 AM, when June came into the bike house. She told me not to get up, but I told her to come on in. We sat and talked for an hour about some of the people that had come through before and about how modern times are so much different than old times.</description>
-    </item>
     
-    <item>
-      <title>Day 7 - Charlottesville to Afton, VA</title>
-      <link>http://www.joesacher.com/blog/2002/05/26/day-7/</link>
-      <pubDate>Sun, 26 May 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/26/day-7/</guid>
-      <description>I adjusted my kickstand mount that was working loose this morning. Checkout time was noon and I got out of my room at 12:05. I actually had to rush to get packed up by noon. Then I got to wait about 10 minutes for an empty elevator going down.</description>
-    </item>
     
-    <item>
-      <title>Day 6 - Palmyra to Charlottesville, VA</title>
-      <link>http://www.joesacher.com/blog/2002/05/25/day-6/</link>
-      <pubDate>Sat, 25 May 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/25/day-6/</guid>
-      <description>The jails in Palmyra, VA are pretty nice. The officer arrested me around 2 AM and confiscated all of my gear.
-Just kidding! I didn&amp;rsquo;t have any problems with camping at the boat ramp last night. Traffic on 15 started to slow around 10 PM and I fell asleep shortly after sending out my emails.</description>
-    </item>
     
-    <item>
-      <title>Day 5 - Lake Anna to Palmyra, VA</title>
-      <link>http://www.joesacher.com/blog/2002/05/24/day-5/</link>
-      <pubDate>Fri, 24 May 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/24/day-5/</guid>
-      <description>I woke up just before dawn cracked at 5:45. I had packed up everything but my sleeping gear before I went to bed, because I wanted to secure as much of it as I could from any animal or other visitors. I was out of the campground before 6.</description>
-    </item>
     
-    <item>
-      <title>Day 4 - Ashland to Lake Anna, VA</title>
-      <link>http://www.joesacher.com/blog/2002/05/23/day-4/</link>
-      <pubDate>Thu, 23 May 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/23/day-4/</guid>
-      <description>Before willing myself out of my warm sleeping bag, I snapped a picture of my view. I rose into the cold and decided on a cold breakfast to keep with the theme. I finished off my first pack of Fig Newtons and had a mug of Gatorade (my morning drink of choice for that last few days.</description>
-    </item>
     
-    <item>
-      <title>Day 3 - Glendale to near Ashland, VA</title>
-      <link>http://www.joesacher.com/blog/2002/05/22/day-3/</link>
-      <pubDate>Wed, 22 May 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/22/day-3/</guid>
-      <description>I didn&amp;rsquo;t get a chance to finish typing up my journal and answer emails before bed yesterday. While eating and writing, the temperature dove off a cliff. The food from my cook stove was warming for a while, but with the food and hot tea gone, night&amp;rsquo;s chill started winning the battle.</description>
-    </item>
     
-    <item>
-      <title>Day 2 - Berkley Plantation</title>
-      <link>http://www.joesacher.com/blog/2002/05/21/day-2-berkley-plantation/</link>
-      <pubDate>Tue, 21 May 2002 03:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/21/day-2-berkley-plantation/</guid>
-      <description>Berkley Plantation was my second big stop of the day. I warn anyone wanting to try this route themselves that the 1&amp;frasl;2 mile ride into Berkley is TERRIBLE. You see the sign that asks you to enjoy yourself for the next 1&amp;frasl;2 mile of authentic Colonial road and you get to try as hard as you can to keep the bike upright.</description>
-    </item>
     
-    <item>
-      <title>Day 2 - Sherwood Forest Plantation</title>
-      <link>http://www.joesacher.com/blog/2002/05/21/day-2-sherwood-forest-plantation/</link>
-      <pubDate>Tue, 21 May 2002 02:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/21/day-2-sherwood-forest-plantation/</guid>
-      <description>Sherwood Forest was the first plantation I visited today along Hwy 5. It holds a few distinctions, such as the only private residence having been owned by two unrelated presidents. William Henry Harrison inherited the property in 1790 and sold it in 1793 without having every lived in the house.</description>
-    </item>
     
-    <item>
-      <title>Day 2 - Jamestown to Glendale, VA</title>
-      <link>http://www.joesacher.com/blog/2002/05/21/day-2/</link>
-      <pubDate>Tue, 21 May 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/21/day-2/</guid>
-      <description>I had a good night&amp;rsquo;s sleep, despite the temperature. I thought about not bringing my 20 degree bag and purchasing a warmer weather bag to take up less space and weight. I&amp;rsquo;m thrilled that I didn&amp;rsquo;t talk myself into it. I needed every bit of that bag to stay warm last night.</description>
-    </item>
     
-    <item>
-      <title>Day 1 - Yorktown to Jamestown, VA</title>
-      <link>http://www.joesacher.com/blog/2002/05/20/day-1/</link>
-      <pubDate>Mon, 20 May 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/20/day-1/</guid>
-      <description>The bicycle tourist is greeted with two choices when starting their tour.: Do I ride away from my home or pack up everything and take alternate transportation to the start?
-For local tours, the loop method is a good idea. Start off in one direction and ride in a big loop until you end up back home.</description>
-    </item>
     
-    <item>
-      <title>Day 0 - Final Shakedown Ride</title>
-      <link>http://www.joesacher.com/blog/2002/05/19/day-0/</link>
-      <pubDate>Sun, 19 May 2002 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2002/05/19/day-0/</guid>
-      <description>All you need in this life is ignorance and confidence, and then success is sure.
-- Mark TwainToday I completely loaded up my RANS Rocket. I&amp;rsquo;ve built many custom components to make it into a cross-country touring machine. Unfortunately, I haven&amp;rsquo;t had as much time getting ready for the trip as I wanted.</description>
-    </item>
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
   </channel>
 </rss>

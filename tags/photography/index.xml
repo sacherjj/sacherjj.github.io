@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Photography on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/photography/</link>
-    <description>Recent content in Photography on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Mon, 21 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/photography/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2017 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Mon, 21 Aug 2017 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>Solar Eclipse 2017</title>
-      <link>http://www.joesacher.com/blog/2017/08/21/solar-eclipse-2017/</link>
-      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2017/08/21/solar-eclipse-2017/</guid>
-      <description>I had been planning on driving down to see the eclipse for a few months. My wife&amp;rsquo;s aunt lives directly in the totality region. We were unsure until the last day if we could make the trip, but headed down on Sunday.
-We were able to visit and have a nice slow Monday morning, before the big show.</description>
-    </item>
     
   </channel>
 </rss>

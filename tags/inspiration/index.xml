@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Inspiration on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/inspiration/</link>
-    <description>Recent content in Inspiration on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Tue, 18 Apr 2006 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/inspiration/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2006 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Tue, 18 Apr 2006 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>These things I wish</title>
-      <link>http://www.joesacher.com/blog/2006/04/18/these-things-i-wish-for-each-of-you/</link>
-      <pubDate>Tue, 18 Apr 2006 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2006/04/18/these-things-i-wish-for-each-of-you/</guid>
-      <description>This is something often attributed to Paul Harvey. While Paul often read material from this author, he was not the author. This was written by Lee Pitts in People Who Live at the End of Dirt Roads that appeared in the 2000 Chicken Soup for the Golden Soul.
-For my grandchildren, I&amp;rsquo;d like better. I&amp;rsquo;d really like for them to know about hand-me-down clothes, homemade ice-cream and meat loaf sandwiches. I really would.</description>
-    </item>
     
   </channel>
 </rss>

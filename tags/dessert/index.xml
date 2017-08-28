@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dessert on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/dessert/</link>
-    <description>Recent content in Dessert on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 06 Dec 2007 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/dessert/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2007 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Thu, 06 Dec 2007 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>Recipe - Japanese Fruit Pie</title>
-      <link>http://www.joesacher.com/blog/2007/12/06/recipe-japanese-fruit-pie/</link>
-      <pubDate>Thu, 06 Dec 2007 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2007/12/06/recipe-japanese-fruit-pie/</guid>
-      <description>This pie is a family tradition, always present at Christmas and Thanksgiving. It is similar to a Pecan Pie, but with a little more body.
-Ingredients  1 frozen pie shell 1 stick of butter, melted 2 eggs 1 teaspoon vinegar (Apple Cider type is best) 1 cup sugar 1 teaspoon vanilla extract 1&amp;frasl;2 cup raisins (gold or regular) 1&amp;frasl;2 cup chopped nuts (normally use pecans) 1&amp;frasl;2 cup coconut (shredded)  Directions Blind bake the 9&amp;rdquo; pie shell, according to the package instructions.</description>
-    </item>
     
   </channel>
 </rss>

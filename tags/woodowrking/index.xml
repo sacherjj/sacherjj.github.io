@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Woodowrking on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/woodowrking/</link>
-    <description>Recent content in Woodowrking on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Wed, 26 Dec 2007 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/woodowrking/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2007 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Wed, 26 Dec 2007 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>Jet Mini vs PSI Turncrafter Pro</title>
-      <link>http://www.joesacher.com/blog/2007/12/26/a-lathe-comparison-jet-mini-vs-psi-turncrafter-pro/</link>
-      <pubDate>Wed, 26 Dec 2007 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2007/12/26/a-lathe-comparison-jet-mini-vs-psi-turncrafter-pro/</guid>
-      <description>When I was looking at lathes, I talked with many people who had tried and liked either the Jet Mini or the PSI Turncrafter Pro lathes. I could not find many that had used both, to get an idea of the differences between them. Now owning a PSI Turncrafter Pro and having taken a class and used a Jet Mini for 5 hours or so, I decided to summarize the differences.</description>
-    </item>
     
   </channel>
 </rss>

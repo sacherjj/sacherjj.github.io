@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Video on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/video/</link>
-    <description>Recent content in Video on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Wed, 10 Aug 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/video/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2011 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Wed, 10 Aug 2011 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>Encoding Videos for the HP Touchpad</title>
-      <link>http://www.joesacher.com/blog/2011/08/10/encoding-videos-for-the-hp-touchpad/</link>
-      <pubDate>Wed, 10 Aug 2011 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2011/08/10/encoding-videos-for-the-hp-touchpad/</guid>
-      <description>This post is for those who have ripped their DVDs and other video media and would like to load it onto their HP Touchpad. I started to encode videos for the HP Touchpad using HandBrake, which had given me success for video targeting my Palm Pre. I used iPad profiles, as the display size is exactly the same. It seemed that no matter what I tried, the files would not show up in Photos &amp;amp; Videos app.</description>
-    </item>
     
   </channel>
 </rss>

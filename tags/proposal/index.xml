@@ -1,35 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Proposal on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/proposal/</link>
-    <description>Recent content in Proposal on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Tue, 18 Mar 2008 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/proposal/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2008 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Tue, 18 Mar 2008 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>What an Engagement!</title>
-      <link>http://www.joesacher.com/blog/2008/03/18/what-an-engagement/</link>
-      <pubDate>Tue, 18 Mar 2008 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2008/03/18/what-an-engagement/</guid>
-      <description>Today I read of an engagement gone seriously wrong. Although, reading through the article I realized that had I been in that situation, things would have gone differently. Amy and I are a little different than the two in the article.
-The incident started with a man concealing his $12,000 engagement ring in a helium balloon, with the idea of actually &amp;lsquo;popping&amp;rsquo; the question. I don&amp;rsquo;t understand why he had not attached the balloon to something of a greater weight than the buoyancy.</description>
-    </item>
     
-    <item>
-      <title>30,000 Hours Later...I&#39;m Engaged</title>
-      <link>http://www.joesacher.com/blog/2008/02/26/30000-hours-later/</link>
-      <pubDate>Tue, 26 Feb 2008 19:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2008/02/26/30000-hours-later/</guid>
-      <description>On September 24th, 2004, I met Amy for the first time on our date at Acapulco Joe’s in Downtown Indianapolis. Amy’s car broke down just before we met, so she was driving her dad’s old Ford Ranger. We have been seeing each other since. On Feb 26th, we were going to reach an obscure and geeky anniversary. We will have known each other for exactly 30,000 hours. About two months ago, I targeted this date for something I had been planning for almost a year.</description>
-    </item>
+    
     
   </channel>
 </rss>

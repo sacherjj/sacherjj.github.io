@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Writing on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/writing/</link>
-    <description>Recent content in Writing on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 03 Jul 2008 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/writing/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2008 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Thu, 03 Jul 2008 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>On Writing by Stephen King</title>
-      <link>http://www.joesacher.com/blog/2008/07/03/on-writing-by-stephen-king/</link>
-      <pubDate>Thu, 03 Jul 2008 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2008/07/03/on-writing-by-stephen-king/</guid>
-      <description>Recently I&amp;rsquo;ve started writing again. In the last few years, all my writing was on screenplay style for short films. Some of these we actually shot and produced, most just sit on my computer in final PDF form. Writing in screenplay format is different than novel, novella, or short story forms. Screenplay is all about dialog and character actions. There is no exposition of character thoughts. I think this experience makes you a stronger dialog writer, when you switch to fiction.</description>
-    </item>
     
   </channel>
 </rss>

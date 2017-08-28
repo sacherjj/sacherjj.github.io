@@ -7,6 +7,14 @@
   content: " ";
   display: table;
 }
+.series_top_page {
+  background: #f5f5f5;
+  padding: 4px;
+  font-style: italic;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
 .clearfix:after,
 .navbar:after,
 .navbar-header:after {

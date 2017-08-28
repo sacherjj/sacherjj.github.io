@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Personal on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/personal/</link>
-    <description>Recent content in Personal on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Sun, 15 May 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/personal/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2011 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Sun, 15 May 2011 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>I Miss You, Dad</title>
-      <link>http://www.joesacher.com/blog/2011/05/15/i-miss-you-dad/</link>
-      <pubDate>Sun, 15 May 2011 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2011/05/15/i-miss-you-dad/</guid>
-      <description>My father fought cancer for decades. He was the strongest man I have ever known. It was hard to see him wither with a body not able to do what his will desired. His suffering finally ended during the early morning of April 20th. Despite knowing that the cancer was terminal and preparing for it. Death is never easy. It tears a hole through you.
-The storm was heavy. No matter what I did, I couldn&amp;rsquo;t keep the ship from going down.</description>
-    </item>
     
   </channel>
 </rss>

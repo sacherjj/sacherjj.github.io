@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cooking on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/cooking/</link>
-    <description>Recent content in Cooking on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Fri, 07 Mar 2008 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/cooking/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2008 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Fri, 07 Mar 2008 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>Happy Birthday To Me</title>
-      <link>http://www.joesacher.com/blog/2008/03/07/happy-birthday-to-me/</link>
-      <pubDate>Fri, 07 Mar 2008 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2008/03/07/happy-birthday-to-me/</guid>
-      <description>Hurray for me. Today is my birthday.
-Last night, I decided to make a German Chocolate Cake. Amy thought I shouldn&amp;rsquo;t have to make my own cake, but I wanted to try one from scratch. The cake used real melted chocolate and I folded in whipped egg whites. The frosting was pretty standard fare with egg yolks, evaporated milk, sugar, etc. I didn&amp;rsquo;t have a piece until tonight. I cooked the cake a little too much and it was slightly dry.</description>
-    </item>
     
   </channel>
 </rss>

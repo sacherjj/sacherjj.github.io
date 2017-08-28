@@ -1,36 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Podcasts on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/podcasts/</link>
-    <description>Recent content in Podcasts on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Wed, 21 Sep 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/podcasts/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2011 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Wed, 21 Sep 2011 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>Zune Podcasts - A Rant</title>
-      <link>http://www.joesacher.com/blog/2011/09/21/zune-podcasts-a-rant/</link>
-      <pubDate>Wed, 21 Sep 2011 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2011/09/21/zune-podcasts-a-rant/</guid>
-      <description>Zune podcast functionality on Windows Phone Mango was obviously designed by someone who never listens to podcasts. I’ve tried to use it over the last three weeks and it is an exercise in futility. There is one glaring problems that needs to be addressed before it is close to usable. It all comes down to episode management. Unfortunately, this is the most important factor of any podcast solution.
-Order is allowed, for either oldest first or newest first.</description>
-    </item>
     
-    <item>
-      <title>Windows Phone Podcast Experience</title>
-      <link>http://www.joesacher.com/blog/2011/09/07/windows-phone-podcast-experience/</link>
-      <pubDate>Wed, 07 Sep 2011 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2011/09/07/windows-phone-podcast-experience/</guid>
-      <description>The &amp;ldquo;Mango&amp;rdquo; update for Windows Phone, or version 7.5 for those less fruity, adds many features. This article is dealing with the podcasting capabilities. On webOS, I made daily use of a brilliant piece of software called drPodder. Moving from this almost clairvoyant app to the integrated podcast ability of Windows Phone is quite jarring.
-I will be outlining the current successes and fails with Windows Phone which keep it from being an enjoyable podcasting experience.</description>
-    </item>
+    
     
   </channel>
 </rss>

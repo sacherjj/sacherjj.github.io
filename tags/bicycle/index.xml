@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bicycle on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/bicycle/</link>
-    <description>Recent content in Bicycle on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Tue, 11 Dec 2007 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/bicycle/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2007 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Tue, 11 Dec 2007 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>How To Build Bicycle Panniers</title>
-      <link>http://www.joesacher.com/blog/2007/12/11/how-to-build-bicycle-panniers/</link>
-      <pubDate>Tue, 11 Dec 2007 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2007/12/11/how-to-build-bicycle-panniers/</guid>
-      <description>I was unable to find a pannier set that works exactly as I needed for the under-seat rack on my RANS Rocket. I like the panniers made by Arkel of all the panniers I have looked at and used. However, I could not find a size that worked exactly for me.</description>
-    </item>
     
   </channel>
 </rss>

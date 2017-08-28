@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pizza on joesacher.com</title>
+      <title>joesacher.com</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.joesacher.com/tags/pizza/</link>
-    <description>Recent content in Pizza on joesacher.com</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
-    <lastBuildDate>Sun, 27 Jan 2008 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.joesacher.com/tags/pizza/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2008 Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</copyright>
+    <updated>Sun, 27 Jan 2008 00:00:00 UTC</updated>
     
     
-    <item>
-      <title>Making Pizza</title>
-      <link>http://www.joesacher.com/blog/2008/01/27/making-pizza/</link>
-      <pubDate>Sun, 27 Jan 2008 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.joesacher.com/blog/2008/01/27/making-pizza/</guid>
-      <description>For New York Style pizzas, you really need a stone. I have heard for people using unglazed tiles from a hardware store, but I am concerned with impurities that may come out of those tiles if I pick the incorrect one. I have purchased a thick stone, but it eventually cracked after some use , but no mis-use from me. I&amp;rsquo;m currently using a large round stone from Pampered Chef.</description>
-    </item>
     
   </channel>
 </rss>
