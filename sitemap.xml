@@ -298,6 +298,36 @@
   </url>
   
   <url>
+    <loc>http://www.joesacher.com/blog/2002/06/07/day-19/</loc>
+    <lastmod>2002-06-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/06/day-18/</loc>
+    <lastmod>2002-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/05/day-17/</loc>
+    <lastmod>2002-06-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/04/day-16/</loc>
+    <lastmod>2002-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/03/day-15/</loc>
+    <lastmod>2002-06-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/02/day-14/</loc>
+    <lastmod>2002-06-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/blog/2002/06/01/day-13/</loc>
     <lastmod>2002-06-01T00:00:00+00:00</lastmod>
   </url>
@@ -445,14 +475,14 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/cooking/</loc>
-    <lastmod>2008-03-07T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/categories/cooking/</loc>
+    <lastmod>2008-01-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/cooking/</loc>
-    <lastmod>2008-01-27T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/tags/cooking/</loc>
+    <lastmod>2008-03-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -595,14 +625,14 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/personal/</loc>
-    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/categories/personal/</loc>
+    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/personal/</loc>
-    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/tags/personal/</loc>
+    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -721,13 +751,13 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/series/trans-am/</loc>
+    <loc>http://www.joesacher.com/categories/trans-am/</loc>
     <lastmod>2007-12-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/trans-am/</loc>
+    <loc>http://www.joesacher.com/series/trans-am/</loc>
     <lastmod>2007-12-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
