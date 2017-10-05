@@ -6,7 +6,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Disabling Analytics for Local Hugo</title>
+  <title>Day 26 and 27 - Rough River Lake</title>
   <meta name="author" content="" />
 
   
@@ -55,9 +55,9 @@
   <link rel="alternate" href="http://www.joesacher.com/index.xml" type="application/rss+xml" title="joesacher.com">
 
   
-  <meta property="og:title" content="Disabling Analytics for Local Hugo" />
+  <meta property="og:title" content="Day 26 and 27 - Rough River Lake" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/blog/2017/08/03/disable-google-analytics-for-local-hugo//" />
+  <meta property="og:url" content="/blog/2002/06/14/day-26-27//" />
   <meta property="og:image" content="img/logo.png" />
 
 </head>
@@ -76,9 +76,9 @@
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand home" href="http://www.joesacher.com/">
-                    <img src="http://www.joesacher.com/img/logo.png" alt="Disabling Analytics for Local Hugo logo" class="hidden-xs hidden-sm">
-                    <img src="http://www.joesacher.com/img/logo-small.png" alt="Disabling Analytics for Local Hugo logo" class="visible-xs visible-sm">
-                    <span class="sr-only">Disabling Analytics for Local Hugo - go to homepage</span>
+                    <img src="http://www.joesacher.com/img/logo.png" alt="Day 26 and 27 - Rough River Lake logo" class="hidden-xs hidden-sm">
+                    <img src="http://www.joesacher.com/img/logo-small.png" alt="Day 26 and 27 - Rough River Lake logo" class="visible-xs visible-sm">
+                    <span class="sr-only">Day 26 and 27 - Rough River Lake - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -127,7 +127,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Disabling Analytics for Local Hugo</h1>
+                <h1>Day 26 and 27 - Rough River Lake</h1>
             </div>
         </div>
     </div>
@@ -141,51 +141,194 @@
                     <div class="col-md-9" id="blog-post">
                         
                         <p class="text-muted mb-small text-right text-uppercase">
-                            August 3, 2017<br/>
-                            <i class="fa fa-clock-o"></i> 2 min. read</p>
+                            June 14, 2002<br/>
+                            <i class="fa fa-clock-o"></i> 1 min. read</p>
 
                             <div id="post-content">
-                                <p class="series_top_page">This post is part of the <a href="http://www.joesacher.com//series/hugo">Hugo</a> series.</p>
-                                <p>Hugo&rsquo;s watching web server is great for creating pages.  Tweak a little and see the browser refresh.  (Unless you break things and then it is still just a manual browser refresh away from back to the good state, once your page is unbroken.)</p>
+                                <p class="series_top_page">This post is part of the <a href="http://www.joesacher.com//series/trans-am">Trans-Am</a> series.</p>
+                                
 
-<p>As I was developing local pages, I happened to have my realtime Google Anaytics open.  I noticed I was hitting it.  When I look back at yesterday&rsquo;s stats, I have 124 visits to a page I was working on, but hadn&rsquo;t published yet.  That isn&rsquo;t good.</p>
 
-<p>I would have assumed that it would be disabled if running locally.  So I started searching around for the code that inserts the script, so I could disable similar to how Disqus is disabled locally.  However, I couldn&rsquo;t find this script anywhere.</p>
 
-<p>After some web searching, it turns out that this is in an internal template, compiled with hugo.  I didn&rsquo;t know that was a thing.  Something to look out for when researching other template changes.</p>
 
-<p>To find where this exists in your theme, look for <code>{{ template &quot;_internal/google_analytics.html&quot; . }}</code>.  In the theme I am modifying for this site, it exists in <code>partials/scripts.html</code>.  I&rsquo;m not sure if this is common or not.</p>
 
-<p>I created a new file named <code>partials/google_analytics.html</code> with the following code:</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
 
-<pre><code>&lt;!-- GOOGLE ANALYTICS --&gt;
-&lt;!-- Disabled when running locally --&gt;
-{{ if not .Site.BuildDrafts }}
-{{ if .Site.GoogleAnalytics }}
-&lt;script&gt;
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
-ga('send', 'pageview');
-&lt;/script&gt;
-{{ end }}
-{{ end }}
-</code></pre>
 
-<p>Then I replaced <code>{{ template &quot;_internal/google_analytics.html&quot; . }}</code> with <code>{{ partial &quot;google_analytics.html&quot; . }}</code>.</p>
 
-<p>Now running locally with the <code>-D</code> flag, the Google Analytics does not load and polute my real statistics.   I typically run <code>hugo -wD server</code> in development.</p>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+<p>When Ruth, Daniel, Noah and I were heading around looking for a place to eat lunch on Friday, we passed the rider doing just Kentucky.  I had Ruth get next to him and told him good luck.  He was surprised to see me ahead of him and I explained about my 90+ mile day to get to the cabin on Thursday.  Then we turned around and hit a Golden Corral in Litchfield.</p>
+
+<p>
+
+<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+	  
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/trans-am/day-26/6302-thumb.jpg');">
+      <img itemprop="thumbnail" src="/img/trans-am/day-26/6302-thumb.jpg" alt="Wonder what they were looking at..."/>
+    </div>
+    <a href="/img/trans-am/day-26/6302.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Wonder what they were looking at...</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/trans-am/day-26/6305-thumb.jpg');">
+      <img itemprop="thumbnail" src="/img/trans-am/day-26/6305-thumb.jpg" alt="Too young to have old man pants"/>
+    </div>
+    <a href="/img/trans-am/day-26/6305.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Too young to have old man pants</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/trans-am/day-26/6309-thumb.jpg');">
+      <img itemprop="thumbnail" src="/img/trans-am/day-26/6309-thumb.jpg" alt="Off for food"/>
+    </div>
+    <a href="/img/trans-am/day-26/6309.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Off for food</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/trans-am/day-26/6311-thumb.jpg');">
+      <img itemprop="thumbnail" src="/img/trans-am/day-26/6311-thumb.jpg" alt="Most respectable I&#39;ve looked in weeks."/>
+    </div>
+    <a href="/img/trans-am/day-26/6311.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Most respectable I&#39;ve looked in weeks.</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/trans-am/day-26/6331-thumb.jpg');">
+      <img itemprop="thumbnail" src="/img/trans-am/day-26/6331-thumb.jpg" alt="Uno?"/>
+    </div>
+    <a href="/img/trans-am/day-26/6331.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Uno?</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/trans-am/day-27/6338-thumb.jpg');">
+      <img itemprop="thumbnail" src="/img/trans-am/day-27/6338-thumb.jpg" alt="Watermelon"/>
+    </div>
+    <a href="/img/trans-am/day-27/6338.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Watermelon</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/trans-am/day-27/6350-thumb.jpg');">
+      <img itemprop="thumbnail" src="/img/trans-am/day-27/6350-thumb.jpg" alt="Nikon Coolpix 990 invented selfies"/>
+    </div>
+    <a href="/img/trans-am/day-27/6350.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Nikon Coolpix 990 invented selfies</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/trans-am/day-27/6352.jpg');">
+      <img itemprop="thumbnail" src="/img/trans-am/day-27/6352.jpg" alt="I&#39;m really incapable of growing a decent beard"/>
+    </div>
+    <a href="/img/trans-am/day-27/6352.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>I&#39;m really incapable of growing a decent beard</p>
+      </figcaption>
+  </figure>
+</div>
+
+</div>
+</p>
+
+<p>I spent two full days at the cabin and was able to visit with all my nephews and my niece.  Both my sister&rsquo;s families came down and we helped with the installation of the new bathtub and shower.  I enjoyed seeing everyone, but I didn&rsquo;t get as much rest as I wanted to get.  Both nights I didn&rsquo;t sleep
+well, because of getting to bed late and kids getting up early.  It is hard to sleep in the living room when that is where the kids want to play in the morning.</p>
+
+<p>Rough River Lake, KY</p>
 
                                 <hr/>
-        <p>Part 3 of 4
-            in the <b>Hugo</b> series.</p>
-        <p><a href="http://www.joesacher.com/blog/2017/08/01/pelican-to-hugo/"><i class="fa fa-angle-left"></i>Series Start<i class="fa fa-angle-right"></i></a>
+        <p>Part 32 of 39
+            in the <b>Trans-Am</b> series.</p>
+        <p><a href="http://www.joesacher.com/blog/2002/05/19/day-0/"><i class="fa fa-angle-left"></i>Series Start<i class="fa fa-angle-right"></i></a>
                      |
-            <a href="http://www.joesacher.com/blog/2017/08/03/implementing-series-in-hugo/"><i class="fa fa-angle-double-left"></i>Implementing a Series in Hugo</a>
+            <a href="http://www.joesacher.com/blog/2002/06/13/day-25/"><i class="fa fa-angle-double-left"></i>Day 25 - Bardstown to Rough River Lake</a>
                  |
-        <a href="http://www.joesacher.com/blog/2017/08/27/converting-series-to-taxonomy/">Changing my Series to Taxonomy<i class="fa fa-angle-double-right"></i></a></p>
+        <a href="http://www.joesacher.com/blog/2002/06/16/day-28/">Day 28 - Cabin to Rough River Dam Airport<i class="fa fa-angle-double-right"></i></a></p>
                              </div>
                         
                         
@@ -231,7 +374,7 @@ ga('send', 'pageview');
             </li><li><a href="http://www.joesacher.com/categories/personal" class="text-uppercase">personal (9)</a>
             </li><li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
             </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (27)</a>
-            </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (25)</a>
+            </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (39)</a>
             </li>
         </ul>
     </div>
@@ -247,7 +390,7 @@ ga('send', 'pageview');
         <ul class="nav nav-pills nav-stacked">
             <li><a href="http://www.joesacher.com/series/hugo" class="text-uppercase">hugo (4)</a>
             </li><li><a href="http://www.joesacher.com/series/python-to-rust" class="text-uppercase">python-to-rust (4)</a>
-            </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (25)</a>
+            </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (39)</a>
             </li>
         </ul>
     </div>
@@ -305,7 +448,7 @@ ga('send', 'pageview');
             </li><li><a href="http://www.joesacher.com/tags/web"><i class="fa fa-tags"></i> web</a>
             </li><li><a href="http://www.joesacher.com/tags/webos"><i class="fa fa-tags"></i> webos</a>
             </li><li><a href="http://www.joesacher.com/tags/windows-phone"><i class="fa fa-tags"></i> windows-phone</a>
-            </li><li><a href="http://www.joesacher.com/tags/woodowrking"><i class="fa fa-tags"></i> woodowrking</a>
+            </li><li><a href="http://www.joesacher.com/tags/woodworking"><i class="fa fa-tags"></i> woodworking</a>
             </li><li><a href="http://www.joesacher.com/tags/writing"><i class="fa fa-tags"></i> writing</a>
             </li>
         </ul>
@@ -385,6 +528,11 @@ ga('send', 'pageview');
 <script src="http://www.joesacher.com/js/owl.carousel.min.js"></script>
 
 
+
+
+<script src="/js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 
 
   </body>

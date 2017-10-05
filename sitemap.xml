@@ -298,6 +298,41 @@
   </url>
   
   <url>
+    <loc>http://www.joesacher.com/blog/2002/06/21/day-33/</loc>
+    <lastmod>2002-06-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/20/day-32/</loc>
+    <lastmod>2002-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/19/day-31/</loc>
+    <lastmod>2002-06-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/18/day-30/</loc>
+    <lastmod>2002-06-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/17/day-29/</loc>
+    <lastmod>2002-06-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/16/day-28/</loc>
+    <lastmod>2002-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/14/day-26-27/</loc>
+    <lastmod>2002-06-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/blog/2002/06/13/day-25/</loc>
     <lastmod>2002-06-13T00:00:00+00:00</lastmod>
   </url>
@@ -594,13 +629,13 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/series/hugo/</loc>
+    <loc>http://www.joesacher.com/tags/hugo/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/hugo/</loc>
+    <loc>http://www.joesacher.com/series/hugo/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -786,13 +821,13 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/series/trans-am/</loc>
+    <loc>http://www.joesacher.com/categories/trans-am/</loc>
     <lastmod>2007-12-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/trans-am/</loc>
+    <loc>http://www.joesacher.com/series/trans-am/</loc>
     <lastmod>2007-12-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
