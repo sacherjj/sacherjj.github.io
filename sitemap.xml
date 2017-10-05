@@ -298,6 +298,26 @@
   </url>
   
   <url>
+    <loc>http://www.joesacher.com/blog/2002/06/13/day-25/</loc>
+    <lastmod>2002-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/12/day-24-lincoln-homestead/</loc>
+    <lastmod>2002-06-12T02:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/12/day-24/</loc>
+    <lastmod>2002-06-12T01:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/11/day-23/</loc>
+    <lastmod>2002-06-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/blog/2002/06/10/day-22/</loc>
     <lastmod>2002-06-10T00:00:00+00:00</lastmod>
   </url>
@@ -490,14 +510,14 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/cooking/</loc>
-    <lastmod>2008-01-27T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/tags/cooking/</loc>
+    <lastmod>2008-03-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/cooking/</loc>
-    <lastmod>2008-03-07T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/categories/cooking/</loc>
+    <lastmod>2008-01-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -640,14 +660,14 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/personal/</loc>
-    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/tags/personal/</loc>
+    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/personal/</loc>
-    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/categories/personal/</loc>
+    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -766,13 +786,13 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/trans-am/</loc>
+    <loc>http://www.joesacher.com/series/trans-am/</loc>
     <lastmod>2007-12-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/series/trans-am/</loc>
+    <loc>http://www.joesacher.com/categories/trans-am/</loc>
     <lastmod>2007-12-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -802,7 +822,7 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/woodowrking/</loc>
+    <loc>http://www.joesacher.com/tags/woodworking/</loc>
     <lastmod>2007-12-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
