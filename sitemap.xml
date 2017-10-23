@@ -298,6 +298,21 @@
   </url>
   
   <url>
+    <loc>http://www.joesacher.com/blog/2002/06/30/day-42/</loc>
+    <lastmod>2002-06-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/29/day-41/</loc>
+    <lastmod>2002-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/28/day-40/</loc>
+    <lastmod>2002-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/blog/2002/06/27/day-39/</loc>
     <lastmod>2002-06-27T00:00:00+00:00</lastmod>
   </url>
@@ -575,14 +590,14 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/cooking/</loc>
-    <lastmod>2008-03-07T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/categories/cooking/</loc>
+    <lastmod>2008-01-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/cooking/</loc>
-    <lastmod>2008-01-27T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/tags/cooking/</loc>
+    <lastmod>2008-03-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -659,13 +674,13 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/hugo/</loc>
+    <loc>http://www.joesacher.com/series/hugo/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/series/hugo/</loc>
+    <loc>http://www.joesacher.com/tags/hugo/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -725,14 +740,14 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/personal/</loc>
-    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/categories/personal/</loc>
+    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/personal/</loc>
-    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/tags/personal/</loc>
+    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
