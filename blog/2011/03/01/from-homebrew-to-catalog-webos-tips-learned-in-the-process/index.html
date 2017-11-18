@@ -15,7 +15,7 @@
   <meta name="description" content="My little piece of the web.">	
   
 
-  <meta name="generator" content="Hugo 0.25.1" />
+  <meta name="generator" content="Hugo 0.30.2" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
@@ -156,16 +156,14 @@
 
 <p>When developing on the Pre or in the Emulator, it is difficult to locate syntactical and functional errors in your code.  You will save a great deal of time when trapping errors as close to the source as possible.  I include try/catch blocks around any non trivial code.  A typical setup function might look like this:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>MySceneAssistant.prototype.setup <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">function</span>(){
-    <span style="color: #006699; font-weight: bold">try</span>{
-        <span style="color: #0099FF; font-style: italic">// My Code</span>
-        Mojo.Log.info(<span style="color: #AA0000; background-color: #FFAAAA">“</span>Hey, I actually got here.<span style="color: #AA0000; background-color: #FFAAAA">”</span>);
-    } <span style="color: #006699; font-weight: bold">catch</span>(e) {
-        Mojo.Log.error(<span style="color: #AA0000; background-color: #FFAAAA">“</span>myScene.setup error<span style="color: #555555">:</span> <span style="color: #555555">%</span>j<span style="color: #AA0000; background-color: #FFAAAA">”</span>, e);
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">MySceneAssistant.prototype.setup <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">function</span>(){
+    <span style="color:#069;font-weight:bold">try</span>{
+        <span style="color:#09f;font-style:italic">// My Code
+</span><span style="color:#09f;font-style:italic"></span>        Mojo.Log.info(<span style="color:#a00;background-color:#faa">“</span>Hey, I actually got here.<span style="color:#a00;background-color:#faa">”</span>);
+    } <span style="color:#069;font-weight:bold">catch</span>(e) {
+        Mojo.Log.error(<span style="color:#a00;background-color:#faa">“</span>myScene.setup error<span style="color:#555">:</span> <span style="color:#555">%</span>j<span style="color:#a00;background-color:#faa">”</span>, e);
     }
-}
-</pre></div>
-
+}</code></pre></div>
 
 <p>When an error occurs, this will print a JSON encoded version of any JavaScript exception that occurs.  For this to be useful, you need to read the <code>/var/log/messages</code> file.  I generally only need to look at errors during initial development on the Emulator.</p>
 
@@ -180,19 +178,15 @@
 
 <p>Your messages will not show up unless you increase the logLevel.  To do this, create a file named <code>framework_config.json</code> in the root of your application.  Inside that file you need:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>{
-    <span style="color: #CC3300">&quot;logLevel&quot;</span><span style="color: #555555">:</span><span style="color: #FF6600">99</span>,
-}
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
+    <span style="color:#c30">&#34;logLevel&#34;</span><span style="color:#555">:</span><span style="color:#f60">99</span>,
+}</code></pre></div>
 
 <p>Remember to set the value back to 0 before you release your app or you will fill the users messages file with all your debug information.</p>
 
 <p>If you need to debug on the Pre, you can only use <code>Mojo.Log.error</code> to write to <code>/var/log/messages</code>.  Follow the process to get terminal access (or incorrectly called “root your Pre”).  You will find the log command missing.  <code>tail -f /var/log/messages</code> will partially replace this.  To perform more like log, pipe the output to grep with something like this:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>tail -f /var/log/messages | grep com.sachersoft.wordwhirl
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tail -f /var/log/messages | grep com.sachersoft.wordwhirl</code></pre></div>
 
 <p>Obviously, replace <code>com.sachersoft.wordwhirl</code> with the proper appId for your application.  Like log, you can terminate this command with Ctrl+C.</p>
 
@@ -202,32 +196,26 @@
 
 <p>A typical event handler statement in the setup function of a scene might look something like this:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>MySceneAssistant.prototype.setup <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">function</span>(){
-    <span style="color: #006699; font-weight: bold">this</span>.controller.listen(<span style="color: #CC3300">&#39;MySuperBtn&#39;</span>, Mojo.Event.tap, <span style="color: #006699; font-weight: bold">this</span>.tapButton.bind(<span style="color: #006699; font-weight: bold">this</span>));
-}
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">MySceneAssistant.prototype.setup <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">function</span>(){
+    <span style="color:#069;font-weight:bold">this</span>.controller.listen(<span style="color:#c30">&#39;MySuperBtn&#39;</span>, Mojo.Event.tap, <span style="color:#069;font-weight:bold">this</span>.tapButton.bind(<span style="color:#069;font-weight:bold">this</span>));
+}</code></pre></div>
 
 <p>This functions correctly, calling the tapButton function and all looks well.  However, when the scene unloads the event handler isn&rsquo;t cleaned up properly.  Every event handler must be removed in the cleanup function with a stopListening call.  This is impossible to do with how we created the event handler.</p>
 
 <p>Each time you call <code>this.tapButton.bind(this)</code>, you will receive a different instance of a function, created by bind.  (The same thing occurs with bindAsEventHandler.)  We need to save the bound function instance, because the stopListening method requires the exact arguments given to the listen method.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>MySceneAssistant.prototype.setup <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">function</span>(){
-    <span style="color: #006699; font-weight: bold">this</span>.tabHndlr <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">this</span>.tapButton.bind(<span style="color: #006699; font-weight: bold">this</span>);
-    <span style="color: #006699; font-weight: bold">this</span>.controller.listen(<span style="color: #CC3300">&#39;MySuperBtn&#39;</span>, Mojo.Event.tap, <span style="color: #006699; font-weight: bold">this</span>.tapHndlr);
-    <span style="color: #006699; font-weight: bold">this</span>.controller.listen(<span style="color: #CC3300">&#39;SecondBtn&#39;</span>, Mojo.Event.tap, <span style="color: #006699; font-weight: bold">this</span>.tapHndlr);
-}
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">MySceneAssistant.prototype.setup <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">function</span>(){
+    <span style="color:#069;font-weight:bold">this</span>.tabHndlr <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">this</span>.tapButton.bind(<span style="color:#069;font-weight:bold">this</span>);
+    <span style="color:#069;font-weight:bold">this</span>.controller.listen(<span style="color:#c30">&#39;MySuperBtn&#39;</span>, Mojo.Event.tap, <span style="color:#069;font-weight:bold">this</span>.tapHndlr);
+    <span style="color:#069;font-weight:bold">this</span>.controller.listen(<span style="color:#c30">&#39;SecondBtn&#39;</span>, Mojo.Event.tap, <span style="color:#069;font-weight:bold">this</span>.tapHndlr);
+}</code></pre></div>
 
 <p>Since the bind function call is stored, we can properly stop event listening. There is an added advantage if you have more than one user of the handler.  Notice my new <code>SecondBtn</code> will use the same bound function as the first.  This eliminates multiple instances of bound functions going to the same place, thereby saving memory.  Now that we are creating event handlers properly, we need to remove them in the cleanup method.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>MySceneAssistant.prototype.cleanup <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">function</span>(){
-    <span style="color: #006699; font-weight: bold">this</span>.controller.stopListening(<span style="color: #CC3300">&#39;MySuperBtn&#39;</span>, Mojo.Event.tap, <span style="color: #006699; font-weight: bold">this</span>.tapHndlr);
-    <span style="color: #006699; font-weight: bold">this</span>.controller.stopListening(<span style="color: #CC3300">&#39;SecondBtn&#39;</span>, Mojo.Event.tap, <span style="color: #006699; font-weight: bold">this</span>.tapHndlr);
-}
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">MySceneAssistant.prototype.cleanup <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">function</span>(){
+    <span style="color:#069;font-weight:bold">this</span>.controller.stopListening(<span style="color:#c30">&#39;MySuperBtn&#39;</span>, Mojo.Event.tap, <span style="color:#069;font-weight:bold">this</span>.tapHndlr);
+    <span style="color:#069;font-weight:bold">this</span>.controller.stopListening(<span style="color:#c30">&#39;SecondBtn&#39;</span>, Mojo.Event.tap, <span style="color:#069;font-weight:bold">this</span>.tapHndlr);
+}</code></pre></div>
 
 <p>With the saved bound function <code>this.tapHndlr</code>, all arguments are the same as when listen was called and the event handlers will be properly disposed.</p>
 
@@ -235,21 +223,17 @@
 
 <p>On some of my scenes, I noticed the HTML elements flicker into place, when dynamic HTML changes were made in the activate scene.  Since these changes can&rsquo;t be performed in setup, how do we fix it?  The answer is the little publicized aboutToActivate.  In this example, I have a css class called “hidden” which is just:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>.<span style="color: #00AA88; font-weight: bold">hidden</span>{
-    <span style="color: #006699; font-weight: bold">display</span>:<span style="color: #006699; font-weight: bold">none</span>;
-}
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#0a8;font-weight:bold">hidden</span>{
+    <span style="color:#069;font-weight:bold">display</span>:<span style="color:#069;font-weight:bold">none</span>;
+}</code></pre></div>
 
 <p>I have a button I want to hide in certain cases.  When this code was in activate, there was a short time that the button was visible before it disappeared.  The flicker was very short, but it looked bad.  By moving the code to aboutToActivate, this flicker is removed and replaced with just a slight bit more scene loading delay.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>MySceneAssistant.prototype.aboutToActivate <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">function</span>(){
-    <span style="color: #006699; font-weight: bold">if</span>(HideButton){
-        $(<span style="color: #CC3300">&#39;MyButton&#39;</span>).addClassName(<span style="color: #CC3300">&#39;hidden&#39;</span>);
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">MySceneAssistant.prototype.aboutToActivate <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">function</span>(){
+    <span style="color:#069;font-weight:bold">if</span>(HideButton){
+        $(<span style="color:#c30">&#39;MyButton&#39;</span>).addClassName(<span style="color:#c30">&#39;hidden&#39;</span>);
     }
-}
-</pre></div>
-
+}</code></pre></div>
 
 <p>The <code>aboutToActivate</code> function can be useful when any dynamic HTML changes have to occur at the load of a scene.  Go through your app and look for flashing or movement of the display when dynamic content is loaded.  This can make it better.</p>
 
@@ -259,54 +243,46 @@
 
 <p>For the letters used to play in Word Whirl, I have a base class of letter-button.  The positioning is absolute within my letter-board div.  The other important pieces of this class are the two -webkit-transition styles:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>.<span style="color: #00AA88; font-weight: bold">letter-button</span>{
-    <span style="color: #006699; font-weight: bold">position</span>:<span style="color: #006699; font-weight: bold">absolute</span>;
-    <span style="color: #006699; font-weight: bold">width</span>:<span style="color: #FF6600">45</span><span style="color: #007788; font-weight: bold">px</span>;
-    <span style="color: #006699; font-weight: bold">height</span>:<span style="color: #FF6600">46</span><span style="color: #007788; font-weight: bold">px</span>;
-    <span style="color: #006699; font-weight: bold">background-image</span>:<span style="color: #336666">url</span>(<span style="color: #CC3300">&#39;../images/ltrtile.png&#39;</span>);
-    <span style="color: #006699">-webkit-</span><span style="color: #006699; font-weight: bold">transition-property</span>: <span style="color: #006699; font-weight: bold">left</span>, <span style="color: #006699; font-weight: bold">top</span>;
-    <span style="color: #006699">-webkit-</span><span style="color: #006699; font-weight: bold">transition-duration</span>: <span style="color: #FF6600">250</span><span style="color: #007788; font-weight: bold">ms</span>, <span style="color: #FF6600">250</span><span style="color: #007788; font-weight: bold">ms</span>;
-}
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#0a8;font-weight:bold">letter-button</span>{
+    <span style="color:#069;font-weight:bold">position</span>:<span style="color:#069;font-weight:bold">absolute</span>;
+    <span style="color:#069;font-weight:bold">width</span>:<span style="color:#f60">45</span><span style="color:#078;font-weight:bold">px</span>;
+    <span style="color:#069;font-weight:bold">height</span>:<span style="color:#f60">46</span><span style="color:#078;font-weight:bold">px</span>;
+    <span style="color:#069;font-weight:bold">background-image</span>:<span style="color:#366">url</span>(<span style="color:#c30">&#39;../images/ltrtile.png&#39;</span>);
+    <span style="color:#069">-webkit-</span><span style="color:#069;font-weight:bold">transition-property</span>: <span style="color:#069;font-weight:bold">left</span>, <span style="color:#069;font-weight:bold">top</span>;
+    <span style="color:#069">-webkit-</span><span style="color:#069;font-weight:bold">transition-duration</span>: <span style="color:#f60">250</span><span style="color:#078;font-weight:bold">ms</span>, <span style="color:#f60">250</span><span style="color:#078;font-weight:bold">ms</span>;
+}</code></pre></div>
 
 <p>The <code>-webkit-transition-property</code> tells which styles the transitions should affect.  <code>-webkit-transition-duration</code> defines the duration it takes to animate each property from start to stop value.</p>
 
 <p>In addition, I have 6 home classes (home0 through home5) and 6 target classes (tar0 through tar5).  These just define the left and top values for each location.  Just the first two of each are listed below, as the others just use larger left values.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>.<span style="color: #00AA88; font-weight: bold">home0</span>{
-    <span style="color: #006699; font-weight: bold">left</span>:<span style="color: #FF6600">10</span><span style="color: #007788; font-weight: bold">px</span>;
-    <span style="color: #006699; font-weight: bold">top</span>:<span style="color: #FF6600">50</span><span style="color: #007788; font-weight: bold">px</span>;
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#0a8;font-weight:bold">home0</span>{
+    <span style="color:#069;font-weight:bold">left</span>:<span style="color:#f60">10</span><span style="color:#078;font-weight:bold">px</span>;
+    <span style="color:#069;font-weight:bold">top</span>:<span style="color:#f60">50</span><span style="color:#078;font-weight:bold">px</span>;
 }
-.<span style="color: #00AA88; font-weight: bold">home1</span>{
-    <span style="color: #006699; font-weight: bold">left</span>:<span style="color: #FF6600">60</span><span style="color: #007788; font-weight: bold">px</span>;
-    <span style="color: #006699; font-weight: bold">top</span>:<span style="color: #FF6600">50</span><span style="color: #007788; font-weight: bold">px</span>;
+.<span style="color:#0a8;font-weight:bold">home1</span>{
+    <span style="color:#069;font-weight:bold">left</span>:<span style="color:#f60">60</span><span style="color:#078;font-weight:bold">px</span>;
+    <span style="color:#069;font-weight:bold">top</span>:<span style="color:#f60">50</span><span style="color:#078;font-weight:bold">px</span>;
 }
-.<span style="color: #00AA88; font-weight: bold">tar0</span>{
-    <span style="color: #006699; font-weight: bold">left</span>:<span style="color: #FF6600">10</span><span style="color: #007788; font-weight: bold">px</span>;
-    <span style="color: #006699; font-weight: bold">top</span>:<span style="color: #FF6600">0</span><span style="color: #007788; font-weight: bold">px</span>;
+.<span style="color:#0a8;font-weight:bold">tar0</span>{
+    <span style="color:#069;font-weight:bold">left</span>:<span style="color:#f60">10</span><span style="color:#078;font-weight:bold">px</span>;
+    <span style="color:#069;font-weight:bold">top</span>:<span style="color:#f60">0</span><span style="color:#078;font-weight:bold">px</span>;
 }
-.<span style="color: #00AA88; font-weight: bold">tar1</span>{
-    <span style="color: #006699; font-weight: bold">left</span>:<span style="color: #FF6600">60</span><span style="color: #007788; font-weight: bold">px</span>;
-    <span style="color: #006699; font-weight: bold">top</span>:<span style="color: #FF6600">0</span><span style="color: #007788; font-weight: bold">px</span>;
-}
-</pre></div>
-
+.<span style="color:#0a8;font-weight:bold">tar1</span>{
+    <span style="color:#069;font-weight:bold">left</span>:<span style="color:#f60">60</span><span style="color:#078;font-weight:bold">px</span>;
+    <span style="color:#069;font-weight:bold">top</span>:<span style="color:#f60">0</span><span style="color:#078;font-weight:bold">px</span>;
+}</code></pre></div>
 
 <p>The HTML for a letter block is defined below.  The inside div with letter class is just to hold the letter used on the block and not important for the animation.  The letter-button class gives the block its main properties. The <code>home0</code> class places the block in the first home position.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&lt;<span style="color: #330099; font-weight: bold">div</span> <span style="color: #330099">class</span><span style="color: #555555">=</span><span style="color: #CC3300">&quot;letter-button home0&quot;</span> <span style="color: #330099">id</span><span style="color: #555555">=</span><span style="color: #CC3300">&quot;but0&quot;</span>&gt;
-    &lt;<span style="color: #330099; font-weight: bold">div</span> <span style="color: #330099">id</span><span style="color: #555555">=</span><span style="color: #CC3300">&quot;let0&quot;</span> <span style="color: #330099">class</span><span style="color: #555555">=</span><span style="color: #CC3300">&quot;letter&quot;</span>&gt;&lt;/<span style="color: #330099; font-weight: bold">div</span>&gt;
-&lt;/<span style="color: #330099; font-weight: bold">div</span>&gt;
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;letter-button home0&#34;</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;but0&#34;</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;let0&#34;</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;letter&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
 
 <p>Animating the block is now just a matter of removing and adding position classes.  This code would move the block from the first home position (<code>home0</code>) to the second target position (<code>tar1</code>).</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>$(<span style="color: #CC3300">&#39;but0&#39;</span>).removeClassName(<span style="color: #CC3300">&#39;home0&#39;</span>);
-$(<span style="color: #CC3300">&#39;but0&#39;</span>).addClassName(<span style="color: #CC3300">&#39;tar1&#39;</span>);
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">$(<span style="color:#c30">&#39;but0&#39;</span>).removeClassName(<span style="color:#c30">&#39;home0&#39;</span>);
+$(<span style="color:#c30">&#39;but0&#39;</span>).addClassName(<span style="color:#c30">&#39;tar1&#39;</span>);</code></pre></div>
 
 <p>The div will fly from the <code>home0</code> to the tar1 position in a quarter of a second.  The timing was controlled by the <code>250ms</code> setting in the <code>-webkit-transition-duration</code> style.</p>
 
@@ -336,8 +312,8 @@ $(<span style="color: #CC3300">&#39;but0&#39;</span>).addClassName(<span style="
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
                         
 
                     </div>
@@ -359,8 +335,8 @@ $(<span style="color: #CC3300">&#39;but0&#39;</span>).addClassName(<span style="
             </li><li><a href="http://www.joesacher.com/categories/how-to" class="text-uppercase">how-to (5)</a>
             </li><li><a href="http://www.joesacher.com/categories/personal" class="text-uppercase">personal (9)</a>
             </li><li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
-            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (27)</a>
-            </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (48)</a>
+            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (29)</a>
+            </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (45)</a>
             </li>
         </ul>
     </div>
@@ -375,8 +351,9 @@ $(<span style="color: #CC3300">&#39;but0&#39;</span>).addClassName(<span style="
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
             <li><a href="http://www.joesacher.com/series/hugo" class="text-uppercase">hugo (4)</a>
+            </li><li><a href="http://www.joesacher.com/series/python-tips" class="text-uppercase">python-tips (2)</a>
             </li><li><a href="http://www.joesacher.com/series/python-to-rust" class="text-uppercase">python-to-rust (4)</a>
-            </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (48)</a>
+            </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (45)</a>
             </li>
         </ul>
     </div>
@@ -394,12 +371,14 @@ $(<span style="color: #CC3300">&#39;but0&#39;</span>).addClassName(<span style="
             </li><li><a href="http://www.joesacher.com/tags/bicycle-touring"><i class="fa fa-tags"></i> bicycle-touring</a>
             </li><li><a href="http://www.joesacher.com/tags/book-review"><i class="fa fa-tags"></i> book-review</a>
             </li><li><a href="http://www.joesacher.com/tags/calendars"><i class="fa fa-tags"></i> calendars</a>
+            </li><li><a href="http://www.joesacher.com/tags/comprehensions"><i class="fa fa-tags"></i> comprehensions</a>
             </li><li><a href="http://www.joesacher.com/tags/cooking"><i class="fa fa-tags"></i> cooking</a>
             </li><li><a href="http://www.joesacher.com/tags/cycling"><i class="fa fa-tags"></i> cycling</a>
             </li><li><a href="http://www.joesacher.com/tags/dessert"><i class="fa fa-tags"></i> dessert</a>
             </li><li><a href="http://www.joesacher.com/tags/dry-bag"><i class="fa fa-tags"></i> dry-bag</a>
             </li><li><a href="http://www.joesacher.com/tags/ebooks"><i class="fa fa-tags"></i> ebooks</a>
             </li><li><a href="http://www.joesacher.com/tags/electronics"><i class="fa fa-tags"></i> electronics</a>
+            </li><li><a href="http://www.joesacher.com/tags/enumerate"><i class="fa fa-tags"></i> enumerate</a>
             </li><li><a href="http://www.joesacher.com/tags/fiction"><i class="fa fa-tags"></i> fiction</a>
             </li><li><a href="http://www.joesacher.com/tags/film-making"><i class="fa fa-tags"></i> film-making</a>
             </li><li><a href="http://www.joesacher.com/tags/google"><i class="fa fa-tags"></i> google</a>
@@ -428,8 +407,10 @@ $(<span style="color: #CC3300">&#39;but0&#39;</span>).addClassName(<span style="
             </li><li><a href="http://www.joesacher.com/tags/rust"><i class="fa fa-tags"></i> rust</a>
             </li><li><a href="http://www.joesacher.com/tags/safety"><i class="fa fa-tags"></i> safety</a>
             </li><li><a href="http://www.joesacher.com/tags/sewing"><i class="fa fa-tags"></i> sewing</a>
+            </li><li><a href="http://www.joesacher.com/tags/strings"><i class="fa fa-tags"></i> strings</a>
             </li><li><a href="http://www.joesacher.com/tags/touchpad"><i class="fa fa-tags"></i> touchpad</a>
             </li><li><a href="http://www.joesacher.com/tags/touring"><i class="fa fa-tags"></i> touring</a>
+            </li><li><a href="http://www.joesacher.com/tags/unicode"><i class="fa fa-tags"></i> unicode</a>
             </li><li><a href="http://www.joesacher.com/tags/video"><i class="fa fa-tags"></i> video</a>
             </li><li><a href="http://www.joesacher.com/tags/web"><i class="fa fa-tags"></i> web</a>
             </li><li><a href="http://www.joesacher.com/tags/webos"><i class="fa fa-tags"></i> webos</a>

@@ -15,7 +15,7 @@
   <meta name="description" content="My little piece of the web.">	
   
 
-  <meta name="generator" content="Hugo 0.25.1" />
+  <meta name="generator" content="Hugo 0.30.2" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
@@ -142,7 +142,7 @@
                         
                         <p class="text-muted mb-small text-right text-uppercase">
                             August 25, 2017<br/>
-                            <i class="fa fa-clock-o"></i> 11 min. read</p>
+                            <i class="fa fa-clock-o"></i> 10 min. read</p>
 
                             <div id="post-content">
                                 <p class="series_top_page">This post is part of the <a href="http://www.joesacher.com//series/python-to-rust">Python to Rust</a> series.</p>
@@ -158,71 +158,65 @@
 
 <p>Let&rsquo;s make a simple Direction Enum.  We will start with this in Python.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">enum</span> <span style="color: #006699; font-weight: bold">import</span> Enum
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">enum</span> <span style="color:#069;font-weight:bold">import</span> Enum
 
 
-<span style="color: #006699; font-weight: bold">class</span> <span style="color: #00AA88; font-weight: bold">Direction</span>(Enum):
-    North <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
-    East <span style="color: #555555">=</span> <span style="color: #FF6600">1</span>
-    South <span style="color: #555555">=</span> <span style="color: #FF6600">2</span>
-    West <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Direction</span>(Enum):
+    North <span style="color:#555">=</span> <span style="color:#f60">0</span>
+    East <span style="color:#555">=</span> <span style="color:#f60">1</span>
+    South <span style="color:#555">=</span> <span style="color:#f60">2</span>
+    West <span style="color:#555">=</span> <span style="color:#f60">3</span>
 
-    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">is_vertical</span>(<span style="color: #336666">self</span>):
-        <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span> <span style="color: #000000; font-weight: bold">in</span> (Direction<span style="color: #555555">.</span>North, Direction<span style="color: #555555">.</span>South)
+    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">is_vertical</span>(self):
+        <span style="color:#069;font-weight:bold">return</span> self <span style="color:#000;font-weight:bold">in</span> (Direction<span style="color:#555">.</span>North, Direction<span style="color:#555">.</span>South)
 
-    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">is_horizontal</span>(<span style="color: #336666">self</span>):
-        <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span> <span style="color: #000000; font-weight: bold">in</span> (Direction<span style="color: #555555">.</span>East, Direction<span style="color: #555555">.</span>West)
+    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">is_horizontal</span>(self):
+        <span style="color:#069;font-weight:bold">return</span> self <span style="color:#000;font-weight:bold">in</span> (Direction<span style="color:#555">.</span>East, Direction<span style="color:#555">.</span>West)
 
-    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">to_vector</span>(<span style="color: #336666">self</span>):
-        dirs <span style="color: #555555">=</span> ((<span style="color: #FF6600">0</span>, <span style="color: #FF6600">1</span>), (<span style="color: #FF6600">1</span>, <span style="color: #FF6600">0</span>), (<span style="color: #FF6600">0</span>, <span style="color: #555555">-</span><span style="color: #FF6600">1</span>), (<span style="color: #555555">-</span><span style="color: #FF6600">1</span>, <span style="color: #FF6600">0</span>))
-        <span style="color: #006699; font-weight: bold">return</span> dirs[<span style="color: #336666">self</span><span style="color: #555555">.</span>value]
-</pre></div>
-
+    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">to_vector</span>(self):
+        dirs <span style="color:#555">=</span> ((<span style="color:#f60">0</span>, <span style="color:#f60">1</span>), (<span style="color:#f60">1</span>, <span style="color:#f60">0</span>), (<span style="color:#f60">0</span>, <span style="color:#555">-</span><span style="color:#f60">1</span>), (<span style="color:#555">-</span><span style="color:#f60">1</span>, <span style="color:#f60">0</span>))
+        <span style="color:#069;font-weight:bold">return</span> dirs[self<span style="color:#555">.</span>value]</code></pre></div>
 
 <p>Lets do the same in Rust.  This is a little longer, as I introduced tests for these are well.  The next several code blocks are all the Rust source code.  I&rsquo;m breaking them into sections to discuss.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #009999">#[derive(PartialEq)]</span><span style="color: #bbbbbb"></span>
-<span style="color: #006699; font-weight: bold">enum</span> <span style="color: #00AA88; font-weight: bold">Direction</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>North,<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>East,<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>South,<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>West,<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#099">#[derive(PartialEq)]</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#069;font-weight:bold">enum</span> <span style="color:#0a8;font-weight:bold">Direction</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>North,<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>East,<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>South,<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>West,<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>The <code>derive</code> statement is to allow Rust to implement a Trait automatically.  This is possible when Enum or Structs are implemented with types that Rust knows how to handle.  The <code>PartialEq</code> is required to use the equal <code>==</code> operator in code below.  If we wanted to use the debug print <code>{:?}</code> we talked about in previous posts, we would include <code>,Debug</code> after <code>PartialEq</code>.</p>
 
 <p>Unlike Python, the Enum isn&rsquo;t required to assign a value.  You have the option of doing what is considered a &ldquo;C-type&rdquo; by just assigning each entry to a value.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">impl</span><span style="color: #bbbbbb"> </span>Direction<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">is_vertical</span>(<span style="color: #555555">&amp;</span><span style="color: #336666">self</span>)<span style="color: #bbbbbb"> </span>-&gt; <span style="color: #007788; font-weight: bold">bool</span> {<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span><span style="color: #006699; font-weight: bold">if</span><span style="color: #bbbbbb"> </span><span style="color: #555555">*</span><span style="color: #336666">self</span><span style="color: #bbbbbb"> </span><span style="color: #555555">==</span><span style="color: #bbbbbb"> </span>Direction::North<span style="color: #bbbbbb"> </span><span style="color: #555555">||</span><span style="color: #bbbbbb"> </span><span style="color: #555555">*</span><span style="color: #336666">self</span><span style="color: #bbbbbb"> </span><span style="color: #555555">==</span><span style="color: #bbbbbb"> </span>Direction::South<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">            </span><span style="color: #006699; font-weight: bold">true</span><span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>}<span style="color: #bbbbbb"> </span><span style="color: #006699; font-weight: bold">else</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">            </span><span style="color: #006699; font-weight: bold">false</span><span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>}<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
-
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">is_horizontal</span>(<span style="color: #555555">&amp;</span><span style="color: #336666">self</span>)<span style="color: #bbbbbb"> </span>-&gt; <span style="color: #007788; font-weight: bold">bool</span> {<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span><span style="color: #006699; font-weight: bold">if</span><span style="color: #bbbbbb"> </span><span style="color: #555555">*</span><span style="color: #336666">self</span><span style="color: #bbbbbb"> </span><span style="color: #555555">==</span><span style="color: #bbbbbb"> </span>Direction::East<span style="color: #bbbbbb"> </span><span style="color: #555555">||</span><span style="color: #bbbbbb"> </span><span style="color: #555555">*</span><span style="color: #336666">self</span><span style="color: #bbbbbb"> </span><span style="color: #555555">==</span><span style="color: #bbbbbb"> </span>Direction::West<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">            </span><span style="color: #006699; font-weight: bold">true</span><span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>}<span style="color: #bbbbbb"> </span><span style="color: #006699; font-weight: bold">else</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">            </span><span style="color: #006699; font-weight: bold">false</span><span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>}<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
-
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">to_vector</span>(<span style="color: #555555">&amp;</span><span style="color: #336666">self</span>)<span style="color: #bbbbbb"> </span>-&gt; (<span style="color: #007788; font-weight: bold">i32</span>,<span style="color: #bbbbbb"> </span><span style="color: #007788; font-weight: bold">i32</span>)<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span><span style="color: #006699; font-weight: bold">match</span><span style="color: #bbbbbb"> </span><span style="color: #555555">*</span><span style="color: #336666">self</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">            </span>Direction::North<span style="color: #bbbbbb"> </span><span style="color: #555555">=&gt;</span><span style="color: #bbbbbb"> </span>(<span style="color: #FF6600">0</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">1</span>),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">            </span>Direction::East<span style="color: #bbbbbb"> </span><span style="color: #555555">=&gt;</span><span style="color: #bbbbbb"> </span>(<span style="color: #FF6600">1</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">0</span>),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">            </span>Direction::South<span style="color: #bbbbbb"> </span><span style="color: #555555">=&gt;</span><span style="color: #bbbbbb"> </span>(<span style="color: #FF6600">0</span>,<span style="color: #bbbbbb"> </span><span style="color: #555555">-</span><span style="color: #FF6600">1</span>),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">            </span>Direction::West<span style="color: #bbbbbb"> </span><span style="color: #555555">=&gt;</span><span style="color: #bbbbbb"> </span>(<span style="color: #555555">-</span><span style="color: #FF6600">1</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">0</span>),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>}<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">impl</span><span style="color:#bbb"> </span>Direction<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">is_vertical</span>(<span style="color:#555">&amp;</span>self)<span style="color:#bbb"> </span>-&gt; <span style="color:#078;font-weight:bold">bool</span> {<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#069;font-weight:bold">if</span><span style="color:#bbb"> </span><span style="color:#555">*</span>self<span style="color:#bbb"> </span><span style="color:#555">==</span><span style="color:#bbb"> </span>Direction::North<span style="color:#bbb"> </span><span style="color:#555">||</span><span style="color:#bbb"> </span><span style="color:#555">*</span>self<span style="color:#bbb"> </span><span style="color:#555">==</span><span style="color:#bbb"> </span>Direction::South<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#069;font-weight:bold">true</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>}<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">else</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#069;font-weight:bold">false</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">is_horizontal</span>(<span style="color:#555">&amp;</span>self)<span style="color:#bbb"> </span>-&gt; <span style="color:#078;font-weight:bold">bool</span> {<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#069;font-weight:bold">if</span><span style="color:#bbb"> </span><span style="color:#555">*</span>self<span style="color:#bbb"> </span><span style="color:#555">==</span><span style="color:#bbb"> </span>Direction::East<span style="color:#bbb"> </span><span style="color:#555">||</span><span style="color:#bbb"> </span><span style="color:#555">*</span>self<span style="color:#bbb"> </span><span style="color:#555">==</span><span style="color:#bbb"> </span>Direction::West<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#069;font-weight:bold">true</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>}<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">else</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#069;font-weight:bold">false</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">to_vector</span>(<span style="color:#555">&amp;</span>self)<span style="color:#bbb"> </span>-&gt; (<span style="color:#078;font-weight:bold">i32</span>,<span style="color:#bbb"> </span><span style="color:#078;font-weight:bold">i32</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#069;font-weight:bold">match</span><span style="color:#bbb"> </span><span style="color:#555">*</span>self<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">            </span>Direction::North<span style="color:#bbb"> </span><span style="color:#555">=&gt;</span><span style="color:#bbb"> </span>(<span style="color:#f60">0</span>,<span style="color:#bbb"> </span><span style="color:#f60">1</span>),<span style="color:#bbb">
+</span><span style="color:#bbb">            </span>Direction::East<span style="color:#bbb"> </span><span style="color:#555">=&gt;</span><span style="color:#bbb"> </span>(<span style="color:#f60">1</span>,<span style="color:#bbb"> </span><span style="color:#f60">0</span>),<span style="color:#bbb">
+</span><span style="color:#bbb">            </span>Direction::South<span style="color:#bbb"> </span><span style="color:#555">=&gt;</span><span style="color:#bbb"> </span>(<span style="color:#f60">0</span>,<span style="color:#bbb"> </span><span style="color:#555">-</span><span style="color:#f60">1</span>),<span style="color:#bbb">
+</span><span style="color:#bbb">            </span>Direction::West<span style="color:#bbb"> </span><span style="color:#555">=&gt;</span><span style="color:#bbb"> </span>(<span style="color:#555">-</span><span style="color:#f60">1</span>,<span style="color:#bbb"> </span><span style="color:#f60">0</span>),<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>In Rust, the <code>impl</code> block (for implementation) is the functionality and is separate from the Enum or Struct.  This seems a little different at first, but makes more sense as Traits are implemented in later posts.  Instead of automatically deriving the <code>Debug</code> trait, we could have a block that starts with <code>impl Debug for Direction</code> and methods required to implement the trait.  Then the <code>{:?}</code> debug print would display what we defined.  Rusts traits based objects are similar to interfaces in C# or Java.  This is different from the object inheritance Python offers.</p>
 
@@ -237,37 +231,35 @@
 <p>One thing I should mention is that all of these functions and the Enum are currently private.  If I tried to use these in a program that imports this library, nothing would be available to reference.  I must include a <code>pub</code> keyword in front of the <code>enum</code> and <code>fn</code> to make them available.</p>
 
 <p>While this is very simple and tests are a little over kill, I wanted to show how they are done in Rust.
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #009999">#[cfg(test)]</span><span style="color: #bbbbbb"></span>
-<span style="color: #006699; font-weight: bold">mod</span> <span style="color: #00CCFF; font-weight: bold">tests</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">use</span><span style="color: #bbbbbb"> </span>Direction;<span style="color: #bbbbbb"></span>
-
-<span style="color: #bbbbbb">    </span><span style="color: #009999">#[test]</span><span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">is_vertical</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>assert<span style="color: #555555">!</span>(Direction::North.is_vertical());<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>assert<span style="color: #555555">!</span>(Direction::South.is_vertical());<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>assert<span style="color: #555555">!</span>(<span style="color: #555555">!</span>Direction::East.is_vertical());<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>assert<span style="color: #555555">!</span>(<span style="color: #555555">!</span>Direction::West.is_vertical());<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
-
-<span style="color: #bbbbbb">    </span><span style="color: #009999">#[test]</span><span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">is_horizontal</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>assert<span style="color: #555555">!</span>(<span style="color: #555555">!</span>Direction::North.is_horizontal());<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>assert<span style="color: #555555">!</span>(<span style="color: #555555">!</span>Direction::South.is_horizontal());<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>assert<span style="color: #555555">!</span>(Direction::East.is_horizontal());<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>assert<span style="color: #555555">!</span>(Direction::West.is_horizontal());<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
-
-<span style="color: #bbbbbb">    </span><span style="color: #009999">#[test]</span><span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">to_vector</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>assert_eq<span style="color: #555555">!</span>(Direction::North.to_vector(),<span style="color: #bbbbbb"> </span>(<span style="color: #FF6600">0</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">1</span>));<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>assert_eq<span style="color: #555555">!</span>(Direction::East.to_vector(),<span style="color: #bbbbbb"> </span>(<span style="color: #FF6600">1</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">0</span>));<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>assert_eq<span style="color: #555555">!</span>(Direction::South.to_vector(),<span style="color: #bbbbbb"> </span>(<span style="color: #FF6600">0</span>,<span style="color: #bbbbbb"> </span><span style="color: #555555">-</span><span style="color: #FF6600">1</span>));<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>assert_eq<span style="color: #555555">!</span>(Direction::West.to_vector(),<span style="color: #bbbbbb"> </span>(<span style="color: #555555">-</span><span style="color: #FF6600">1</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">0</span>));<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#099">#[cfg(test)]</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#069;font-weight:bold">mod</span> <span style="color:#0cf;font-weight:bold">tests</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">use</span><span style="color:#bbb"> </span>Direction;<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#099">#[test]</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">is_vertical</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>assert<span style="color:#555">!</span>(Direction::North.is_vertical());<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>assert<span style="color:#555">!</span>(Direction::South.is_vertical());<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>assert<span style="color:#555">!</span>(<span style="color:#555">!</span>Direction::East.is_vertical());<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>assert<span style="color:#555">!</span>(<span style="color:#555">!</span>Direction::West.is_vertical());<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#099">#[test]</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">is_horizontal</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>assert<span style="color:#555">!</span>(<span style="color:#555">!</span>Direction::North.is_horizontal());<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>assert<span style="color:#555">!</span>(<span style="color:#555">!</span>Direction::South.is_horizontal());<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>assert<span style="color:#555">!</span>(Direction::East.is_horizontal());<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>assert<span style="color:#555">!</span>(Direction::West.is_horizontal());<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#099">#[test]</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">to_vector</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>assert_eq<span style="color:#555">!</span>(Direction::North.to_vector(),<span style="color:#bbb"> </span>(<span style="color:#f60">0</span>,<span style="color:#bbb"> </span><span style="color:#f60">1</span>));<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>assert_eq<span style="color:#555">!</span>(Direction::East.to_vector(),<span style="color:#bbb"> </span>(<span style="color:#f60">1</span>,<span style="color:#bbb"> </span><span style="color:#f60">0</span>));<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>assert_eq<span style="color:#555">!</span>(Direction::South.to_vector(),<span style="color:#bbb"> </span>(<span style="color:#f60">0</span>,<span style="color:#bbb"> </span><span style="color:#555">-</span><span style="color:#f60">1</span>));<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>assert_eq<span style="color:#555">!</span>(Direction::West.to_vector(),<span style="color:#bbb"> </span>(<span style="color:#555">-</span><span style="color:#f60">1</span>,<span style="color:#bbb"> </span><span style="color:#f60">0</span>));<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div></p>
 
 <p>This creates a separate module for tests.  A module is the unit of organization for Rust.  This is similar to a Python package.  It isn&rsquo;t required to put tests in a module, all that is required is the function have <code>#[test]</code> above it.  However, using a module is good practice.  The <code>#[cfg(test)]</code> is used to only compile this code if we are testing by running <code>cargo test</code>.  This reduces the binary size of the final result and reduces compile time.</p>
 
@@ -279,49 +271,45 @@
 
 <p>The other thing I mentioned earlier is Rust&rsquo;s ability to hold data in an Enum.  Lets look at an Enum that might handle possible responses in a conversation.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">enum</span> <span style="color: #00AA88; font-weight: bold">Interaction</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #0099FF; font-style: italic">// Normal Enum</span>
-<span style="color: #bbbbbb">    </span>DoNothing,<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #0099FF; font-style: italic">// Tuple based values</span>
-<span style="color: #bbbbbb">    </span>Say(<span style="color: #555555">&amp;</span><span style="color: #336666">&#39;static</span><span style="color: #bbbbbb"> </span><span style="color: #007788; font-weight: bold">str</span>),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>Shout(<span style="color: #555555">&amp;</span><span style="color: #336666">&#39;static</span><span style="color: #bbbbbb"> </span><span style="color: #007788; font-weight: bold">str</span>,<span style="color: #bbbbbb"> </span><span style="color: #007788; font-weight: bold">u32</span>),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #0099FF; font-style: italic">// Structure Based</span>
-<span style="color: #bbbbbb">    </span>Physical<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"> </span>action: <span style="color: #006699">&amp;</span><span style="color: #336666">&#39;static</span><span style="color: #bbbbbb"> </span><span style="color: #007788; font-weight: bold">str</span>,<span style="color: #bbbbbb"> </span>leave_after: <span style="color: #007788; font-weight: bold">bool</span> },<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">enum</span> <span style="color:#0a8;font-weight:bold">Interaction</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#09f;font-style:italic">// Normal Enum
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#bbb">    </span>DoNothing,<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#09f;font-style:italic">// Tuple based values
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#bbb">    </span>Say(<span style="color:#555">&amp;</span><span style="color:#366">&#39;static</span><span style="color:#bbb"> </span><span style="color:#078;font-weight:bold">str</span>),<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>Shout(<span style="color:#555">&amp;</span><span style="color:#366">&#39;static</span><span style="color:#bbb"> </span><span style="color:#078;font-weight:bold">str</span>,<span style="color:#bbb"> </span><span style="color:#078;font-weight:bold">u32</span>),<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#09f;font-style:italic">// Structure Based
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#bbb">    </span>Physical<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span>action: <span style="color:#069">&amp;</span><span style="color:#366">&#39;static</span><span style="color:#bbb"> </span><span style="color:#078;font-weight:bold">str</span>,<span style="color:#bbb"> </span>leave_after: <span style="color:#078;font-weight:bold">bool</span> },<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>So we have <code>DoNothing</code> that requires no data, <code>Say</code> which has a str holding what to say, <code>Shout</code> with a str and a <code>u32</code> for volume of shout, and a <code>Physical</code> response has named fields of <code>action</code> and <code>leave_after</code>.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">describe_interaction</span>(inter: <span style="color: #00AA88; font-weight: bold">Interaction</span>)<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">match</span><span style="color: #bbbbbb"> </span>inter<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>Interaction::DoNothing<span style="color: #bbbbbb"> </span><span style="color: #555555">=&gt;</span><span style="color: #bbbbbb"> </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;Doing Nothing&quot;</span>),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>Interaction::Say(s)<span style="color: #bbbbbb"> </span><span style="color: #555555">=&gt;</span><span style="color: #bbbbbb"> </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;Say: &#39;{}&#39;&quot;</span>,<span style="color: #bbbbbb"> </span>s),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>Interaction::Shout(s,<span style="color: #bbbbbb"> </span>v)<span style="color: #bbbbbb"> </span><span style="color: #555555">=&gt;</span><span style="color: #bbbbbb"> </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;Shout: &#39;{}&#39; at volume: {}&quot;</span>,<span style="color: #bbbbbb"> </span>s,<span style="color: #bbbbbb"> </span>v),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>Interaction::Physical<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"> </span>action,<span style="color: #bbbbbb"> </span>leave_after: <span style="color: #00AA88; font-weight: bold">leave</span><span style="color: #bbbbbb"> </span>}<span style="color: #bbbbbb"> </span><span style="color: #555555">=&gt;</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">                </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;You {} &quot;</span>,<span style="color: #bbbbbb"> </span>action);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">                </span><span style="color: #006699; font-weight: bold">if</span><span style="color: #bbbbbb"> </span>leave<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">                    </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;And leave.&quot;</span>);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">                </span>}<span style="color: #bbbbbb"> </span><span style="color: #006699; font-weight: bold">else</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">                    </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;And stay.&quot;</span>);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">                </span>}<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>},<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-
-<span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">main</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>noth<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span>Interaction::DoNothing;<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>say<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span>Interaction::Say(<span style="color: #CC3300">&quot;Hello&quot;</span>);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>shout<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span>Interaction::Shout(<span style="color: #CC3300">&quot;I SAID HELLO!&quot;</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">12</span>);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>phys<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span>Interaction::Physical<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"> </span>action: <span style="color: #CC3300">&quot;Stomp Foot&quot;</span>,<span style="color: #bbbbbb"> </span>leave_after: <span style="color: #00AA88; font-weight: bold">true</span><span style="color: #bbbbbb"> </span>};<span style="color: #bbbbbb"></span>
-
-<span style="color: #bbbbbb">    </span>describe_interaction(noth);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>describe_interaction(say);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>describe_interaction(shout);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>describe_interaction(phys);<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">describe_interaction</span>(inter: <span style="color:#0a8;font-weight:bold">Interaction</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">match</span><span style="color:#bbb"> </span>inter<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>Interaction::DoNothing<span style="color:#bbb"> </span><span style="color:#555">=&gt;</span><span style="color:#bbb"> </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;Doing Nothing&#34;</span>),<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>Interaction::Say(s)<span style="color:#bbb"> </span><span style="color:#555">=&gt;</span><span style="color:#bbb"> </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;Say: &#39;{}&#39;&#34;</span>,<span style="color:#bbb"> </span>s),<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>Interaction::Shout(s,<span style="color:#bbb"> </span>v)<span style="color:#bbb"> </span><span style="color:#555">=&gt;</span><span style="color:#bbb"> </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;Shout: &#39;{}&#39; at volume: {}&#34;</span>,<span style="color:#bbb"> </span>s,<span style="color:#bbb"> </span>v),<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>Interaction::Physical<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span>action,<span style="color:#bbb"> </span>leave_after: <span style="color:#0a8;font-weight:bold">leave</span><span style="color:#bbb"> </span>}<span style="color:#bbb"> </span><span style="color:#555">=&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">                </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;You {} &#34;</span>,<span style="color:#bbb"> </span>action);<span style="color:#bbb">
+</span><span style="color:#bbb">                </span><span style="color:#069;font-weight:bold">if</span><span style="color:#bbb"> </span>leave<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">                    </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;And leave.&#34;</span>);<span style="color:#bbb">
+</span><span style="color:#bbb">                </span>}<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">else</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">                    </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;And stay.&#34;</span>);<span style="color:#bbb">
+</span><span style="color:#bbb">                </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>},<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>noth<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span>Interaction::DoNothing;<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>say<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span>Interaction::Say(<span style="color:#c30">&#34;Hello&#34;</span>);<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>shout<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span>Interaction::Shout(<span style="color:#c30">&#34;I SAID HELLO!&#34;</span>,<span style="color:#bbb"> </span><span style="color:#f60">12</span>);<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>phys<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span>Interaction::Physical<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span>action: <span style="color:#c30">&#34;Stomp Foot&#34;</span>,<span style="color:#bbb"> </span>leave_after: <span style="color:#0a8;font-weight:bold">true</span><span style="color:#bbb"> </span>};<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>describe_interaction(noth);<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>describe_interaction(say);<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>describe_interaction(shout);<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>describe_interaction(phys);<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>We will start from the bottom up.  In <code>main</code>, we create 4 variables for the 4 types of Interaction Enum.  Notice how the data is just added as part of the setting of the enums.  We then call <code>describe_interaction</code> with each type.  This method uses a match to identify a given enum and bind the data held with variables we can use.</p>
 
@@ -352,42 +340,36 @@ And leave.
 
 <p>Since Rust requires all paths to be handled, you must handle a return that has <code>Some</code> value or <code>None</code>.  If we look at the <code>Option</code> Enum, the code would look like this:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">enum</span> <span style="color: #336666">Option</span><span style="color: #555555">&lt;</span>T<span style="color: #555555">&gt;</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #336666">Some</span>(T),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #336666">None</span>,<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">enum</span> <span style="color:#366">Option</span><span style="color:#555">&lt;</span>T<span style="color:#555">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#366">Some</span>(T),<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#366">None</span>,<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>The <code>T</code> is using the generic capability of Rust to allow Some to hold the type defined when the Option is created.  If we use <code>Option&lt;i32&gt;</code>, this would be the same as if the Some was defined like <code>Some(i32)</code>.  You could have a scalar, tuple, or more complex data type and it would work with Option.  The idea is just that you have Some data or None.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">get_optional_input</span>()<span style="color: #bbbbbb"> </span>-&gt; <span style="color: #336666">Option</span><span style="color: #555555">&lt;</span><span style="color: #007788; font-weight: bold">i32</span><span style="color: #555555">&gt;</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">if</span><span style="color: #bbbbbb"> </span>we_get_number_from_user<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span><span style="color: #336666">Some</span>(number)<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"> </span><span style="color: #006699; font-weight: bold">else</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span><span style="color: #336666">None</span><span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-
-
-<span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">main</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">if</span><span style="color: #bbbbbb"> </span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span><span style="color: #336666">Some</span>(num)<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span>get_optional_input()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;We received {}&quot;</span>,<span style="color: #bbbbbb"> </span>num);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"> </span><span style="color: #006699; font-weight: bold">else</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;Nothing&quot;</span>);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">get_optional_input</span>()<span style="color:#bbb"> </span>-&gt; <span style="color:#366">Option</span><span style="color:#555">&lt;</span><span style="color:#078;font-weight:bold">i32</span><span style="color:#555">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">if</span><span style="color:#bbb"> </span>we_get_number_from_user<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#366">Some</span>(number)<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">else</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#366">None</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">if</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span><span style="color:#366">Some</span>(num)<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span>get_optional_input()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;We received {}&#34;</span>,<span style="color:#bbb"> </span>num);<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">else</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;Nothing&#34;</span>);<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>The <code>get_optional_input</code> is psudo code that wouldn&rsquo;t run, but gives you and idea of how you would make an Option return.   In the <code>main</code> function, I&rsquo;ve introduced a new assigment and control feature, the <code>if let</code>.  This is true if the left side assignment can be made.  Otherwise, the else clause will execute.  This would be the same as the following match:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">match</span><span style="color: #bbbbbb"> </span>get_optional_input()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #336666">Some</span>(num)<span style="color: #bbbbbb"> </span><span style="color: #555555">=&gt;</span><span style="color: #bbbbbb"> </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;We received {}&quot;</span>,<span style="color: #bbbbbb"> </span>num),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>_<span style="color: #bbbbbb"> </span><span style="color: #555555">=&gt;</span><span style="color: #bbbbbb"> </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;Nothing&quot;</span>),<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">match</span><span style="color:#bbb"> </span>get_optional_input()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#366">Some</span>(num)<span style="color:#bbb"> </span><span style="color:#555">=&gt;</span><span style="color:#bbb"> </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;We received {}&#34;</span>,<span style="color:#bbb"> </span>num),<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>_<span style="color:#bbb"> </span><span style="color:#555">=&gt;</span><span style="color:#bbb"> </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;Nothing&#34;</span>),<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>Note, I could have used <code>None</code> for the section expression, but used the <code>_</code> catch all, because I had talked about it previously, but had not shown it before.</p>
 
@@ -399,38 +381,34 @@ And leave.
 
 <p>Error conditions are returned from functions.  The Result type is used for this.  The Result has two possibilities, like Option, but both have their own type.  So this is using generics with two types.  If we were to create it ourselves, the code would look like this:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">enum</span> <span style="color: #336666">Result</span><span style="color: #555555">&lt;</span>T,<span style="color: #bbbbbb"> </span>E<span style="color: #555555">&gt;</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #336666">Ok</span>(T),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #336666">Err</span>(E),<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">enum</span> <span style="color:#366">Result</span><span style="color:#555">&lt;</span>T,<span style="color:#bbb"> </span>E<span style="color:#555">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#366">Ok</span>(T),<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#366">Err</span>(E),<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>The letters used with generics isn&rsquo;t required to be anything, but by convention <code>T</code> is used for only one, as a shortcut for type.  Here, <code>T</code> means type and <code>E</code> means error type.</p>
 
 <p>Let&rsquo;s make a divide function.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">divide</span>(num: <span style="color: #007788; font-weight: bold">i32</span>,<span style="color: #bbbbbb"> </span>div: <span style="color: #007788; font-weight: bold">i32</span>)<span style="color: #bbbbbb"> </span>-&gt; <span style="color: #336666">Result</span><span style="color: #555555">&lt;</span><span style="color: #007788; font-weight: bold">i32</span>,<span style="color: #bbbbbb"> </span><span style="color: #555555">&amp;</span><span style="color: #336666">&#39;static</span><span style="color: #bbbbbb"> </span><span style="color: #007788; font-weight: bold">str</span><span style="color: #555555">&gt;</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">if</span><span style="color: #bbbbbb"> </span>div<span style="color: #bbbbbb"> </span><span style="color: #555555">==</span><span style="color: #bbbbbb"> </span><span style="color: #FF6600">0</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span><span style="color: #336666">Err</span>(<span style="color: #CC3300">&quot;You can&#39;t divide by zero.&quot;</span>)<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"> </span><span style="color: #006699; font-weight: bold">else</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span><span style="color: #336666">Ok</span>(num<span style="color: #bbbbbb"> </span><span style="color: #555555">/</span><span style="color: #bbbbbb"> </span>div)<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-
-<span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">divide_display</span>(num: <span style="color: #007788; font-weight: bold">i32</span>,<span style="color: #bbbbbb"> </span>div: <span style="color: #007788; font-weight: bold">i32</span>)<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">match</span><span style="color: #bbbbbb"> </span>divide(num,<span style="color: #bbbbbb"> </span>div)<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span><span style="color: #336666">Ok</span>(val)<span style="color: #bbbbbb"> </span><span style="color: #555555">=&gt;</span><span style="color: #bbbbbb"> </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;{}/{} = {}&quot;</span>,<span style="color: #bbbbbb"> </span>num,<span style="color: #bbbbbb"> </span>div,<span style="color: #bbbbbb"> </span>val),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">        </span><span style="color: #336666">Err</span>(err)<span style="color: #bbbbbb"> </span><span style="color: #555555">=&gt;</span><span style="color: #bbbbbb"> </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;{}&quot;</span>,<span style="color: #bbbbbb"> </span>err),<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-
-<span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">main</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>divide_display(<span style="color: #FF6600">20</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">10</span>);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>divide_display(<span style="color: #FF6600">10</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">0</span>);<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">divide</span>(num: <span style="color:#078;font-weight:bold">i32</span>,<span style="color:#bbb"> </span>div: <span style="color:#078;font-weight:bold">i32</span>)<span style="color:#bbb"> </span>-&gt; <span style="color:#366">Result</span><span style="color:#555">&lt;</span><span style="color:#078;font-weight:bold">i32</span>,<span style="color:#bbb"> </span><span style="color:#555">&amp;</span><span style="color:#366">&#39;static</span><span style="color:#bbb"> </span><span style="color:#078;font-weight:bold">str</span><span style="color:#555">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">if</span><span style="color:#bbb"> </span>div<span style="color:#bbb"> </span><span style="color:#555">==</span><span style="color:#bbb"> </span><span style="color:#f60">0</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#366">Err</span>(<span style="color:#c30">&#34;You can&#39;t divide by zero.&#34;</span>)<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">else</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#366">Ok</span>(num<span style="color:#bbb"> </span><span style="color:#555">/</span><span style="color:#bbb"> </span>div)<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">divide_display</span>(num: <span style="color:#078;font-weight:bold">i32</span>,<span style="color:#bbb"> </span>div: <span style="color:#078;font-weight:bold">i32</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">match</span><span style="color:#bbb"> </span>divide(num,<span style="color:#bbb"> </span>div)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#366">Ok</span>(val)<span style="color:#bbb"> </span><span style="color:#555">=&gt;</span><span style="color:#bbb"> </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;{}/{} = {}&#34;</span>,<span style="color:#bbb"> </span>num,<span style="color:#bbb"> </span>div,<span style="color:#bbb"> </span>val),<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#366">Err</span>(err)<span style="color:#bbb"> </span><span style="color:#555">=&gt;</span><span style="color:#bbb"> </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;{}&#34;</span>,<span style="color:#bbb"> </span>err),<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>divide_display(<span style="color:#f60">20</span>,<span style="color:#bbb"> </span><span style="color:#f60">10</span>);<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>divide_display(<span style="color:#f60">10</span>,<span style="color:#bbb"> </span><span style="color:#f60">0</span>);<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>As you should expect, the output is:</p>
 
@@ -473,8 +451,8 @@ You can't divide by zero.
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
                         
 
                     </div>
@@ -496,8 +474,8 @@ You can't divide by zero.
             </li><li><a href="http://www.joesacher.com/categories/how-to" class="text-uppercase">how-to (5)</a>
             </li><li><a href="http://www.joesacher.com/categories/personal" class="text-uppercase">personal (9)</a>
             </li><li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
-            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (27)</a>
-            </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (48)</a>
+            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (29)</a>
+            </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (45)</a>
             </li>
         </ul>
     </div>
@@ -512,8 +490,9 @@ You can't divide by zero.
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
             <li><a href="http://www.joesacher.com/series/hugo" class="text-uppercase">hugo (4)</a>
+            </li><li><a href="http://www.joesacher.com/series/python-tips" class="text-uppercase">python-tips (2)</a>
             </li><li><a href="http://www.joesacher.com/series/python-to-rust" class="text-uppercase">python-to-rust (4)</a>
-            </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (48)</a>
+            </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (45)</a>
             </li>
         </ul>
     </div>
@@ -531,12 +510,14 @@ You can't divide by zero.
             </li><li><a href="http://www.joesacher.com/tags/bicycle-touring"><i class="fa fa-tags"></i> bicycle-touring</a>
             </li><li><a href="http://www.joesacher.com/tags/book-review"><i class="fa fa-tags"></i> book-review</a>
             </li><li><a href="http://www.joesacher.com/tags/calendars"><i class="fa fa-tags"></i> calendars</a>
+            </li><li><a href="http://www.joesacher.com/tags/comprehensions"><i class="fa fa-tags"></i> comprehensions</a>
             </li><li><a href="http://www.joesacher.com/tags/cooking"><i class="fa fa-tags"></i> cooking</a>
             </li><li><a href="http://www.joesacher.com/tags/cycling"><i class="fa fa-tags"></i> cycling</a>
             </li><li><a href="http://www.joesacher.com/tags/dessert"><i class="fa fa-tags"></i> dessert</a>
             </li><li><a href="http://www.joesacher.com/tags/dry-bag"><i class="fa fa-tags"></i> dry-bag</a>
             </li><li><a href="http://www.joesacher.com/tags/ebooks"><i class="fa fa-tags"></i> ebooks</a>
             </li><li><a href="http://www.joesacher.com/tags/electronics"><i class="fa fa-tags"></i> electronics</a>
+            </li><li><a href="http://www.joesacher.com/tags/enumerate"><i class="fa fa-tags"></i> enumerate</a>
             </li><li><a href="http://www.joesacher.com/tags/fiction"><i class="fa fa-tags"></i> fiction</a>
             </li><li><a href="http://www.joesacher.com/tags/film-making"><i class="fa fa-tags"></i> film-making</a>
             </li><li><a href="http://www.joesacher.com/tags/google"><i class="fa fa-tags"></i> google</a>
@@ -565,8 +546,10 @@ You can't divide by zero.
             </li><li><a href="http://www.joesacher.com/tags/rust"><i class="fa fa-tags"></i> rust</a>
             </li><li><a href="http://www.joesacher.com/tags/safety"><i class="fa fa-tags"></i> safety</a>
             </li><li><a href="http://www.joesacher.com/tags/sewing"><i class="fa fa-tags"></i> sewing</a>
+            </li><li><a href="http://www.joesacher.com/tags/strings"><i class="fa fa-tags"></i> strings</a>
             </li><li><a href="http://www.joesacher.com/tags/touchpad"><i class="fa fa-tags"></i> touchpad</a>
             </li><li><a href="http://www.joesacher.com/tags/touring"><i class="fa fa-tags"></i> touring</a>
+            </li><li><a href="http://www.joesacher.com/tags/unicode"><i class="fa fa-tags"></i> unicode</a>
             </li><li><a href="http://www.joesacher.com/tags/video"><i class="fa fa-tags"></i> video</a>
             </li><li><a href="http://www.joesacher.com/tags/web"><i class="fa fa-tags"></i> web</a>
             </li><li><a href="http://www.joesacher.com/tags/webos"><i class="fa fa-tags"></i> webos</a>

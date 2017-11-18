@@ -1,0 +1,188 @@
+Short Set of Python Tips
+
+Use Python 3.6.  It is so much better than 2.7.  Seriously.  fstrings
+
+
+If you see .open() and .close() around, it is probably a sign that you should be using a with block (what is the name if with format).
+Especially for opening a file.
+
+Use a virtual environments with every project.  venv part of Python 3.4+
+
+
+
+Use csv module for csv... please.  It isn't as easy as you think and yes, you did forget about that edge case.  That one two.  While you are at it, forget BeautifulSoup, just parse HTML with a regex.  Facepalm....
+
+The exception for this is if you are using pandas.from_csv, which is even better.  However, overkill if you don't have a reason for pandas.
+
+
+
+Avoid *args and **kwargs unless you need them.  I find myself doing this for flexibility and never using them.  Stop it.
+
+
+
+Use PyCharm and learn the features.  (I'm biased.)  But learn what your IDE can do if you use it.  I've me people using PyCharm who have never debugged with it.  That is unfathomable to me.
+
+If your IDE has PEP8 correction and notes, use it.  This in PyCharm helped me be a better python programmer.  Except the 80 column limitation.  If you are programming in a terminal, sorry, but my monitor if 30" wide.
+
+
+Use a linter if you don't have it as part of your IDE.
+https://www.youtube.com/watch?v=wf-BqAjZb8M&feature=youtu.be
+
+
+Yes, it is possible to make multiple nested level comprehensions.  Unless they are VERY simple, just don't do it.  Seriously.  The little extra memory and operation is worth it for sanity.
+
+If you need a counter along with this item, you use enumerate.  
+
+# Bad code monkey
+i = 0
+for name in names:
+	print("Name #{}: {}".format(i, name))
+	i += 1
+
+# See how much prettier?
+for (i, name) in enumerate(names):
+	print("Name #{}: {}".format(i, name))
+
+
+multiprocessing, not threading  <--- Why?
+Threading doesn't work with selenium, but multiprocessing does
+
+
+Use destructuring assignment, not indices, for multiple assignment first, second, *_ = (1,2,3,4)
+
+---
+
+from __future__ import division fixes this discrepancy (by backporting Python 3 behaviour to Python 2).
+
+Also // is not the integer division but the floor division operator, this makes a difference when passing floats in
+
+>>> 3.2 / 2.5
+1.28
+>>> 3.2 // 2.5
+1.0
+An other subtle difference between P2 and P3 is the behaviour of the round builtin:
+
+In Python 3, it implements banker's rounding (round-to-even), Python 2 uses away-from-zero. So round(2.5) is 2 in Python 3 and 3 in Python 2.
+In Python 3, round(n) returns an int but round(n, k) returns a float (unless k is None), in Python 2 round always returns a float.
+In Python 3, byte and str objects are always different. In Python 2, str and unicode could be equal if the implicit decoding (of the str to unicode) succeeded and the resulting unicode objects were equal, and you would get a warning if the decoding failed (the Python 3 behaviour is something of a downgrade there).
+
+----
+
+
+when you think you have to write something, check the standard library. if you still think you have to write it, check it again. then check some of the major libraries. then recheck those. python has a fantastic ecosystem where the most difficult part about it is finding the package you need.
+
+
+The order of these two things should be reversed. Nobody should be trying to use urllib2 instead of requests unless they have a very good reason.
+
+For most of the "batteries included" libraries in the standard library (email, HTML, network, XML, OS path handling, etc.), there's better equivalents on pypi.
+
+
+itertools and functools are your friends - both modules provide general solutions to a wide variety of common problems. in general, the more familiar you are with the standard library, the better you'll be able to tackle problems in a legible and "pythonic" way.
+
+
+----
+
+list comprehensions are pretty neat and make your code more succinct!
+However, be careful of being too clever.
+
+for obj_id, obj in dicts_of_objects_to_check.items():
+    for o in obj:
+        if obj.id > 10:
+            yield o.id
+
+
+object_ids = [o.id 
+              for obj_id, obj in dicts_of_objects_to_check.items()
+              for o in obj
+              if obj.id > 10]
+
+-----
+
+
+Yes, you are clever.  Don't be.  If you need 5 times more comments than code to explain your cleverness, you are evil.  Just write it so you can understand it.
+
+
+
+Understand the decorator. Become the decorator.
+But don't start with one.  It is a good way to dedup effort.  A decorator you use once is not a good thing.  It is premature optimization.
+
+
+Mastery comes one mistake a time...
+
+Experiment.
+Have side projects.
+
+
+Break the rules.
+https://www.youtube.com/watch?v=9UnMZYMaosw
+
+
+Never use a list as a default argument (foo=[]) in functions.  Or dictionaries...  Never use a mutable as a default argument.   This. If you're tempted to make the default argument a mutable, make it None instead and handle it inside the function.
+
+
+Get familiar with generators and try to use them wherever possible.
+
+
+Try to use absolute imports when possible.
+
+
+
+Not everything has to be a class.
+https://www.youtube.com/watch?v=o9pEzgHorH0
+
+
+Prove you're right.
+Build Descriptors
+Know the dunder methods  <--  key to codeing better
+There's always more to learn.
+Learn the Python C API
+
+----
+Express yourself in a convincing and replicable manner.
+Don't beat around the bush. Get to the point with the shortest possible code. Compare with accidental complexity vs essential complexity.
+Be sure to name your artifacts properly. Not too long and not too short. No data or items, except where totally obvious what it is from context. No items_which_come_from_that_other_server_unless_cached either. Upon reading, the names need to get into your brain fast.
+Read your code as if you never saw it before and adapt it if it is confusing.
+Don't shy away from "not invented here". It's mostly a good learning experience.
+Don't shy away from throwing your own code away if you find a library of objectively(!) better quality. Read the code before using.
+----
+
+
+Variable names: use your words.
+
+Good: counter, probe, product
+Bad: c, cnt, prb, p, prd, prdct, obj
+Additionally, generic names like object are too ambiguous. If at all possible, be specific when naming things.
+
+
+---
+
+pytest.  Learn it.  Use it.  TDD.  
+
+---
+
+Don't use pickle, use camel.
+---
+
+or just
+
+import this
+
+----
+
+Do not create unnecessary lists. Most built-in functions accept generators as well. Do all(item > 0 for item in iterable), not all([item ... ])
+Use virtualenv for every project (already has been said though).
+If you faced extensive computations and/or nested looping on top of large lists/array, consider using numpy or numba.
+NEVER do from module import *.
+Study standard library.
+pytest is your friend.
+Use cProfile (or other profiler) regularly, optimize the bottlenecks.
+Follow PEP8 (reasonably)
+Do not use destructors, use with block instead
+Create custom exceptions, NEVER use except Expection.
+Name your functions and variable properly. Python doesn't have static typing (well, latest versions have type annotations, but they aren't popular yet), so verbose names is a good practice.
+
+---
+
+Learn stdtypes https://docs.python.org/3.6/library/stdtypes.html
+
+

@@ -15,7 +15,7 @@
   <meta name="description" content="Comparing Python&#39;s Dynamic and Strong-ish type system with Rust&#39;s static and very strong type system.  Covering the scalar and a few of the complex types.">
   
 
-  <meta name="generator" content="Hugo 0.25.1" />
+  <meta name="generator" content="Hugo 0.30.2" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
@@ -164,13 +164,11 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 <p>If we try that in JavaScript, we may not know how the interpreter will automatically convert the values.  When using ScratchPad in Firefox, I got the following:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>    <span style="color: #FF6600">1</span> <span style="color: #555555">+</span> <span style="color: #CC3300">&quot;1&quot;</span>;
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#f60">1</span> <span style="color:#555">+</span> <span style="color:#c30">&#34;1&#34;</span>;
     
-    <span style="color: #0099FF; font-style: italic">/*</span>
-<span style="color: #0099FF; font-style: italic">    11</span>
-<span style="color: #0099FF; font-style: italic">    */</span>
-</pre></div>
-
+    <span style="color:#09f;font-style:italic">/*
+</span><span style="color:#09f;font-style:italic">    11
+</span><span style="color:#09f;font-style:italic">    */</span></code></pre></div>
 
 <p>So JavaScript converted the number <code>1</code> to a string <code>&quot;1&quot;</code> and then appended the strings together.  Since this happened automatically, we call the typing weak.  It does not warn you before types change.</p>
 
@@ -184,11 +182,9 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 <p>If we try to do this same addition in Rust, we can&rsquo;t compile.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">main</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;{}&quot;</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">1</span><span style="color: #bbbbbb"> </span><span style="color: #555555">+</span><span style="color: #bbbbbb"> </span><span style="color: #CC3300">&quot;1&quot;</span>);<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;{}&#34;</span>,<span style="color:#bbb"> </span><span style="color:#f60">1</span><span style="color:#bbb"> </span><span style="color:#555">+</span><span style="color:#bbb"> </span><span style="color:#c30">&#34;1&#34;</span>);<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>The compiler complains to us, much like the Python interpreter did while running.</p>
 
@@ -209,30 +205,24 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 <p>Python strong types are associated with the object, not the variable.  This is perfectly valid Python:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>count <span style="color: #555555">=</span> <span style="color: #FF6600">12</span>         <span style="color: #0099FF; font-style: italic"># Strong Number Type</span>
-count <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;Dracula&quot;</span>  <span style="color: #0099FF; font-style: italic"># Strong String Type</span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">count <span style="color:#555">=</span> <span style="color:#f60">12</span>         <span style="color:#09f;font-style:italic"># Strong Number Type</span>
+count <span style="color:#555">=</span> <span style="color:#c30"></span><span style="color:#c30">&#34;Dracula&#34;</span>  <span style="color:#09f;font-style:italic"># Strong String Type</span></code></pre></div>
 
 <p>Rust looks like it can do the same thing at first.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">main</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>count<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span><span style="color: #FF6600">12</span>;<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>count<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span><span style="color: #CC3300">&quot;Dracula&quot;</span>;<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>count<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#f60">12</span>;<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>count<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#c30">&#34;Dracula&#34;</span>;<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>This compiles.  Rust complains about the two unused variables we created.  Unlike Python, Rust did not reuse the first <code>count</code>.  It threw it away when we created the second <code>count</code> equal to <code>&quot;Dracula&quot;</code>.  The <code>let</code> keyword is used only for variable definition.  If assigning to a variable already defined, a normal <code>var = value;</code> is used.</p>
 
 <p>In the follow code, we try to reassign count.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">main</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>count<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span><span style="color: #FF6600">12</span>;<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>count<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span><span style="color: #CC3300">&quot;Dracula&quot;</span>;<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>count<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#f60">12</span>;<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>count<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#c30">&#34;Dracula&#34;</span>;<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>We have two problems, but only get the first one from the compiler.</p>
 
@@ -258,12 +248,10 @@ count <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;D
 
 <p>Let&rsquo;s go ahead and use the <code>len()</code> method to get a valid integer to assign.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">main</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>count<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span><span style="color: #FF6600">12</span>;<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>count<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span><span style="color: #CC3300">&quot;Dracula&quot;</span>.len();<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>count<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#f60">12</span>;<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>count<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#c30">&#34;Dracula&#34;</span>.len();<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <pre><code>error[E0384]: re-assignment of immutable variable `count`
  --&gt; src/main.rs:3:5
@@ -282,14 +270,12 @@ count <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;D
 
 <p>We tell Rust that the variable is mutable with the <code>mut</code> keyword.  I also added calls to the <code>println!</code> macro to display the two values as they change.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">main</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span><span style="color: #006699; font-weight: bold">mut</span><span style="color: #bbbbbb"> </span>count<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span><span style="color: #FF6600">12</span>;<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;{}&quot;</span>,<span style="color: #bbbbbb"> </span>count);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>count<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span><span style="color: #CC3300">&quot;Dracula&quot;</span>.len();<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;{}&quot;</span>,<span style="color: #bbbbbb"> </span>count);<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">mut</span><span style="color:#bbb"> </span>count<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#f60">12</span>;<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;{}&#34;</span>,<span style="color:#bbb"> </span>count);<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>count<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#c30">&#34;Dracula&#34;</span>.len();<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;{}&#34;</span>,<span style="color:#bbb"> </span>count);<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>Output:</p>
 
@@ -351,11 +337,9 @@ True
 
 <p>In Rust, bool is a proper type with no automatic type changes:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">main</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;{}&quot;</span>,<span style="color: #bbbbbb"> </span><span style="color: #006699; font-weight: bold">true</span><span style="color: #bbbbbb"> </span><span style="color: #555555">+</span><span style="color: #bbbbbb"> </span><span style="color: #FF6600">1</span>);<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;{}&#34;</span>,<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">true</span><span style="color:#bbb"> </span><span style="color:#555">+</span><span style="color:#bbb"> </span><span style="color:#f60">1</span>);<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <pre><code>error[E0369]: binary operation `+` cannot be applied to type `bool`
  --&gt; src/main.rs:2:20
@@ -394,19 +378,15 @@ True
 
 <p>While type notation did come to Python with 3.6, it is required in Rust when it cannot be inferred.  For variable declaration, this comes with a colon after the variable name.  For example, the code we wrote above with type inference would be the same as writing the explicit <code>usize</code> type after a <code>:</code>.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">main</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span><span style="color: #006699; font-weight: bold">mut</span><span style="color: #bbbbbb"> </span>count: <span style="color: #007788; font-weight: bold">usize</span> <span style="color: #555555">=</span><span style="color: #bbbbbb"> </span><span style="color: #FF6600">12</span>;<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>count<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span><span style="color: #CC3300">&quot;Dracula&quot;</span>.len();<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">mut</span><span style="color:#bbb"> </span>count: <span style="color:#078;font-weight:bold">usize</span> <span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#f60">12</span>;<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>count<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#c30">&#34;Dracula&#34;</span>.len();<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>For the Rust Array, we use square brackets similar to C, with the type and number.  Below we have <code>x</code> equal to a 5 member array of <code>i32</code> integers, that is initialized to 5 different values.  The array <code>y</code> is a boolean with 1000 values, and we initialize all 1000 of these values to <code>true</code>.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>x: [<span style="color: #007788; font-weight: bold">i32</span>;<span style="color: #bbbbbb"> </span><span style="color: #FF6600">5</span>]<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span>[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">0</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">1</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">2</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">3</span>];<span style="color: #bbbbbb"></span>
-<span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>y: [<span style="color: #007788; font-weight: bold">bool</span>;<span style="color: #bbbbbb"> </span><span style="color: #FF6600">1000</span>]<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span>[<span style="color: #006699; font-weight: bold">true</span>;<span style="color: #bbbbbb"> </span><span style="color: #FF6600">1000</span>];<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>x: [<span style="color:#078;font-weight:bold">i32</span>;<span style="color:#bbb"> </span><span style="color:#f60">5</span>]<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span>[<span style="color:#555">-</span><span style="color:#f60">1</span>,<span style="color:#bbb"> </span><span style="color:#f60">0</span>,<span style="color:#bbb"> </span><span style="color:#f60">1</span>,<span style="color:#bbb"> </span><span style="color:#f60">2</span>,<span style="color:#bbb"> </span><span style="color:#f60">3</span>];<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>y: [<span style="color:#078;font-weight:bold">bool</span>;<span style="color:#bbb"> </span><span style="color:#f60">1000</span>]<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span>[<span style="color:#069;font-weight:bold">true</span>;<span style="color:#bbb"> </span><span style="color:#f60">1000</span>];</code></pre></div>
 
 <h3 id="python-array-list-and-rust-vector">Python Array/List and Rust Vector</h3>
 
@@ -416,10 +396,8 @@ True
 
 <p>If we assume a list full of integers, for simplicity.  (For better performance, you could use the Python array instead.)  In Python this is:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>l <span style="color: #555555">=</span> [<span style="color: #FF6600">1</span>, <span style="color: #FF6600">2</span>, <span style="color: #FF6600">3</span>]
-<span style="color: #006699; font-weight: bold">print</span>(l)
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">l <span style="color:#555">=</span> [<span style="color:#f60">1</span>, <span style="color:#f60">2</span>, <span style="color:#f60">3</span>]
+<span style="color:#069;font-weight:bold">print</span>(l)</code></pre></div>
 
 <p>Output</p>
 
@@ -428,10 +406,8 @@ True
 
 <p>In Rust, we would have:</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>v<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span>vec<span style="color: #555555">!</span>[<span style="color: #FF6600">1</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">2</span>,<span style="color: #bbbbbb"> </span><span style="color: #FF6600">3</span>];<span style="color: #bbbbbb"></span>
-println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;{:?}&quot;</span>,<span style="color: #bbbbbb"> </span>v);<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>v<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span>vec<span style="color:#555">!</span>[<span style="color:#f60">1</span>,<span style="color:#bbb"> </span><span style="color:#f60">2</span>,<span style="color:#bbb"> </span><span style="color:#f60">3</span>];<span style="color:#bbb">
+</span><span style="color:#bbb"></span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;{:?}&#34;</span>,<span style="color:#bbb"> </span>v);</code></pre></div>
 
 <p>Output</p>
 
@@ -444,16 +420,12 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
 
 <p>This works for an empty list in Python, because type isn&rsquo;t important.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>l <span style="color: #555555">=</span> []
-<span style="color: #006699; font-weight: bold">print</span>(l)
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">l <span style="color:#555">=</span> []
+<span style="color:#069;font-weight:bold">print</span>(l)</code></pre></div>
 
 <p>If we wanted to make an empty vector, would use a static method on the Vec struct: <code>Vec::new()</code>.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>v<span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span><span style="color: #336666">Vec</span>::new();<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>v<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#366">Vec</span>::new();</code></pre></div>
 
 <p>However, with an empty vector the Rust compiler has no data from which to infer type.</p>
 
@@ -467,16 +439,12 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
 
 <p>For many types, you will see the <code>&lt;T&gt;</code> notation for type.  We are saying that v is a <code>Vec</code> holding type <code>i32</code>.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>v: <span style="color: #336666">Vec</span><span style="color: #555555">&lt;</span><span style="color: #007788; font-weight: bold">i32</span><span style="color: #555555">&gt;</span><span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span><span style="color: #336666">Vec</span>::new();<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>v: <span style="color:#366">Vec</span><span style="color:#555">&lt;</span><span style="color:#078;font-weight:bold">i32</span><span style="color:#555">&gt;</span><span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#366">Vec</span>::new();</code></pre></div>
 
 <p>It would work to call the macro with no values, but best practices is to call the <code>new</code> constructor when you want an empty object.  The double colon <code>::</code> is only used on the static methods.  Once you have a valid instance, you can use methods of the object.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>v: <span style="color: #336666">Vec</span><span style="color: #555555">&lt;</span><span style="color: #007788; font-weight: bold">i32</span><span style="color: #555555">&gt;</span><span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span><span style="color: #336666">Vec</span>::new();<span style="color: #bbbbbb"></span>
-println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;{}&quot;</span>,<span style="color: #bbbbbb"> </span>v.len());<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span>v: <span style="color:#366">Vec</span><span style="color:#555">&lt;</span><span style="color:#078;font-weight:bold">i32</span><span style="color:#555">&gt;</span><span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#366">Vec</span>::new();<span style="color:#bbb">
+</span><span style="color:#bbb"></span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;{}&#34;</span>,<span style="color:#bbb"> </span>v.len());</code></pre></div>
 
 <p>Output</p>
 
@@ -489,16 +457,14 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
 
 <p>HashMap isn&rsquo;t automatically available in Rust.  We will be using our first <code>use</code> statement, which is similar to Python&rsquo;s <code>import</code>.  This is part of Rust and not an external crate, it just isn&rsquo;t automatically included.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">use</span><span style="color: #bbbbbb"> </span>std::collections::HashMap;<span style="color: #bbbbbb"></span>
-
-<span style="color: #006699; font-weight: bold">fn</span> <span style="color: #CC00FF">main</span>()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #006699; font-weight: bold">let</span><span style="color: #bbbbbb"> </span><span style="color: #006699; font-weight: bold">mut</span><span style="color: #bbbbbb"> </span>hm: <span style="color: #00AA88; font-weight: bold">HashMap</span><span style="color: #555555">&lt;</span><span style="color: #007788; font-weight: bold">u32</span>,<span style="color: #bbbbbb"> </span><span style="color: #555555">&amp;</span><span style="color: #007788; font-weight: bold">str</span><span style="color: #555555">&gt;</span><span style="color: #bbbbbb"> </span><span style="color: #555555">=</span><span style="color: #bbbbbb"> </span>HashMap::new();<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>hm.insert(<span style="color: #FF6600">1</span>,<span style="color: #bbbbbb"> </span><span style="color: #CC3300">&quot;Joe&quot;</span>);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>hm.insert(<span style="color: #FF6600">8</span>,<span style="color: #bbbbbb"> </span><span style="color: #CC3300">&quot;Amy&quot;</span>);<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;{:?}&quot;</span>,<span style="color: #bbbbbb"> </span>hm);<span style="color: #bbbbbb"></span>
-}<span style="color: #bbbbbb"></span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#069;font-weight:bold">use</span><span style="color:#bbb"> </span>std::collections::HashMap;<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#069;font-weight:bold">fn</span> <span style="color:#c0f">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">let</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">mut</span><span style="color:#bbb"> </span>hm: <span style="color:#0a8;font-weight:bold">HashMap</span><span style="color:#555">&lt;</span><span style="color:#078;font-weight:bold">u32</span>,<span style="color:#bbb"> </span><span style="color:#555">&amp;</span><span style="color:#078;font-weight:bold">str</span><span style="color:#555">&gt;</span><span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span>HashMap::new();<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>hm.insert(<span style="color:#f60">1</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;Joe&#34;</span>);<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>hm.insert(<span style="color:#f60">8</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;Amy&#34;</span>);<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>println<span style="color:#555">!</span>(<span style="color:#c30">&#34;{:?}&#34;</span>,<span style="color:#bbb"> </span>hm);<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div>
 
 <p>From <code>std::collections</code> we are using <code>HashMap</code>.  We create an empty <code>HashMap&lt;K, V&gt;</code> with key type of <code>u32</code> and value type of <code>&amp;str</code>, which is a string pointer.  Look for the Strings post to cover strings in more detail.  Since we have no macro for creation, like the vector&rsquo;s <code>vec!</code>, we cannot use a simple notation for a single line dictionary creation and loading.  So we make two calls to the HashMap <code>insert</code> method and provide key and values.  Then use the Debug trait of the HashMap to display the structure.</p>
 
@@ -538,8 +504,8 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
                         
 
                     </div>
@@ -561,8 +527,8 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
             </li><li><a href="http://www.joesacher.com/categories/how-to" class="text-uppercase">how-to (5)</a>
             </li><li><a href="http://www.joesacher.com/categories/personal" class="text-uppercase">personal (9)</a>
             </li><li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
-            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (27)</a>
-            </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (48)</a>
+            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (29)</a>
+            </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (45)</a>
             </li>
         </ul>
     </div>
@@ -577,8 +543,9 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
             <li><a href="http://www.joesacher.com/series/hugo" class="text-uppercase">hugo (4)</a>
+            </li><li><a href="http://www.joesacher.com/series/python-tips" class="text-uppercase">python-tips (2)</a>
             </li><li><a href="http://www.joesacher.com/series/python-to-rust" class="text-uppercase">python-to-rust (4)</a>
-            </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (48)</a>
+            </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (45)</a>
             </li>
         </ul>
     </div>
@@ -596,12 +563,14 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
             </li><li><a href="http://www.joesacher.com/tags/bicycle-touring"><i class="fa fa-tags"></i> bicycle-touring</a>
             </li><li><a href="http://www.joesacher.com/tags/book-review"><i class="fa fa-tags"></i> book-review</a>
             </li><li><a href="http://www.joesacher.com/tags/calendars"><i class="fa fa-tags"></i> calendars</a>
+            </li><li><a href="http://www.joesacher.com/tags/comprehensions"><i class="fa fa-tags"></i> comprehensions</a>
             </li><li><a href="http://www.joesacher.com/tags/cooking"><i class="fa fa-tags"></i> cooking</a>
             </li><li><a href="http://www.joesacher.com/tags/cycling"><i class="fa fa-tags"></i> cycling</a>
             </li><li><a href="http://www.joesacher.com/tags/dessert"><i class="fa fa-tags"></i> dessert</a>
             </li><li><a href="http://www.joesacher.com/tags/dry-bag"><i class="fa fa-tags"></i> dry-bag</a>
             </li><li><a href="http://www.joesacher.com/tags/ebooks"><i class="fa fa-tags"></i> ebooks</a>
             </li><li><a href="http://www.joesacher.com/tags/electronics"><i class="fa fa-tags"></i> electronics</a>
+            </li><li><a href="http://www.joesacher.com/tags/enumerate"><i class="fa fa-tags"></i> enumerate</a>
             </li><li><a href="http://www.joesacher.com/tags/fiction"><i class="fa fa-tags"></i> fiction</a>
             </li><li><a href="http://www.joesacher.com/tags/film-making"><i class="fa fa-tags"></i> film-making</a>
             </li><li><a href="http://www.joesacher.com/tags/google"><i class="fa fa-tags"></i> google</a>
@@ -630,8 +599,10 @@ println<span style="color: #555555">!</span>(<span style="color: #CC3300">&quot;
             </li><li><a href="http://www.joesacher.com/tags/rust"><i class="fa fa-tags"></i> rust</a>
             </li><li><a href="http://www.joesacher.com/tags/safety"><i class="fa fa-tags"></i> safety</a>
             </li><li><a href="http://www.joesacher.com/tags/sewing"><i class="fa fa-tags"></i> sewing</a>
+            </li><li><a href="http://www.joesacher.com/tags/strings"><i class="fa fa-tags"></i> strings</a>
             </li><li><a href="http://www.joesacher.com/tags/touchpad"><i class="fa fa-tags"></i> touchpad</a>
             </li><li><a href="http://www.joesacher.com/tags/touring"><i class="fa fa-tags"></i> touring</a>
+            </li><li><a href="http://www.joesacher.com/tags/unicode"><i class="fa fa-tags"></i> unicode</a>
             </li><li><a href="http://www.joesacher.com/tags/video"><i class="fa fa-tags"></i> video</a>
             </li><li><a href="http://www.joesacher.com/tags/web"><i class="fa fa-tags"></i> web</a>
             </li><li><a href="http://www.joesacher.com/tags/webos"><i class="fa fa-tags"></i> webos</a>

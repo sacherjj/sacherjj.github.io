@@ -15,7 +15,7 @@
   <meta name="description" content="My little piece of the web.">	
   
 
-  <meta name="generator" content="Hugo 0.25.1" />
+  <meta name="generator" content="Hugo 0.30.2" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
@@ -186,68 +186,58 @@
 
 <p>Functions are objects in Python and can be stored and referenced just like data.  In the internal encoding function <code>_local_encode</code>, I&rsquo;m storing the various data type encode methods in a dictonary with data type string as key.  This allows me to get data type string with <code>type(data).__name__</code>.  If the key exists in the dictonary, I envoke that method to process the data.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_local_encode</span>(<span style="color: #336666">self</span>, data):
-    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Returns the proper Bencoded string for data given &quot;&quot;&quot;</span>
-    encoders <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;dict&#39;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_dictionary,
-                <span style="color: #CC3300">&#39;list&#39;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_list,
-                <span style="color: #CC3300">&#39;tuple&#39;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_list,
-                <span style="color: #CC3300">&#39;str&#39;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_string,
-                <span style="color: #CC3300">&#39;int&#39;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_integer,
-                <span style="color: #CC3300">&#39;float&#39;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_float}
-    data_type <span style="color: #555555">=</span> <span style="color: #336666">type</span>(data)<span style="color: #555555">.</span><span style="color: #003333">__name__</span>
-    <span style="color: #006699; font-weight: bold">if</span> data_type <span style="color: #000000; font-weight: bold">in</span> encoders<span style="color: #555555">.</span>keys():
-        <span style="color: #006699; font-weight: bold">return</span> encoders[data_type](data)
-    <span style="color: #006699; font-weight: bold">else</span>:
-        <span style="color: #006699; font-weight: bold">raise</span> <span style="color: #CC0000; font-weight: bold">Exception</span>(<span style="color: #CC3300">&#39;Encoder is not defined for data type: </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&#39;</span> <span style="color: #555555">%</span> data_type)
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_local_encode</span>(self, data):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; Returns the proper Bencoded string for data given &#34;&#34;&#34;</span>
+    encoders <span style="color:#555">=</span> {<span style="color:#c30"></span><span style="color:#c30">&#39;dict&#39;</span>: self<span style="color:#555">.</span>_encode_dictionary,
+                <span style="color:#c30"></span><span style="color:#c30">&#39;list&#39;</span>: self<span style="color:#555">.</span>_encode_list,
+                <span style="color:#c30"></span><span style="color:#c30">&#39;tuple&#39;</span>: self<span style="color:#555">.</span>_encode_list,
+                <span style="color:#c30"></span><span style="color:#c30">&#39;str&#39;</span>: self<span style="color:#555">.</span>_encode_string,
+                <span style="color:#c30"></span><span style="color:#c30">&#39;int&#39;</span>: self<span style="color:#555">.</span>_encode_integer,
+                <span style="color:#c30"></span><span style="color:#c30">&#39;float&#39;</span>: self<span style="color:#555">.</span>_encode_float}
+    data_type <span style="color:#555">=</span> <span style="color:#366">type</span>(data)<span style="color:#555">.</span>__name__
+    <span style="color:#069;font-weight:bold">if</span> data_type <span style="color:#000;font-weight:bold">in</span> encoders<span style="color:#555">.</span>keys():
+        <span style="color:#069;font-weight:bold">return</span> encoders[data_type](data)
+    <span style="color:#069;font-weight:bold">else</span>:
+        <span style="color:#069;font-weight:bold">raise</span> <span style="color:#c00;font-weight:bold">Exception</span>(<span style="color:#c30"></span><span style="color:#c30">&#39;Encoder is not defined for data type: </span><span style="color:#a00">%s</span><span style="color:#c30">&#39;</span> <span style="color:#555">%</span> data_type)</code></pre></div>
 
 <p>String encoding is very simple, just joining length of the string with the data.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #9999FF">@staticmethod</span>
-<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_encode_string</span>(data):
-    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Converts string to Bencoded Byte String &quot;&quot;&quot;</span>
-    <span style="color: #006699; font-weight: bold">return</span> <span style="color: #CC3300">&#39;</span><span style="color: #AA0000">%d</span><span style="color: #CC3300">:</span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&#39;</span> <span style="color: #555555">%</span> (<span style="color: #336666">len</span>(data), data)
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#99f">@staticmethod</span>
+<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_encode_string</span>(data):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; Converts string to Bencoded Byte String &#34;&#34;&#34;</span>
+    <span style="color:#069;font-weight:bold">return</span> <span style="color:#c30"></span><span style="color:#c30">&#39;</span><span style="color:#a00">%d</span><span style="color:#c30">:</span><span style="color:#a00">%s</span><span style="color:#c30">&#39;</span> <span style="color:#555">%</span> (<span style="color:#366">len</span>(data), data)</code></pre></div>
 
 <p>Encoding integer is just wrapping <code>i</code> and <code>e</code> around the string conversion of the integer.  Since bencode does not encode floats, those are converted to ints.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #9999FF">@staticmethod</span>
-<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_encode_integer</span>(data):
-    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Converts Integer to Bencoded Integer string &quot;&quot;&quot;</span>
-    <span style="color: #006699; font-weight: bold">return</span> <span style="color: #CC3300">&#39;i</span><span style="color: #AA0000">%d</span><span style="color: #CC3300">e&#39;</span> <span style="color: #555555">%</span> data
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#99f">@staticmethod</span>
+<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_encode_integer</span>(data):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; Converts Integer to Bencoded Integer string &#34;&#34;&#34;</span>
+    <span style="color:#069;font-weight:bold">return</span> <span style="color:#c30"></span><span style="color:#c30">&#39;i</span><span style="color:#a00">%d</span><span style="color:#c30">e&#39;</span> <span style="color:#555">%</span> data
 
-<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_encode_float</span>(<span style="color: #336666">self</span>, data):
-    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Converts Float to Bencoded Integer string &quot;&quot;&quot;</span>
-    <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_integer(<span style="color: #336666">int</span>(data))
-</pre></div>
-
+<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_encode_float</span>(self, data):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; Converts Float to Bencoded Integer string &#34;&#34;&#34;</span>
+    <span style="color:#069;font-weight:bold">return</span> self<span style="color:#555">.</span>_encode_integer(<span style="color:#366">int</span>(data))</code></pre></div>
 
 <p>List encoding performs recursive calls into _local_encode as it loops through the list, just appending items.  I optimised with lists instead of string concatenation.  Originally, I built this with the ben variable as a string and += calls, which is terrible for memory performance.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_encode_list</span>(<span style="color: #336666">self</span>, data):
-    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Converts List or Tuple to Bencoded List string &quot;&quot;&quot;</span>
-    ben <span style="color: #555555">=</span> [<span style="color: #CC3300">&#39;l&#39;</span>]
-    <span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> data:
-        ben<span style="color: #555555">.</span>append(<span style="color: #336666">self</span><span style="color: #555555">.</span>_local_encode(item))
-    ben<span style="color: #555555">.</span>append(<span style="color: #CC3300">&#39;e&#39;</span>)
-    <span style="color: #006699; font-weight: bold">return</span> <span style="color: #CC3300">&#39;&#39;</span><span style="color: #555555">.</span>join(ben)
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_encode_list</span>(self, data):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; Converts List or Tuple to Bencoded List string &#34;&#34;&#34;</span>
+    ben <span style="color:#555">=</span> [<span style="color:#c30"></span><span style="color:#c30">&#39;l&#39;</span>]
+    <span style="color:#069;font-weight:bold">for</span> item <span style="color:#000;font-weight:bold">in</span> data:
+        ben<span style="color:#555">.</span>append(self<span style="color:#555">.</span>_local_encode(item))
+    ben<span style="color:#555">.</span>append(<span style="color:#c30"></span><span style="color:#c30">&#39;e&#39;</span>)
+    <span style="color:#069;font-weight:bold">return</span> <span style="color:#c30"></span><span style="color:#c30">&#39;&#39;</span><span style="color:#555">.</span>join(ben)</code></pre></div>
 
 <p>Dictionary works the same way as list, just appending the generated values from _local_encode with the addition of a string in front.  Again, this was changed from string concatenation to list append.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_encode_dictionary</span>(<span style="color: #336666">self</span>, data):
-    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Converts Dictionary to Bencoded Dictionary String &quot;&quot;&quot;</span>
-    ben <span style="color: #555555">=</span> [<span style="color: #CC3300">&#39;d&#39;</span>]
-    <span style="color: #006699; font-weight: bold">for</span> key <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">sorted</span>(data<span style="color: #555555">.</span>keys()):
-        ben<span style="color: #555555">.</span>append(<span style="color: #336666">self</span><span style="color: #555555">.</span>_encode_string(key))
-        ben<span style="color: #555555">.</span>append(<span style="color: #336666">self</span><span style="color: #555555">.</span>_local_encode(data[key]))
-    ben<span style="color: #555555">.</span>append(<span style="color: #CC3300">&#39;e&#39;</span>)
-    <span style="color: #006699; font-weight: bold">return</span><span style="color: #CC3300">&#39;&#39;</span><span style="color: #555555">.</span>join(ben)
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_encode_dictionary</span>(self, data):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; Converts Dictionary to Bencoded Dictionary String &#34;&#34;&#34;</span>
+    ben <span style="color:#555">=</span> [<span style="color:#c30"></span><span style="color:#c30">&#39;d&#39;</span>]
+    <span style="color:#069;font-weight:bold">for</span> key <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">sorted</span>(data<span style="color:#555">.</span>keys()):
+        ben<span style="color:#555">.</span>append(self<span style="color:#555">.</span>_encode_string(key))
+        ben<span style="color:#555">.</span>append(self<span style="color:#555">.</span>_local_encode(data[key]))
+    ben<span style="color:#555">.</span>append(<span style="color:#c30"></span><span style="color:#c30">&#39;e&#39;</span>)
+    <span style="color:#069;font-weight:bold">return</span><span style="color:#c30"></span><span style="color:#c30">&#39;&#39;</span><span style="color:#555">.</span>join(ben)</code></pre></div>
 
 <p>This came out simpler and cleaner than I expected for encoding.  But it is a really simple format, so it shouldn&rsquo;t be too complex.</p>
 
@@ -255,77 +245,67 @@
 
 <p>For my external decode method, I&rsquo;m using a class level pointer for the bencoded string and walking through it.  I setup those two variables and call into _local_decode.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">decode</span>(<span style="color: #336666">self</span>, ben_string):
-    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Returns the data structure defined by the Bencoded string &quot;&quot;&quot;</span>
-    <span style="color: #006699; font-weight: bold">try</span>:
-        <span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string <span style="color: #555555">=</span> ben_string
-        <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
-        <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_local_decode()
-    <span style="color: #006699; font-weight: bold">except</span> <span style="color: #CC0000; font-weight: bold">IndexError</span> <span style="color: #006699; font-weight: bold">as</span> e:
-        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Index Error at Pointer = </span><span style="color: #AA0000">%d</span><span style="color: #CC3300"> of </span><span style="color: #AA0000">%d</span><span style="color: #CC3300; font-weight: bold">\n</span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&quot;</span> <span style="color: #555555">%</span> (<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer, <span style="color: #336666">len</span>(<span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string), <span style="color: #336666">str</span>(e)))
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">decode</span>(self, ben_string):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; Returns the data structure defined by the Bencoded string &#34;&#34;&#34;</span>
+    <span style="color:#069;font-weight:bold">try</span>:
+        self<span style="color:#555">.</span>_ben_string <span style="color:#555">=</span> ben_string
+        self<span style="color:#555">.</span>_pointer <span style="color:#555">=</span> <span style="color:#f60">0</span>
+        <span style="color:#069;font-weight:bold">return</span> self<span style="color:#555">.</span>_local_decode()
+    <span style="color:#069;font-weight:bold">except</span> <span style="color:#c00;font-weight:bold">IndexError</span> <span style="color:#069;font-weight:bold">as</span> e:
+        <span style="color:#069;font-weight:bold">print</span>(<span style="color:#c30"></span><span style="color:#c30">&#34;Index Error at Pointer = </span><span style="color:#a00">%d</span><span style="color:#c30"> of </span><span style="color:#a00">%d</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#a00">%s</span><span style="color:#c30">&#34;</span> <span style="color:#555">%</span> (self<span style="color:#555">.</span>_pointer, <span style="color:#366">len</span>(self<span style="color:#555">.</span>_ben_string), <span style="color:#366">str</span>(e)))</code></pre></div>
 
 <p>While I thought I might use the dictonary mapped methods again, I couldn&rsquo;t find a clean way to handle the 11 possible cases for integer.  So, I decided to just just go old school flow control.  This is one situation that I would have used a switch statement with an else case if it was available in Python.  If you have a more Pythonic way of doing this, please ley me know!</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_local_decode</span>(<span style="color: #336666">self</span>):
-    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; Detects and returns the proper Bencoded data type starting at current Pointer position &quot;&quot;&quot;</span>
-    cur_char <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string[<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer]
-    <span style="color: #006699; font-weight: bold">if</span> cur_char <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;i&#39;</span>:
-        <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_parse_integer()
-    <span style="color: #006699; font-weight: bold">elif</span> cur_char <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;l&#39;</span>:
-        <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_parse_list()
-    <span style="color: #006699; font-weight: bold">elif</span> cur_char <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;d&#39;</span>:
-        <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_parse_dictionary()
-    <span style="color: #006699; font-weight: bold">elif</span> cur_char <span style="color: #000000; font-weight: bold">in</span> (<span style="color: #CC3300">&#39;-&#39;</span>, <span style="color: #CC3300">&#39;0&#39;</span>, <span style="color: #CC3300">&#39;1&#39;</span>, <span style="color: #CC3300">&#39;2&#39;</span>, <span style="color: #CC3300">&#39;3&#39;</span>, <span style="color: #CC3300">&#39;4&#39;</span>, <span style="color: #CC3300">&#39;5&#39;</span>, <span style="color: #CC3300">&#39;6&#39;</span>, <span style="color: #CC3300">&#39;7&#39;</span>, <span style="color: #CC3300">&#39;8&#39;</span>, <span style="color: #CC3300">&#39;9&#39;</span>):
-        <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_parse_byte_string()
-    <span style="color: #006699; font-weight: bold">else</span>:
-        <span style="color: #006699; font-weight: bold">raise</span> <span style="color: #CC0000; font-weight: bold">Exception</span>(<span style="color: #CC3300">&#39;Invalid character detected at position </span><span style="color: #AA0000">%d</span><span style="color: #CC3300"> : </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&#39;</span> <span style="color: #555555">%</span> (<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer, <span style="color: #336666">str</span>(cur_char)))
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_local_decode</span>(self):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; Detects and returns the proper Bencoded data type starting at current Pointer position &#34;&#34;&#34;</span>
+    cur_char <span style="color:#555">=</span> self<span style="color:#555">.</span>_ben_string[self<span style="color:#555">.</span>_pointer]
+    <span style="color:#069;font-weight:bold">if</span> cur_char <span style="color:#555">==</span> <span style="color:#c30"></span><span style="color:#c30">&#39;i&#39;</span>:
+        <span style="color:#069;font-weight:bold">return</span> self<span style="color:#555">.</span>_parse_integer()
+    <span style="color:#069;font-weight:bold">elif</span> cur_char <span style="color:#555">==</span> <span style="color:#c30"></span><span style="color:#c30">&#39;l&#39;</span>:
+        <span style="color:#069;font-weight:bold">return</span> self<span style="color:#555">.</span>_parse_list()
+    <span style="color:#069;font-weight:bold">elif</span> cur_char <span style="color:#555">==</span> <span style="color:#c30"></span><span style="color:#c30">&#39;d&#39;</span>:
+        <span style="color:#069;font-weight:bold">return</span> self<span style="color:#555">.</span>_parse_dictionary()
+    <span style="color:#069;font-weight:bold">elif</span> cur_char <span style="color:#000;font-weight:bold">in</span> (<span style="color:#c30"></span><span style="color:#c30">&#39;-&#39;</span>, <span style="color:#c30"></span><span style="color:#c30">&#39;0&#39;</span>, <span style="color:#c30"></span><span style="color:#c30">&#39;1&#39;</span>, <span style="color:#c30"></span><span style="color:#c30">&#39;2&#39;</span>, <span style="color:#c30"></span><span style="color:#c30">&#39;3&#39;</span>, <span style="color:#c30"></span><span style="color:#c30">&#39;4&#39;</span>, <span style="color:#c30"></span><span style="color:#c30">&#39;5&#39;</span>, <span style="color:#c30"></span><span style="color:#c30">&#39;6&#39;</span>, <span style="color:#c30"></span><span style="color:#c30">&#39;7&#39;</span>, <span style="color:#c30"></span><span style="color:#c30">&#39;8&#39;</span>, <span style="color:#c30"></span><span style="color:#c30">&#39;9&#39;</span>):
+        <span style="color:#069;font-weight:bold">return</span> self<span style="color:#555">.</span>_parse_byte_string()
+    <span style="color:#069;font-weight:bold">else</span>:
+        <span style="color:#069;font-weight:bold">raise</span> <span style="color:#c00;font-weight:bold">Exception</span>(<span style="color:#c30"></span><span style="color:#c30">&#39;Invalid character detected at position </span><span style="color:#a00">%d</span><span style="color:#c30"> : </span><span style="color:#a00">%s</span><span style="color:#c30">&#39;</span> <span style="color:#555">%</span> (self<span style="color:#555">.</span>_pointer, <span style="color:#366">str</span>(cur_char)))</code></pre></div>
 
 <p>Before we get into Integer and String decoding, we have a helper function.  Both the Integer and the String will have a certain number of characters to parse into an integer.
 The only difference is the stop character.  For the String, this is the length of the string with &lsquo;:&rsquo; end character.  For the Integer, this is the actual data value with &lsquo;e&rsquo; end character.<br />
 You will see this method called from both decode methods.  Note that the int() parsing handles the leading &lsquo;-&rsquo; fine for negative integers.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_get_number</span>(<span style="color: #336666">self</span>, end_char):
-    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; </span>
-<span style="color: #CC3300; font-style: italic">    Returns number in string up to termination character given. </span>
-<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_get_number</span>(self, end_char):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; 
+</span><span style="color:#c30">    Returns number in string up to termination character given. 
+</span><span style="color:#c30">    &#34;&#34;&#34;</span>
     
-    start_pointer <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer
-    <span style="color: #006699; font-weight: bold">while</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string[<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer] <span style="color: #555555">!=</span> end_char:
-        <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
-    num <span style="color: #555555">=</span> <span style="color: #336666">int</span>(<span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string[start_pointer:<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer])  <span style="color: #0099FF; font-style: italic"># Parse int</span>
-    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>  <span style="color: #0099FF; font-style: italic"># Consume the end_char</span>
-    <span style="color: #006699; font-weight: bold">return</span> num
-</pre></div>
-
+    start_pointer <span style="color:#555">=</span> self<span style="color:#555">.</span>_pointer
+    <span style="color:#069;font-weight:bold">while</span> self<span style="color:#555">.</span>_ben_string[self<span style="color:#555">.</span>_pointer] <span style="color:#555">!=</span> end_char:
+        self<span style="color:#555">.</span>_pointer <span style="color:#555">+=</span> <span style="color:#f60">1</span>
+    num <span style="color:#555">=</span> <span style="color:#366">int</span>(self<span style="color:#555">.</span>_ben_string[start_pointer:self<span style="color:#555">.</span>_pointer])  <span style="color:#09f;font-style:italic"># Parse int</span>
+    self<span style="color:#555">.</span>_pointer <span style="color:#555">+=</span> <span style="color:#f60">1</span>  <span style="color:#09f;font-style:italic"># Consume the end_char</span>
+    <span style="color:#069;font-weight:bold">return</span> num</code></pre></div>
 
 <p>The only job of the integer decode method is to consume the leading character that doesn&rsquo;t exist in the string integer.  Then all the work is turned over to the _get_number method above up to the &lsquo;e&rsquo; character.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_parse_integer</span>(<span style="color: #336666">self</span>):
-    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; </span>
-<span style="color: #CC3300; font-style: italic">    Parses a Bencoded Integer type of format i&lt;number&gt;e</span>
-<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
-    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>  <span style="color: #0099FF; font-style: italic"># Consume the &#39;i&#39; start character</span>
-    <span style="color: #006699; font-weight: bold">return</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_get_number(<span style="color: #CC3300">&#39;e&#39;</span>)
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_parse_integer</span>(self):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; 
+</span><span style="color:#c30">    Parses a Bencoded Integer type of format i&lt;number&gt;e
+</span><span style="color:#c30">    &#34;&#34;&#34;</span>
+    self<span style="color:#555">.</span>_pointer <span style="color:#555">+=</span> <span style="color:#f60">1</span>  <span style="color:#09f;font-style:italic"># Consume the &#39;i&#39; start character</span>
+    <span style="color:#069;font-weight:bold">return</span> self<span style="color:#555">.</span>_get_number(<span style="color:#c30"></span><span style="color:#c30">&#39;e&#39;</span>)</code></pre></div>
 
 <p>The String decoding gets the length integer this the helper function up to the &lsquo;:&rsquo; character.  Then it gets the string for return, and increments the pointer past the string.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_parse_byte_string</span>(<span style="color: #336666">self</span>):
-    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
-<span style="color: #CC3300; font-style: italic">    Parses a Bencoded Byte String type of format &lt;len&gt;:&lt;byte string&gt; </span>
-<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_parse_byte_string</span>(self):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34;
+</span><span style="color:#c30">    Parses a Bencoded Byte String type of format &lt;len&gt;:&lt;byte string&gt; 
+</span><span style="color:#c30">    &#34;&#34;&#34;</span>
 
-    str_len <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_get_number(<span style="color: #CC3300">&#39;:&#39;</span>)
-    byte_string <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string[<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer:<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+</span> str_len]
-    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> str_len  <span style="color: #0099FF; font-style: italic"># Consume the byte string</span>
-    <span style="color: #006699; font-weight: bold">return</span> byte_string
-</pre></div>
-
+    str_len <span style="color:#555">=</span> self<span style="color:#555">.</span>_get_number(<span style="color:#c30"></span><span style="color:#c30">&#39;:&#39;</span>)
+    byte_string <span style="color:#555">=</span> self<span style="color:#555">.</span>_ben_string[self<span style="color:#555">.</span>_pointer:self<span style="color:#555">.</span>_pointer <span style="color:#555">+</span> str_len]
+    self<span style="color:#555">.</span>_pointer <span style="color:#555">+=</span> str_len  <span style="color:#09f;font-style:italic"># Consume the byte string</span>
+    <span style="color:#069;font-weight:bold">return</span> byte_string</code></pre></div>
 
 <p>The list starts with &lsquo;l&rsquo; and ends with &lsquo;e&rsquo;.  So we move the pointer to consume the &lsquo;l&rsquo;, then we loop until the current pointer character is an &lsquo;e&rsquo;.  Each time through the while,
 the class level pointer might increment quite a bit, as data items are consumed.  However, we are not at the end of the list until we see a letter &lsquo;e&rsquo;.</p>
@@ -334,40 +314,36 @@ the class level pointer might increment quite a bit, as data items are consumed.
 
 <p>Since it is the responsibility of all the decoding methods to consume their bytes, we increment the pointer to move past the list termination &lsquo;e&rsquo; at the end.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_parse_list</span>(<span style="color: #336666">self</span>):
-    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot; </span>
-<span style="color: #CC3300; font-style: italic">    Parses a Bencoded List type of format l&lt;contents&gt;e</span>
-<span style="color: #CC3300; font-style: italic">    </span>
-<span style="color: #CC3300; font-style: italic">    All members of the list as simply appended together in Bencode format to make up &lt;contents&gt;</span>
-<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
-    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>  <span style="color: #0099FF; font-style: italic"># Consume the &#39;l&#39; start character</span>
-    val <span style="color: #555555">=</span> []
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_parse_list</span>(self):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; 
+</span><span style="color:#c30">    Parses a Bencoded List type of format l&lt;contents&gt;e
+</span><span style="color:#c30">    
+</span><span style="color:#c30">    All members of the list as simply appended together in Bencode format to make up &lt;contents&gt;
+</span><span style="color:#c30">    &#34;&#34;&#34;</span>
+    self<span style="color:#555">.</span>_pointer <span style="color:#555">+=</span> <span style="color:#f60">1</span>  <span style="color:#09f;font-style:italic"># Consume the &#39;l&#39; start character</span>
+    val <span style="color:#555">=</span> []
     
-    <span style="color: #006699; font-weight: bold">while</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string[<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer] <span style="color: #555555">!=</span> <span style="color: #CC3300">&#39;e&#39;</span>:
-        val<span style="color: #555555">.</span>append(<span style="color: #336666">self</span><span style="color: #555555">.</span>_local_decode())
+    <span style="color:#069;font-weight:bold">while</span> self<span style="color:#555">.</span>_ben_string[self<span style="color:#555">.</span>_pointer] <span style="color:#555">!=</span> <span style="color:#c30"></span><span style="color:#c30">&#39;e&#39;</span>:
+        val<span style="color:#555">.</span>append(self<span style="color:#555">.</span>_local_decode())
     
-    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span> <span style="color: #0099FF; font-style: italic"># Consume the &#39;e&#39; termination character</span>
-    <span style="color: #006699; font-weight: bold">return</span> val
-</pre></div>
-
+    self<span style="color:#555">.</span>_pointer <span style="color:#555">+=</span> <span style="color:#f60">1</span> <span style="color:#09f;font-style:italic"># Consume the &#39;e&#39; termination character</span>
+    <span style="color:#069;font-weight:bold">return</span> val</code></pre></div>
 
 <p>This is very similar to list processing, with the addition of the key.  We know that the key is required to be a byte string, so we call directly to that method.</p>
 
-<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">_parse_dictionary</span>(<span style="color: #336666">self</span>):
-    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;    Parses a Bencoded Dictionary type of format d&lt;pairs&gt;e</span>
-
-<span style="color: #CC3300; font-style: italic">    All pairs consist of ByteString key followed by any valid data type</span>
-<span style="color: #CC3300; font-style: italic">    &quot;&quot;&quot;</span>
-    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>  <span style="color: #0099FF; font-style: italic"># Consume the &#39;d&#39; start character</span>
-    be_dict <span style="color: #555555">=</span> {}
-    <span style="color: #006699; font-weight: bold">while</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_ben_string[<span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer] <span style="color: #555555">!=</span> <span style="color: #CC3300">&#39;e&#39;</span>:
-        key <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_parse_byte_string()   <span style="color: #0099FF; font-style: italic"># Skipping local decode, because key must be a byte string</span>
-        val <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>_local_decode()
-        be_dict[key] <span style="color: #555555">=</span> val
-    <span style="color: #336666">self</span><span style="color: #555555">.</span>_pointer <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>  <span style="color: #0099FF; font-style: italic"># Consume the &#39;e&#39; termination character</span>
-    <span style="color: #006699; font-weight: bold">return</span> be_dict
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_parse_dictionary</span>(self):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34;    Parses a Bencoded Dictionary type of format d&lt;pairs&gt;e
+</span><span style="color:#c30">
+</span><span style="color:#c30">    All pairs consist of ByteString key followed by any valid data type
+</span><span style="color:#c30">    &#34;&#34;&#34;</span>
+    self<span style="color:#555">.</span>_pointer <span style="color:#555">+=</span> <span style="color:#f60">1</span>  <span style="color:#09f;font-style:italic"># Consume the &#39;d&#39; start character</span>
+    be_dict <span style="color:#555">=</span> {}
+    <span style="color:#069;font-weight:bold">while</span> self<span style="color:#555">.</span>_ben_string[self<span style="color:#555">.</span>_pointer] <span style="color:#555">!=</span> <span style="color:#c30"></span><span style="color:#c30">&#39;e&#39;</span>:
+        key <span style="color:#555">=</span> self<span style="color:#555">.</span>_parse_byte_string()   <span style="color:#09f;font-style:italic"># Skipping local decode, because key must be a byte string</span>
+        val <span style="color:#555">=</span> self<span style="color:#555">.</span>_local_decode()
+        be_dict[key] <span style="color:#555">=</span> val
+    self<span style="color:#555">.</span>_pointer <span style="color:#555">+=</span> <span style="color:#f60">1</span>  <span style="color:#09f;font-style:italic"># Consume the &#39;e&#39; termination character</span>
+    <span style="color:#069;font-weight:bold">return</span> be_dict</code></pre></div>
 
 <p>If you have a cleaner implementation you would like to share, please contact me.  I found the few iterations on this to be enjoyable and a good learning experience.</p>
 
@@ -395,8 +371,8 @@ the class level pointer might increment quite a bit, as data items are consumed.
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
                         
 
                     </div>
@@ -418,8 +394,8 @@ the class level pointer might increment quite a bit, as data items are consumed.
             </li><li><a href="http://www.joesacher.com/categories/how-to" class="text-uppercase">how-to (5)</a>
             </li><li><a href="http://www.joesacher.com/categories/personal" class="text-uppercase">personal (9)</a>
             </li><li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
-            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (27)</a>
-            </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (48)</a>
+            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (29)</a>
+            </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (45)</a>
             </li>
         </ul>
     </div>
@@ -434,8 +410,9 @@ the class level pointer might increment quite a bit, as data items are consumed.
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
             <li><a href="http://www.joesacher.com/series/hugo" class="text-uppercase">hugo (4)</a>
+            </li><li><a href="http://www.joesacher.com/series/python-tips" class="text-uppercase">python-tips (2)</a>
             </li><li><a href="http://www.joesacher.com/series/python-to-rust" class="text-uppercase">python-to-rust (4)</a>
-            </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (48)</a>
+            </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (45)</a>
             </li>
         </ul>
     </div>
@@ -453,12 +430,14 @@ the class level pointer might increment quite a bit, as data items are consumed.
             </li><li><a href="http://www.joesacher.com/tags/bicycle-touring"><i class="fa fa-tags"></i> bicycle-touring</a>
             </li><li><a href="http://www.joesacher.com/tags/book-review"><i class="fa fa-tags"></i> book-review</a>
             </li><li><a href="http://www.joesacher.com/tags/calendars"><i class="fa fa-tags"></i> calendars</a>
+            </li><li><a href="http://www.joesacher.com/tags/comprehensions"><i class="fa fa-tags"></i> comprehensions</a>
             </li><li><a href="http://www.joesacher.com/tags/cooking"><i class="fa fa-tags"></i> cooking</a>
             </li><li><a href="http://www.joesacher.com/tags/cycling"><i class="fa fa-tags"></i> cycling</a>
             </li><li><a href="http://www.joesacher.com/tags/dessert"><i class="fa fa-tags"></i> dessert</a>
             </li><li><a href="http://www.joesacher.com/tags/dry-bag"><i class="fa fa-tags"></i> dry-bag</a>
             </li><li><a href="http://www.joesacher.com/tags/ebooks"><i class="fa fa-tags"></i> ebooks</a>
             </li><li><a href="http://www.joesacher.com/tags/electronics"><i class="fa fa-tags"></i> electronics</a>
+            </li><li><a href="http://www.joesacher.com/tags/enumerate"><i class="fa fa-tags"></i> enumerate</a>
             </li><li><a href="http://www.joesacher.com/tags/fiction"><i class="fa fa-tags"></i> fiction</a>
             </li><li><a href="http://www.joesacher.com/tags/film-making"><i class="fa fa-tags"></i> film-making</a>
             </li><li><a href="http://www.joesacher.com/tags/google"><i class="fa fa-tags"></i> google</a>
@@ -487,8 +466,10 @@ the class level pointer might increment quite a bit, as data items are consumed.
             </li><li><a href="http://www.joesacher.com/tags/rust"><i class="fa fa-tags"></i> rust</a>
             </li><li><a href="http://www.joesacher.com/tags/safety"><i class="fa fa-tags"></i> safety</a>
             </li><li><a href="http://www.joesacher.com/tags/sewing"><i class="fa fa-tags"></i> sewing</a>
+            </li><li><a href="http://www.joesacher.com/tags/strings"><i class="fa fa-tags"></i> strings</a>
             </li><li><a href="http://www.joesacher.com/tags/touchpad"><i class="fa fa-tags"></i> touchpad</a>
             </li><li><a href="http://www.joesacher.com/tags/touring"><i class="fa fa-tags"></i> touring</a>
+            </li><li><a href="http://www.joesacher.com/tags/unicode"><i class="fa fa-tags"></i> unicode</a>
             </li><li><a href="http://www.joesacher.com/tags/video"><i class="fa fa-tags"></i> video</a>
             </li><li><a href="http://www.joesacher.com/tags/web"><i class="fa fa-tags"></i> web</a>
             </li><li><a href="http://www.joesacher.com/tags/webos"><i class="fa fa-tags"></i> webos</a>
