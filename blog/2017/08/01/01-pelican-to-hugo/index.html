@@ -148,9 +148,7 @@
                                 <p class="series_top_page">This post is part of the <a href="http://www.joesacher.com//series/hugo">Hugo</a> series.</p>
                                 <p>I&rsquo;ve used Python as my main programming language for a few years.  When my Word Press was hacked and defaced yet again, I finally decided to rebuild my website with a static generator and host on GitHub.  I leaned towards <a href="https://blog.getpelican.com/">Pelican</a>, due to the Python base that I thought I could modify if I needed.  And I hoped that I could get it to work easily.</p>
 
-<p>I did get everything converted over to .rst format and rendering.  I didn&rsquo;t really like the template that I was able to get working, but the site was back up.  I even created new content.  Then I switched my main computers and had trouble getting Pelican to work again.  For some things, Windows Python is a pain.</p>
-
-<p>This leads to a two years that I just didn&rsquo;t update my web site, because I didn&rsquo;t get Pelican building again.  And it looks like even longer, because what I was updating was my Trans-Am entries, that I&rsquo;m posting on the date they happened in 2002.</p>
+<p>I did get everything converted over to .rst format and rendering.  I didn&rsquo;t really like the template that I was able to get working, but the site was back up.  I even created new content.  Then I switched my main computers and had trouble getting Pelican to work again.  For some things, Windows Python is a pain.  I was able to get it rendering for some new content ealry this year, but it really was not a great experience and render times continue to climb.</p>
 
 <p>Over vacation, I looked at <a href="https://golang.org/">Go</a> and <a href="https://www.rust-lang.org/">Rust</a>.  These are often talked about like they are competing languages, but they really have mostly different domains.  I think I would be more productive with Go, but it would not help me grow as a programmer.  I also was a little annoyed that there were many blessed data types, that do things you are not allowed to do with the language.  Rust has much less of this, as most of the language is implemented IN the language.  However, it has an undeniably more difficult learning curve.</p>
 
@@ -158,9 +156,9 @@
 
 <p>It took me a few days to get up to speed in Hugo and with Go Templates.  Then I converted my .rst files to .md files and changed the front matter.  With it not being as flexible in url pathing, I was happy to see alias, which are easy redirects for content.  I can point my old category paths to current date paths with no loss of search engine results.</p>
 
-<p>There are still a few warts, like the crazy ton of empty lines when you process a template.  This is apparently going away with Go 1.6 that will be used for compiling the next version.  Hopefully, having a working build system will get me to update this site more often.</p>
+<p>There are still a few warts, like the crazy ton of empty lines when you process a template.  This is apparently going away with Go 1.6 that will be used for compiling the next version.</p>
 
-<p>I&rsquo;ve said that before.</p>
+<p>Note: I later learned that the secret to eliminating all the rendering new lines is in the template coding.  The changing of tags from <code>{{</code> to <code>{{-</code> will eliminate the white space between the opening and closing tags.  When I was looping through pages to build series, this was resulting in many spaces and newlines.  That has been cleaned up and taken care of with the next generation of the site.</p>
 
                                 <hr/>
         <p>Part 1 of 4
@@ -210,7 +208,7 @@
             </li><li><a href="http://www.joesacher.com/categories/how-to" class="text-uppercase">how-to (5)</a>
             </li><li><a href="http://www.joesacher.com/categories/personal" class="text-uppercase">personal (9)</a>
             </li><li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
-            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (29)</a>
+            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (31)</a>
             </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (45)</a>
             </li>
         </ul>
@@ -226,7 +224,7 @@
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
             <li><a href="http://www.joesacher.com/series/hugo" class="text-uppercase">hugo (4)</a>
-            </li><li><a href="http://www.joesacher.com/series/python-tips" class="text-uppercase">python-tips (2)</a>
+            </li><li><a href="http://www.joesacher.com/series/python-tips" class="text-uppercase">python-tips (4)</a>
             </li><li><a href="http://www.joesacher.com/series/python-to-rust" class="text-uppercase">python-to-rust (4)</a>
             </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (45)</a>
             </li>
@@ -249,6 +247,7 @@
             </li><li><a href="http://www.joesacher.com/tags/comprehensions"><i class="fa fa-tags"></i> comprehensions</a>
             </li><li><a href="http://www.joesacher.com/tags/cooking"><i class="fa fa-tags"></i> cooking</a>
             </li><li><a href="http://www.joesacher.com/tags/cycling"><i class="fa fa-tags"></i> cycling</a>
+            </li><li><a href="http://www.joesacher.com/tags/decorators"><i class="fa fa-tags"></i> decorators</a>
             </li><li><a href="http://www.joesacher.com/tags/dessert"><i class="fa fa-tags"></i> dessert</a>
             </li><li><a href="http://www.joesacher.com/tags/dry-bag"><i class="fa fa-tags"></i> dry-bag</a>
             </li><li><a href="http://www.joesacher.com/tags/ebooks"><i class="fa fa-tags"></i> ebooks</a>
@@ -256,6 +255,7 @@
             </li><li><a href="http://www.joesacher.com/tags/enumerate"><i class="fa fa-tags"></i> enumerate</a>
             </li><li><a href="http://www.joesacher.com/tags/fiction"><i class="fa fa-tags"></i> fiction</a>
             </li><li><a href="http://www.joesacher.com/tags/film-making"><i class="fa fa-tags"></i> film-making</a>
+            </li><li><a href="http://www.joesacher.com/tags/functions"><i class="fa fa-tags"></i> functions</a>
             </li><li><a href="http://www.joesacher.com/tags/google"><i class="fa fa-tags"></i> google</a>
             </li><li><a href="http://www.joesacher.com/tags/hacking"><i class="fa fa-tags"></i> hacking</a>
             </li><li><a href="http://www.joesacher.com/tags/ham-radio"><i class="fa fa-tags"></i> ham-radio</a>

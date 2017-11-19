@@ -58,6 +58,16 @@
   </url>
   
   <url>
+    <loc>http://www.joesacher.com/blog/2017/05/20/04-mutable-defaults-and-decorators/</loc>
+    <lastmod>2017-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2017/04/22/03-functions-and-mutable-defaults/</loc>
+    <lastmod>2017-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/blog/2017/04/15/02-strings/</loc>
     <lastmod>2017-04-15T00:00:00+00:00</lastmod>
   </url>
@@ -595,20 +605,26 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/cooking/</loc>
-    <lastmod>2008-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://www.joesacher.com/tags/cooking/</loc>
     <lastmod>2008-03-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>http://www.joesacher.com/categories/cooking/</loc>
+    <lastmod>2008-01-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/tags/cycling/</loc>
     <lastmod>2002-03-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/tags/decorators/</loc>
+    <lastmod>2017-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -661,6 +677,12 @@
   </url>
   
   <url>
+    <loc>http://www.joesacher.com/tags/functions/</loc>
+    <lastmod>2017-04-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/tags/google/</loc>
     <lastmod>2017-08-03T02:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -685,13 +707,13 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/series/hugo/</loc>
+    <loc>http://www.joesacher.com/tags/hugo/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/hugo/</loc>
+    <loc>http://www.joesacher.com/series/hugo/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -751,14 +773,14 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/personal/</loc>
-    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/tags/personal/</loc>
+    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/personal/</loc>
-    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/categories/personal/</loc>
+    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -806,7 +828,7 @@
   
   <url>
     <loc>http://www.joesacher.com/series/python-tips/</loc>
-    <lastmod>2017-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
