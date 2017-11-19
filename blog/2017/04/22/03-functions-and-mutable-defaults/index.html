@@ -148,7 +148,7 @@
                                 <p class="series_top_page">This post is part of the <a href="http://www.joesacher.com//series/python-tips">Python Tips</a> series.</p>
                                 
 
-<p>Default arguments in Python allow you to make complex methods very easy to use.  They can be called with mostly defaults or called with as much configuration as needed.  This comes with a gotcha for those getting started in this.  If you use mutable data structures as defaults, things don&rsquo;t behave exactly as you would expect.</p>
+<p>Default arguments in Python allow you to make complex functions very easy to use.  They can be called with mostly defaults or called with as much configuration as needed.  This comes with a gotcha for those getting started in this.  If you use mutable data structures as defaults, things don&rsquo;t behave exactly as you would expect.</p>
 
 <p>However, before we start, lets cover some things you may not know that I will use in the code.  And others that are just interesting and partially related.</p>
 
@@ -156,22 +156,22 @@
 
 <p>Once we get done with all the detours, you will see <code>*items</code> as a parameter in the code below.  Prefixing an argument with a single <code>*</code> means that you will collect all unnamed parameters into an argument list.  If you have single arguments you wish to capture outside of this, they just need to appear prior to the catch all variable.  This is most commonly used with the term <code>*args</code> for <strong>arg</strong>ument<strong>s</strong>, which is fine if representing generic or various types of data.  However, I prefer to make a clearer name when possible.  So here is used <code>*items</code> as we are sending items of a list.</p>
 
-<p>We are not using <code>**kwargs</code>, or the <code>**</code> style, but this is used to expand <strong>k</strong>ey <strong>w</strong>ord <strong>arg</strong>ument<strong>s</strong>.  So you can think of a dictionary being passed in.  Here is a method that takes key word arguments and just prints them up.  Notice how we are using <code>.items()</code> which is the same way to get (key, value) pairs out of a dictionary.</p>
+<p>We are not using <code>**kwargs</code>, or the <code>**</code> style, but this is used to expand <strong>k</strong>ey <strong>w</strong>ord <strong>arg</strong>ument<strong>s</strong>.  So you can think of a dictionary being passed in.  Here is a function that takes key word arguments and just prints them up.  Notice how we are using <code>.items()</code> which is the same way to get (key, value) pairs out of a dictionary.</p>
 
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">my_method</span>(<span style="color:#555">**</span>kwargs):
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">my_function</span>(<span style="color:#555">**</span>kwargs):
     <span style="color:#069;font-weight:bold">for</span> (key, value) <span style="color:#000;font-weight:bold">in</span> kwargs<span style="color:#555">.</span>items():
         <span style="color:#069;font-weight:bold">print</span>(<span style="color:#c30"></span><span style="color:#c30">&#39;{} - {}&#39;</span><span style="color:#555">.</span>format(key, value))</code></pre></div>
 
 <p>We can call this with two arguments and look at the output:</p>
 
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_method(joe<span style="color:#555">=</span><span style="color:#c30"></span><span style="color:#c30">&#39;corny&#39;</span>, amy<span style="color:#555">=</span><span style="color:#c30"></span><span style="color:#c30">&#39;amazing&#39;</span>)</code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_function(joe<span style="color:#555">=</span><span style="color:#c30"></span><span style="color:#c30">&#39;corny&#39;</span>, amy<span style="color:#555">=</span><span style="color:#c30"></span><span style="color:#c30">&#39;amazing&#39;</span>)</code></pre></div>
 
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">joe - corny
 amy - amazing</code></pre></div>
 
 <p>Lets go a little crazier:</p>
 
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_method(a<span style="color:#555">=</span><span style="color:#f60">1</span>, b<span style="color:#555">=</span><span style="color:#f60">2</span>, c<span style="color:#555">=</span><span style="color:#f60">3</span>, ddddddd<span style="color:#555">=</span><span style="color:#f60">4</span>, i<span style="color:#555">=</span><span style="color:#c30"></span><span style="color:#c30">&#39;am&#39;</span>, getting<span style="color:#555">=</span><span style="color:#c30"></span><span style="color:#c30">&#39;tired&#39;</span>, of<span style="color:#555">=</span><span style="color:#c30"></span><span style="color:#c30">&#39;arguments&#39;</span>)</code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_function(a<span style="color:#555">=</span><span style="color:#f60">1</span>, b<span style="color:#555">=</span><span style="color:#f60">2</span>, c<span style="color:#555">=</span><span style="color:#f60">3</span>, ddddddd<span style="color:#555">=</span><span style="color:#f60">4</span>, i<span style="color:#555">=</span><span style="color:#c30"></span><span style="color:#c30">&#39;am&#39;</span>, getting<span style="color:#555">=</span><span style="color:#c30"></span><span style="color:#c30">&#39;tired&#39;</span>, of<span style="color:#555">=</span><span style="color:#c30"></span><span style="color:#c30">&#39;arguments&#39;</span>)</code></pre></div>
 
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">a - 1
 b - 2
@@ -186,19 +186,19 @@ of - arguments</code></pre></div>
 <p>New with Python 3 is the ability to force named arguments.  This means they must be entered with the name.  This is easiest to show with a few examples.</p>
 
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">print_label</span>(label_text, inverted, mirrored, flipped):
-    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; Method for printing label with many boolean args &#34;&#34;&#34;</span>
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; function for printing label with many boolean args &#34;&#34;&#34;</span>
     <span style="color:#069;font-weight:bold">pass</span>
 
 print_label(<span style="color:#c30"></span><span style="color:#c30">&#39;My Text&#39;</span>, False, True, False)</code></pre></div>
 
-<p>While I would define the <code>print_label</code> method with good defaults for the last three arguments, I didn&rsquo;t want to here as I don&rsquo;t want you to think that forcing named arguments requires arguments with defaults.</p>
+<p>While I would define the <code>print_label</code> function with good defaults for the last three arguments, I didn&rsquo;t want to here as I don&rsquo;t want you to think that forcing named arguments requires arguments with defaults.</p>
 
 <p>If you saw that <code>print_label</code> call somewhere in code, how easy would it be to figure out what is going on?  Sure, you knew at the time you were coding as you just saw the definition or PyCharm popped up hints.</p>
 
 <p>Just reading through source code, it will be impossible to understand.  <strong>This is bad</strong>.</p>
 
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">print_label</span>(label_text, <span style="color:#555">*</span>, inverted, mirrored, flipped):
-    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; Method for printing label with many boolean args &#34;&#34;&#34;</span>
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34; function for printing label with many boolean args &#34;&#34;&#34;</span>
     <span style="color:#069;font-weight:bold">pass</span>
 
 print_label(<span style="color:#c30"></span><span style="color:#c30">&#39;My Text&#39;</span>, False, True, False)  <span style="color:#09f;font-style:italic"># Errors</span>
@@ -212,7 +212,7 @@ print_label(<span style="color:#c30"></span><span style="color:#c30">&#39;My Tex
 
 <h3 id="last-detour-i-promise">Last detour, I promise</h3>
 
-<p>Since we talked about <code>*</code> and <code>**</code> in receiving arguments to a function, I wanted to cover the idea of expanding lists and dictionaries.  The syntax is the same.  If you have a tuple with three items and wish to send those arguments into a method, you would just use <code>*tuple_var</code>.  This expands them into separate arguments.  Without this, you would be sending the tuple as the first argument.  This works the same for a list as a tuple.  For a dict, just use <code>**dict_var</code> to send named arguments in.</p>
+<p>Since we talked about <code>*</code> and <code>**</code> in receiving arguments to a function, I wanted to cover the idea of expanding lists and dictionaries.  The syntax is the same.  If you have a tuple with three items and wish to send those arguments into a function, you would just use <code>*tuple_var</code>.  This expands them into separate arguments.  Without this, you would be sending the tuple as the first argument.  This works the same for a list as a tuple.  For a dict, just use <code>**dict_var</code> to send named arguments in.</p>
 
 <h3 id="back-to-default-mutability">Back to default mutability</h3>
 
@@ -242,7 +242,7 @@ list_d <span style="color:#555">=</span> append_values(<span style="color:#f60">
 
 <p>How is this possible, with the default values of <code>[]</code>?  Here is the issue with using mutable types as defaults.</p>
 
-<p>When a method is created, Python keeps data related to it.  The default arguments are created and stored.  Each time the method is called, Python doesn&rsquo;t recreate it.  This would be wasteful.  It just looks at the values and uses them.  So this default list starts empty.  However, in the list_a call, we are using it and appending 1 and 2 into it.  list_b and list_c are not using the default, so these default values stay dormant.  list_d again uses the default list, which is not empty but <code>[1, 2]</code> from the list_a call.  This is why we get the values instead of an empty list.</p>
+<p>When a function is created, Python keeps data related to it.  The default arguments are created and stored.  Each time the function is called, Python doesn&rsquo;t recreate it.  This would be wasteful.  It just looks at the values and uses them.  So this default list starts empty.  However, in the list_a call, we are using it and appending 1 and 2 into it.  list_b and list_c are not using the default, so these default values stay dormant.  list_d again uses the default list, which is not empty but <code>[1, 2]</code> from the list_a call.  This is why we get the values instead of an empty list.</p>
 
 <h3 id="using-inspect">Using inspect</h3>
 
@@ -261,7 +261,7 @@ list_d <span style="color:#555">=</span> append_values(<span style="color:#f60">
 
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">FullArgSpec(args=[], varargs=&#39;items&#39;, varkw=None, defaults=None, kwonlyargs=[&#39;to_list&#39;], kwonlydefaults={&#39;to_list&#39;: []}, annotations={})</code></pre></div>
 
-<p>Before we start calling this method, I used inspect to print out the full argument specification just after the method was created.</p>
+<p>Before we start calling this function, I used inspect to print out the full argument specification just after the function was created.</p>
 
 <ul>
 <li><code>args</code> is empty, because we don&rsquo;t have any positional arguments that are not handled via the *items variable.  This is a list that would contain them otherwise.</li>
@@ -315,9 +315,9 @@ FullArgSpec(args=[], varargs=&#39;items&#39;, varkw=None, defaults=None, kwonlya
 
 <p>There is two ways to write code.  Code, then try to see if it works.  Or define what working is with tests, and code until it does work.</p>
 
-<p>Yes, you read about how tests are good, but it is more work and you wind up just calling the method a few times with different data and calling it good.  The problem is you delete that sample code and move on.  How do we tell that it still works with changes?</p>
+<p>Yes, you read about how tests are good, but it is more work and you wind up just calling the function a few times with different data and calling it good.  The problem is you delete that sample code and move on.  How do we tell that it still works with changes?</p>
 
-<p>Or worse, you just write the method and assume it works as we did above.  Now we have to figure out why we are getting weird bugs in production as almost everyone passes in a list, but occasionally they don&rsquo;t.</p>
+<p>Or worse, you just write the function and assume it works as we did above.  Now we have to figure out why we are getting weird bugs in production as almost everyone passes in a list, but occasionally they don&rsquo;t.</p>
 
 <p>For all but the smallest programs, testing is lower overall effort and improves code quality.  Yes, it feels like more work, especially when deadlines are looming.  And it may be very hard with existing software.  However, untestable software is usually not modular enough for good code to begin with.  Just the act of testing makes you structure code into smaller and more predictable functions with fewer inter-related &lsquo;magic&rsquo;.  Getting in the habit early will make you a better developer.</p>
 
@@ -380,9 +380,9 @@ default-mutable.py:11: AssertionError
 
 <h3 id="fixing-the-default-mutable-problem">Fixing the default mutable problem</h3>
 
-<p>The best method for a default argument value is something that is easy to determine between a list with items and no list.  So if we use <code>None</code> as the default, it is easy to tell the difference.  However it forces us to handle the situation inside the method.</p>
+<p>The best method for a default argument value is something that is easy to determine between a list with items and no list.  So if we use <code>None</code> as the default, it is easy to tell the difference.  However it forces us to handle the situation inside the function.</p>
 
-<p>We will update out method to be the following:</p>
+<p>We will update out function to be the following:</p>
 
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">append_values</span>(<span style="color:#555">*</span>items, to_list<span style="color:#555">=</span>None):
     <span style="color:#069;font-weight:bold">if</span> to_list <span style="color:#000;font-weight:bold">is</span> None:

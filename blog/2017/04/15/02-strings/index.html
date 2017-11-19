@@ -220,7 +220,7 @@ to_append <span style="color:#555">=</span> <span style="color:#366">list</span>
         <span style="color:#069;font-weight:bold">return</span> fake_file<span style="color:#555">.</span>getvalue()
 
 
-<span style="color:#09f;font-style:italic"># timeit will run each method this number of times</span>
+<span style="color:#09f;font-style:italic"># timeit will run each function this number of times</span>
 run_count <span style="color:#555">=</span> <span style="color:#f60">200</span>
 
 <span style="color:#069;font-weight:bold">print</span>(<span style="color:#c30"></span><span style="color:#c30">&#39;naive_method: {}&#39;</span><span style="color:#555">.</span>format(timeit<span style="color:#555">.</span>timeit(naive_method, number<span style="color:#555">=</span>run_count)))
@@ -234,7 +234,7 @@ run_count <span style="color:#555">=</span> <span style="color:#f60">200</span>
 
 <p>List join method is 2.1 seconds, pseudo file is 2.5 seconds, and naive &lsquo;+&rsquo; method is 3.4 seconds.</p>
 
-<p>If in doubt about which methods of doing things is best, it is good to quickly test.  However, performance isn&rsquo;t always the most important, if it hampers readability and understanding of code.  Otherwise, you would just write in a language where performance is first.  Python is just as much about programmer performance as code performance.</p>
+<p>If in doubt about which method of doing things is best, it is good to quickly test.  However, performance isn&rsquo;t always the most important, if it hampers readability and understanding of code.  Otherwise, you would just write in a language where performance is first.  Python is just as much about programmer performance as code performance.</p>
 
 <p>The language has been developed so that typical pythonic methods are the fastest or close enough to not matter.  Just like PEP-8, writing pythonic code is good practice as it creates a common grammar that allows programmers to more easily parse each other&rsquo;s code.</p>
 

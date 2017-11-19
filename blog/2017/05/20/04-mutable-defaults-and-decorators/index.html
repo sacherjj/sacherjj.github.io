@@ -152,11 +152,11 @@
 
 <h3 id="using-the-default-mutable-for-good">Using the default mutable for good</h3>
 
-<p>In developing a Python workflow for a custom system, I&rsquo;m interfacing with custom hardware to measure current and temperature.  The hardware method is much slower than the normal software.  These values will only change slowly compared to software (especially temperature).</p>
+<p>In developing a Python workflow for a custom system, I&rsquo;m interfacing with custom hardware to measure current and temperature.  The hardware call is much slower than the normal software.  These values will only change slowly compared to software (especially temperature).</p>
 
-<p>I am writing a workflow that starts cycling slowly and eventually speeds up to faster than 1 second.  I&rsquo;m going through 144 members of the workflow and could call these methods in each one.  This is really a waste in processing time.   What if I had a system to cache values and only really call hardware after a certain amount of time.  This would be useful in not just hardware interfacing, but also in getting other expensive resources (like network queries) for something that doesn&rsquo;t change rapidly.</p>
+<p>I am writing a workflow that starts cycling slowly and eventually speeds up to faster than 1 second.  I&rsquo;m going through 144 members of the workflow and could call these functions in each one.  This is really a waste in processing time.   What if I had a system to cache values and only really call hardware after a certain amount of time.  This would be useful in not just hardware interfacing, but also in getting other expensive resources (like network queries) for something that doesn&rsquo;t change rapidly.</p>
 
-<p>I could make some type of complex systems that manages calls to these hardware functions and only call the hardware method when needed.  Surely there is an easier way.  (Programmers continually ask that.  Usually it is a good thing.)</p>
+<p>I could make some type of complex systems that manages calls to these hardware functions only when needed.  Surely there is an easier way.  (Programmers continually ask that.  Usually it is a good thing.)</p>
 
 <p>What if the function itself could hold the call and only perform the expensive operations after a certain time?  That would be pretty cool.  Lets do that.</p>
 
@@ -204,7 +204,7 @@
 
 <p>This test passes and it one of the slowest tests I&rsquo;ve written in a while.  1.33 seconds runtime.  Aren&rsquo;t we glad I didn&rsquo;t make it 30 second cache.  Testing would be a full commercial break.</p>
 
-<p>This works how we want, but we need to add this caching to multiple hardware call.  So we just copy all the parts of this to each method and move along, right?</p>
+<p>This works how we want, but we need to add this caching to multiple hardware call.  So we just copy all the parts of this to each function and move along, right?</p>
 
 <p>Woah, there.  Any time you think about copy and pasting around code, you are doing things wrong.  Python has a methodology to easily modify function called decoration.  (Its not just for holidays anymore!)</p>
 
@@ -334,9 +334,9 @@ Something is done after function call</code></pre></div>
 
 <p>The <code>_cached_with_immediate(main_func)</code> is the function we are returning with the decorator.  You can see this on the last line.</p>
 
-<p>The <code>_decorator</code> method have <code>*args</code> to catch positional and <code>**kwargs</code> to catch named arguments to the original function.  We are adding our <code>_cached</code> argument that we don&rsquo;t expect anyone to call, and the <code>immediate</code> named parameter to allow cache-less call.</p>
+<p>The <code>_decorator</code> function has <code>*args</code> to catch positional and <code>**kwargs</code> to catch named arguments to the original function.  We are adding our <code>_cached</code> argument that we don&rsquo;t expect anyone to call, and the <code>immediate</code> named parameter to allow cache-less call.</p>
 
-<p>The code inside that method looks very similar to what we had up top.  Because we do the same thing wrapped around the call to <code>main_func(*args, **kwargs)</code>.</p>
+<p>The code inside that function looks very similar to what we had up top.  Because we do the same thing wrapped around the call to <code>main_func(*args, **kwargs)</code>.</p>
 
 <p>The <code>functool.wraps</code> call is used to get the name of the function proper, instead of using the inside function name.</p>
 
