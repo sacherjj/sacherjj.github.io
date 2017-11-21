@@ -3,22 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.joesacher.com/blog/2017/08/27/04-converting-series-to-taxonomy/</loc>
+    <loc>http://www.joesacher.com/blog/2017/08/27/converting-series-to-taxonomy/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2017/08/25/04-ptr-enum/</loc>
+    <loc>http://www.joesacher.com/blog/2017/08/25/ptr-enum/</loc>
     <lastmod>2017-08-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2017/08/24/03-ptr-types/</loc>
+    <loc>http://www.joesacher.com/blog/2017/08/24/ptr-types/</loc>
     <lastmod>2017-08-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2017/08/23/02-ptr-cargo-pip/</loc>
+    <loc>http://www.joesacher.com/blog/2017/08/23/ptr-cargo-pip/</loc>
     <lastmod>2017-08-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -28,7 +28,7 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2017/08/22/01-ptr-beginning/</loc>
+    <loc>http://www.joesacher.com/blog/2017/08/22/ptr-beginning/</loc>
     <lastmod>2017-08-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -38,12 +38,12 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2017/08/03/03-disable-google-analytics-for-local-hugo/</loc>
+    <loc>http://www.joesacher.com/blog/2017/08/03/disable-google-analytics-for-local-hugo/</loc>
     <lastmod>2017-08-03T02:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2017/08/03/02-implementing-series-in-hugo/</loc>
+    <loc>http://www.joesacher.com/blog/2017/08/03/implementing-series-in-hugo/</loc>
     <lastmod>2017-08-03T01:00:00+00:00</lastmod>
   </url>
   
@@ -53,27 +53,27 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2017/08/01/01-pelican-to-hugo/</loc>
+    <loc>http://www.joesacher.com/blog/2017/08/01/pelican-to-hugo/</loc>
     <lastmod>2017-08-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2017/05/20/04-mutable-defaults-and-decorators/</loc>
+    <loc>http://www.joesacher.com/blog/2017/05/20/mutable-defaults-and-decorators/</loc>
     <lastmod>2017-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2017/04/22/03-functions-and-mutable-defaults/</loc>
+    <loc>http://www.joesacher.com/blog/2017/04/22/functions-and-mutable-defaults/</loc>
     <lastmod>2017-04-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2017/04/15/02-strings/</loc>
+    <loc>http://www.joesacher.com/blog/2017/04/15/python-strings/</loc>
     <lastmod>2017-04-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2017/04/08/01-starting-tips/</loc>
+    <loc>http://www.joesacher.com/blog/2017/04/08/python-starting-tips/</loc>
     <lastmod>2017-04-08T00:00:00+00:00</lastmod>
   </url>
   
@@ -93,7 +93,7 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2011/09/07/android-vs-windows-phone-navigation/</loc>
+    <loc>http://www.joesacher.com/blog/2011/09/07/encoding-videos-for-the-hp-touchpad/</loc>
     <lastmod>2011-09-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -163,7 +163,7 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2011/03/01/from-homebrew-to-catalog-webos-tips-learned-in-the-process/</loc>
+    <loc>http://www.joesacher.com/blog/2011/03/01/webos-from-homebrew-to-catalog-tips-learned-in-the-process/</loc>
     <lastmod>2011-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -183,7 +183,7 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2010/12/21/bencoding/</loc>
+    <loc>http://www.joesacher.com/blog/2010/12/21/bencoding-encoding-of-a-.torrent-file/</loc>
     <lastmod>2010-12-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -273,7 +273,7 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/blog/2007/12/04/why-do-you-ride-a-bicycle-across-the-country/</loc>
+    <loc>http://www.joesacher.com/blog/2007/12/04/why-ride-a-bicycle-across-the-country/</loc>
     <lastmod>2007-12-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -315,6 +315,21 @@
   <url>
     <loc>http://www.joesacher.com/blog/2005/05/02/watts-volts-and-amps/</loc>
     <lastmod>2005-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/30/day-42/</loc>
+    <lastmod>2002-06-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/29/day-41/</loc>
+    <lastmod>2002-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.joesacher.com/blog/2002/06/28/day-40/</loc>
+    <lastmod>2002-06-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -601,14 +616,14 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/cooking/</loc>
-    <lastmod>2008-01-27T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/tags/cooking/</loc>
+    <lastmod>2008-03-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/cooking/</loc>
-    <lastmod>2008-03-07T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/categories/cooking/</loc>
+    <lastmod>2008-01-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -703,13 +718,13 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/series/hugo/</loc>
+    <loc>http://www.joesacher.com/tags/hugo/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/hugo/</loc>
+    <loc>http://www.joesacher.com/series/hugo/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -769,14 +784,14 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/personal/</loc>
-    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/tags/personal/</loc>
+    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/personal/</loc>
-    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
+    <loc>http://www.joesacher.com/categories/personal/</loc>
+    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

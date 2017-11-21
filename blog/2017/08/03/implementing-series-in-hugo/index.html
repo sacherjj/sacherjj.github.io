@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Implementing a Series in Hugo</title>
+  <meta name="author" content="" />
+
+  
+
+  
+  <meta name="description" content="My little piece of the web.">	
+  
+
+  <meta name="generator" content="Hugo 0.30.2" />
+
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="http://www.joesacher.com/css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="http://www.joesacher.com/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="http://www.joesacher.com/css/custom.css" rel="stylesheet">
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="http://www.joesacher.com/img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="http://www.joesacher.com/img/apple-touch-icon.png" />
+
+  
+
+
+
+
+  <link rel="alternate" href="http://www.joesacher.com/index.xml" type="application/rss+xml" title="joesacher.com">
+
+  
+  <meta property="og:title" content="Implementing a Series in Hugo" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2017/08/03/implementing-series-in-hugo//" />
+  <meta property="og:image" content="img/logo.png" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="http://www.joesacher.com/">
+                    <img src="http://www.joesacher.com/img/logo.png" alt="Implementing a Series in Hugo logo" class="hidden-xs hidden-sm">
+                    <img src="http://www.joesacher.com/img/logo-small.png" alt="Implementing a Series in Hugo logo" class="visible-xs visible-sm">
+                    <span class="sr-only">Implementing a Series in Hugo - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Implementing a Series in Hugo</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-md-9" id="blog-post">
+                        
+                        <p class="text-muted mb-small text-right text-uppercase">
+                            August 3, 2017<br/>
+                            <i class="fa fa-clock-o"></i> 7 min. read</p>
+
+                            <div id="post-content">
+                                <p class="series_top_page">This post is part of the <a href="http://www.joesacher.com//series/hugo">Hugo</a> series.</p>
+                                
+
+<p>Note: This is the first method I used to create a series with Hugo.  Later in the Hugo series, I changed to using taxonomies, which is a better way of accomplishing this.   This post is left up for reference.</p>
+
+<h2 id="goal">Goal</h2>
+
+<p>In converting my Pelican blog over to Hugo, I needed to learn a new templating system.  I miss a few things that Pelican did, like categories based on folders and not front matter.  However, I can see advantages of allowing more organization in these folders, without affecting final position on the web.</p>
+
+<p>One glaring miss was the idea of series links.  I have been trying to add photos and complete conversion of my travel journal into posts for my <a href="/categories/trans-am">Trans-Am bicycle trip in 2002</a>.  I wanted the bottom of the entry to allow the reader to jump to the next post.</p>
+
+<p>My goal was to have something like this at the bottom of any series page:</p>
+
+<pre><code>Part [Current Page Num] of [Total Series Page Count] in the [Series Name] series.
+&lt; Series Start &gt; | &lt; [Previous Page Title]  |  [Next Page Title] &gt;
+</code></pre>
+
+<p>I would like <code>&lt; Series Start &gt;</code>, <code>Previous Page Title</code>, <code>Next Page Title</code>, and <code>Series Name</code> have hyperlinks to the relevant pages.  I was able to accomplish all but the last.  I&rsquo;m not sure if I want to map the <code>Series Name</code> to <code>category</code> or make a page that lists all posts of a series.</p>
+
+<p>For my Trans-Am, this would render like:</p>
+
+<pre><code>Part 6 of 19 in the Trans-Am series.
+&lt; Series Start &gt;  |  &lt; Day 2 - Sherwood Forest Plantation  |  Day 4 - Ashland to Lake Anna, VA &gt;
+</code></pre>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>The template I came up with seems very inefficient.  Once I get more familiar with go templating, there may be a cleaner way of accomplishing this.  If you have improvements, I&rsquo;d really like to hear about them.</p>
+
+<p>The first thing I need to do is detect if the page is part of a series and the name of that series.  I&rsquo;m printing this value out, so I need to make this to be ready to print.   I&rsquo;m using a <code>series</code> page variable in the front matter for this.</p>
+
+<pre><code>+++
+series = &quot;Trans-Am&quot;
++++
+</code></pre>
+
+<p>In addition to this, I will be sorting based on date for page position in series.  <code>date</code> is already a defined variable, so that is handled.  I&rsquo;m adding this functionality as part of my theme, in a new file: <code>layouts/partials/series_link.html</code>.  I added a call to this in <code>layouts/_default/single.html</code> just below <code>{{ .Content }}</code> like the following:</p>
+
+<pre><code>&lt;div id=&quot;post-content&quot;&gt;
+    {{ .Content }}
+    {{ partial &quot;series_link.html&quot; . }}
+&lt;/div&gt;
+</code></pre>
+
+<p>This will put it directly after the main page content.</p>
+
+<h3 id="series-link-html">series_link.html</h3>
+
+<p>Complete source, which I will discuss in parts below:</p>
+
+<pre><code>{{ if .Params.series }}
+    {{ $.Scratch.Add &quot;cur_page_num&quot; 1 }} 
+    {{ $.Scratch.Add &quot;total_page_num&quot; 0 }} 
+    {{ range where .Site.RegularPages.ByDate &quot;Params.series&quot; .Params.series }} 
+        {{ $.Scratch.Add &quot;total_page_num&quot; 1 }} 
+        {{ if gt $.Date.Unix .Date.Unix }} 
+            {{ $.Scratch.Add &quot;cur_page_num&quot; 1 }} 
+            {{ $.Scratch.Set &quot;prev_link&quot; .Permalink }}
+            {{ $.Scratch.Set &quot;prev_title&quot; .Title }}  
+        {{ end }}
+    {{ end }}
+    {{ range where .Site.RegularPages.ByDate.Reverse &quot;Params.series&quot; .Params.series }} 
+        {{ $.Scratch.Set &quot;first_link&quot; .Permalink }}
+        {{ if lt $.Date.Unix .Date.Unix }}
+            {{ $.Scratch.Set &quot;next_link&quot; .Permalink }}
+            {{ $.Scratch.Set &quot;next_title&quot; .Title }}
+        {{ end }}
+    {{ end }}
+    {{ if or ($.Scratch.Get &quot;next_link&quot;) ($.Scratch.Get &quot;prev_link&quot;) }} 
+        &lt;hr/&gt;
+        &lt;p&gt;Part {{ $.Scratch.Get &quot;cur_page_num&quot; }} of {{ $.Scratch.Get &quot;total_page_num&quot; }}
+            in the &lt;b&gt;{{ .Params.series }}&lt;/b&gt; series.&lt;/p&gt;
+        &lt;p&gt;
+        {{ if $.Scratch.Get &quot;prev_link&quot; }}
+            {{ if ne ($.Scratch.Get &quot;prev_link&quot;) ($.Scratch.Get &quot;first_link&quot;) }}
+                &lt;a href=&quot;{{ $.Scratch.Get &quot;first_link&quot; }}&quot;&gt;&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;Series Start&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                    |
+            {{ end }}
+            {{ if $.Scratch.Get &quot;prev_link&quot; }}
+                &lt;a href=&quot;{{ $.Scratch.Get &quot;prev_link&quot; }}&quot;&gt;&lt;i class=&quot;fa fa-angle-double-left&quot;&gt;&lt;/i&gt;{{ $.Scratch.Get &quot;prev_title&quot; }}&lt;/a&gt;
+            {{ end }}
+        {{ end }}
+        {{ if and ($.Scratch.Get &quot;next_link&quot;) ($.Scratch.Get &quot;prev_link&quot;) }}
+                |
+        {{ end }}
+        {{ if $.Scratch.Get &quot;next_link&quot; }}
+            &lt;a href=&quot;{{ $.Scratch.Get &quot;next_link&quot; }}&quot;&gt;{{ $.Scratch.Get &quot;next_title&quot; }}&lt;i class=&quot;fa fa-angle-double-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+        {{ end }}
+    {{ end }}
+{{ end }}
+</code></pre>
+
+<h3 id="enabling">Enabling</h3>
+
+<p>The outer <code>if</code> only allows this to run if <code>series</code> exists on a page:</p>
+
+<pre><code>{{ if .Params.series }}
+   ...
+{{ end }}
+</code></pre>
+
+<h3 id="getting-data">Getting Data</h3>
+
+<p>Next I am defining page variables to hold the current page number of the series and the total pages in the series.</p>
+
+<pre><code>{{ $.Scratch.Add &quot;cur_page_num&quot; 1 }}
+{{ $.Scratch.Add &quot;total_page_num&quot; 0 }}
+</code></pre>
+
+<p>Here we are looping through pages by date (old to new), where the page&rsquo;s series is the same as the current page&rsquo;s series.  <code>total_page_num</code> is incremented each loop, yielding a count of all pages that are in the series.</p>
+
+<p>Our <code>if</code> is true when the current page date is greater than the looping page.  This will apply to all pages previous to the current page.  So incrementing <code>cur_page_num</code> from 0 would make it the number of the previous page.  This is why it is initialized to 1 above.  I&rsquo;m also saving the link and title of the page.  This is set each page, but will last be set when it reaches the previous page, after which the if will be in a false state.</p>
+
+<pre><code>{{ range where .Site.RegularPages.ByDate &quot;Params.series&quot; .Params.series }}
+        {{ $.Scratch.Add &quot;total_page_num&quot; 1 }}
+    {{ if gt $.Date.Unix .Date.Unix }}
+        {{ $.Scratch.Add &quot;cur_page_num&quot; 1 }}
+        {{ $.Scratch.Set &quot;prev_link&quot; .Permalink }}
+        {{ $.Scratch.Set &quot;prev_title&quot; .Title }}
+    {{ end }}
+{{ end }}
+</code></pre>
+
+<p>The next loop is backwards, due to the <code>.Reverse</code>, so it gives pages by date (new to old).  I&rsquo;m setting <code>first_link</code> each time, so it will be the first in the series when complete.</p>
+
+<p>If the current page is less than the page in the loop (meaning it is older), we set the link and title for the next page.  This will end up with the page directly next of the current one, then the if is not true for the rest of the loop.</p>
+
+<pre><code>{{ range where .Site.RegularPages.ByDate.Reverse &quot;Params.series&quot; .Params.series }}
+    {{ $.Scratch.Set &quot;first_link&quot; .Permalink }}
+    {{ if lt $.Date.Unix .Date.Unix }}
+        {{ $.Scratch.Set &quot;next_link&quot; .Permalink }}
+        {{ $.Scratch.Set &quot;next_title&quot; .Title }}
+    {{ end }}
+{{ end }}
+</code></pre>
+
+<h3 id="generating-display">Generating Display</h3>
+
+<p>Now we have all the data we need and we just have to display it on the rendering page.</p>
+
+<p>I don&rsquo;t want to display anything if there is only one member of the series.  So we have a wrapper <code>if</code> to require either a next or a previous link.</p>
+
+<pre><code>{{ if or ($.Scratch.Get &quot;next_link&quot;) ($.Scratch.Get &quot;prev_link&quot;) }} 
+   ...
+{{ end }}
+</code></pre>
+
+<p>I printing an <code>&lt;hr/&gt;</code> to seperate this a little from the bottom of the page.  Next, I print the <code>Part x of y in the [SeriesName] series</code>.  Since I&rsquo;m just printing the <code>.Params.series</code> variable directly, it must be display ready as I mentioned above.</p>
+
+<pre><code>&lt;hr/&gt;
+&lt;p&gt;Part {{ $.Scratch.Get &quot;cur_page_num&quot; }} of {{ $.Scratch.Get &quot;total_page_num&quot; }}
+    in the &lt;b&gt;{{ .Params.series }}&lt;/b&gt; series.&lt;/p&gt;
+</code></pre>
+
+<p>We only want to print a <code>&lt; Series Start &gt;</code>  and/or  <code>&lt; [Previous Title]</code>, if there is a previous link.  So the outer <code>if</code> checks this.</p>
+
+<p>I want to display the previous title instead of just <code>&lt; Series Start &gt;</code> if they are the same thing.  So I&rsquo;m only showing the start link if <code>prev_link</code> and <code>first_link</code> are not equal (ne).  Since if they are not equal, I know both exist, I include the <code>|</code> delimiter inside that <code>if</code>.</p>
+
+<p>The second <code>if</code> just displays the previous link if it exists.</p>
+
+<p>So for the first page in the series, this section is skipped with no <code>prev_link</code> set.  For the second page in the series: <code>prev_link == first_link</code>, so the <code>&lt; Series Start &gt;</code> isn&rsquo;t printed and we get a <code>prev_title</code> text link to the first page.  For third and subsequent pages, we will get both of these links.</p>
+
+<pre><code>{{ if $.Scratch.Get &quot;prev_link&quot; }}
+    {{ if ne ($.Scratch.Get &quot;prev_link&quot;) ($.Scratch.Get &quot;first_link&quot;) }}
+        &lt;a href=&quot;{{ $.Scratch.Get &quot;first_link&quot; }}&quot;&gt;&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;Series Start&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            |  
+    {{ end }}
+    {{ if $.Scratch.Get &quot;prev_link&quot; }}
+        &lt;a href=&quot;{{ $.Scratch.Get &quot;prev_link&quot; }}&quot;&gt;&lt;i class=&quot;fa fa-angle-double-left&quot;&gt;&lt;/i&gt;{{ $.Scratch.Get &quot;prev_title&quot; }}&lt;/a&gt;
+    {{ end }}
+{{ end }}
+</code></pre>
+
+<p>This section prints the delimiting <code>|</code> between <code>next_link</code> and <code>prev_link</code>, only if both exist.</p>
+
+<pre><code>{{ if and ($.Scratch.Get &quot;next_link&quot;) ($.Scratch.Get &quot;prev_link&quot;) }}
+
+{{ end }}
+</code></pre>
+
+<p>The last section just prints the link to the next page, if <code>next_link</code> exists.</p>
+
+<pre><code>{{ if $.Scratch.Get &quot;next_link&quot; }} 
+    &lt;a href=&quot;{{ $.Scratch.Get &quot;next_link&quot; }}&quot;&gt;{{ $.Scratch.Get &quot;next_title&quot; }}&lt;i class=&quot;fa fa-angle-double-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+{{ end }}
+</code></pre>
+
+<p>That completes the template.</p>
+
+<p>You can see this on any one of my <a href="/categories/trans-am">Trans-Am pages</a>, at the bottom of the page.</p>
+
+                                <hr/>
+        <p>Part 2 of 4
+            in the <b>Hugo</b> series.</p>
+        <p><a href="http://www.joesacher.com/blog/2017/08/01/pelican-to-hugo/"><i class="fa fa-angle-double-left"></i>Moved from Pelican to Hugo</a>
+                 |
+        <a href="http://www.joesacher.com/blog/2017/08/03/disable-google-analytics-for-local-hugo/">Disabling Analytics for Local Hugo<i class="fa fa-angle-double-right"></i></a></p>
+                             </div>
+                        
+                        
+                        <div id="comments"><div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "joesachercom" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+                        
+
+                    </div>
+                    
+                    
+
+                    
+                    <div class="col-md-3">
+                        
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Categories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="http://www.joesacher.com/categories/cooking" class="text-uppercase">cooking (2)</a>
+            </li><li><a href="http://www.joesacher.com/categories/how-to" class="text-uppercase">how-to (5)</a>
+            </li><li><a href="http://www.joesacher.com/categories/personal" class="text-uppercase">personal (9)</a>
+            </li><li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
+            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (31)</a>
+            </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (48)</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Blog Series</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="http://www.joesacher.com/series/hugo" class="text-uppercase">hugo (4)</a>
+            </li><li><a href="http://www.joesacher.com/series/python-tips" class="text-uppercase">python-tips (4)</a>
+            </li><li><a href="http://www.joesacher.com/series/python-to-rust" class="text-uppercase">python-to-rust (4)</a>
+            </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (48)</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="panel sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            <li><a href="http://www.joesacher.com/tags/android"><i class="fa fa-tags"></i> android</a>
+            </li><li><a href="http://www.joesacher.com/tags/avr"><i class="fa fa-tags"></i> avr</a>
+            </li><li><a href="http://www.joesacher.com/tags/bicycle"><i class="fa fa-tags"></i> bicycle</a>
+            </li><li><a href="http://www.joesacher.com/tags/bicycle-touring"><i class="fa fa-tags"></i> bicycle-touring</a>
+            </li><li><a href="http://www.joesacher.com/tags/book-review"><i class="fa fa-tags"></i> book-review</a>
+            </li><li><a href="http://www.joesacher.com/tags/calendars"><i class="fa fa-tags"></i> calendars</a>
+            </li><li><a href="http://www.joesacher.com/tags/comprehensions"><i class="fa fa-tags"></i> comprehensions</a>
+            </li><li><a href="http://www.joesacher.com/tags/cooking"><i class="fa fa-tags"></i> cooking</a>
+            </li><li><a href="http://www.joesacher.com/tags/cycling"><i class="fa fa-tags"></i> cycling</a>
+            </li><li><a href="http://www.joesacher.com/tags/decorators"><i class="fa fa-tags"></i> decorators</a>
+            </li><li><a href="http://www.joesacher.com/tags/dessert"><i class="fa fa-tags"></i> dessert</a>
+            </li><li><a href="http://www.joesacher.com/tags/dry-bag"><i class="fa fa-tags"></i> dry-bag</a>
+            </li><li><a href="http://www.joesacher.com/tags/ebooks"><i class="fa fa-tags"></i> ebooks</a>
+            </li><li><a href="http://www.joesacher.com/tags/electronics"><i class="fa fa-tags"></i> electronics</a>
+            </li><li><a href="http://www.joesacher.com/tags/enumerate"><i class="fa fa-tags"></i> enumerate</a>
+            </li><li><a href="http://www.joesacher.com/tags/fiction"><i class="fa fa-tags"></i> fiction</a>
+            </li><li><a href="http://www.joesacher.com/tags/film-making"><i class="fa fa-tags"></i> film-making</a>
+            </li><li><a href="http://www.joesacher.com/tags/functions"><i class="fa fa-tags"></i> functions</a>
+            </li><li><a href="http://www.joesacher.com/tags/google"><i class="fa fa-tags"></i> google</a>
+            </li><li><a href="http://www.joesacher.com/tags/hacking"><i class="fa fa-tags"></i> hacking</a>
+            </li><li><a href="http://www.joesacher.com/tags/ham-radio"><i class="fa fa-tags"></i> ham-radio</a>
+            </li><li><a href="http://www.joesacher.com/tags/hugo"><i class="fa fa-tags"></i> hugo</a>
+            </li><li><a href="http://www.joesacher.com/tags/humor"><i class="fa fa-tags"></i> humor</a>
+            </li><li><a href="http://www.joesacher.com/tags/hvac"><i class="fa fa-tags"></i> hvac</a>
+            </li><li><a href="http://www.joesacher.com/tags/inspiration"><i class="fa fa-tags"></i> inspiration</a>
+            </li><li><a href="http://www.joesacher.com/tags/javascript"><i class="fa fa-tags"></i> javascript</a>
+            </li><li><a href="http://www.joesacher.com/tags/lathes"><i class="fa fa-tags"></i> lathes</a>
+            </li><li><a href="http://www.joesacher.com/tags/marriage"><i class="fa fa-tags"></i> marriage</a>
+            </li><li><a href="http://www.joesacher.com/tags/navigation"><i class="fa fa-tags"></i> navigation</a>
+            </li><li><a href="http://www.joesacher.com/tags/nonfiction"><i class="fa fa-tags"></i> nonfiction</a>
+            </li><li><a href="http://www.joesacher.com/tags/pannier"><i class="fa fa-tags"></i> pannier</a>
+            </li><li><a href="http://www.joesacher.com/tags/personal"><i class="fa fa-tags"></i> personal</a>
+            </li><li><a href="http://www.joesacher.com/tags/photography"><i class="fa fa-tags"></i> photography</a>
+            </li><li><a href="http://www.joesacher.com/tags/pizza"><i class="fa fa-tags"></i> pizza</a>
+            </li><li><a href="http://www.joesacher.com/tags/podcasts"><i class="fa fa-tags"></i> podcasts</a>
+            </li><li><a href="http://www.joesacher.com/tags/programming"><i class="fa fa-tags"></i> programming</a>
+            </li><li><a href="http://www.joesacher.com/tags/projects"><i class="fa fa-tags"></i> projects</a>
+            </li><li><a href="http://www.joesacher.com/tags/proposal"><i class="fa fa-tags"></i> proposal</a>
+            </li><li><a href="http://www.joesacher.com/tags/python"><i class="fa fa-tags"></i> python</a>
+            </li><li><a href="http://www.joesacher.com/tags/recipe"><i class="fa fa-tags"></i> recipe</a>
+            </li><li><a href="http://www.joesacher.com/tags/recumbent"><i class="fa fa-tags"></i> recumbent</a>
+            </li><li><a href="http://www.joesacher.com/tags/rust"><i class="fa fa-tags"></i> rust</a>
+            </li><li><a href="http://www.joesacher.com/tags/safety"><i class="fa fa-tags"></i> safety</a>
+            </li><li><a href="http://www.joesacher.com/tags/sewing"><i class="fa fa-tags"></i> sewing</a>
+            </li><li><a href="http://www.joesacher.com/tags/strings"><i class="fa fa-tags"></i> strings</a>
+            </li><li><a href="http://www.joesacher.com/tags/touchpad"><i class="fa fa-tags"></i> touchpad</a>
+            </li><li><a href="http://www.joesacher.com/tags/touring"><i class="fa fa-tags"></i> touring</a>
+            </li><li><a href="http://www.joesacher.com/tags/unicode"><i class="fa fa-tags"></i> unicode</a>
+            </li><li><a href="http://www.joesacher.com/tags/video"><i class="fa fa-tags"></i> video</a>
+            </li><li><a href="http://www.joesacher.com/tags/web"><i class="fa fa-tags"></i> web</a>
+            </li><li><a href="http://www.joesacher.com/tags/webos"><i class="fa fa-tags"></i> webos</a>
+            </li><li><a href="http://www.joesacher.com/tags/windows-phone"><i class="fa fa-tags"></i> windows-phone</a>
+            </li><li><a href="http://www.joesacher.com/tags/woodworking"><i class="fa fa-tags"></i> woodworking</a>
+            </li><li><a href="http://www.joesacher.com/tags/writing"><i class="fa fa-tags"></i> writing</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+        
+
+
+
+
+
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left">Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</p>
+            
+            <p class="pull-right">A modified version of 
+              template by <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>
+              
+              ported to Hugo by <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+    </div>
+    
+
+    
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-3718160-3', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+<script src="http://www.joesacher.com/js/hpneo.gmaps.js"></script>
+<script src="http://www.joesacher.com/js/gmaps.init.js"></script>
+<script src="http://www.joesacher.com/js/front.js"></script>
+
+
+<script src="http://www.joesacher.com/js/owl.carousel.min.js"></script>
+
+
+
+
+  </body>
+</html>
