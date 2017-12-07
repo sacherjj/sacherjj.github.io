@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Raspberry Pi Hardware Mocking</title>
+  <meta name="author" content="" />
+
+  
+
+  
+  <meta name="description" content="My little piece of the web.">	
+  
+
+  <meta name="generator" content="Hugo 0.30.2" />
+
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="http://www.joesacher.com/css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="http://www.joesacher.com/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="http://www.joesacher.com/css/custom.css" rel="stylesheet">
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="http://www.joesacher.com/img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="http://www.joesacher.com/img/apple-touch-icon.png" />
+
+  
+
+
+
+
+  <link rel="alternate" href="http://www.joesacher.com/index.xml" type="application/rss+xml" title="joesacher.com">
+
+  
+  <meta property="og:title" content="Raspberry Pi Hardware Mocking" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2017/10/14/rpi-hardware-mocking//" />
+  <meta property="og:image" content="img/logo.png" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="http://www.joesacher.com/">
+                    <img src="http://www.joesacher.com/img/logo.png" alt="Raspberry Pi Hardware Mocking logo" class="hidden-xs hidden-sm">
+                    <img src="http://www.joesacher.com/img/logo-small.png" alt="Raspberry Pi Hardware Mocking logo" class="visible-xs visible-sm">
+                    <span class="sr-only">Raspberry Pi Hardware Mocking - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Raspberry Pi Hardware Mocking</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-md-9" id="blog-post">
+                        
+                        <p class="text-muted mb-small text-right text-uppercase">
+                            October 14, 2017<br/>
+                            <i class="fa fa-clock-o"></i> 23 min. read</p>
+
+                            <div id="post-content">
+                                <p class="series_top_page">This post is part of the <a href="http://www.joesacher.com//series/burn-in-cart">Burn-In Cart</a> series.</p>
+                                
+
+<p>Before I get to deeply into specific functionality and operation of our charging carts, I thought it would be good to take a detour into drivers for custom hardware.  In addition I&rsquo;ll cover mocking hardware devices to allow testing of your drivers and operating your system in a simulation with no hardware present.  This allows you to flush out your hardware design with software before fabricating PCBs.  (A PCB takes a long time to &ldquo;compile&rdquo;.)</p>
+
+<p>When the system is dependent on external devices, such as the 144 Android tablets that will be connected to it, a little Python code is much easier to write and refactor to simulate tablets than an separate Android app.  With the Requests package, I can easily act like a tablet calling a web service.  I can also prove my system before I interface with our programmers to know the problem shouldn&rsquo;t be on my side.  We will talk more about this in later articles.</p>
+
+<p>I cover hardware at first, because I want you to understand a little about it before I get to software, but this will be mostly software related article.</p>
+
+<h3 id="hardware-interfaces">Hardware Interfaces</h3>
+
+<p>All Raspberry Pi logic is at the 3.3V level, so care must be taken to use 3.3V logic chips or use level converters.  Those used to 5V capable chips, such as the Arduino, need to be careful.  In the case of driving higher voltages, MOSFETs are common and must be specified with Vgs appropriate for logic levels.  These are unsurprisingly called &ldquo;Logic Level&rdquo; MOSFETs.  I use these to drive 12V logic from the 3.3V of the RPi.</p>
+
+<p>There are a few hardware interfaces available on the Raspberry Pi, the most commonly used being GPIO and I2C bus.</p>
+
+<h4 id="smbus">SMBus</h4>
+
+<p>On the RPi, the I2C bus is called SMbus.  I2C and SMBus are essentially compatible at 100 KHz.  I2C allows 400 KHz and 3.4 MHz interfacing that SMBus does not support.  I named my packages to follow the smbus Python package.  This type of bus has a clock line and a data line.  Both are pulled up to 3.3V via a resistor and devices using the bus must pull them down to ground.  It is a master/slave setup with multiple devices allowed on a given bus.  All slaves have a 7-bit address number and must be unique on the bus.  The Raspberry Pi is the master, which always starts communication.</p>
+
+<p>The master will send an 8-bit value, with the first 7-bit the address and the last bit controlling if this is a read or write.  The slave will respond that it received the info and the master will continue with more commands until the exchange is complete.</p>
+
+<p>I&rsquo;m using the smbus interface for getting a silicon serial number, reading voltage and current across a shunt to determine power being used, and reading temperature of the board.  These are three devices on the same bus, all with different addresses.</p>
+
+<p>These chips can get fairly complex in functionality, but all use the same interfaces.  So mocking the hardware will get harder with complexity.  However, there may only get a few of the available smbus commands that you use and therefore must implement in your fake devices.</p>
+
+<h4 id="gpio">GPIO</h4>
+
+<p>The GPIO interface is for General Purpose Input Output.  These are single pins that you can use to send data to devices in an output mode or receive information from devices with an input mode.  This is what I use to drive a chain of shift registers.  Almost all pins are available for GPIO, unless you use them for other buses.  GPIO 2 and 3 are used for SMBus.  I could not use SMBus if these were allocated to GPIO.  The same is true with reserved pins for SPI and UART buses.  And important part of designing a hardware project is allocation of IO.</p>
+
+<p>For a shift register, we need 4 outputs: clock, data, enable, and strobe.  We clock data into the buffer and then strobe it from buffer directly to output.  This keeps the bits from shifting down the actual outputs and only toggles them when we have shifted everything through.</p>
+
+<p>This is a little different to mock in software, as you need to look at pin transitions.  For example, the data line value is used when the clock line has a rising transition (goes from low to high).  So my mock devices will need a hook to these transitions that are important and emulate functionality.  Although writing tests for the objects helped me find a subtle issue with these callbacks that became important for simulation, as you will see below.</p>
+
+<h3 id="software-interfaces">Software Interfaces</h3>
+
+<p>When RPi.GPIO is imported, you get a global object that you can only setup once.  If you try to start a new one before using <code>.cleanup()</code> on the existing one, you will get a warning.  And if you try to share pins with multiple instances of GPIO, you are in uncharted (read: dangerous) territory.  As I was mocking up the GPIO interface, I started trying to emulate this error condition.  However, a properly structured Python project with only over one reference to GPIO, so this was overkill.</p>
+
+<p>All of my RPi hardware drivers have an interface reference as the first argument, either for GPIO or SMBus.  This allows me to easily pass in a reference to the single object that holds that interface.  There is no worry about accidentally creating a second one.  This also allows me to pass in a fake version of GPIO or SMBus for testing and simulation.</p>
+
+<p>My imports for these interfaces looks like this:
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">try</span>:
+    <span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">RPi.GPIO</span> <span style="color:#069;font-weight:bold">as</span> <span style="color:#0cf;font-weight:bold">GPIO</span>
+    <span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">smbus</span>
+    SIMULATION <span style="color:#555">=</span> False
+<span style="color:#069;font-weight:bold">except</span> <span style="color:#c00;font-weight:bold">ImportError</span>:
+    <span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">rpi_hardware.mocked</span> <span style="color:#069;font-weight:bold">import</span> GPIO
+    <span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">rpi_hardware.mocked</span> <span style="color:#069;font-weight:bold">import</span> smbus
+    SIMULATION <span style="color:#555">=</span> True</code></pre></div></p>
+
+<p>With the boolean <code>SIMULATION</code> variable, I can control if my system is running normally or in simulation.  This is usually the difference between my running on the configured RPi or my local laptop.  With <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> I can just change the interpreter reference and debug exactly the same either locally or over SSH on the RPi.  That is worth the price of admission to the Professional version of PyCharm.</p>
+
+<h4 id="fakegpio">FakeGPIO</h4>
+
+<p>In order to only allow a single GPIO, I used a singleton pattern by overriding <code>__new__</code>.   This stores the instance in a class level attribute of <code>__self__</code>.  The constructor needs to be defined as <code>def _init()</code> instead of <code>def __init__()</code>, as we are not creating new object each time.  For break down between tests or to reset the object, the <code>destroy()</code> method is provided.  This is what I call when I&rsquo;m emulating the <code>GPIO.cleanup()</code>.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Singleton</span>(<span style="color:#366">object</span>):
+    <span style="color:#069;font-weight:bold">def</span> __new__(cls, <span style="color:#555">*</span>args, <span style="color:#555">**</span>kwds):
+        self <span style="color:#555">=</span> <span style="color:#c30"></span><span style="color:#c30">&#34;__self__&#34;</span>
+        <span style="color:#069;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">not</span> <span style="color:#366">hasattr</span>(cls, self):
+            instance <span style="color:#555">=</span> <span style="color:#366">object</span><span style="color:#555">.</span>__new__(cls)
+            instance<span style="color:#555">.</span>_init(<span style="color:#555">*</span>args, <span style="color:#555">**</span>kwds)
+            <span style="color:#366">setattr</span>(cls, self, instance)
+        <span style="color:#069;font-weight:bold">return</span> <span style="color:#366">getattr</span>(cls, self)
+
+    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_init</span>(self, <span style="color:#555">*</span>args, <span style="color:#555">**</span>kwargs):
+        <span style="color:#069;font-weight:bold">raise</span> <span style="color:#c00;font-weight:bold">NotImplementedError</span>(<span style="color:#c30"></span><span style="color:#c30">&#39;must implement init method&#39;</span>)
+
+    <span style="color:#99f">@classmethod</span>
+    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">destroy</span>(cls):
+        self <span style="color:#555">=</span> <span style="color:#c30"></span><span style="color:#c30">&#39;__self__&#39;</span>
+        <span style="color:#069;font-weight:bold">if</span> <span style="color:#366">hasattr</span>(cls, self):
+            instance <span style="color:#555">=</span> <span style="color:#366">getattr</span>(cls, self)
+            <span style="color:#069;font-weight:bold">del</span> instance
+            <span style="color:#366">delattr</span>(cls, self)</code></pre></div>
+
+<p>The full FakeGPIO source <a href="https://github.com/sacherjj/rpi_hardware/blob/master/rpi_hardware/mocked/gpio.py">can be viewed here</a>, as it is too large to include inline.  There is quite a bit of bookkeeping with constants and handling both BCM and BOARD based pin numbering schemes.  All of the normal function are replacements for what your hardware driver would normally call.  You can look through the object and see how things are working.  I&rsquo;m liberal with <code>ValueError</code> to help shake out issues with the bad hardware driver calls.  It is easier to find these problems in software than when we are trying to interface with actual hardware.</p>
+
+<p>The two major data structures in FakeGPIO are <code>_pins</code> and <code>_edge_callback</code>.</p>
+
+<p>The <code>_pins</code> attribute of the FakeGPIO stores all GPIO pins direction and value as a 2 item list.  The key is the BCM value for the pin.  All internal values are BCM numbering and BOARD pin numbers are translated to BCM for use.  For direction, we are using the defined constants of <code>GPIO.IN</code> and <code>GPIO.OUT</code>.  All constants have been defined using the underlying C code values, in case a user is bad and calls with a number rather than referencing the constant.</p>
+
+<p>The <code>_edge_callback</code> attribute is a <code>defaultdict(list)</code> that will store callback methods for each pin (again BCM naming).  The value is a tuple with <code>(edge_type, callback)</code>.  This could possibly be done more efficiently with a tuple as key, such as <code>(pin, edge_type)</code>.   Then I could use the dictionary hash to find exact callbacks I need, instead of looking if I have the proper transition for a given pin.  Although if you are pin heavy and callback light, the overhead of tuple building for key search might actually be slower than the loop when you have a 50-50 chance of a callback.</p>
+
+<p>There are a few helper under functions, but the two that are important in use of FakeGPIO are <code>_simulate_set_pin</code> and <code>_simulate_read_out_pin</code>.  When we have an input, we are expecting hardware to provide that value.  The <code>_simulate_set_pin</code> method is how your virtual hardware provides an input.  When we have an output, we expect hardware to read it and do something with it.  The <code>_simulate_read_out_pin</code> method is where your virtual hardware can read those values.  In the implementation of my fake HCF4904 shift register hardware, I&rsquo;m using a callback function to tell me that the device has been clocked.  But I use this <code>_simulate_read_out_pin</code> to get the value of the data pin at that point.</p>
+
+<h4 id="hcf4094-driver">HCF4094 Driver</h4>
+
+<p>This driver is for a shift register.  This is a device that allows you to use a clock and data to serially shift out bits to be available parallel as 8-bits for each chip.</p>
+
+<p>The logic on this is confusing sometimes, because making the RPi pin high (3.3V) turns on a MOSFET that pulls the high voltage output low.  When the RPi pin is low, the MOSFET turns off, allowing the line to pull high (12V).  This also makes mocking the hardware backwards.</p>
+
+<p>To make things a little less confusing, I&rsquo;ve defined <code>_OUTPUT_HIGH</code> and <code>_OUTPUT_LOW</code> that are already flipped.</p>
+
+<p><code>__init__</code> is fairly simple, just storing the 4 pins used by the device and setting up the 4 pins as <code>GPIO.OUTPUT</code>.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">HCF4094</span>(<span style="color:#366">object</span>):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34;
+</span><span style="color:#c30">    Drives HCF4094 shift register with external pull up resistors
+</span><span style="color:#c30">    to high voltage and N-MOSFET pulling down to ground.
+</span><span style="color:#c30">
+</span><span style="color:#c30">    HCF4094 is capable of higher voltages than RPi interface (I&#39;m using 12V.)
+</span><span style="color:#c30">    This allows a more robust signal line, but requires isolation with RPi.
+</span><span style="color:#c30">
+</span><span style="color:#c30">    I&#39;m driving base of DMN3404 N-MOSFET through 100R resistor.
+</span><span style="color:#c30">    Base is pulled to Ground via 10K resistor.
+</span><span style="color:#c30">    Drain is connected directly to output for each of the 4 pins and via 4.7K resistor to 12V.
+</span><span style="color:#c30">    Source is connected to ground.
+</span><span style="color:#c30">
+</span><span style="color:#c30">    I am chaining 6 boards with each having 6 HCF4094 devices.  This allows 288 outputs.
+</span><span style="color:#c30">    Chaining HCF4094 requires nothing different in software, with exception of larger data for shift_data.
+</span><span style="color:#c30">    &#34;&#34;&#34;</span>
+
+    <span style="color:#09f;font-style:italic"># Due to N-MOSFET Pulling down, logic is reversed</span>
+    _OUTPUT_HIGH <span style="color:#555">=</span> <span style="color:#f60">0</span>
+    _OUTPUT_LOW <span style="color:#555">=</span> <span style="color:#f60">1</span>
+
+    <span style="color:#069;font-weight:bold">def</span> __init__(self, gpio_ref, data_gpio, clock_gpio, strobe_gpio, out_enable_gpio,
+                 enable_output_immediate<span style="color:#555">=</span>False):
+        <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34;
+</span><span style="color:#c30">        Initialization
+</span><span style="color:#c30">
+</span><span style="color:#c30">        :param gpio_ref:  reference to RPi.GPIO object
+</span><span style="color:#c30">        :param data_gpio: data pin number
+</span><span style="color:#c30">        :param clock_gpio: clock pin number
+</span><span style="color:#c30">        :param strobe_gpio: strobe pin number
+</span><span style="color:#c30">        :param out_enable_gpio: output enable pin number
+</span><span style="color:#c30">        :return:
+</span><span style="color:#c30">        &#34;&#34;&#34;</span>
+        self<span style="color:#555">.</span>_gpio <span style="color:#555">=</span> gpio_ref
+        self<span style="color:#555">.</span>_data_pin <span style="color:#555">=</span> data_gpio
+        self<span style="color:#555">.</span>_clock_pin <span style="color:#555">=</span> clock_gpio
+        self<span style="color:#555">.</span>_strobe_pin <span style="color:#555">=</span> strobe_gpio
+        self<span style="color:#555">.</span>_out_enable_pin <span style="color:#555">=</span> out_enable_gpio
+
+        self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>setup(self<span style="color:#555">.</span>_data_pin, self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>OUT, initial<span style="color:#555">=</span>self<span style="color:#555">.</span>_OUTPUT_LOW)
+        self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>setup(self<span style="color:#555">.</span>_clock_pin, self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>OUT, initial<span style="color:#555">=</span>self<span style="color:#555">.</span>_OUTPUT_LOW)
+        self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>setup(self<span style="color:#555">.</span>_out_enable_pin, self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>OUT, initial<span style="color:#555">=</span>self<span style="color:#555">.</span>_OUTPUT_LOW)
+        self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>setup(self<span style="color:#555">.</span>_strobe_pin, self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>OUT, initial<span style="color:#555">=</span>self<span style="color:#555">.</span>_OUTPUT_LOW)
+
+        <span style="color:#069;font-weight:bold">if</span> enable_output_immediate:
+            self<span style="color:#555">.</span>set_output_enable(True)
+
+    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">set_output_enable</span>(self, enable):
+        <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34;
+</span><span style="color:#c30">        Set output enable pin
+</span><span style="color:#c30">
+</span><span style="color:#c30">        :param enable: State of pin
+</span><span style="color:#c30">        :return: None
+</span><span style="color:#c30">        &#34;&#34;&#34;</span>
+        output_val <span style="color:#555">=</span> self<span style="color:#555">.</span>_OUTPUT_LOW
+        <span style="color:#069;font-weight:bold">if</span> enable:
+            output_val <span style="color:#555">=</span> self<span style="color:#555">.</span>_OUTPUT_HIGH
+        self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>output(self<span style="color:#555">.</span>_out_enable_pin, output_val)</code></pre></div>
+
+<p>To send data out, we send an iterable of <code>0</code> or <code>1</code> values that are clocked out and then the whole data set is strobed to move from buffer to actual output.</p>
+
+<p>I&rsquo;m using an <code>OrderedDict</code> as my internal storage so I can easily set bit values by dictionary key, but shift them out in the correct order to the proper pin on the shift registers.  (Keeping track of bits is a big deal when your shift length is 288.)</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">shift_data</span>(self, data):
+        <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34;
+</span><span style="color:#c30">        Shifts data out, in order of the list.
+</span><span style="color:#c30">
+</span><span style="color:#c30">        :param data: Data to be shifted as list or tuple
+</span><span style="color:#c30">        :return: Bits shifted count
+</span><span style="color:#c30">        &#34;&#34;&#34;</span>
+        shift_count <span style="color:#555">=</span> <span style="color:#f60">0</span>
+        self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>output(self<span style="color:#555">.</span>_strobe_pin, self<span style="color:#555">.</span>_OUTPUT_LOW)
+        <span style="color:#069;font-weight:bold">for</span> bit_value <span style="color:#000;font-weight:bold">in</span> data:
+            <span style="color:#09f;font-style:italic"># Inverting due to N-MOSFET inversion, also error if not 0/1.</span>
+            value <span style="color:#555">=</span> (HCF4094<span style="color:#555">.</span>_OUTPUT_LOW, HCF4094<span style="color:#555">.</span>_OUTPUT_HIGH)[bit_value]
+            self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>output(self<span style="color:#555">.</span>_data_pin, value)
+            self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>output(self<span style="color:#555">.</span>_clock_pin, self<span style="color:#555">.</span>_OUTPUT_HIGH)
+            self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>output(self<span style="color:#555">.</span>_clock_pin, self<span style="color:#555">.</span>_OUTPUT_LOW)
+            shift_count <span style="color:#555">+=</span> <span style="color:#f60">1</span>
+        self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>output(self<span style="color:#555">.</span>_strobe_pin, self<span style="color:#555">.</span>_OUTPUT_HIGH)
+        <span style="color:#069;font-weight:bold">return</span> shift_count</code></pre></div>
+
+<h4 id="hcf4094-fake-hardware">HCF4094 Fake Hardware</h4>
+
+<p>I call my fake hardware <code>HCF4094Capture</code> as I&rsquo;m capturing the data that is sent out.  In addition to the normal fields in <code>HCF4094.__init__</code>, I also have <code>bit_list</code> and <code>callback</code>.  The <code>bit_length</code> is determined by <code>len(bit_list)</code>.   The <code>callback</code> will be sent a list of tuples with <code>(pin_number, current_state)</code> if any of the pins have changed since last strobe.</p>
+
+<p>I attach a callback to the <code>FakeGPIO</code> for a transition on the clock and strobe pin.  This is a <code>FALLING</code> transition, even though I&rsquo;m actually wanting a <code>RISING</code> transition at the HCF4094 chip.  Again, this is due to the reversing on the MOSFETs.  Data is buffered during the clock callback and toggled to output (and callback processed) with a strobe callback.  I initially had this backwards and could not get my tests to pass.  That is why we take the time to write tests.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">HCF4094Capture</span>(<span style="color:#366">object</span>):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34;
+</span><span style="color:#c30">    This class is used to emulate the data that is shifted to the HCF4094.
+</span><span style="color:#c30">
+</span><span style="color:#c30">    A callback method is registered and will be called with a list of tuples (index, bit_state) for each
+</span><span style="color:#c30">    output that has changed since last strobe.  This allows you to simulate hardware that occurs when the
+</span><span style="color:#c30">    bit state changes.
+</span><span style="color:#c30">
+</span><span style="color:#c30">    An example of this would be if the bit is controlling power to a device.  With a `1` bit state, you
+</span><span style="color:#c30">    could simulate what actions occur when power is applied to the device.
+</span><span style="color:#c30">
+</span><span style="color:#c30">    &#34;&#34;&#34;</span>
+
+    <span style="color:#069;font-weight:bold">def</span> __init__(self, gpio_ref, data_gpio, clock_gpio, strobe_gpio, out_enable_gpio,
+                 bits_list, callback):
+        <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34;
+</span><span style="color:#c30">        Initialization
+</span><span style="color:#c30">
+</span><span style="color:#c30">        Callback method details:
+</span><span style="color:#c30">
+</span><span style="color:#c30">        One argument is given to callback method, a list of tuples (index, 0 or 1).
+</span><span style="color:#c30">        index: index of bits_list which has changed since last strobe event.
+</span><span style="color:#c30">        0 or 1: new state of bit.
+</span><span style="color:#c30">
+</span><span style="color:#c30">        It is expected that you maintain old state to see if you need to trigger simulation events for what
+</span><span style="color:#c30">        electrical event corresponds with that bit changing.
+</span><span style="color:#c30">
+</span><span style="color:#c30">        :param gpio_ref:  reference to Mock.GPIO object
+</span><span style="color:#c30">        :param data_gpio: data pin number
+</span><span style="color:#c30">        :param clock_gpio: clock pin number
+</span><span style="color:#c30">        :param strobe_gpio: strobe pin number
+</span><span style="color:#c30">        :param out_enable_gpio: output enable pin number
+</span><span style="color:#c30">        :param bits_list: list of bit states for current output, order is furthest to nearest bit.  As shifting
+</span><span style="color:#c30">                          occurs at index 0 and finished at index ``n``.
+</span><span style="color:#c30">                          This sets initial state to trigger callbacks and bit length
+</span><span style="color:#c30">                          Initial state usually all 0, so `[0] * bit_depth` might be easy initialization
+</span><span style="color:#c30">        :param callback: method to call when bits change
+</span><span style="color:#c30">        &#34;&#34;&#34;</span>
+        self<span style="color:#555">.</span>_gpio <span style="color:#555">=</span> gpio_ref
+        self<span style="color:#555">.</span>_data_pin <span style="color:#555">=</span> data_gpio
+        self<span style="color:#555">.</span>_clock_pin <span style="color:#555">=</span> clock_gpio
+        self<span style="color:#555">.</span>_strobe_pin <span style="color:#555">=</span> strobe_gpio
+        self<span style="color:#555">.</span>_out_enable_pin <span style="color:#555">=</span> out_enable_gpio
+
+        test_list <span style="color:#555">=</span> [bit <span style="color:#069;font-weight:bold">for</span> bit <span style="color:#000;font-weight:bold">in</span> bits_list <span style="color:#069;font-weight:bold">if</span> bit <span style="color:#000;font-weight:bold">not</span> <span style="color:#000;font-weight:bold">in</span> (<span style="color:#f60">0</span>, <span style="color:#f60">1</span>)]
+        <span style="color:#069;font-weight:bold">if</span> <span style="color:#366">len</span>(test_list) <span style="color:#555">!=</span> <span style="color:#f60">0</span>:
+            <span style="color:#069;font-weight:bold">raise</span> <span style="color:#c00;font-weight:bold">ValueError</span>(<span style="color:#c30"></span><span style="color:#c30">&#39;bits_list may only contain 0 or 1.  Found {}&#39;</span><span style="color:#555">.</span>format(test_list))
+
+        self<span style="color:#555">.</span>_bit_count <span style="color:#555">=</span> <span style="color:#366">len</span>(bits_list)
+        self<span style="color:#555">.</span>current_data <span style="color:#555">=</span> <span style="color:#366">tuple</span>(bits_list)
+        self<span style="color:#555">.</span>_buffered_data <span style="color:#555">=</span> []
+        self<span style="color:#555">.</span>_callback <span style="color:#555">=</span> callback
+
+        <span style="color:#09f;font-style:italic"># Register with Mock GPIO to call methods when clock or strobe occurs</span>
+        <span style="color:#09f;font-style:italic"># We are using FALLING instead of RISING, because logic is backwards due to</span>
+        <span style="color:#09f;font-style:italic"># MOSFET for output.</span>
+        self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>add_event_callback(self<span style="color:#555">.</span>_clock_pin, self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>FALLING, self<span style="color:#555">.</span>_clocked)
+        self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>add_event_callback(self<span style="color:#555">.</span>_strobe_pin, self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>FALLING, self<span style="color:#555">.</span>_  strobed)</code></pre></div>
+
+<p>These two methods are callbacks from GPIO.  When a clock transition occurs, we push data (swapped due to negative logic) in the buffer.   When the strobe occurs, we send data to attached callbacks.</p>
+
+<p>If strobe is not brought low before data is transferred, it will strobe data down the outputs as you clock the shift.  This can be useful in some situations for moving displays.  However, I do not allow this in my driver, so I did not emulate in the virtual hardware.  We could add this by testing for strobe state and calling <code>_strobed</code> if needed in <code>_clocked</code>.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_clocked</span>(self):
+        <span style="color:#09f;font-style:italic"># Have to reverse data, as MOSFET output is backwards</span>
+        bit_value <span style="color:#555">=</span> (<span style="color:#f60">1</span>, <span style="color:#f60">0</span>)[self<span style="color:#555">.</span>_gpio<span style="color:#555">.</span>_simulate_read_out_pin(self<span style="color:#555">.</span>_data_pin)]
+        self<span style="color:#555">.</span>_buffered_data<span style="color:#555">.</span>append(bit_value)
+
+    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_strobed</span>(self):
+        self<span style="color:#555">.</span>_send_data()</code></pre></div>
+
+<p>My goal for the <code>_send_data</code> method is to build a tuple of <code>index</code> and <code>value</code> for pins that have changed.</p>
+
+<p>First I generate the <code>new_data</code> by adding buffered data to the end and taking the last bits that satisfy the <code>_bit_count</code> of our shift register system.  Then I&rsquo;m using a list comprehension with <code>enumerate</code> to generate my <code>index</code> and <code>zip</code> to give me an <code>(old, new)</code> tuple.  The list comprehension only outputs if <code>old != new</code>.</p>
+
+<p>Before sending to the callback, I update my <code>current_data</code> in case the callback decides to process the entire output data.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_send_data</span>(self):
+        <span style="color:#09f;font-style:italic"># Make list with last `self._bit_count` number of bits shifted.</span>
+        <span style="color:#09f;font-style:italic"># May be called with only a few bits shifted, so need to include old data.</span>
+        new_data <span style="color:#555">=</span> (<span style="color:#366">list</span>(self<span style="color:#555">.</span>current_data) <span style="color:#555">+</span> self<span style="color:#555">.</span>_buffered_data)[<span style="color:#555">-</span>self<span style="color:#555">.</span>_bit_count:]
+        changes <span style="color:#555">=</span> [(index, new)
+                   <span style="color:#069;font-weight:bold">for</span> (index, (old, new)) <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">enumerate</span>(<span style="color:#366">zip</span>(self<span style="color:#555">.</span>current_data, new_data))
+                   <span style="color:#069;font-weight:bold">if</span> old <span style="color:#555">!=</span> new]
+        self<span style="color:#555">.</span>current_data <span style="color:#555">=</span> <span style="color:#366">tuple</span>(new_data)
+        self<span style="color:#555">.</span>_callback(changes)</code></pre></div>
+
+<h4 id="testing-fakegpio">Testing FakeGPIO</h4>
+
+<p>First we look at parts of <a href="https://github.com/sacherjj/rpi_hardware/blob/master/tests/test_fake_gpio.py">the tests I wrote when building the FakeGPIO object</a>.  With my fixtures, I&rsquo;m not returning any data.  RPi.GPIO uses the global GPIO reference and I do the same.  However, I&rsquo;m using fixtures to reset the GPIO to three states: Initialized (raw), Using BCM numbering (bcm), and using Board numbering (board).</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#99f">@pytest.fixture</span>
+<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">raw</span>():
+    GPIO<span style="color:#555">.</span>cleanup()
+
+
+<span style="color:#99f">@pytest.fixture</span>
+<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">bcm</span>():
+    GPIO<span style="color:#555">.</span>cleanup()
+    GPIO<span style="color:#555">.</span>setmode(GPIO<span style="color:#555">.</span>BCM)
+
+
+<span style="color:#99f">@pytest.fixture</span>
+<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">board</span>():
+    GPIO<span style="color:#555">.</span>cleanup()
+    GPIO<span style="color:#555">.</span>setmode(GPIO<span style="color:#555">.</span>BOARD)</code></pre></div>
+
+<p>I&rsquo;ve previously talked about using the <code>with pytest.raises(ExceptionType)</code> as a method of proving error conditions are caught.  I&rsquo;m skipping some of these tests and simple functionality checks.  You can see those at the full file link above.</p>
+
+<p>GPIO is capable of calling a method when a pin has a rising or falling transition.  To catch this callback, I&rsquo;m using the <code>mock</code> package.  <code>func = mock.Mock()</code> provides a callback function that allows you to test what was sent to it or if it was even called.</p>
+
+<p>In both of these methods, I&rsquo;m creating the callback, configuring the pin so a transition will fire the callback, adding the callback, and triggering it with an <code>output</code> call.  To test that it was called, I use <code>func.assert_called_with()</code>.  I&rsquo;m using no arguments, because GPIO callbacks have none.  When we write tests for our <code>HCF4094Capture</code> fake object, you will see callbacks with an argument.</p>
+
+<p>Note: If you need many callbacks and only want to use one function, look at <code>functools partial</code> for freezing arguments in a function.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">test_rising_callback</span>(board):
+    func <span style="color:#555">=</span> mock<span style="color:#555">.</span>Mock()
+    GPIO<span style="color:#555">.</span>setup(<span style="color:#f60">38</span>, GPIO<span style="color:#555">.</span>OUT, initial<span style="color:#555">=</span>GPIO<span style="color:#555">.</span>LOW)
+    GPIO<span style="color:#555">.</span>add_event_callback(<span style="color:#f60">38</span>, GPIO<span style="color:#555">.</span>RISING, func)
+    GPIO<span style="color:#555">.</span>output(<span style="color:#f60">38</span>, GPIO<span style="color:#555">.</span>HIGH)
+    func<span style="color:#555">.</span>assert_called_with()
+
+
+<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">test_falling_callback</span>(bcm):
+    func <span style="color:#555">=</span> mock<span style="color:#555">.</span>Mock()
+    GPIO<span style="color:#555">.</span>setup(<span style="color:#f60">6</span>, GPIO<span style="color:#555">.</span>OUT, initial<span style="color:#555">=</span>GPIO<span style="color:#555">.</span>HIGH)
+    GPIO<span style="color:#555">.</span>add_event_callback(<span style="color:#f60">6</span>, GPIO<span style="color:#555">.</span>FALLING, func)
+    GPIO<span style="color:#555">.</span>output(<span style="color:#f60">6</span>, GPIO<span style="color:#555">.</span>LOW)
+    func<span style="color:#555">.</span>assert_called_with()</code></pre></div>
+
+<h4 id="testing-hcf4094">Testing HCF4094</h4>
+
+<p>Testing <code>HCF4094</code> functionality is not too complex, because the main functionality we have with a shift register is to just shift out data.  Like the <code>GPIO</code> testing above, we need to handle callbacks and will be using <code>mock</code> again.</p>
+
+<p>I define the 4 pins so I can share them between the driver and fake hardware, otherwise they won&rsquo;t link up.  I have one fixture that creates the <code>FakeGPIO</code> from mocked.  Then I create a callback with <code>mock.Mock()</code>.  We pass this into <code>HCF4094Capture</code> to get changed data back.  Then I create the hardware driver <code>HCF4094</code> and return everything needed in tests as a tuple.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">mock</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">pytest</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">rpi_hardware.mocked</span> <span style="color:#069;font-weight:bold">import</span> GPIO
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">rpi_hardware.mocked</span> <span style="color:#069;font-weight:bold">import</span> HCF4904Capture
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">rpi_hardware</span> <span style="color:#069;font-weight:bold">import</span> HCF4094
+
+OUT_EN <span style="color:#555">=</span> <span style="color:#f60">20</span>
+STROBE <span style="color:#555">=</span> <span style="color:#f60">19</span>
+CLOCK <span style="color:#555">=</span> <span style="color:#f60">26</span>
+DATA <span style="color:#555">=</span> <span style="color:#f60">21</span>
+
+
+<span style="color:#99f">@pytest.fixture</span>
+<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">capture</span>():
+    GPIO<span style="color:#555">.</span>cleanup()
+    GPIO<span style="color:#555">.</span>setmode(GPIO<span style="color:#555">.</span>BCM)
+    callback <span style="color:#555">=</span> mock<span style="color:#555">.</span>Mock()
+    hcf_capture <span style="color:#555">=</span> HCF4904Capture(GPIO, DATA, CLOCK, STROBE, OUT_EN, [<span style="color:#f60">0</span>]<span style="color:#555">*</span><span style="color:#f60">16</span>, callback)
+    hcf <span style="color:#555">=</span> HCF4094(GPIO, DATA, CLOCK, STROBE, OUT_EN, True)
+    <span style="color:#069;font-weight:bold">return</span> hcf_capture, hcf, callback</code></pre></div>
+
+<p>In the first test, you can see how I&rsquo;m using tuple unpacking to get at the objects sent in with the fixture.  I want to test the callback functionality for the fake hardware, without bringing the hardware driver into the mix.  So I reached inside the object and modified the internal attributes that would be created with clock callbacks and strobe callbacks.  This allowed me to test functionality expected if those callbacks worked.</p>
+
+<p>Notice that we are again testing the fact that a call back occurred with the mock function by using <code>callback.assert_called_with(expected arguments)</code>.  In this scenario it isn&rsquo;t just testing that a callback occurred, but doing essentially an <code>assert [expected arguments] == [callback arguments received]</code>.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">test_hcf_capture_send_data_internal</span>(capture):
+    hcf_capture, hcf, callback <span style="color:#555">=</span> capture
+    hcf_capture<span style="color:#555">.</span>_buffered_data <span style="color:#555">=</span> [<span style="color:#f60">1</span>]
+    hcf_capture<span style="color:#555">.</span>_send_data()
+    callback<span style="color:#555">.</span>assert_called_with([(<span style="color:#f60">15</span>, <span style="color:#f60">1</span>)])
+
+    hcf_capture<span style="color:#555">.</span>_buffered_data <span style="color:#555">=</span> [<span style="color:#f60">1</span>]<span style="color:#555">*</span><span style="color:#f60">16</span>
+    hcf_capture<span style="color:#555">.</span>_send_data()
+    callback<span style="color:#555">.</span>assert_called_with([(index, <span style="color:#f60">1</span>) <span style="color:#069;font-weight:bold">for</span> index <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(<span style="color:#f60">15</span>)])</code></pre></div>
+
+<p>The value of writing the above function and testing just one piece became apparent when I was developing the callback structure for getting data from <code>HCF4094</code>.  This test was to be a full up test of the <code>HCF4094</code> hardware driver, sending pin changes through the <code>FakeGPIO</code> and triggering callbacks in <code>HCF4094Capture</code> which will trigger a callback for data changed.   It is a complex chain.  And it didn&rsquo;t work.  I received a failed test, because the callback was never called.</p>
+
+<p>This is where I discovered that the callback I needed to register with <code>FakeGPIO</code> was <code>FALLING</code> instead of <code>RISING</code>, due to the reversed logic.  I am a firm believer that tests do not take any more time than writing throw away code to test a method.  And instances like this really help you find issues with your code.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">test_hcf4904_shift_data</span>(capture):
+    hcf_capture, hcf, callback <span style="color:#555">=</span> capture
+    <span style="color:#09f;font-style:italic"># Shift full set of 1&#39;s should get all changes</span>
+    hcf<span style="color:#555">.</span>shift_data([<span style="color:#f60">1</span>]<span style="color:#555">*</span><span style="color:#f60">16</span>)
+    callback<span style="color:#555">.</span>assert_called_with([(index, <span style="color:#f60">1</span>) <span style="color:#069;font-weight:bold">for</span> index <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(<span style="color:#f60">16</span>)])
+    <span style="color:#09f;font-style:italic"># Partial shift</span>
+    hcf<span style="color:#555">.</span>shift_data([<span style="color:#f60">0</span>, <span style="color:#f60">1</span>, <span style="color:#f60">0</span>, <span style="color:#f60">1</span>])
+    callback<span style="color:#555">.</span>assert_called_with([(<span style="color:#f60">12</span>, <span style="color:#f60">0</span>), (<span style="color:#f60">14</span>, <span style="color:#f60">0</span>)])</code></pre></div>
+
+<p>So these callbacks in <code>HCF4094Capture</code> are useful for testing operation of our hardware.  But this is the hook to simulate the system.  If we see a certain pin go to <code>1</code> then I know a tablet has been given charging power.  I can start making the battery voltage go up and send a web service call indicating <code>PowerApplied</code>.  I&rsquo;ll cover simulation using these interfaces in another article.</p>
+
+<h3 id="fake-smbus">Fake SMBus</h3>
+
+<p>Implementing fake hardware for SMBus is both easier and harder.  The interface to the hardware is defined, so we can use actual method calls and don&rsquo;t have to track pin transitions in a custom way for each device type.  However, the device can be very complex and this would need to be implemented virtually for full simulation.  Often you only need to use a certain subset of functionality to cover what you actually use for a device.</p>
+
+<p>However, if you have a full capabilities driver, then you need full capabilities simulator to integrate everything into tests.  For the complex chips, I stub out the functionality I need for simulation and am doing much of the testing with the actual hardware.  Everything is a tradeoff of effort vs return.</p>
+
+<p>I&rsquo;m not going to go into <code>SMBus</code> with much detail, as the <code>GPIO</code> implementation was more complex in the topics I wanted to cover in this article.  I have two objects in my <a href="https://github.com/sacherjj/rpi_hardware/blob/master/rpi_hardware/mocked/smbus.py">mocked/smbus.py file</a>: <code>SMBus</code> and <code>FakeSMBDevice</code>.  To create a virtual SMBus device, you would inherit from <code>FakeSMBDevice</code>, which provides function stubs for functionality available in <code>SMBus</code> and registers the device with <code>SMBus</code>.  You only need to implement what you use.  If you get a <code>NotImplementedError</code>, then you use it and didn&rsquo;t implement it.</p>
+
+<h4 id="ds28cm00-driver">DS28CM00 Driver</h4>
+
+<p>The <code>DS28CM00</code> chips is about as simple as an SMBus device gets.  This is a silicon serial number.  Its sole purpose is to give you a unique 6-byte serial number.</p>
+
+<p>Why would you use something like this?  It allows me to keep all software the same on each RPi and use this to load unique configurations from the DB at startup.  So pushing updates to all carts is simply a multiple target SCP transfer of files, with no unique configuration data.  This is very helpful.</p>
+
+<p>This is a ROM with only 1-bit configurable (toggle between SMBus and I2C modes).  Since I drive this at 100 KHz, I never need to touch this.  I only need to read the serial number value and check the CRC on the data received.  Then I provide this in a hex string format.  Since calling hardware is slow and this will not change after being read, I cache the value and only call once.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">.util.crc</span> <span style="color:#069;font-weight:bold">import</span> crc8_check
+
+
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">DS28CM00</span>(<span style="color:#366">object</span>):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34;
+</span><span style="color:#c30">    I2C driver for DS28CM00 silicon serial number
+</span><span style="color:#c30">
+</span><span style="color:#c30">    This is a simple chip that only gives you a unique serial number.
+</span><span style="color:#c30">    It is useful if you want to load the same software on multiple systems
+</span><span style="color:#c30">    and still have them able to determine who they are.
+</span><span style="color:#c30">
+</span><span style="color:#c30">    I use this serial as the primary key in the DB.  This allows the device to
+</span><span style="color:#c30">    load config data from the DB at start up.
+</span><span style="color:#c30">    &#34;&#34;&#34;</span>
+
+    _ADDRESS <span style="color:#555">=</span> <span style="color:#f60">0b1010000</span>
+
+    <span style="color:#069;font-weight:bold">def</span> __init__(self, smbus_ref):
+        <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34;
+</span><span style="color:#c30">        Initalize object and give proper smbus to use.
+</span><span style="color:#c30">
+</span><span style="color:#c30">        :param smbus_ref: smbus object, as create with smbus.Smbus(bus_number) or mock smbus object.
+</span><span style="color:#c30">        &#34;&#34;&#34;</span>
+        self<span style="color:#555">.</span>_smbus <span style="color:#555">=</span> smbus_ref
+        self<span style="color:#555">.</span>_serial_number <span style="color:#555">=</span> None
+        self<span style="color:#555">.</span>_serial_hex <span style="color:#555">=</span> None
+
+    <span style="color:#99f">@property</span>
+    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">serial_number</span>(self):
+        <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34;
+</span><span style="color:#c30">        Read silicon serial number.
+</span><span style="color:#c30">
+</span><span style="color:#c30">        :return: 48-bit serial number as hex value
+</span><span style="color:#c30">        :raises: ValueError if CRC check fails
+</span><span style="color:#c30">        &#34;&#34;&#34;</span>
+        <span style="color:#069;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">not</span> self<span style="color:#555">.</span>_serial_number:
+            <span style="color:#09f;font-style:italic"># Load it once and cache it</span>
+            self<span style="color:#555">.</span>_smbus<span style="color:#555">.</span>write_byte(self<span style="color:#555">.</span>_ADDRESS, <span style="color:#f60">0x00</span>)
+            data <span style="color:#555">=</span> [self<span style="color:#555">.</span>_smbus<span style="color:#555">.</span>read_byte(self<span style="color:#555">.</span>_ADDRESS) <span style="color:#069;font-weight:bold">for</span> _ <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(<span style="color:#f60">8</span>)]
+            <span style="color:#069;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">not</span> crc8_check(data[:<span style="color:#555">-</span><span style="color:#f60">1</span>], data[<span style="color:#555">-</span><span style="color:#f60">1</span>]):
+                <span style="color:#069;font-weight:bold">raise</span> <span style="color:#c00;font-weight:bold">ValueError</span>(<span style="color:#c30"></span><span style="color:#c30">&#39;CRC validation failed for reading serial number.&#39;</span>)
+            self<span style="color:#555">.</span>_serial_number <span style="color:#555">=</span> <span style="color:#f60">0</span>
+            <span style="color:#069;font-weight:bold">for</span> byte_value <span style="color:#000;font-weight:bold">in</span> data[<span style="color:#f60">1</span>:<span style="color:#555">-</span><span style="color:#f60">1</span>]:
+                self<span style="color:#555">.</span>_serial_number <span style="color:#555">=</span> (self<span style="color:#555">.</span>_serial_number <span style="color:#555">&lt;&lt;</span> <span style="color:#f60">8</span>) <span style="color:#555">+</span> byte_value
+            self<span style="color:#555">.</span>_serial_hex <span style="color:#555">=</span> <span style="color:#366">hex</span>(self<span style="color:#555">.</span>_serial_number)
+        <span style="color:#069;font-weight:bold">return</span> self<span style="color:#555">.</span>_serial_hex</code></pre></div>
+
+<h4 id="fake-ds28cm00">Fake DS28CM00</h4>
+
+<p>As you see in the code above, I&rsquo;m only using two methods on the <code>SMBus</code> object: <code>write_byte</code> and <code>read_byte</code>.  So these are the only methods I need to implement for my <code>FakeSMBusDevice</code>.</p>
+
+<p>At <code>__init__</code>, we pass in the serial number we want the device to have.  I do some validation that we have the correct number of bits and values are within range.  I used a list of integers, instead of <code>bytes</code> or <code>bytearray</code> as it eliminated conversions to do the <a href="https://github.com/sacherjj/rpi_hardware/blob/master/rpi_hardware/util/crc.py">CRC-8 calculation</a>.  This is transparent to the user of the <code>DS28CM00</code> real device.</p>
+
+<p>I setup the memory into <code>_data</code> and also build a <code>_write_map</code> that only allows writing to the 8th byte (configuration register), but have not implemented this write.  When reading an SMBus memory, it is common to write the address location then repeatedly call <code>read_byte</code>.  So we have an internal <code>_index</code> that points to the next memory.  Each call to <code>read_byte</code> increments this and wraps around if we get to the edge of memory.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">.smbus</span> <span style="color:#069;font-weight:bold">import</span> FakeSMBusDevice
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">rpi_hardware</span> <span style="color:#069;font-weight:bold">import</span> DS28CM00
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">rpi_hardware.util.crc</span> <span style="color:#069;font-weight:bold">import</span> crc8_value
+
+
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">FakeDS28CM00</span>(FakeSMBusDevice):
+    <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34;
+</span><span style="color:#c30">    Fake Hardware for DS28CM00, to be talked to using DS28CM00 object for testing and simulation
+</span><span style="color:#c30">
+</span><span style="color:#c30">    DS28CM00 is a silicon serial number.  So we just have a simple memory device that
+</span><span style="color:#c30">    is read with multiple byte calls.
+</span><span style="color:#c30">
+</span><span style="color:#c30">    Note: Only implemented write for address selection.  Not for writing of the one
+</span><span style="color:#c30">    configuration bit, which would occur with a write of 0x08 followed by 0x00 or 0x01.
+</span><span style="color:#c30">    &#34;&#34;&#34;</span>
+
+    _ADDRESS <span style="color:#555">=</span> DS28CM00<span style="color:#555">.</span>_ADDRESS
+
+    <span style="color:#069;font-weight:bold">def</span> __init__(self, smbus, serial_number_byte_list):
+        <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;&#34;
+</span><span style="color:#c30">        Initalize object and give proper smbus to use.
+</span><span style="color:#c30">
+</span><span style="color:#c30">        :param smbus: mock smbus object.
+</span><span style="color:#c30">        :param serial_number_byte_list: 6 member list with bytes for serial number
+</span><span style="color:#c30">        &#34;&#34;&#34;</span>
+        <span style="color:#069;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">not</span> <span style="color:#366">len</span>(serial_number_byte_list) <span style="color:#555">==</span> <span style="color:#f60">6</span>:
+            <span style="color:#069;font-weight:bold">raise</span> <span style="color:#c00;font-weight:bold">ValueError</span>(<span style="color:#c30"></span><span style="color:#c30">&#39;serial_number_byte_list must be a list of 6 byte integers.&#39;</span>)
+        <span style="color:#069;font-weight:bold">if</span> <span style="color:#366">max</span>(serial_number_byte_list) <span style="color:#555">&gt;</span> <span style="color:#f60">255</span> <span style="color:#000;font-weight:bold">or</span> <span style="color:#366">min</span>(serial_number_byte_list) <span style="color:#555">&lt;</span> <span style="color:#f60">0</span>:
+            <span style="color:#069;font-weight:bold">raise</span> <span style="color:#c00;font-weight:bold">ValueError</span>(<span style="color:#c30"></span><span style="color:#c30">&#39;serial_number_byte_list contains values not within range(256)&#39;</span>)
+
+        <span style="color:#09f;font-style:italic"># Memory is Family Code (0x70), 6 bytes of serial number, crc8, Control Register byte (0x01)</span>
+        data <span style="color:#555">=</span> [<span style="color:#f60">0x70</span>] <span style="color:#555">+</span> serial_number_byte_list[:]
+        self<span style="color:#555">.</span>_data <span style="color:#555">=</span> data <span style="color:#555">+</span> [crc8_value(data)] <span style="color:#555">+</span> [<span style="color:#f60">0x01</span>]
+        self<span style="color:#555">.</span>_write_map <span style="color:#555">=</span> [False] <span style="color:#555">*</span> <span style="color:#f60">8</span> <span style="color:#555">+</span> [True]
+        self<span style="color:#555">.</span>_index <span style="color:#555">=</span> <span style="color:#f60">0</span>
+        <span style="color:#366">super</span>()<span style="color:#555">.</span>__init__(smbus, self<span style="color:#555">.</span>_ADDRESS)
+
+    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">_inc_index</span>(self):
+        self<span style="color:#555">.</span>_index <span style="color:#555">+=</span> <span style="color:#f60">1</span>
+        <span style="color:#069;font-weight:bold">if</span> self<span style="color:#555">.</span>_index <span style="color:#555">&gt;</span> <span style="color:#f60">8</span>:
+            self<span style="color:#555">.</span>_index <span style="color:#555">=</span> <span style="color:#f60">0</span>
+
+    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">write_byte</span>(self, byte):
+        <span style="color:#069;font-weight:bold">if</span> <span style="color:#555">-</span><span style="color:#f60">1</span> <span style="color:#555">&lt;</span> byte <span style="color:#555">&lt;</span> <span style="color:#f60">9</span>:
+            self<span style="color:#555">.</span>_index <span style="color:#555">=</span> byte
+        <span style="color:#069;font-weight:bold">else</span>:
+            <span style="color:#069;font-weight:bold">raise</span> <span style="color:#c00;font-weight:bold">ValueError</span>(<span style="color:#c30"></span><span style="color:#c30">&#39;Valid memory addresses for write at 0x00 to 0x08.&#39;</span>)
+
+    <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">read_byte</span>(self):
+        value <span style="color:#555">=</span> self<span style="color:#555">.</span>_data[self<span style="color:#555">.</span>_index]
+        self<span style="color:#555">.</span>_inc_index()
+        <span style="color:#069;font-weight:bold">return</span> value</code></pre></div>
+
+<h4 id="testing-ds28cm00">Testing DS28CM00</h4>
+
+<p>Testing is straight forward, with a fixture to initialize the <code>mocked.SMBus</code>.  I first test that bad values for serial number initialization are not allowed in <code>FakeDS28CM00</code>.  Then <code>test_straight_read</code> is just a simple serial number read from <code>FakeDS28CM00</code> through <code>mocked.SMBus</code> into <code>DS28CM00</code> and validation that data in is the same a data out.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">pytest</span>
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">rpi_hardware.mocked</span> <span style="color:#069;font-weight:bold">import</span> smbus
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">rpi_hardware.mocked</span> <span style="color:#069;font-weight:bold">import</span> FakeDS28CM00
+<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">rpi_hardware</span> <span style="color:#069;font-weight:bold">import</span> DS28CM00
+
+
+<span style="color:#99f">@pytest.fixture</span>
+<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">smb</span>():
+    bus <span style="color:#555">=</span> smbus<span style="color:#555">.</span>SMBus(<span style="color:#f60">1</span>)
+    <span style="color:#069;font-weight:bold">return</span> bus
+
+
+<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">test_bad_byte_values</span>(smb):
+    bad_number_values <span style="color:#555">=</span> [<span style="color:#f60">1</span>, <span style="color:#f60">2</span>, <span style="color:#f60">3</span>, <span style="color:#f60">4</span>, <span style="color:#f60">5</span>]
+    <span style="color:#069;font-weight:bold">with</span> pytest<span style="color:#555">.</span>raises(<span style="color:#c00;font-weight:bold">ValueError</span>):
+        ds <span style="color:#555">=</span> FakeDS28CM00(smb, bad_number_values)
+    bad_values <span style="color:#555">=</span> [<span style="color:#f60">0</span>, <span style="color:#555">-</span><span style="color:#f60">1</span>, <span style="color:#f60">256</span>, <span style="color:#f60">3</span>, <span style="color:#f60">19</span>, <span style="color:#f60">43</span>]
+    <span style="color:#069;font-weight:bold">with</span> pytest<span style="color:#555">.</span>raises(<span style="color:#c00;font-weight:bold">ValueError</span>):
+        ds <span style="color:#555">=</span> FakeDS28CM00(smb, bad_values)
+
+
+<span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">test_straight_read</span>(smb):
+    serial_number <span style="color:#555">=</span> [<span style="color:#f60">15</span>, <span style="color:#f60">45</span>, <span style="color:#f60">120</span>, <span style="color:#f60">255</span>, <span style="color:#f60">0</span>, <span style="color:#f60">192</span>]
+
+    fds <span style="color:#555">=</span> FakeDS28CM00(smb, serial_number)
+    rds <span style="color:#555">=</span> DS28CM00(smb)
+    serial <span style="color:#555">=</span> <span style="color:#f60">0</span>
+    <span style="color:#069;font-weight:bold">for</span> byte <span style="color:#000;font-weight:bold">in</span> serial_number:
+        serial <span style="color:#555">=</span> (serial <span style="color:#555">&lt;&lt;</span> <span style="color:#f60">8</span>) <span style="color:#555">+</span> byte
+    <span style="color:#069;font-weight:bold">assert</span> <span style="color:#366">hex</span>(serial) <span style="color:#555">==</span> rds<span style="color:#555">.</span>serial_number</code></pre></div>
+
+<p>Because a CRC is included to validate data and detect if transmission errors occurred, I could add in bad data functionality to my <code>FakeDS28CM00</code> object and test my CRC errors in the main object.  This would allow me to help validate all outcomes.</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>This is one of my longer articles, but I hope it was of value for you.  Let&rsquo;s hit some bullet points of what we covered:</p>
+
+<ul>
+<li>Raspberry Pi common hardware interfaces</li>
+<li>How to implement a Singleton model in Python</li>
+<li>How to create a mocked replacement for both GPIO and SMBus</li>
+<li>How to structure imports to switch between real and fake interfaces</li>
+<li>How to implement drivers in a way that allows interface substitutions</li>
+<li>Testing with <code>pytest</code> and <code>mock</code> to verify callback functions</li>
+<li>Testing drivers with mocked hardware</li>
+</ul>
+
+<p>When I look at all of those, I can understand why this article is so long.  In future articles for this series, I will discuss implementation of the cart workflow and web software and simulation, using these virtual devices.</p>
+
+                                <hr/>
+        <p>Part 2 of 3
+            in the <b>Burn-In Cart</b> series.</p>
+        <p><a href="http://www.joesacher.com/blog/2017/10/06/burn-in-carts/"><i class="fa fa-angle-double-left"></i>Burn-In Carts</a>
+                 |
+        <a href="http://www.joesacher.com/blog/2017/10/28/raspberry-pi-startup-ip-web/">RPi Startup IP and Web Display<i class="fa fa-angle-double-right"></i></a></p>
+                             </div>
+                        
+                        
+                        <div id="comments"><div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "joesachercom" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+                        
+
+                    </div>
+                    
+                    
+
+                    
+                    <div class="col-md-3">
+                        
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Categories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="http://www.joesacher.com/categories/cooking" class="text-uppercase">cooking (2)</a>
+            </li><li><a href="http://www.joesacher.com/categories/how-to" class="text-uppercase">how-to (5)</a>
+            </li><li><a href="http://www.joesacher.com/categories/personal" class="text-uppercase">personal (9)</a>
+            </li><li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
+            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (38)</a>
+            </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (48)</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Blog Series</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="http://www.joesacher.com/series/burn-in-cart" class="text-uppercase">burn-in-cart (3)</a>
+            </li><li><a href="http://www.joesacher.com/series/hugo" class="text-uppercase">hugo (4)</a>
+            </li><li><a href="http://www.joesacher.com/series/python-tips" class="text-uppercase">python-tips (8)</a>
+            </li><li><a href="http://www.joesacher.com/series/python-to-rust" class="text-uppercase">python-to-rust (4)</a>
+            </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (48)</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="panel sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            <li><a href="http://www.joesacher.com/tags/android"><i class="fa fa-tags"></i> android</a>
+            </li><li><a href="http://www.joesacher.com/tags/avr"><i class="fa fa-tags"></i> avr</a>
+            </li><li><a href="http://www.joesacher.com/tags/bicycle"><i class="fa fa-tags"></i> bicycle</a>
+            </li><li><a href="http://www.joesacher.com/tags/bicycle-touring"><i class="fa fa-tags"></i> bicycle-touring</a>
+            </li><li><a href="http://www.joesacher.com/tags/book-review"><i class="fa fa-tags"></i> book-review</a>
+            </li><li><a href="http://www.joesacher.com/tags/calendars"><i class="fa fa-tags"></i> calendars</a>
+            </li><li><a href="http://www.joesacher.com/tags/cooking"><i class="fa fa-tags"></i> cooking</a>
+            </li><li><a href="http://www.joesacher.com/tags/cycling"><i class="fa fa-tags"></i> cycling</a>
+            </li><li><a href="http://www.joesacher.com/tags/dessert"><i class="fa fa-tags"></i> dessert</a>
+            </li><li><a href="http://www.joesacher.com/tags/dry-bag"><i class="fa fa-tags"></i> dry-bag</a>
+            </li><li><a href="http://www.joesacher.com/tags/ebooks"><i class="fa fa-tags"></i> ebooks</a>
+            </li><li><a href="http://www.joesacher.com/tags/electronics"><i class="fa fa-tags"></i> electronics</a>
+            </li><li><a href="http://www.joesacher.com/tags/fiction"><i class="fa fa-tags"></i> fiction</a>
+            </li><li><a href="http://www.joesacher.com/tags/film-making"><i class="fa fa-tags"></i> film-making</a>
+            </li><li><a href="http://www.joesacher.com/tags/google"><i class="fa fa-tags"></i> google</a>
+            </li><li><a href="http://www.joesacher.com/tags/hacking"><i class="fa fa-tags"></i> hacking</a>
+            </li><li><a href="http://www.joesacher.com/tags/ham-radio"><i class="fa fa-tags"></i> ham-radio</a>
+            </li><li><a href="http://www.joesacher.com/tags/hardware"><i class="fa fa-tags"></i> hardware</a>
+            </li><li><a href="http://www.joesacher.com/tags/hugo"><i class="fa fa-tags"></i> hugo</a>
+            </li><li><a href="http://www.joesacher.com/tags/humor"><i class="fa fa-tags"></i> humor</a>
+            </li><li><a href="http://www.joesacher.com/tags/hvac"><i class="fa fa-tags"></i> hvac</a>
+            </li><li><a href="http://www.joesacher.com/tags/inspiration"><i class="fa fa-tags"></i> inspiration</a>
+            </li><li><a href="http://www.joesacher.com/tags/javascript"><i class="fa fa-tags"></i> javascript</a>
+            </li><li><a href="http://www.joesacher.com/tags/lathes"><i class="fa fa-tags"></i> lathes</a>
+            </li><li><a href="http://www.joesacher.com/tags/marriage"><i class="fa fa-tags"></i> marriage</a>
+            </li><li><a href="http://www.joesacher.com/tags/mock"><i class="fa fa-tags"></i> mock</a>
+            </li><li><a href="http://www.joesacher.com/tags/navigation"><i class="fa fa-tags"></i> navigation</a>
+            </li><li><a href="http://www.joesacher.com/tags/nonfiction"><i class="fa fa-tags"></i> nonfiction</a>
+            </li><li><a href="http://www.joesacher.com/tags/pannier"><i class="fa fa-tags"></i> pannier</a>
+            </li><li><a href="http://www.joesacher.com/tags/personal"><i class="fa fa-tags"></i> personal</a>
+            </li><li><a href="http://www.joesacher.com/tags/photography"><i class="fa fa-tags"></i> photography</a>
+            </li><li><a href="http://www.joesacher.com/tags/pizza"><i class="fa fa-tags"></i> pizza</a>
+            </li><li><a href="http://www.joesacher.com/tags/podcasts"><i class="fa fa-tags"></i> podcasts</a>
+            </li><li><a href="http://www.joesacher.com/tags/programming"><i class="fa fa-tags"></i> programming</a>
+            </li><li><a href="http://www.joesacher.com/tags/projects"><i class="fa fa-tags"></i> projects</a>
+            </li><li><a href="http://www.joesacher.com/tags/proposal"><i class="fa fa-tags"></i> proposal</a>
+            </li><li><a href="http://www.joesacher.com/tags/pytest"><i class="fa fa-tags"></i> pytest</a>
+            </li><li><a href="http://www.joesacher.com/tags/python"><i class="fa fa-tags"></i> python</a>
+            </li><li><a href="http://www.joesacher.com/tags/raspberry-pi"><i class="fa fa-tags"></i> raspberry-pi</a>
+            </li><li><a href="http://www.joesacher.com/tags/recipe"><i class="fa fa-tags"></i> recipe</a>
+            </li><li><a href="http://www.joesacher.com/tags/recumbent"><i class="fa fa-tags"></i> recumbent</a>
+            </li><li><a href="http://www.joesacher.com/tags/rust"><i class="fa fa-tags"></i> rust</a>
+            </li><li><a href="http://www.joesacher.com/tags/safety"><i class="fa fa-tags"></i> safety</a>
+            </li><li><a href="http://www.joesacher.com/tags/sewing"><i class="fa fa-tags"></i> sewing</a>
+            </li><li><a href="http://www.joesacher.com/tags/testing"><i class="fa fa-tags"></i> testing</a>
+            </li><li><a href="http://www.joesacher.com/tags/touchpad"><i class="fa fa-tags"></i> touchpad</a>
+            </li><li><a href="http://www.joesacher.com/tags/touring"><i class="fa fa-tags"></i> touring</a>
+            </li><li><a href="http://www.joesacher.com/tags/video"><i class="fa fa-tags"></i> video</a>
+            </li><li><a href="http://www.joesacher.com/tags/web"><i class="fa fa-tags"></i> web</a>
+            </li><li><a href="http://www.joesacher.com/tags/webos"><i class="fa fa-tags"></i> webos</a>
+            </li><li><a href="http://www.joesacher.com/tags/windows-phone"><i class="fa fa-tags"></i> windows-phone</a>
+            </li><li><a href="http://www.joesacher.com/tags/woodworking"><i class="fa fa-tags"></i> woodworking</a>
+            </li><li><a href="http://www.joesacher.com/tags/writing"><i class="fa fa-tags"></i> writing</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+        
+
+
+
+
+
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left">Copyright (c) 2002-2017 - Joe Sacher - All Rights Reserved.</p>
+            
+            <p class="pull-right">A modified version of 
+              template by <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>
+              
+              ported to Hugo by <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+    </div>
+    
+
+    
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-3718160-3', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+<script src="http://www.joesacher.com/js/hpneo.gmaps.js"></script>
+<script src="http://www.joesacher.com/js/gmaps.init.js"></script>
+<script src="http://www.joesacher.com/js/front.js"></script>
+
+
+<script src="http://www.joesacher.com/js/owl.carousel.min.js"></script>
+
+
+
+
+  </body>
+</html>
