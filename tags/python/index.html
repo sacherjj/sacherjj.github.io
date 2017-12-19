@@ -134,6 +134,32 @@
                             <div class="row">
                                 <div class="col-md-4">
                                   <div class="image">
+                                      <a href="http://www.joesacher.com/blog/2017/12/01/nulls-in-winreg/"><img src="http://www.joesacher.com/img/banners/python-logo.png" class="img-responsive" alt=""></a>
+                                  </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h2><a href="http://www.joesacher.com/blog/2017/12/01/nulls-in-winreg/">NULLs in the Windows Registry</a></h2>
+                                    <div class="clearfix">
+                                        <p class="author-category">
+                                          in <a href="http://www.joesacher.com/categories/tech">tech</a>&nbsp; &nbsp; <i class="fa fa-clock-o"></i> 3 min. read
+                                        </p>
+                                        <p class="date-comments">
+                                            <a href="http://www.joesacher.com/blog/2017/12/01/nulls-in-winreg/" class="text-uppercase"><i class="fa fa-calendar-o"></i>December 1, 2017</a>
+                                        </p>
+                                    </div>
+                                    <p class="intro">I ran into an interesting issue with my Windows development machine when trying to test a Flask web app. This was due to werkzeug running the simple web server for flask that is created when you us app.run().
+The error had me confused at first, as it has nothing to do with what I was changing at the time:
+TypeError: OpenKey() argument 2 must be str without null characters or None, not str  I tracked back through the stack to see that werkzeug is looking at the Windows Registry.</p>
+                                    <p class="read-more"><a href="http://www.joesacher.com/blog/2017/12/01/nulls-in-winreg/" class="btn btn-template-main">Continue reading</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section class="post">
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="image">
                                       <a href="http://www.joesacher.com/blog/2017/10/28/raspberry-pi-startup-ip-web/"><img src="http://www.joesacher.com/img/banners/burn-in-cart.jpg" class="img-responsive" alt=""></a>
                                   </div>
                                 </div>
@@ -350,31 +376,6 @@ Unders There are many uses of single underscores in Python. We will hit a few co
                                 </div>
                             </div>
                         </section>
-                        
-                        <section class="post">
-                            <div class="row">
-                                <div class="col-md-4">
-                                  <div class="image">
-                                      <a href="http://www.joesacher.com/blog/2017/05/20/mutable-defaults-and-decorators/"><img src="http://www.joesacher.com/img/banners/python-logo.png" class="img-responsive" alt=""></a>
-                                  </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h2><a href="http://www.joesacher.com/blog/2017/05/20/mutable-defaults-and-decorators/">Python: Mutable Defaults and Decorators</a></h2>
-                                    <div class="clearfix">
-                                        <p class="author-category">
-                                          in <a href="http://www.joesacher.com/categories/tech">tech</a>&nbsp; &nbsp; <i class="fa fa-clock-o"></i> 9 min. read
-                                        </p>
-                                        <p class="date-comments">
-                                            <a href="http://www.joesacher.com/blog/2017/05/20/mutable-defaults-and-decorators/" class="text-uppercase"><i class="fa fa-calendar-o"></i>May 20, 2017</a>
-                                        </p>
-                                    </div>
-                                    <p class="intro">If you came directly to this article, you might want to read my previous on in this series with the link at the bottom. We discussed the dangers of using mutable values for defaults in a function parameter. In this article I&rsquo;ll discuss two things: using mutable defaults for good and decorators. In the end, combining these together.
-Using the default mutable for good In developing a Python workflow for a custom system, I&rsquo;m interfacing with custom hardware to measure current and temperature.</p>
-                                    <p class="read-more"><a href="http://www.joesacher.com/blog/2017/05/20/mutable-defaults-and-decorators/" class="btn btn-template-main">Continue reading</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
                         <ul class="pager">
                             <li class="previous disabled"><a href="#">&larr; Newer</a></li><li class="next"><a href="http://www.joesacher.com//tags/python/page/2/">Older &rarr;</a></li>
                         </ul>
@@ -402,7 +403,7 @@ Using the default mutable for good In developing a Python workflow for a custom 
             </li><li><a href="http://www.joesacher.com/categories/how-to" class="text-uppercase">how-to (5)</a>
             </li><li><a href="http://www.joesacher.com/categories/personal" class="text-uppercase">personal (9)</a>
             </li><li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
-            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (38)</a>
+            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (39)</a>
             </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (48)</a>
             </li>
         </ul>
@@ -484,6 +485,7 @@ Using the default mutable for good In developing a Python workflow for a custom 
             </li><li><a href="http://www.joesacher.com/tags/web"><i class="fa fa-tags"></i> web</a>
             </li><li><a href="http://www.joesacher.com/tags/webos"><i class="fa fa-tags"></i> webos</a>
             </li><li><a href="http://www.joesacher.com/tags/windows-phone"><i class="fa fa-tags"></i> windows-phone</a>
+            </li><li><a href="http://www.joesacher.com/tags/wiundows"><i class="fa fa-tags"></i> wiundows</a>
             </li><li><a href="http://www.joesacher.com/tags/woodworking"><i class="fa fa-tags"></i> woodworking</a>
             </li><li><a href="http://www.joesacher.com/tags/writing"><i class="fa fa-tags"></i> writing</a>
             </li>

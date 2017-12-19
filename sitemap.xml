@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.joesacher.com/blog/2017/12/01/nulls-in-winreg/</loc>
+    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/blog/2017/10/28/raspberry-pi-startup-ip-web/</loc>
     <lastmod>2017-10-28T00:00:00+00:00</lastmod>
   </url>
@@ -623,7 +628,7 @@
   
   <url>
     <loc>http://www.joesacher.com/blog/</loc>
-    <lastmod>2017-10-28T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -741,13 +746,13 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/tags/hugo/</loc>
+    <loc>http://www.joesacher.com/series/hugo/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/series/hugo/</loc>
+    <loc>http://www.joesacher.com/tags/hugo/</loc>
     <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -844,7 +849,7 @@
   
   <url>
     <loc>http://www.joesacher.com/tags/programming/</loc>
-    <lastmod>2011-03-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -868,7 +873,7 @@
   
   <url>
     <loc>http://www.joesacher.com/tags/python/</loc>
-    <lastmod>2017-10-28T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -940,7 +945,7 @@
   
   <url>
     <loc>http://www.joesacher.com/categories/tech/</loc>
-    <lastmod>2017-10-28T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -963,13 +968,13 @@
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/categories/trans-am/</loc>
+    <loc>http://www.joesacher.com/series/trans-am/</loc>
     <lastmod>2007-12-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.joesacher.com/series/trans-am/</loc>
+    <loc>http://www.joesacher.com/categories/trans-am/</loc>
     <lastmod>2007-12-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -999,6 +1004,12 @@
   </url>
   
   <url>
+    <loc>http://www.joesacher.com/tags/wiundows/</loc>
+    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/tags/woodworking/</loc>
     <lastmod>2007-12-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1012,7 +1023,7 @@
   
   <url>
     <loc>http://www.joesacher.com/</loc>
-    <lastmod>2017-10-28T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
