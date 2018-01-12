@@ -199,9 +199,12 @@ try_count <span style="color:#555">=</span> <span style="color:#f60">10</span>
 </span><span style="color:#c30">    Loop checking for valid IP and sleeping
 </span><span style="color:#c30">    &#34;&#34;&#34;</span>
     <span style="color:#069;font-weight:bold">for</span> tries <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(try_count):
-        <span style="color:#069;font-weight:bold">if</span> is_good_ip(get_ip()):
-            <span style="color:#069;font-weight:bold">break</span>
-        cycle_eth0()
+        <span style="color:#069;font-weight:bold">try</span>:
+            <span style="color:#069;font-weight:bold">if</span> is_good_ip(get_ip()):
+                break0
+            cycle_eth0()
+        <span style="color:#069;font-weight:bold">except</span>:
+            <span style="color:#069;font-weight:bold">pass</span>
         sleep(<span style="color:#f60">10</span>)
     <span style="color:#069;font-weight:bold">else</span>:
         <span style="color:#069;font-weight:bold">raise</span> <span style="color:#c00;font-weight:bold">Exception</span>(<span style="color:#c30"></span><span style="color:#c30">&#39;IP Address did not assign correctly.&#39;</span>)
@@ -245,17 +248,19 @@ sudo python3 boot.py</code></pre></div></p>
 
 <h3 id="run-on-gui-load">Run on GUI Load</h3>
 
-<p>To run a program when the GUI loads, I found the easiest is to add it to the <code>/etc/xdg/lxsession/LXDE/autostart</code> file.  I added the line below to the bottom of this file.</p>
+<p>To run a program when the GUI loads, I found the easiest is to add it to the <code>~/.config/lxsession/LXDE-pi/autostart</code> file.  I added the line below to the bottom of this file.</p>
 
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">@python3 /home/pi/agapao-cart/on_gui_load.py</code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">@/usr/bin/python3 /home/pi/agapao-cart/on_gui_load.py</code></pre></div>
 
-<p>This script (on_gui_load.py) will open up our chromium browser, display in maximised full screen mode (&ndash;kiosk) and load the localhost web server.</p>
+<p>Notice that I must be explicit with both the path to <code>python3</code> and the full script path.</p>
+
+<p>This script (on_gui_load.py) will open up our chromium browser, display in maximised full screen mode (&ndash;kiosk) and load the localhost web server.  Using (&ndash;incognito) is the best way I have found to eliminate the &lsquo;restore&rsquo; prompt if the browser is closed with a system shutdown.  (Which is how I always close it.)</p>
 
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">subprocess</span>
 
 
 <span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">start_web_browser_kiosk</span>():
-    my_cmd <span style="color:#555">=</span> <span style="color:#c30"></span><span style="color:#c30">&#34;chromium-browser --kiosk http://127.0.0.1&#34;</span>
+    my_cmd <span style="color:#555">=</span> <span style="color:#c30"></span><span style="color:#c30">&#34;chromium-browser --kiosk --incognito http://127.0.0.1&#34;</span>
     proc <span style="color:#555">=</span> subprocess<span style="color:#555">.</span>Popen(my_cmd, shell<span style="color:#555">=</span>True)
 
 
@@ -264,14 +269,16 @@ sudo python3 boot.py</code></pre></div></p>
 
 <p>The browser will load the Flask website being served as GUI for our 7&rdquo; touchscreens.</p>
 
-<h3 id="don-t-sleep-screen">Don&rsquo;t Sleep Screen</h3>
+<h3 id="screen-sleep-and-mouse-pointer">Screen Sleep and Mouse Pointer</h3>
 
 <p>The next thing you will notice is the screen will go black after a delay and your nice embedded display will require you to tap it to find status on your process.  Not ideal.</p>
 
-<p>If we edit <code>/etc/lightdm/lightdm.conf</code> and add the following lines to the [SetDefaults] section, we can solve the issue.</p>
+<p>If we edit <code>/etc/lightdm/lightdm.conf</code> and add the following lines to the <code>[SeatDefaults]</code> section, we can solve the issue.</p>
 
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># don&#39;t sleep the screen
 xserver-command=X -s 0 dpms</code></pre></div>
+
+<p>If you have a touch screen and do not want a mouse cursor, also add the <code>-nocursor</code> flag.</p>
 
                                 <hr/>
         <p>Part 3 of 3
@@ -323,7 +330,7 @@ xserver-command=X -s 0 dpms</code></pre></div>
             </li><li><a href="http://www.joesacher.com/categories/how-to" class="text-uppercase">how-to (5)</a>
             </li><li><a href="http://www.joesacher.com/categories/personal" class="text-uppercase">personal (9)</a>
             </li><li><a href="http://www.joesacher.com/categories/reviews" class="text-uppercase">reviews (14)</a>
-            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (39)</a>
+            </li><li><a href="http://www.joesacher.com/categories/tech" class="text-uppercase">tech (40)</a>
             </li><li><a href="http://www.joesacher.com/categories/trans-am" class="text-uppercase">trans-am (48)</a>
             </li>
         </ul>
@@ -340,7 +347,7 @@ xserver-command=X -s 0 dpms</code></pre></div>
         <ul class="nav nav-pills nav-stacked">
             <li><a href="http://www.joesacher.com/series/burn-in-cart" class="text-uppercase">burn-in-cart (3)</a>
             </li><li><a href="http://www.joesacher.com/series/hugo" class="text-uppercase">hugo (4)</a>
-            </li><li><a href="http://www.joesacher.com/series/python-tips" class="text-uppercase">python-tips (8)</a>
+            </li><li><a href="http://www.joesacher.com/series/python-tips" class="text-uppercase">python-tips (9)</a>
             </li><li><a href="http://www.joesacher.com/series/python-to-rust" class="text-uppercase">python-to-rust (4)</a>
             </li><li><a href="http://www.joesacher.com/series/trans-am" class="text-uppercase">trans-am (48)</a>
             </li>
@@ -360,6 +367,7 @@ xserver-command=X -s 0 dpms</code></pre></div>
             </li><li><a href="http://www.joesacher.com/tags/bicycle-touring"><i class="fa fa-tags"></i> bicycle-touring</a>
             </li><li><a href="http://www.joesacher.com/tags/book-review"><i class="fa fa-tags"></i> book-review</a>
             </li><li><a href="http://www.joesacher.com/tags/calendars"><i class="fa fa-tags"></i> calendars</a>
+            </li><li><a href="http://www.joesacher.com/tags/collections"><i class="fa fa-tags"></i> collections</a>
             </li><li><a href="http://www.joesacher.com/tags/cooking"><i class="fa fa-tags"></i> cooking</a>
             </li><li><a href="http://www.joesacher.com/tags/cycling"><i class="fa fa-tags"></i> cycling</a>
             </li><li><a href="http://www.joesacher.com/tags/dessert"><i class="fa fa-tags"></i> dessert</a>

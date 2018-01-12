@@ -78,6 +78,11 @@
   </url>
   
   <url>
+    <loc>http://www.joesacher.com/blog/2017/07/10/collections-library/</loc>
+    <lastmod>2017-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/blog/2017/06/24/dunder-name-main/</loc>
     <lastmod>2017-06-24T00:00:00+00:00</lastmod>
   </url>
@@ -656,6 +661,12 @@
   </url>
   
   <url>
+    <loc>http://www.joesacher.com/tags/collections/</loc>
+    <lastmod>2017-07-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.joesacher.com/tags/cooking/</loc>
     <lastmod>2008-03-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -879,7 +890,7 @@
   
   <url>
     <loc>http://www.joesacher.com/series/python-tips/</loc>
-    <lastmod>2017-06-24T00:00:00+00:00</lastmod>
+    <lastmod>2017-07-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
