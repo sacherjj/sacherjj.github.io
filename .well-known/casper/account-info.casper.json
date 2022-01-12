@@ -20,8 +20,8 @@
         ],
         "branding": {
             "logo": {
-                "png_256": "http://www.joesacher.com/img/cspr-care/cspr-care-256.png",
-                "png_1024": "http://www.joesacher.com/img/cspr-care/cspr-care-1024.png"
+                "png_256": "https://www.joesacher.com/img/cspr-care/cspr-care-256.png",
+                "png_1024": "https://www.joesacher.com/img/cspr-care/cspr-care-1024.png"
             }
         },
         "location": {
@@ -41,7 +41,7 @@
     "nodes": [
         {
             "public_key": "01ba1d24932ec070d5c13440025dfa760688a9337c5ddac41654706508cb5ea5cd",
-            "description": "Bare Metal 6C/12T 64 GB server with 2 TB nvme.  AWS EC2 hot backup.",
+            "description": "cspr.care - Bare Metal 6C/12T 64 GB server with 2 TB nvme.  AWS EC2 hot backup.",
             "functionality": ["validator"]
         }
     ]
