@@ -1,7 +1,7 @@
 {
     "owner": {
-        "name": "Joe Sacher",
-        "description": "Principal Engineer at CasperLabs",
+        "name": "cspr.care",
+        "description": "Joe Sacher - Principal Engineer at CasperLabs",
         "type": ["individual", "validator"],
         "identity": {
             "ownership_disclosure_url": "",
@@ -41,7 +41,7 @@
     "nodes": [
         {
             "public_key": "01ba1d24932ec070d5c13440025dfa760688a9337c5ddac41654706508cb5ea5cd",
-            "description": "cspr.care - Bare Metal 6C/12T 64 GB server with 2 TB nvme.  AWS EC2 hot backup.",
+            "description": "Bare Metal 6C/12T 64 GB server with 2 TB nvme.  AWS EC2 hot backup.",
             "functionality": ["validator"]
         }
     ]
