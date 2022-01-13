@@ -16,7 +16,8 @@
         },
         "affiliated_accounts": [
             {"public_key": "017dafc21c1036cb31293873af9aa62029de1340265b46e130b9cca5b3991d52b3"},
-            {"public_key": "01ea10acc13dadaec81a98300c0d4de6d6e2ae564bdc5c9de0fe844f3d3c31d27e"}
+            {"public_key": "01ea10acc13dadaec81a98300c0d4de6d6e2ae564bdc5c9de0fe844f3d3c31d27e"},
+            {"public_key": "013870a4f11baab2252ba984b8a0e75b6333064248f7630b7dd54a22d340701667"}
         ],
         "branding": {
             "logo": {
